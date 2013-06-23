@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://hiberabyss.github.io/hiberabyss/sitemap.xml 
+Sitemap: http://hiberabyss.github.io/sitemap.xml 
