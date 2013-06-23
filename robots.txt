@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://hiberabyss.github.io/hiberabyss/sitemap.xml 
