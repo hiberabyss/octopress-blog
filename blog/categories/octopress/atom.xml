@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[hiberabyss's Blog]]></title>
-  <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress | hiberabyss's Blog]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
   <updated>2013-06-23T23:35:04+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
@@ -28,19 +28,6 @@
 
 
 <h2>测试1</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[第一个测试]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/23/this-is-my-first-blog/"/>
-    <updated>2013-06-23T18:32:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/23/this-is-my-first-blog</id>
-    <content type="html"><![CDATA[<p>我们都有一个家</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh-gen</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   
