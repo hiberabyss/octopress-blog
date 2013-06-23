@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | hiberabyss's Blog]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-23T23:35:04+08:00</updated>
+  <updated>2013-06-23T23:37:39+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -18,8 +18,7 @@
     <link href="http://hiberabyss.github.io/blog/2013/06/23/how-to-config-octopress-on-github/"/>
     <updated>2013-06-23T23:26:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/2013/06/23/how-to-config-octopress-on-github</id>
-    <content type="html"><![CDATA[<pre><code>一直觉得应该写自己的博客，之前尝试着用wordpress写，但它的编辑器实在是让我受不了，效率太低；而且现在也已经习惯了用VIM编辑东西，因此就很想找一个类似与latex式的用写代码的方式写博客，octopress就映入我的眼帘。界面还是很漂亮的，可以直接用文本进行编辑。
-</code></pre>
+    <content type="html"><![CDATA[<p>一直觉得应该写自己的博客，之前尝试着用wordpress写，但它的编辑器实在是让我受不了，效率太低；而且现在也已经习惯了用VIM编辑东西，因此就很想找一个类似与latex式的用写代码的方式写博客，octopress就映入我的眼帘。界面还是很漂亮的，可以直接用文本进行编辑。</p>
 
 <ul>
 <li>first</li>
