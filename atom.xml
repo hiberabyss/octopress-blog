@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T22:00:00+08:00</updated>
+  <updated>2013-06-24T22:06:31+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -26,7 +26,9 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>disqus_short_name: hiberabyss    #在Disqus上注册的用户名
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#输入网址后会生成一个shortname，可以在控制面板中找到
+</span><span class='line'>disqus_short_name: hiberabyss 
 </span><span class='line'>disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure>
 
 
@@ -36,7 +38,8 @@
 
 <h2>参考资料</h2>
 
-<p><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a></p>
+<p><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a>
+<a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a></p>
 ]]></content>
   </entry>
   
