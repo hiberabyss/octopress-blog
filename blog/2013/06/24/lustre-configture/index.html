@@ -1,24 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[hiberabyss's Blog]]></title>
-  <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
-  <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T14:37:10+08:00</updated>
-  <id>http://hiberabyss.github.io/</id>
-  <author>
-    <name><![CDATA[hiberabyss]]></name>
-    <email><![CDATA[liuhb90@gmail.com]]></email>
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Lustre-2.3的安装与配置 - hiberabyss's Blog</title>
+  <meta name="author" content="hiberabyss">
 
   
-  <entry>
-    <title type="html"><![CDATA[Lustre-2.3的安装与配置]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/24/lustre-configture/"/>
-    <updated>2013-06-24T12:37:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/24/lustre-configture</id>
-    <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
+  <meta name="description" content="Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。 内容摘要：
+* 安装环境
+* Lustre的安装
+* Lustre的配置
+* &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://hiberabyss.github.io/blog/2013/06/24/lustre-configture">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="hiberabyss's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">hiberabyss's Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:hiberabyss.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Lustre-2.3的安装与配置</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-24T12:37:00+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
 <p>内容摘要：
 * 安装环境
@@ -202,24 +279,114 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
 <h2>参考文献：</h2>
 
 <p><a href="http://xiaolangit.blog.51cto.com/3343422/1195060">51CTO：Lustre-2.3的安装</a></p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[配置octopress的完整教程]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/23/how-to-config-octopress-on-github/"/>
-    <updated>2013-06-23T23:26:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/23/how-to-config-octopress-on-github</id>
-    <content type="html"><![CDATA[<p>一直觉得应该写自己的博客，之前尝试着用wordpress写，但它的编辑器实在是让我受不了，效率太低；而且现在也已经习惯了用VIM编辑东西，因此就很想找一个类似与latex式的用写代码的方式写博客，octopress就映入我的眼帘。界面还是很漂亮的，可以直接用文本进行编辑。</p>
 
-<ul>
-<li>first</li>
-<li>second</li>
-</ul>
+<span class="byline author vcard">Posted by <span class="fn">hiberabyss</span></span>
+
+      
 
 
-<h2>测试1</h2>
-]]></content>
-  </entry>
+
+
+
+
+
+
   
-</feed>
+
+
+<time datetime="2013-06-24T12:37:00+08:00" pubdate data-updated="true">Jun 24<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/filesystem/'>FileSystem</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hiberabyss.github.io/blog/2013/06/24/lustre-configture/" data-via="" data-counturl="http://hiberabyss.github.io/blog/2013/06/24/lustre-configture/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/23/how-to-config-octopress-on-github/" title="Previous Post: 配置octopress的完整教程">&laquo; 配置octopress的完整教程</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/24/lustre-configture/">Lustre-2.3的安装与配置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/how-to-config-octopress-on-github/">配置octopress的完整教程</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - hiberabyss -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
