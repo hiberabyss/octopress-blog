@@ -120,9 +120,13 @@ Lustre的配置
 
 <h2>Lustre的安装</h2>
 
-<p>安装之前，对系统环境有如下要求： <br/>
-&ndash;. 必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；
-&ndash;. selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</p>
+<p>安装之前，对系统环境有如下要求：</p>
+
+<ol>
+<li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
+<li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
+</ol>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
