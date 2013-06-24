@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T22:08:21+08:00</updated>
+  <updated>2013-06-24T22:30:36+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -20,14 +20,18 @@
     <id>http://hiberabyss.github.io/blog/2013/06/24/my-octopress-configure</id>
     <content type="html"><![CDATA[<p>所做的一些个性化更改的资料整理。</p>
 
+<h2>修改导航栏名称</h2>
+
+<p>修改<code>source/_includes/custom/navigation.html</code>文件即可：</p>
+
 <h2>添加Disqus</h2>
 
-<p>首先需要在<a href="http://www.disqus.com/">Disqus</a>上注册一个帐号，然后修改<em>_config.yml</em>文件：</p>
+<p>首先需要在<a href="http://www.disqus.com/">Disqus</a>上注册一个帐号，然后修改<code>_config.yml</code>文件：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#输入网址后会生成一个shortname，可以在控制面板中找到
+</pre></td><td class='code'><pre><code class=''><span class='line'>#在Disgus官网控制面板中输入使用的网址后会生成一个shortname
 </span><span class='line'>disqus_short_name: hiberabyss 
 </span><span class='line'>disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure>
 
@@ -38,7 +42,7 @@
 
 <h2>参考资料</h2>
 
-<p><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a>
+<p><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a><br/>
 <a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a></p>
 ]]></content>
   </entry>
