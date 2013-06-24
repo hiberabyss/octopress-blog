@@ -121,8 +121,8 @@ Lustre的配置
 <h2>Lustre的安装</h2>
 
 <p>安装之前，对系统环境有如下要求： <br/>
- 1.  必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；
- 1.  selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</p>
+&ndash;. 必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；
+&ndash;. selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
@@ -223,7 +223,7 @@ Lustre的配置
 
 <h2>实用工具</h2>
 
-<p>lctl：可以直接在终端月运行进入交互的命令方式或者直接输入命令。</p>
+<p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -255,12 +255,12 @@ Lustre的配置
 
 <h2>遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
 
-<p>P：安装完重启之后，系统无法启动。
-C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。
+<p>P：安装完重启之后，系统无法启动。<br/>
+C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br/>
 R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。</p>
 
-<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接
-C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。
+<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br/>
+C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br/>
 R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。</p>
 
 <h2>比较有创意的Idea</h2>
