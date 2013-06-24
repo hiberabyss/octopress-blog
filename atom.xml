@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T22:30:36+08:00</updated>
+  <updated>2013-06-24T22:37:49+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -23,6 +23,10 @@
 <h2>修改导航栏名称</h2>
 
 <p>修改<code>source/_includes/custom/navigation.html</code>文件即可：</p>
+
+<h2>修改缩进方式</h2>
+
+<p>修改文件<code>sass/custom/_layout.scss</code>，设置<code>$indented-lists: true</code>。</p>
 
 <h2>添加Disqus</h2>
 
