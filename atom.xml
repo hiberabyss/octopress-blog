@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T22:37:49+08:00</updated>
+  <updated>2013-06-24T22:52:55+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -43,6 +43,11 @@
 <h2>总结</h2>
 
 <p>把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。</p>
+
+<h2>相关博客</h2>
+
+<p><a href="http://yanping.me/cn/">雁起平沙的网络日志</a><br/>
+<a href="http://whbzju.github.io/">知行录（github上有源码）</a></p>
 
 <h2>参考资料</h2>
 
