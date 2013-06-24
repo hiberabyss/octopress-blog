@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: FileSystem | hiberabyss's Blog]]></title>
+  <title><![CDATA[Category: FileSystem | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/filesystem/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T15:38:22+08:00</updated>
+  <updated>2013-06-24T16:10:29+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -20,7 +20,7 @@
     <id>http://hiberabyss.github.io/blog/2013/06/24/lustre-configture</id>
     <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
-<h2>主要内容：</h2>
+<h2>主要内容</h2>
 
 <ul>
 <li>安装环境</li>
