@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FileSystem | hiberabyss's Blog]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/filesystem/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-24T15:05:28+08:00</updated>
+  <updated>2013-06-24T15:15:01+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -18,7 +18,7 @@
     <link href="http://hiberabyss.github.io/blog/2013/06/24/lustre-configture/"/>
     <updated>2013-06-24T12:37:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/2013/06/24/lustre-configture</id>
-    <content type="html"><![CDATA[<p>  Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
+    <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
 <h2>主要内容：</h2>
 
@@ -45,8 +45,8 @@
 <h2>Lustre的安装</h2>
 
 <p>安装之前，对系统环境有如下要求：
-1. 必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；
-2. selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</p>
+1.  必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；
+2.  selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</p>
 
 <p><code>
 SELINUX=disabled
