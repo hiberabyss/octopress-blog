@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-25T18:15:05+08:00</updated>
+  <updated>2013-06-25T18:54:12+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -28,7 +28,7 @@
 <h2 id="section-1">修改缩进方式</h2>
 <p>修改文件<code>sass/custom/_layout.scss</code>，设置<code>$indented-lists: true</code>。</p>
 
-<h2 id="section-2">去除 <strong>分类目录</strong> 和 <strong>近期文章</strong> 的下划线</h2>
+<h2 id="section-2">去除分类目录和近期文章的下划线</h2>
 <p>根据<a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">这篇文章</a>修改。对<code>plugins/category_list.rb</code>文件中<code>style</code>变量做如下修改：</p>
 
 <p><code>
