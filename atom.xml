@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-25T15:32:01+08:00</updated>
+  <updated>2013-06-25T16:28:03+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Markdown和kramdown语法总结]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/25/markdown-syntax/"/>
+    <link href="http://hiberabyss.github.io/blog/20130625/markdown-syntax/"/>
     <updated>2013-06-25T15:20:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/25/markdown-syntax</id>
-    <content type="html"><![CDATA[<h3 id="more--"><code>&lt;--more--&gt;</code>可以用来在只在首页展示部分内容，并添加一个按钮。</h3>
+    <id>http://hiberabyss.github.io/blog/20130625/markdown-syntax</id>
+    <content type="html"><![CDATA[<h3 id="more--"><code>&lt;!--more--&gt;</code>可以用来在只在首页展示部分内容，并添加一个按钮。</h3>
 
 <h2 id="latex">Latex语法</h2>
 <p>插入以下代码：</p>
@@ -87,11 +87,12 @@ $$</p>
   
   <entry>
     <title type="html"><![CDATA[个性化Octopress资源整理]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/24/my-octopress-configure/"/>
+    <link href="http://hiberabyss.github.io/blog/20130624/my-octopress-configure/"/>
     <updated>2013-06-24T17:07:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/24/my-octopress-configure</id>
-    <content type="html"><![CDATA[<p>&lt;–more–&gt;
-所做个性化修改的资料整理总结。</p>
+    <id>http://hiberabyss.github.io/blog/20130624/my-octopress-configure</id>
+    <content type="html"><![CDATA[<p>所做个性化修改的资料整理总结。</p>
+
+<!--more-->
 
 <h2 id="section">修改导航栏名称</h2>
 <p>修改<code>source/_includes/custom/navigation.html</code>文件即可：</p>
@@ -99,37 +100,69 @@ $$</p>
 <h2 id="section-1">修改缩进方式</h2>
 <p>修改文件<code>sass/custom/_layout.scss</code>，设置<code>$indented-lists: true</code>。</p>
 
-<h2 id="disqus">添加Disqus</h2>
-<p>首先需要在<a href="http://www.disqus.com/">Disqus</a>上注册一个帐号，然后修改<code>_config.yml</code>文件：</p>
+<h2 id="section-2">去除 <strong>分类目录</strong> 和 <strong>近期文章</strong> 的下划线</h2>
+<p>根据<a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">这篇文章</a>修改。对<code>plugins/category_list.rb</code>文件中<code>style</code>变量做如下修改：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">style = "text-decoration:none; ..."</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>对文件<code>source/\_inclue/asides/recent\_postts.html</code>做如下修改：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;a</span> <span class="na">style=</span><span class="s">&quot;text-decoration:none&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>也可以直接在这个文件里修改显示的名称，其他侧边栏插件修改方法类似。</p>
+
+<h2 id="disqus">添加Disqus</h2>
+<p>首先需要在<a href="http://www.disqus.com/">Disqus</a>上注册一个帐号，然后修改<code>\_config.yml</code>文件：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">#在Disgus官网控制面板中输入使用的网址后会生成一个shortname
+</pre></td><td class="code"><pre><code class="html"><span class="line">#在Disgus官网控制面板中输入使用的网址后会生成一个shortname
 </span><span class="line">disqus_short_name: hiberabyss	
-</span><span class="line">disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure></notextile></div>
+</span><span class="line">disqus_show_comment_count: true
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-2">添加多说</h2>
+<h2 id="section-3">添加多说</h2>
 <p>主要参考<a href="http://ihavanna.org/Internet/2013-02/add-duoshuo-commemt-system-into-octopress.html">这篇文章</a>。需要先在多看官网上<a href="http://duoshuo.com/create-site/">创建站点</a>（官网的上写的是我要安装，最开始被我给直接忽略了），在后台控制面板的工具选项的代码中可以获取<code>short\_name</code>，可能是和输入的域名是一致的，不太确定。</p>
 
-<h2 id="section-3">总结</h2>
-<p>把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。</p>
+<h2 id="kramdown">使用kramdown包</h2>
+<p>安装kramdown包：</p>
 
-<h2 id="section-4">相关博客</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="n">install</span> <span class="n">kramdown</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>修改配置文件<code>\_config.yml</code>，把<code>rdiscount</code>改为<code>kramdown</code>：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="yaml"><span class="line"><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">kramdown</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="latex">使用Latex</h2>
+<p>修改支持Latex的方法参见<a href="http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/">这篇文章</a>。</p>
+
+<h2 id="section-4">总结</h2>
+<p>有不少内容参考了[这篇文章]（http://www.yanjiuyanjiu.com/blog/20130402/）。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。</p>
+
+<h2 id="section-5">相关博客</h2>
 <p><a href="http://yanping.me/cn/">雁起平沙的网络日志</a><br />
 <a href="http://whbzju.github.io/">知行录（github上有源码）</a></p>
 
-<h2 id="section-5">参考资料</h2>
+<h2 id="section-6">参考资料</h2>
 <p><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a><br />
-<a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a></p>
+<a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a>
+<a href="http://ihavanna.org/Internet/2013-02/add-duoshuo-commemt-system-into-octopress.html">为 Octopress 添加多说评论系统</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Lustre-2.3的安装与配置]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/24/lustre-configture/"/>
+    <link href="http://hiberabyss.github.io/blog/20130624/lustre-configture/"/>
     <updated>2013-06-24T12:37:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/24/lustre-configture</id>
+    <id>http://hiberabyss.github.io/blog/20130624/lustre-configture</id>
     <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
 <h2 id="section">主要内容</h2>

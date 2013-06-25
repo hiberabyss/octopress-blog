@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Markdown | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/markdown/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-25T15:32:01+08:00</updated>
+  <updated>2013-06-25T16:28:03+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Markdown和kramdown语法总结]]></title>
-    <link href="http://hiberabyss.github.io/blog/2013/06/25/markdown-syntax/"/>
+    <link href="http://hiberabyss.github.io/blog/20130625/markdown-syntax/"/>
     <updated>2013-06-25T15:20:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/2013/06/25/markdown-syntax</id>
-    <content type="html"><![CDATA[<h3 id="more--"><code>&lt;--more--&gt;</code>可以用来在只在首页展示部分内容，并添加一个按钮。</h3>
+    <id>http://hiberabyss.github.io/blog/20130625/markdown-syntax</id>
+    <content type="html"><![CDATA[<h3 id="more--"><code>&lt;!--more--&gt;</code>可以用来在只在首页展示部分内容，并添加一个按钮。</h3>
 
 <h2 id="latex">Latex语法</h2>
 <p>插入以下代码：</p>

@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://hiberabyss.github.io/blog/2013/06/24/lustre-configture/</loc>
+        <loc>http://hiberabyss.github.io/blog/20130624/lustre-configture/</loc>
         <lastmod>2013-06-25T15:16:25+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hiberabyss.github.io/blog/2013/06/24/my-octopress-configure/</loc>
-        <lastmod>2013-06-25T15:00:06+08:00</lastmod>
+        <loc>http://hiberabyss.github.io/blog/20130624/my-octopress-configure/</loc>
+        <lastmod>2013-06-25T16:08:57+08:00</lastmod>
     </url>
     <url>
-        <loc>http://hiberabyss.github.io/blog/2013/06/25/markdown-syntax/</loc>
-        <lastmod>2013-06-25T15:31:51+08:00</lastmod>
+        <loc>http://hiberabyss.github.io/blog/20130625/markdown-syntax/</loc>
+        <lastmod>2013-06-25T15:35:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/about/</loc>
@@ -18,11 +18,11 @@
     </url>
     <url>
         <loc>http://hiberabyss.github.io/</loc>
-        <lastmod>2013-06-25T15:31:51+08:00</lastmod>
+        <lastmod>2013-06-25T16:08:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/archives/</loc>
-        <lastmod>2013-06-25T15:31:51+08:00</lastmod>
+        <lastmod>2013-06-25T16:08:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/robots.txt</loc>
