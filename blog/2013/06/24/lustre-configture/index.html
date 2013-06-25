@@ -9,10 +9,7 @@
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。 主要内容 安装环境
-Lustre的安装
-Lustre的配置
-用于Lustre管理的实用工具 &hellip;">
+  <meta name="description" content="Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。 主要内容 安装环境 Lustre的安装 Lustre的配置 用于Lustre管理的实用工具 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -101,195 +98,149 @@ Lustre的配置
 
 <div class="entry-content"><p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
-<h2>主要内容</h2>
-
+<h2 id="section">主要内容</h2>
 <ul>
-<li>安装环境</li>
-<li>Lustre的安装</li>
-<li>Lustre的配置</li>
-<li>用于Lustre管理的实用工具</li>
-<li>遇到的问题与解决方案</li>
-<li>有创意的Idea</li>
+  <li>安装环境  </li>
+  <li>Lustre的安装</li>
+  <li>Lustre的配置</li>
+  <li>用于Lustre管理的实用工具</li>
+  <li>遇到的问题与解决方案</li>
+  <li>有创意的Idea</li>
 </ul>
 
-
-<h2>安装环境</h2>
-
+<h2 id="section-1">安装环境</h2>
 <ul>
-<li>操作系统：CentOS 6.3 (x86_64)</li>
-<li>内核版本：2.6.32-279</li>
-<li>Lustre版本：2.3</li>
-<li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
+  <li>操作系统：CentOS 6.3 (x86_64)</li>
+  <li>内核版本：2.6.32-279</li>
+  <li>Lustre版本：2.3</li>
+  <li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
 </ul>
 
-
-<h2>Lustre的安装</h2>
-
-<p>安装之前，对系统环境有如下要求：</p>
+<h2 id="lustre">Lustre的安装</h2>
+<p>安装之前，对系统环境有如下要求：   </p>
 
 <ol>
-<li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
-<li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
+  <li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
+  <li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
 </ol>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">SELINUX=disabled</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
+<p>下载<a href="http://downloads.whamcloud.com/public/e2fsprogs/latest/el6/RPMS/x86_64/">e2fsprogs</a>并安装：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">rpm -Uvh --nodeps \
+</span><span class="line">e2fsprogs-devel-1.42.7.wc1-7.el6.x86_64.rpm \
+</span><span class="line">e2fsprogs-libs-1.42.7.wc1-7.el6.x86_64.rpm \
+</span><span class="line">e2fsprogs-1.42.7.wc1-7.el6.x86_64.rpm \
+</span><span class="line">libcom_err-devel-1.42.7.wc1-7.el6.x86_64.rpm \
+</span><span class="line">libcom_err-1.42.7.wc1-7.el6.x86_64.rpm \
+</span><span class="line">libss-devel-1.42.7.wc1-7.el6.x86_64.rpm \
+</span><span class="line">libss-1.42.7.wc1-7.el6.x86_64.rpm</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
+<p>下载<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">kernel</a>包并安装（如果要使用InfiniBind连接方式，则必须安装kernel-ib-version包，且需要卸载系统中已经安装的以mlnx开头的kenel包）：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">rpm -ivh \
+</span><span class="line">kernel-firmware-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm \
+</span><span class="line">kernel-devel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm \
+</span><span class="line">kernel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm \
+</span><span class="line">kernel-ib-version</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<p>下载<a href="http://downloads.whamcloud.com/public/e2fsprogs/latest/el6/RPMS/x86_64/">e2fsprogs</a>并安装：</p>
+<p>下载并安装<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">Lustre</a>：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">rpm -ivh \
+</span><span class="line">lustre-ldiskfs-3.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm \
+</span><span class="line">lustre-modules-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm \
+</span><span class="line">lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rpm -Uvh --nodeps \
-</span><span class='line'>e2fsprogs-devel-1.42.7.wc1-7.el6.x86_64.rpm \
-</span><span class='line'>e2fsprogs-libs-1.42.7.wc1-7.el6.x86_64.rpm \
-</span><span class='line'>e2fsprogs-1.42.7.wc1-7.el6.x86_64.rpm \
-</span><span class='line'>libcom_err-devel-1.42.7.wc1-7.el6.x86_64.rpm \
-</span><span class='line'>libcom_err-1.42.7.wc1-7.el6.x86_64.rpm \
-</span><span class='line'>libss-devel-1.42.7.wc1-7.el6.x86_64.rpm \
-</span><span class='line'>libss-1.42.7.wc1-7.el6.x86_64.rpm</span></code></pre></td></tr></table></div></figure>
-
-
-<p>下载<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">kernel</a>包并安装（如果要使用InfiniBind连接方式，则必须安装kernel-ib-version包，且需要卸载系统中已经安装的以mlnx开头的kenel包）：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rpm -ivh \
-</span><span class='line'>kernel-firmware-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm \
-</span><span class='line'>kernel-devel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm \
-</span><span class='line'>kernel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm \
-</span><span class='line'>kernel-ib-version</span></code></pre></td></tr></table></div></figure>
-
-
-<p>下载并安装<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">Lustre</a>：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rpm -ivh \
-</span><span class='line'>lustre-ldiskfs-3.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm \
-</span><span class='line'>lustre-modules-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm \
-</span><span class='line'>lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Lustre的配置</h2>
-
-<p>配置Lustre所使用的借口名称以及相对应的别名；创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>options lnet networks="o2ib0(ib0)"</span></code></pre></td></tr></table></div></figure>
-
-
-<p>载入相关模块：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>modprobe lustre
-</span><span class='line'>modprobe ldiskfs
-</span><span class='line'>modprobe lnet</span></code></pre></td></tr></table></div></figure>
-
+<h2 id="lustre-1">Lustre的配置</h2>
+<p>配置Lustre所使用的借口名称以及相对应的别名；创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">options lnet networks="o2ib0(ib0)"</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+载入相关模块：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">modprobe lustre
+</span><span class="line">modprobe ldiskfs
+</span><span class="line">modprobe lnet</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
 <p>这时可以查看<em>/sys/modules/lnet/prarameters/networks</em>内容，以确定<em>lnet.conf</em>中的配置信息是否已经加载至内核。</p>
 
-<p>在MDS上的创建Lustre文件系统，并挂载：</p>
+<p>在MDS上的创建Lustre文件系统，并挂载：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">mkfs.lustre --fsname=mylustre --mdt --mgs --index=0 --reformat /dev/sdb1
+</span><span class="line">mount.lustre /dev/sdb1 /mnt/mdt</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+其中<em>fsname</em>为安装的lustre文件系统的标志，在MGS、MDS和OSS中都必须保持一致，在客户端挂在Lustre文件系统时也会使用到这个名字，长度不能超过8个字符；本例中MGS和MDS使用同一个服务器；<em>reformat</em>会对磁盘进行重新格式化处理。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkfs.lustre --fsname=mylustre --mdt --mgs --index=0 --reformat /dev/sdb1
-</span><span class='line'>mount.lustre /dev/sdb1 /mnt/mdt</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其中<em>fsname</em>为安装的lustre文件系统的标志，在MGS、MDS和OSS中都必须保持一致，在客户端挂在Lustre文件系统时也会使用到这个名字，长度不能超过8个字符；本例中MGS和MDS使用同一个服务器；<em>reformat</em>会对磁盘进行重新格式化处理。</p>
-
-<p>在OSS上创建Lustre文件系统，并挂载：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkfs.lustre --fsname=mylustre --ost --reformat --index=num --mgsnode=host_mds@o2ib0 /dev/sdb2
-</span><span class='line'>mount.lustre /dev/sdb2 /mnt/ost</span></code></pre></td></tr></table></div></figure>
-
-
-<p>必须要在MDT的文件系统挂在之后才能挂载OST的文件系统；<em>host_mds</em>为mds的ip地址或者已经写入<em>hosts</em>文件的主机名，<em>o2ib0</em>和<em>lnet.conf</em>中写入的内容保持一致。
+<p>在OSS上创建Lustre文件系统，并挂载：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">mkfs.lustre --fsname=mylustre --ost --reformat --index=num --mgsnode=host_mds@o2ib0 /dev/sdb2
+</span><span class="line">mount.lustre /dev/sdb2 /mnt/ost</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+必须要在MDT的文件系统挂在之后才能挂载OST的文件系统；<em>host_mds</em>为mds的ip地址或者已经写入<em>hosts</em>文件的主机名，<em>o2ib0</em>和<em>lnet.conf</em>中写入的内容保持一致。
 如果出现无法连接的情况，则可能是防火墙的原因，可以关闭<em>iptables</em>服务：<code>service iptables stop</code></p>
 
-<p>客户端的挂载：</p>
+<p>客户端的挂载：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">mount.lustre host_mds@o2ib0:/mylustre /mnt/lustre</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mount.lustre host_mds@o2ib0:/mylustre /mnt/lustre</span></code></pre></td></tr></table></div></figure>
+<h2 id="section-2">实用工具</h2>
+<p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">lctl network up
+</span><span class="line">lctl list_nids	#可以查看当前实际的ip地址，以确定是否使用了正确的接口
+</span><span class="line">lctl ping nids	#用来检查OSS和MGS连接是否正常
+</span><span class="line">lctl dl		#查看当前的设备</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
+<p>可以通过<em>lfs</em>命令获取已挂载的<em>lustre</em>文件系统信息：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">lfs df -h</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<h2>实用工具</h2>
+<p>或者对文件系统的文件写入方式等进行配置：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">lfs setstripe -c -1 -S 128M /mnt/lustre/</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+其中<code>-c -1</code>表示写入到所有的OSS中，<code>-S 128M</code>表示文件分块的大小为128M；上面是对整个文件系统进行设置，也可以单独地对某个文件或者文件夹进行设置；设置完后可以通过如下命令查看配置信息是否正确：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">lfs getstripe /mnt/lustre</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。</p>
+<h2 id="p-problemc-causer-resolve">遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
+<p>P：安装完重启之后，系统无法启动。<br />
+C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br />
+R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。  </p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lctl network up
-</span><span class='line'>lctl list_nids    #可以查看当前实际的ip地址，以确定是否使用了正确的接口
-</span><span class='line'>lctl ping nids    #用来检查OSS和MGS连接是否正常
-</span><span class='line'>lctl dl       #查看当前的设备</span></code></pre></td></tr></table></div></figure>
+<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br />
+C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br />
+R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。  </p>
 
+<h2 id="idea">比较有创意的Idea</h2>
+<p>需要对<em>/dev/sdb</em>进行分区，就在一台机器上利用<code>fdisk</code>按要求分区后，拷贝出该硬盘前512字节启动分区内容：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">dd if=/dev/sdb of=boot512.img bs=512 count=1</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+之后把这个文件写入其他机器的<em>/dev/sdb</em>硬盘，便可完成分区，这样便方便进行批量处理了：
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">dd if=boot512.img of=/dev/sdb bs=512 count=1</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+在用<code>fdisk</code>分完区后，在<em>/dev/sdb#</em>中并没有及时地反映出分区后的结果，此时运行<code>partprobe /dev/sdb</code>命令即可。</p>
 
-<p>可以通过<em>lfs</em>命令获取已挂载的<em>lustre</em>文件系统信息：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lfs df -h</span></code></pre></td></tr></table></div></figure>
-
-
-<p>或者对文件系统的文件写入方式等进行配置：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lfs setstripe -c -1 -S 128M /mnt/lustre/</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其中<code>-c -1</code>表示写入到所有的OSS中，<code>-S 128M</code>表示文件分块的大小为128M；上面是对整个文件系统进行设置，也可以单独地对某个文件或者文件夹进行设置；设置完后可以通过如下命令查看配置信息是否正确：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lfs getstripe /mnt/lustre</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
-
-<p>P：安装完重启之后，系统无法启动。<br/>
-C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br/>
-R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。</p>
-
-<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br/>
-C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br/>
-R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。</p>
-
-<h2>比较有创意的Idea</h2>
-
-<p>需要对<em>/dev/sdb</em>进行分区，就在一台机器上利用<code>fdisk</code>按要求分区后，拷贝出该硬盘前512字节启动分区内容：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>dd if=/dev/sdb of=boot512.img bs=512 count=1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>之后把这个文件写入其他机器的<em>/dev/sdb</em>硬盘，便可完成分区，这样便方便进行批量处理了：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>dd if=boot512.img of=/dev/sdb bs=512 count=1</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在用<code>fdisk</code>分完区后，在<em>/dev/sdb#</em>中并没有及时地反映出分区后的结果，此时运行<code>partprobe /dev/sdb</code>命令即可。</p>
-
-<h2>参考文献：</h2>
-
+<h2 id="section-3">参考文献：</h2>
 <p><a href="http://xiaolangit.blog.51cto.com/3343422/1195060">51CTO：Lustre-2.3的安装</a></p>
 </div>
 
@@ -419,7 +370,38 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
+  <footer role="contentinfo"><!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<p>
   Copyright &copy; 2013 - hiberabyss -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>

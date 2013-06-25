@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FileSystem | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/filesystem/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-25T14:38:55+08:00</updated>
+  <updated>2013-06-25T15:00:18+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -20,37 +20,31 @@
     <id>http://hiberabyss.github.io/blog/2013/06/24/lustre-configture</id>
     <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
-<h2>主要内容</h2>
-
+<h2 id="section">主要内容</h2>
 <ul>
-<li>安装环境</li>
-<li>Lustre的安装</li>
-<li>Lustre的配置</li>
-<li>用于Lustre管理的实用工具</li>
-<li>遇到的问题与解决方案</li>
-<li>有创意的Idea</li>
+  <li>安装环境  </li>
+  <li>Lustre的安装</li>
+  <li>Lustre的配置</li>
+  <li>用于Lustre管理的实用工具</li>
+  <li>遇到的问题与解决方案</li>
+  <li>有创意的Idea</li>
 </ul>
 
-
-<h2>安装环境</h2>
-
+<h2 id="section-1">安装环境</h2>
 <ul>
-<li>操作系统：CentOS 6.3 (x86_64)</li>
-<li>内核版本：2.6.32-279</li>
-<li>Lustre版本：2.3</li>
-<li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
+  <li>操作系统：CentOS 6.3 (x86_64)</li>
+  <li>内核版本：2.6.32-279</li>
+  <li>Lustre版本：2.3</li>
+  <li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
 </ul>
 
-
-<h2>Lustre的安装</h2>
-
-<p>安装之前，对系统环境有如下要求：</p>
+<h2 id="lustre">Lustre的安装</h2>
+<p>安装之前，对系统环境有如下要求：   </p>
 
 <ol>
-<li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
-<li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
+  <li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
+  <li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
 </ol>
-
 
 <p><code>
 SELINUX=disabled
@@ -85,8 +79,7 @@ lustre-modules-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm \
 lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm
 </code></p>
 
-<h2>Lustre的配置</h2>
-
+<h2 id="lustre-1">Lustre的配置</h2>
 <p>配置Lustre所使用的借口名称以及相对应的别名；创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：
 <code>
 options lnet networks="o2ib0(ib0)"
@@ -120,14 +113,13 @@ mount.lustre /dev/sdb2 /mnt/ost
 mount.lustre host_mds@o2ib0:/mylustre /mnt/lustre
 </code></p>
 
-<h2>实用工具</h2>
-
+<h2 id="section-2">实用工具</h2>
 <p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。
 <code>
 lctl network up
-lctl list_nids  #可以查看当前实际的ip地址，以确定是否使用了正确的接口
-lctl ping nids  #用来检查OSS和MGS连接是否正常
-lctl dl     #查看当前的设备
+lctl list_nids	#可以查看当前实际的ip地址，以确定是否使用了正确的接口
+lctl ping nids	#用来检查OSS和MGS连接是否正常
+lctl dl		#查看当前的设备
 </code></p>
 
 <p>可以通过<em>lfs</em>命令获取已挂载的<em>lustre</em>文件系统信息：
@@ -144,18 +136,16 @@ lfs setstripe -c -1 -S 128M /mnt/lustre/
 lfs getstripe /mnt/lustre
 </code></p>
 
-<h2>遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
+<h2 id="p-problemc-causer-resolve">遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
+<p>P：安装完重启之后，系统无法启动。<br />
+C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br />
+R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。  </p>
 
-<p>P：安装完重启之后，系统无法启动。<br/>
-C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br/>
-R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。</p>
+<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br />
+C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br />
+R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。  </p>
 
-<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br/>
-C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br/>
-R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。</p>
-
-<h2>比较有创意的Idea</h2>
-
+<h2 id="idea">比较有创意的Idea</h2>
 <p>需要对<em>/dev/sdb</em>进行分区，就在一台机器上利用<code>fdisk</code>按要求分区后，拷贝出该硬盘前512字节启动分区内容：
 <code>
 dd if=/dev/sdb of=boot512.img bs=512 count=1
@@ -166,8 +156,7 @@ dd if=boot512.img of=/dev/sdb bs=512 count=1
 </code>
 在用<code>fdisk</code>分完区后，在<em>/dev/sdb#</em>中并没有及时地反映出分区后的结果，此时运行<code>partprobe /dev/sdb</code>命令即可。</p>
 
-<h2>参考文献：</h2>
-
+<h2 id="section-3">参考文献：</h2>
 <p><a href="http://xiaolangit.blog.51cto.com/3343422/1195060">51CTO：Lustre-2.3的安装</a></p>
 ]]></content>
   </entry>
