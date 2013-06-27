@@ -595,6 +595,16 @@
 <span class="line-number">418</span>
 <span class="line-number">419</span>
 <span class="line-number">420</span>
+<span class="line-number">421</span>
+<span class="line-number">422</span>
+<span class="line-number">423</span>
+<span class="line-number">424</span>
+<span class="line-number">425</span>
+<span class="line-number">426</span>
+<span class="line-number">427</span>
+<span class="line-number">428</span>
+<span class="line-number">429</span>
+<span class="line-number">430</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line">	<span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
 </span><span class="line"><span class="nb">require</span> <span class="s2">&quot;bundler/setup&quot;</span>
 </span><span class="line"><span class="nb">require</span> <span class="s2">&quot;stringex&quot;</span>
@@ -879,6 +889,16 @@
 </span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">public_dir</span><span class="p">,</span> <span class="n">deploy_dir</span><span class="p">)</span>
 </span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## copying </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/.&quot;</span><span class="p">,</span> <span class="n">deploy_dir</span>
+</span><span class="line">
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git add -u&quot;</span>
+</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Source Commiting&quot;</span>
+</span><span class="line">  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Source updated at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing generated website&quot;</span>
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git push octopress source --force&quot;</span>
+</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Github Pages deploy complete&quot;</span>
+</span><span class="line">
 </span><span class="line">  <span class="n">cd</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">do</span>
 </span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
 </span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add -u&quot;</span>
@@ -1064,6 +1084,8 @@
         <a class="basic-alignment left" href="/blog/20130625/markdown-syntax/" title="Previous Post: Markdown和kramdown语法总结">&laquo; Markdown和kramdown语法总结</a>
       
       
+        <a class="basic-alignment right" href="/blog/20130626/git-summary/" title="Next Post: git总结">git总结 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -1096,12 +1118,16 @@
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/filesystem' style='font-size: 130.0%'>Filesystem(1)</a>  <a href='/blog/categories/markdown' style='font-size: 130.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(2)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/filesystem' style='font-size: 130.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 130.0%'>Git(1)</a>  <a href='/blog/categories/markdown' style='font-size: 130.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(2)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130626/git-summary/">Git总结</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130625/octopress-custom-cofigure/">我定制的Octopress文件</a>

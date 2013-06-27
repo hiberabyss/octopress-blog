@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-26T22:48:18+08:00</updated>
+  <updated>2013-06-27T10:16:47+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,149 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[git总结]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130626/git-summary/"/>
+    <updated>2013-06-26T23:00:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130626/git-summary</id>
+    <content type="html"><![CDATA[<h2 id="git">git初始化设置</h2>
+<p>设置全局用户名和邮箱，存储在<code>~/.gitconfig</code>文件中。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git config --global user.name <span class="s2">&quot;My Name&quot;</span>
+</span><span class="line">git config --global user.email <span class="s2">&quot;my@email.com&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>或者对单独的<code>Repo</code>进行设置，存储在<code>.git/config</code>文件中</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd </span>dir
+</span><span class="line">git config user.name <span class="s2">&quot;My Name&quot;</span>
+</span><span class="line">git config user.email <span class="s2">&quot;my@email.com&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>配置终端颜色显示</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git config −−global color.diff auto
+</span><span class="line">git config −−global color.status auto
+</span><span class="line">git config −−global color.branch auto
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="gitpushgithub">创建本地git仓库并push到github</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">mkdir project
+</span><span class="line"><span class="nb">cd </span>project
+</span><span class="line">git init
+</span><span class="line">git add .
+</span><span class="line"><span class="c">#会自动创建master分支，进行完commit操作后才能新建别的分支</span>
+</span><span class="line">git commit −am <span class="s1">&#39;comment message &#39;</span>  <span class="c">#-a会自动添加被修改的文件</span>
+</span><span class="line"><span class="c">#git@github使用的是ssh连接，还可以使用https://github.com/username/project.git</span>
+</span><span class="line">git remote add origin git@github.com:username/yourrepo.git
+</span><span class="line"><span class="c">#把本地分支push到远程服务器，--tags选项会把本地的tags标签也上传</span>
+</span><span class="line">git push origin remote_branch --tags
+</span><span class="line"><span class="c">#更一般的情况，把local_branch本地分支上传到remote_branch分支</span>
+</span><span class="line">git push origin <span class="o">[</span>local_branch<span class="o">]</span>:remote_branch
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>当使用<code>SSH</code>的连接方式时，参考<a href="https://help.github.com/articles/generating-ssh-keys">这篇文章</a>在<code>github</code>网站上添加<code>SSH key</code>，这样在进行数据传输时就不需要再输入用户名和密码了。</p>
+
+<h2 id="section">从远程分支获取内容</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone -b branch remote_url
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-1">关于分支的一些操作</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看当前已有分支及默认的分支</span>
+</span><span class="line">git branch
+</span><span class="line"><span class="c">#创建一个本地分支</span>
+</span><span class="line">git branch local_branch
+</span><span class="line"><span class="c">#切换默认分支</span>
+</span><span class="line">git checkout branch
+</span><span class="line"><span class="c">#删除一个远程的分支，相当于把本地一个不存在的分支push到远程分支中</span>
+</span><span class="line">git push origin :remote_branch
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">标签</h2>
+<p>可以对一些版本加标签</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#commit is the checksum value to add tag to previous version</span>
+</span><span class="line">git tag −a tagname −m <span class="s1">&#39;message &#39;</span> &lt;commit &gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-3">文件过滤</h2>
+<p>在相应的目录中新建<code>.gitignore</code>文件，<code>~/.gitignore</code>文件作用于全局</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#this is comments. To see detail, execute &#39;git help ignore &#39;</span>
+</span><span class="line">hello.c
+</span><span class="line">*.o
+</span><span class="line">!foo.o
+</span><span class="line"><span class="c">#to include foo.o which is excluded by *.o.</span>
+</span><span class="line"><span class="se">\!</span>important!.o
+</span><span class="line"><span class="c">#to exclude file whose name begin with !.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-4">其他常用命令</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看详细的帮助文档</span>
+</span><span class="line">git <span class="nb">help command</span>
+</span><span class="line"><span class="c">#删除文件</span>
+</span><span class="line">git rm
+</span><span class="line">git status
+</span><span class="line">git log
+</span><span class="line"><span class="c">#将服务器端更改同步到本地</span>
+</span><span class="line">git pull
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-5">参考资料</h2>
+<ul>
+  <li><a href="http://wlog.cn/soft/git-quick-start.html">git学习笔记</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[我定制的Octopress文件]]></title>
@@ -517,6 +660,16 @@
 <span class="line-number">418</span>
 <span class="line-number">419</span>
 <span class="line-number">420</span>
+<span class="line-number">421</span>
+<span class="line-number">422</span>
+<span class="line-number">423</span>
+<span class="line-number">424</span>
+<span class="line-number">425</span>
+<span class="line-number">426</span>
+<span class="line-number">427</span>
+<span class="line-number">428</span>
+<span class="line-number">429</span>
+<span class="line-number">430</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line">	<span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
 </span><span class="line"><span class="nb">require</span> <span class="s2">&quot;bundler/setup&quot;</span>
 </span><span class="line"><span class="nb">require</span> <span class="s2">&quot;stringex&quot;</span>
@@ -801,6 +954,16 @@
 </span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">public_dir</span><span class="p">,</span> <span class="n">deploy_dir</span><span class="p">)</span>
 </span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## copying </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/.&quot;</span><span class="p">,</span> <span class="n">deploy_dir</span>
+</span><span class="line">
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git add -u&quot;</span>
+</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Source Commiting&quot;</span>
+</span><span class="line">  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Source updated at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing generated website&quot;</span>
+</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git push octopress source --force&quot;</span>
+</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Github Pages deploy complete&quot;</span>
+</span><span class="line">
 </span><span class="line">  <span class="n">cd</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">do</span>
 </span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
 </span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add -u&quot;</span>
