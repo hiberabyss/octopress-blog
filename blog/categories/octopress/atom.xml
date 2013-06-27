@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-27T10:16:47+08:00</updated>
+  <updated>2013-06-27T10:22:00+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -527,6 +527,7 @@
 <span class='line-number'>428</span>
 <span class='line-number'>429</span>
 <span class='line-number'>430</span>
+<span class='line-number'>431</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'>	<span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
 </span><span class='line'><span class="nb">require</span> <span class="s2">&quot;bundler/setup&quot;</span>
 </span><span class='line'><span class="nb">require</span> <span class="s2">&quot;stringex&quot;</span>
@@ -557,6 +558,8 @@
 </span><span class='line'><span class="n">server_port</span>     <span class="o">=</span> <span class="s2">&quot;4000&quot;</span>      <span class="c1"># port for preview server eg. localhost:4000</span>
 </span><span class='line'><span class="n">deploy_local</span>	<span class="o">=</span> <span class="s2">&quot;push_local&quot;</span>	<span class="c1">#hiberabyss:</span>
 </span><span class='line'><span class="n">editor</span>		<span class="o">=</span> <span class="s2">&quot;gvim&quot;</span>		<span class="c1">#hiberabyss: the eidtor after new</span>
+</span><span class='line'><span class="n">source_remote</span>	<span class="o">=</span> <span class="s2">&quot;octopress&quot;</span>	<span class="c1">#hiberabyss: remote ref</span>
+</span><span class='line'><span class="n">source_branch</span>	<span class="o">=</span> <span class="s2">&quot;source&quot;</span>	<span class="c1">#hiberabyss: the source branch</span>
 </span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="n">desc</span> <span class="s2">&quot;Initial setup for Octopress: copies the default theme into the path of Jekyll&#39;s generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]&quot;</span>
@@ -817,9 +820,8 @@
 </span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Source Commiting&quot;</span>
 </span><span class='line'>  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Source updated at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing generated website&quot;</span>
-</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;git push octopress source --force&quot;</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Github Pages deploy complete&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;git push </span><span class="si">#{</span><span class="n">source_remote</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">source_branch</span><span class="si">}</span><span class="s2"> --force&quot;</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Source update complete&quot;</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="n">cd</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">do</span>
 </span><span class='line'>    <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
