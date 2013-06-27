@@ -28,6 +28,8 @@ new_page_ext    = "markdown"  # default new page file extension when using the n
 server_port     = "4000"      # port for preview server eg. localhost:4000
 deploy_local	= "push_local"	#hiberabyss:
 editor		= "gvim"		#hiberabyss: the eidtor after new
+source_remote	= "octopress"	#hiberabyss: remote ref
+source_branch	= "source"	#hiberabyss: the source branch
 
 
 desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
@@ -288,9 +290,8 @@ multitask :push do
   puts "\n## Source Commiting"
   message = "Source updated at #{Time.now.utc}"
   system "git commit -m \"#{message}\""
-  puts "\n## Pushing generated website"
-  system "git push octopress source --force"
-  puts "\n## Github Pages deploy complete"
+  system "git push #{source_remote} #{source_branch} --force"
+  puts "\n## Source update complete"
 
   cd "#{deploy_dir}" do
     system "git add ."
