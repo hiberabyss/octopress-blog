@@ -26,7 +26,8 @@ themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
 server_port     = "4000"      # port for preview server eg. localhost:4000
-editor		= "vim"
+deploy_local	= "push_local"	#hiberabyss:
+editor		= "gvim"		#hiberabyss: the eidtor after new
 
 
 desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
@@ -108,13 +109,14 @@ task :new_post, :title do |t, args|
   open(filename, 'w') do |post|
     post.puts "---"
     post.puts "layout: post"
-    post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+    #post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+    post.puts "title: \"\""
     post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
     post.puts "comments: true"
     post.puts "categories: "
     post.puts "---"
   end
-  system "vim #{filename}"
+  system "#{editor} #{filename}"
 end
 
 # usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to "new-page.markdown")
@@ -151,6 +153,7 @@ task :new_page, :filename do |t, args|
       page.puts "footer: true"
       page.puts "---"
     end
+    system "#{editor} #{file}"
   else
     puts "Syntax error: #{args.filename} contains unsupported characters"
   end
@@ -225,8 +228,25 @@ task :deploy do
   Rake::Task["#{deploy_default}"].execute
 end
 
+#hiberabyss: deploy to local
+desc "Local deploy task"
+task :ldeploy do
+  # Check if preview posts exist, which should not be published
+  if File.exists?(".preview-mode")
+    puts "## Found posts in preview mode, regenerating files ..."
+    File.delete(".preview-mode")
+    Rake::Task[:generate].execute
+  end
+Rake::Task[:copydot].invoke(source_dir, public_dir)
+  Rake::Task["#{deploy_local}"].execute
+end
+
 desc "Generate website and deploy"
 task :gen_deploy => [:integrate, :generate, :deploy] do
+end
+
+desc "Local Generate and deploy"
+task :lgdeploy => [:integrate, :generate, :ldeploy] do
 end
 
 desc "copy dot files for deployment"
@@ -246,6 +266,15 @@ task :rsync do
   ok_failed system("rsync -avze 'ssh -p #{ssh_port}' #{exclude} #{rsync_args} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
 end
 
+desc "deploy public directory to local deploy_dir"
+multitask :push_local do
+  puts "## Deploying branch to local "
+  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
+  Rake::Task[:copydot].invoke(public_dir, deploy_dir)
+  puts "\n## copying #{public_dir} to #{deploy_dir}"
+  cp_r "#{public_dir}/.", deploy_dir
+end
+
 desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
@@ -253,6 +282,16 @@ multitask :push do
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
   puts "\n## copying #{public_dir} to #{deploy_dir}"
   cp_r "#{public_dir}/.", deploy_dir
+
+  system "git add ."
+  system "git add -u"
+  puts "\n## Source Commiting"
+  message = "Source updated at #{Time.now.utc}"
+  system "git commit -m \"#{message}\""
+  puts "\n## Pushing generated website"
+  system "git push octopress source --force"
+  puts "\n## Github Pages deploy complete"
+
   cd "#{deploy_dir}" do
     system "git add ."
     system "git add -u"

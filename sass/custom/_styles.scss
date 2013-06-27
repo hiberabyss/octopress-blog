@@ -1,2 +1,31 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+//it seems that # represent for id 
+//change style for recent posts
+#recent_posts a{
+    text-decoration:none;
+}
+
+#recent_posts a:hover{
+    text-decoration:underline;
+}
+
+// . represent for class
+//change style for categories tag
+.categories_tag a{
+    text-decoration:none;
+}
+
+.categories_tag a:hover{
+    text-decoration:underline;
+}
+
+#friendslink a{
+    text-decoration:none;
+}
+
+#friendslink a:hover{
+    text-decoration:underline;
+}
+
