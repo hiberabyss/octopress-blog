@@ -3,7 +3,7 @@ layout: post
 title: "Lustre-2.3的安装与配置"
 date: 2013-06-24 12:37
 comments: true
-categories: FileSystem
+categories: FileSystem Lustre
 ---
 Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。
 
@@ -133,6 +133,38 @@ lfs setstripe -c -1 -S 128M /mnt/lustre/
 
 ```
 lfs getstripe /mnt/lustre
+```
+
+利用`tunefs.lustre`可以查看已建立的lustre文件系统的信息，并对部分信息进行调整。
+
+##利用iozone进行测试
+iozone是对文件系统的读写性能进行测试的工具
+
+```bash
+#单个测试文件大小
+FILE_SIZE="16g"
+#进行读写的进程的数量
+THREAD_NUM="16"
+#总的读写数据量
+TOTAL_FILESIZE=$((FILE_SIZE*THREAD_NUM))
+#-i 0: 代表write/rewrite
+#-i 1: 代表read/reread
+#-+n: 不进行重复测试，即不会进行rewrite和reread
+/path/to/iozone -e -c -s $TOTAL_FILESIZE -r $RECSIZE -+m $NODELIST -+k -i 0 -i 1 -t  $THREAD_NUM -o -w -+n>> $OUTPUTFILE
+```
+
+其中`$NODELIST`是下面一种格式的节点配置文件，每一行代表一个客户端，用空格区分为不同的列，每一列的含义如下：
+
+1. 客户端名称
+2. 要测试的文件系统的一个目录
+3. iozone的可执行文件路径
+4. 文件名，相同的主机名但不同的文件名也表示一个单独的读写测试进程
+
+```
+snode17 /mnt/lustre /path/to/iozone file170
+snode18 /mnt/lustre /path/to/iozone file180
+snode17 /mnt/lustre /path/to/iozone file171
+snode18 /mnt/lustre /path/to/iozone file181
 ```
 
 ##遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）

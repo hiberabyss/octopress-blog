@@ -5,6 +5,10 @@ date: 2013-06-26 23:00
 comments: true
 categories: git
 ---
+记录一些很常用的git配置和git命令使用方法，本着够用即可的原则。
+
+<!--more-->
+
 ##git初始化设置
 设置全局用户名和邮箱，存储在`~/.gitconfig`文件中。
 

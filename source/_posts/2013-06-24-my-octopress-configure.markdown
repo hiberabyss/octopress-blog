@@ -52,13 +52,15 @@ kramdown的详细语法资料[kramdown Syntax](http://kramdown.rubyforge.org/syn
 修改支持Latex的方法参见[这篇文章](http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/)。
 
 
-##总结 有不少内容参考了[这篇文章](http://www.yanjiuyanjiu.com/blog/20130402/)。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。 
+##总结
+有不少内容参考了[这篇文章](http://www.yanjiuyanjiu.com/blog/20130402/)。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。 
+
 ##相关博客
 - [雁起平沙的网络日志](http://yanping.me/cn/)  
 - [知行录（github上有源码）](http://whbzju.github.io/)
 - [MrZhang.me（做的比较玄的一个博客，有源代码）](http://mrzhang.me/)
 
 ##参考资料
-- [为Octopress博客追加新浪微博侧栏](http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/)  
-- [幫你的Octopress增加文章分類](http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/)
-- [为 Octopress 添加多说评论系统](http://ihavanna.org/Internet/2013-02/add-duoshuo-commemt-system-into-octopress.html)
+* [为Octopress博客追加新浪微博侧栏](http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/)  
+* [幫你的Octopress增加文章分類](http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/)
+* [为 Octopress 添加多说评论系统](http://ihavanna.org/Internet/2013-02/add-duoshuo-commemt-system-into-octopress.html)

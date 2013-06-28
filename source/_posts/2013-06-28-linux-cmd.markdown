@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Linux常用命令"
+date: 2013-06-28 10:54
+comments: true
+categories: linux
+---
+本文主要是对常用的linux命令做一个总结。
+<!--more-->
+
+##man
+man是使用less来显示手册页的，按h键可显示操作帮助，有如下使用技巧：
+
+1. 按下`m`标记位置，```可跳转到相应的标记。
+2. 按下`！`可直接执行命令。
+
+```bash
+#搜索包含相应关键字的手册页
+man -k keyword
+```
+
+##who
+查看启动了多少shell。
+
+##type
+

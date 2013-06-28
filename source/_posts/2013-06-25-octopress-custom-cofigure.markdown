@@ -7,6 +7,8 @@ categories: Octopress
 ---
 这里放置我自己修改的`Rakefile`配置文件和`sass/custom/_styles.scss`，显示的代码会和源文件中代码保持一致，主要利用[Render Partial](http://octopress.org/docs/plugins/render-partial/)插件实现，该插件以`source`目录作为工作目录。利用[Codeblock](http://octopress.org/docs/plugins/codeblock/)插件可以显示标题，在标题中包括文件扩展名可以自动添加语法高亮。
 
+<!--more-->
+
 ##样式文件
 `/sass/custom/`下的文件会最后加载，因此会覆盖之前所做的设置。
 
