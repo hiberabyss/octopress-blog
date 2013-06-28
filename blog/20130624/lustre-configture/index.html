@@ -253,6 +253,52 @@
 </pre></td><td class="code"><pre><code class="bash"><span class="line">lfs getstripe /mnt/lustre
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>利用<code>tunefs.lustre</code>可以查看已建立的lustre文件系统的信息，并对部分信息进行调整。</p>
+
+<h2 id="iozone">利用iozone进行测试</h2>
+<p>iozone是对文件系统的读写性能进行测试的工具</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#单个测试文件大小</span>
+</span><span class="line"><span class="nv">FILE_SIZE</span><span class="o">=</span><span class="s2">&quot;16g&quot;</span>
+</span><span class="line"><span class="c">#进行读写的进程的数量</span>
+</span><span class="line"><span class="nv">THREAD_NUM</span><span class="o">=</span><span class="s2">&quot;16&quot;</span>
+</span><span class="line"><span class="c">#总的读写数据量</span>
+</span><span class="line"><span class="nv">TOTAL_FILESIZE</span><span class="o">=</span><span class="k">$((</span>FILE_SIZE*THREAD_NUM<span class="k">))</span>
+</span><span class="line"><span class="c">#-i 0: 代表write/rewrite</span>
+</span><span class="line"><span class="c">#-i 1: 代表read/reread</span>
+</span><span class="line"><span class="c">#-+n: 不进行重复测试，即不会进行rewrite和reread</span>
+</span><span class="line">/path/to/iozone -e -c -s <span class="nv">$TOTAL_FILESIZE</span> -r <span class="nv">$RECSIZE</span> -+m <span class="nv">$NODELIST</span> -+k -i 0 -i 1 -t  <span class="nv">$THREAD_NUM</span> -o -w -+n&gt;&gt; <span class="nv">$OUTPUTFILE</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>其中<code>$NODELIST</code>是下面一种格式的节点配置文件，每一行代表一个客户端，用空格区分为不同的列，每一列的含义如下：</p>
+
+<ol>
+  <li>客户端名称</li>
+  <li>要测试的文件系统的一个目录</li>
+  <li>iozone的可执行文件路径</li>
+  <li>文件名，相同的主机名但不同的文件名也表示一个单独的读写测试进程</li>
+</ol>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">snode17 /mnt/lustre /path/to/iozone file170
+</span><span class="line">snode18 /mnt/lustre /path/to/iozone file180
+</span><span class="line">snode17 /mnt/lustre /path/to/iozone file171
+</span><span class="line">snode18 /mnt/lustre /path/to/iozone file181
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <h2 id="p-problemc-causer-resolve">遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
 <p>P：安装完重启之后，系统无法启动。<br />
 C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br />
@@ -306,7 +352,7 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/filesystem/'>FileSystem</a>
+    <a class='category' href='/blog/categories/filesystem/'>FileSystem</a>, <a class='category' href='/blog/categories/lustre/'>Lustre</a>
   
 </span>
 
@@ -358,12 +404,20 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/filesystem' style='font-size: 130.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 130.0%'>Git(1)</a>  <a href='/blog/categories/markdown' style='font-size: 130.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(2)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 140.0%'>Linux(2)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130628/bash-summary/">Bash编程的一些总结</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130628/linux-cmd/">Linux常用命令</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130626/git-summary/">Git总结</a>
@@ -374,15 +428,7 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
       </li>
     
       <li class="post">
-        <a href="/blog/20130625/markdown-syntax/">Markdown和kramdown语法总结</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130624/my-octopress-configure/">个性化Octopress资源整理</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130624/lustre-configture/">Lustre-2.3的安装与配置</a>
+        <a href="/blog/20130625/markdown-syntax/">Octopress中Markdown文件语法总结</a>
       </li>
     
   </ul>

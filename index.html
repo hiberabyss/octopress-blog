@@ -9,11 +9,7 @@
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="git初始化设置
-设置全局用户名和邮箱，存储在~/.gitconfig文件中。 1
-2
-git config --global user.name &quot;My Name&quot;
-git config --global user.email &quot;my@email.com&quot &hellip;">
+  <meta name="description" content="对shell编程的一些总结，直接使用代码进行示例。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +72,95 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/20130628/bash-summary/">Bash编程的一些总结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-28T11:51:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2013</time>
+        
+
+	 
+	  | <a href="/blog/20130628/bash-summary/#comments">Comments</a>
+	 
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>对shell编程的一些总结，直接使用代码进行示例。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/20130628/bash-summary/">继续阅读&rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/20130628/linux-cmd/">Linux常用命令</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-28T10:54:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2013</time>
+        
+
+	 
+	  | <a href="/blog/20130628/linux-cmd/#comments">Comments</a>
+	 
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>本文主要是对常用的linux命令做一个总结。
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/20130628/linux-cmd/">继续阅读&rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/20130626/git-summary/">Git总结</a></h1>
     
     
@@ -103,143 +188,14 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
   </header>
 
 
-  <div class="entry-content"><h2 id="git">git初始化设置</h2>
-<p>设置全局用户名和邮箱，存储在<code>~/.gitconfig</code>文件中。</p>
+  <div class="entry-content"><p>记录一些很常用的git配置和git命令使用方法，本着够用即可的原则。</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">git config --global user.name <span class="s2">&quot;My Name&quot;</span>
-</span><span class="line">git config --global user.email <span class="s2">&quot;my@email.com&quot;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>或者对单独的<code>Repo</code>进行设置，存储在<code>.git/config</code>文件中</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd </span>dir
-</span><span class="line">git config user.name <span class="s2">&quot;My Name&quot;</span>
-</span><span class="line">git config user.email <span class="s2">&quot;my@email.com&quot;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>配置终端颜色显示</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">git config −−global color.diff auto
-</span><span class="line">git config −−global color.status auto
-</span><span class="line">git config −−global color.branch auto
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="gitpushgithub">创建本地git仓库并push到github</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mkdir project
-</span><span class="line"><span class="nb">cd </span>project
-</span><span class="line">git init
-</span><span class="line">git add .
-</span><span class="line"><span class="c">#会自动创建master分支，进行完commit操作后才能新建别的分支</span>
-</span><span class="line">git commit −am <span class="s1">&#39;comment message &#39;</span>  <span class="c">#-a会自动添加被修改的文件</span>
-</span><span class="line"><span class="c">#git@github使用的是ssh连接，还可以使用https://github.com/username/project.git</span>
-</span><span class="line">git remote add origin git@github.com:username/yourrepo.git
-</span><span class="line"><span class="c">#把本地分支push到远程服务器，--tags选项会把本地的tags标签也上传</span>
-</span><span class="line">git push origin remote_branch --tags
-</span><span class="line"><span class="c">#更一般的情况，把local_branch本地分支上传到remote_branch分支</span>
-</span><span class="line">git push origin <span class="o">[</span>local_branch<span class="o">]</span>:remote_branch
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>当使用<code>SSH</code>的连接方式时，参考<a href="https://help.github.com/articles/generating-ssh-keys">这篇文章</a>在<code>github</code>网站上添加<code>SSH key</code>，这样在进行数据传输时就不需要再输入用户名和密码了。</p>
-
-<h2 id="section">从远程分支获取内容</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone -b branch remote_url
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-1">关于分支的一些操作</h2>
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看当前已有分支及默认的分支</span>
-</span><span class="line">git branch
-</span><span class="line"><span class="c">#创建一个本地分支</span>
-</span><span class="line">git branch local_branch
-</span><span class="line"><span class="c">#切换默认分支</span>
-</span><span class="line">git checkout branch
-</span><span class="line"><span class="c">#删除一个远程的分支，相当于把本地一个不存在的分支push到远程分支中</span>
-</span><span class="line">git push origin :remote_branch
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-2">标签</h2>
-<p>可以对一些版本加标签</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#commit is the checksum value to add tag to previous version</span>
-</span><span class="line">git tag −a tagname −m <span class="s1">&#39;message &#39;</span> &lt;commit &gt;
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-3">文件过滤</h2>
-<p>在相应的目录中新建<code>.gitignore</code>文件，<code>~/.gitignore</code>文件作用于全局</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#this is comments. To see detail, execute &#39;git help ignore &#39;</span>
-</span><span class="line">hello.c
-</span><span class="line">*.o
-</span><span class="line">!foo.o
-</span><span class="line"><span class="c">#to include foo.o which is excluded by *.o.</span>
-</span><span class="line"><span class="se">\!</span>important!.o
-</span><span class="line"><span class="c">#to exclude file whose name begin with !.</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-4">其他常用命令</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看详细的帮助文档</span>
-</span><span class="line">git <span class="nb">help command</span>
-</span><span class="line"><span class="c">#删除文件</span>
-</span><span class="line">git rm
-</span><span class="line">git status
-</span><span class="line">git log
-</span><span class="line"><span class="c">#将服务器端更改同步到本地</span>
-</span><span class="line">git pull
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-5">参考资料</h2>
-<ul>
-  <li><a href="http://wlog.cn/soft/git-quick-start.html">git学习笔记</a></li>
-</ul>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/20130626/git-summary/">继续阅读&rarr;</a>
+    </footer>
   
 
 
@@ -279,949 +235,12 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
 
   <div class="entry-content"><p>这里放置我自己修改的<code>Rakefile</code>配置文件和<code>sass/custom/_styles.scss</code>，显示的代码会和源文件中代码保持一致，主要利用<a href="http://octopress.org/docs/plugins/render-partial/">Render Partial</a>插件实现，该插件以<code>source</code>目录作为工作目录。利用<a href="http://octopress.org/docs/plugins/codeblock/">Codeblock</a>插件可以显示标题，在标题中包括文件扩展名可以自动添加语法高亮。</p>
 
-<h2 id="section">样式文件</h2>
-<p><code>/sass/custom/</code>下的文件会最后加载，因此会覆盖之前所做的设置。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>../sass/custom/_styles.scss </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-</pre></td><td class="code"><pre><code class="scss"><span class="line">	<span class="c1">// This File is imported last, and will override other styles in the cascade</span>
-</span><span class="line"><span class="c1">// Add styles here to make changes without digging in too much</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">//it seems that # represent for id </span>
-</span><span class="line"><span class="c1">//change style for recent posts</span>
-</span><span class="line"><span class="nn">#recent_posts</span> <span class="nt">a</span><span class="p">{</span>
-</span><span class="line">    <span class="nt">text-decoration</span><span class="nd">:none</span><span class="o">;</span>
-</span><span class="line"><span class="p">}</span>
-</span><span class="line">
-</span><span class="line"><span class="nn">#recent_posts</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span>
-</span><span class="line">    <span class="nt">text-decoration</span><span class="nd">:underline</span><span class="o">;</span>
-</span><span class="line"><span class="p">}</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">// . represent for class</span>
-</span><span class="line"><span class="c1">//change style for categories tag</span>
-</span><span class="line"><span class="nc">.categories_tag</span> <span class="nt">a</span><span class="p">{</span>
-</span><span class="line">    <span class="nt">text-decoration</span><span class="nd">:none</span><span class="o">;</span>
-</span><span class="line"><span class="p">}</span>
-</span><span class="line">
-</span><span class="line"><span class="nc">.categories_tag</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span>
-</span><span class="line">    <span class="nt">text-decoration</span><span class="nd">:underline</span><span class="o">;</span>
-</span><span class="line"><span class="p">}</span>
-</span><span class="line">
-</span><span class="line"><span class="nn">#friendslink</span> <span class="nt">a</span><span class="p">{</span>
-</span><span class="line">    <span class="nt">text-decoration</span><span class="nd">:none</span><span class="o">;</span>
-</span><span class="line"><span class="p">}</span>
-</span><span class="line">
-</span><span class="line"><span class="nn">#friendslink</span> <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span>
-</span><span class="line">    <span class="nt">text-decoration</span><span class="nd">:underline</span><span class="o">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="ruby">Ruby程序文件</h2>
-<p>主要做了如下修改：</p>
-
-<ol>
-  <li>增加<code>editor = vim</code>，在每次<code>new_post</code>和<code>new_page</code>操作时，自动打开相应的文件；</li>
-  <li>新增<code>task :lgdeploy</code>，仅布局到本地，暂不上传到<code>github</code>。</li>
-</ol>
-
-<p>Rakefile的语法可以参见<a href="http://lukaszwrobel.pl/blog/rake-tutorial">这篇文章</a></p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>../Rakefile </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span>
-<span class="line-number">35</span>
-<span class="line-number">36</span>
-<span class="line-number">37</span>
-<span class="line-number">38</span>
-<span class="line-number">39</span>
-<span class="line-number">40</span>
-<span class="line-number">41</span>
-<span class="line-number">42</span>
-<span class="line-number">43</span>
-<span class="line-number">44</span>
-<span class="line-number">45</span>
-<span class="line-number">46</span>
-<span class="line-number">47</span>
-<span class="line-number">48</span>
-<span class="line-number">49</span>
-<span class="line-number">50</span>
-<span class="line-number">51</span>
-<span class="line-number">52</span>
-<span class="line-number">53</span>
-<span class="line-number">54</span>
-<span class="line-number">55</span>
-<span class="line-number">56</span>
-<span class="line-number">57</span>
-<span class="line-number">58</span>
-<span class="line-number">59</span>
-<span class="line-number">60</span>
-<span class="line-number">61</span>
-<span class="line-number">62</span>
-<span class="line-number">63</span>
-<span class="line-number">64</span>
-<span class="line-number">65</span>
-<span class="line-number">66</span>
-<span class="line-number">67</span>
-<span class="line-number">68</span>
-<span class="line-number">69</span>
-<span class="line-number">70</span>
-<span class="line-number">71</span>
-<span class="line-number">72</span>
-<span class="line-number">73</span>
-<span class="line-number">74</span>
-<span class="line-number">75</span>
-<span class="line-number">76</span>
-<span class="line-number">77</span>
-<span class="line-number">78</span>
-<span class="line-number">79</span>
-<span class="line-number">80</span>
-<span class="line-number">81</span>
-<span class="line-number">82</span>
-<span class="line-number">83</span>
-<span class="line-number">84</span>
-<span class="line-number">85</span>
-<span class="line-number">86</span>
-<span class="line-number">87</span>
-<span class="line-number">88</span>
-<span class="line-number">89</span>
-<span class="line-number">90</span>
-<span class="line-number">91</span>
-<span class="line-number">92</span>
-<span class="line-number">93</span>
-<span class="line-number">94</span>
-<span class="line-number">95</span>
-<span class="line-number">96</span>
-<span class="line-number">97</span>
-<span class="line-number">98</span>
-<span class="line-number">99</span>
-<span class="line-number">100</span>
-<span class="line-number">101</span>
-<span class="line-number">102</span>
-<span class="line-number">103</span>
-<span class="line-number">104</span>
-<span class="line-number">105</span>
-<span class="line-number">106</span>
-<span class="line-number">107</span>
-<span class="line-number">108</span>
-<span class="line-number">109</span>
-<span class="line-number">110</span>
-<span class="line-number">111</span>
-<span class="line-number">112</span>
-<span class="line-number">113</span>
-<span class="line-number">114</span>
-<span class="line-number">115</span>
-<span class="line-number">116</span>
-<span class="line-number">117</span>
-<span class="line-number">118</span>
-<span class="line-number">119</span>
-<span class="line-number">120</span>
-<span class="line-number">121</span>
-<span class="line-number">122</span>
-<span class="line-number">123</span>
-<span class="line-number">124</span>
-<span class="line-number">125</span>
-<span class="line-number">126</span>
-<span class="line-number">127</span>
-<span class="line-number">128</span>
-<span class="line-number">129</span>
-<span class="line-number">130</span>
-<span class="line-number">131</span>
-<span class="line-number">132</span>
-<span class="line-number">133</span>
-<span class="line-number">134</span>
-<span class="line-number">135</span>
-<span class="line-number">136</span>
-<span class="line-number">137</span>
-<span class="line-number">138</span>
-<span class="line-number">139</span>
-<span class="line-number">140</span>
-<span class="line-number">141</span>
-<span class="line-number">142</span>
-<span class="line-number">143</span>
-<span class="line-number">144</span>
-<span class="line-number">145</span>
-<span class="line-number">146</span>
-<span class="line-number">147</span>
-<span class="line-number">148</span>
-<span class="line-number">149</span>
-<span class="line-number">150</span>
-<span class="line-number">151</span>
-<span class="line-number">152</span>
-<span class="line-number">153</span>
-<span class="line-number">154</span>
-<span class="line-number">155</span>
-<span class="line-number">156</span>
-<span class="line-number">157</span>
-<span class="line-number">158</span>
-<span class="line-number">159</span>
-<span class="line-number">160</span>
-<span class="line-number">161</span>
-<span class="line-number">162</span>
-<span class="line-number">163</span>
-<span class="line-number">164</span>
-<span class="line-number">165</span>
-<span class="line-number">166</span>
-<span class="line-number">167</span>
-<span class="line-number">168</span>
-<span class="line-number">169</span>
-<span class="line-number">170</span>
-<span class="line-number">171</span>
-<span class="line-number">172</span>
-<span class="line-number">173</span>
-<span class="line-number">174</span>
-<span class="line-number">175</span>
-<span class="line-number">176</span>
-<span class="line-number">177</span>
-<span class="line-number">178</span>
-<span class="line-number">179</span>
-<span class="line-number">180</span>
-<span class="line-number">181</span>
-<span class="line-number">182</span>
-<span class="line-number">183</span>
-<span class="line-number">184</span>
-<span class="line-number">185</span>
-<span class="line-number">186</span>
-<span class="line-number">187</span>
-<span class="line-number">188</span>
-<span class="line-number">189</span>
-<span class="line-number">190</span>
-<span class="line-number">191</span>
-<span class="line-number">192</span>
-<span class="line-number">193</span>
-<span class="line-number">194</span>
-<span class="line-number">195</span>
-<span class="line-number">196</span>
-<span class="line-number">197</span>
-<span class="line-number">198</span>
-<span class="line-number">199</span>
-<span class="line-number">200</span>
-<span class="line-number">201</span>
-<span class="line-number">202</span>
-<span class="line-number">203</span>
-<span class="line-number">204</span>
-<span class="line-number">205</span>
-<span class="line-number">206</span>
-<span class="line-number">207</span>
-<span class="line-number">208</span>
-<span class="line-number">209</span>
-<span class="line-number">210</span>
-<span class="line-number">211</span>
-<span class="line-number">212</span>
-<span class="line-number">213</span>
-<span class="line-number">214</span>
-<span class="line-number">215</span>
-<span class="line-number">216</span>
-<span class="line-number">217</span>
-<span class="line-number">218</span>
-<span class="line-number">219</span>
-<span class="line-number">220</span>
-<span class="line-number">221</span>
-<span class="line-number">222</span>
-<span class="line-number">223</span>
-<span class="line-number">224</span>
-<span class="line-number">225</span>
-<span class="line-number">226</span>
-<span class="line-number">227</span>
-<span class="line-number">228</span>
-<span class="line-number">229</span>
-<span class="line-number">230</span>
-<span class="line-number">231</span>
-<span class="line-number">232</span>
-<span class="line-number">233</span>
-<span class="line-number">234</span>
-<span class="line-number">235</span>
-<span class="line-number">236</span>
-<span class="line-number">237</span>
-<span class="line-number">238</span>
-<span class="line-number">239</span>
-<span class="line-number">240</span>
-<span class="line-number">241</span>
-<span class="line-number">242</span>
-<span class="line-number">243</span>
-<span class="line-number">244</span>
-<span class="line-number">245</span>
-<span class="line-number">246</span>
-<span class="line-number">247</span>
-<span class="line-number">248</span>
-<span class="line-number">249</span>
-<span class="line-number">250</span>
-<span class="line-number">251</span>
-<span class="line-number">252</span>
-<span class="line-number">253</span>
-<span class="line-number">254</span>
-<span class="line-number">255</span>
-<span class="line-number">256</span>
-<span class="line-number">257</span>
-<span class="line-number">258</span>
-<span class="line-number">259</span>
-<span class="line-number">260</span>
-<span class="line-number">261</span>
-<span class="line-number">262</span>
-<span class="line-number">263</span>
-<span class="line-number">264</span>
-<span class="line-number">265</span>
-<span class="line-number">266</span>
-<span class="line-number">267</span>
-<span class="line-number">268</span>
-<span class="line-number">269</span>
-<span class="line-number">270</span>
-<span class="line-number">271</span>
-<span class="line-number">272</span>
-<span class="line-number">273</span>
-<span class="line-number">274</span>
-<span class="line-number">275</span>
-<span class="line-number">276</span>
-<span class="line-number">277</span>
-<span class="line-number">278</span>
-<span class="line-number">279</span>
-<span class="line-number">280</span>
-<span class="line-number">281</span>
-<span class="line-number">282</span>
-<span class="line-number">283</span>
-<span class="line-number">284</span>
-<span class="line-number">285</span>
-<span class="line-number">286</span>
-<span class="line-number">287</span>
-<span class="line-number">288</span>
-<span class="line-number">289</span>
-<span class="line-number">290</span>
-<span class="line-number">291</span>
-<span class="line-number">292</span>
-<span class="line-number">293</span>
-<span class="line-number">294</span>
-<span class="line-number">295</span>
-<span class="line-number">296</span>
-<span class="line-number">297</span>
-<span class="line-number">298</span>
-<span class="line-number">299</span>
-<span class="line-number">300</span>
-<span class="line-number">301</span>
-<span class="line-number">302</span>
-<span class="line-number">303</span>
-<span class="line-number">304</span>
-<span class="line-number">305</span>
-<span class="line-number">306</span>
-<span class="line-number">307</span>
-<span class="line-number">308</span>
-<span class="line-number">309</span>
-<span class="line-number">310</span>
-<span class="line-number">311</span>
-<span class="line-number">312</span>
-<span class="line-number">313</span>
-<span class="line-number">314</span>
-<span class="line-number">315</span>
-<span class="line-number">316</span>
-<span class="line-number">317</span>
-<span class="line-number">318</span>
-<span class="line-number">319</span>
-<span class="line-number">320</span>
-<span class="line-number">321</span>
-<span class="line-number">322</span>
-<span class="line-number">323</span>
-<span class="line-number">324</span>
-<span class="line-number">325</span>
-<span class="line-number">326</span>
-<span class="line-number">327</span>
-<span class="line-number">328</span>
-<span class="line-number">329</span>
-<span class="line-number">330</span>
-<span class="line-number">331</span>
-<span class="line-number">332</span>
-<span class="line-number">333</span>
-<span class="line-number">334</span>
-<span class="line-number">335</span>
-<span class="line-number">336</span>
-<span class="line-number">337</span>
-<span class="line-number">338</span>
-<span class="line-number">339</span>
-<span class="line-number">340</span>
-<span class="line-number">341</span>
-<span class="line-number">342</span>
-<span class="line-number">343</span>
-<span class="line-number">344</span>
-<span class="line-number">345</span>
-<span class="line-number">346</span>
-<span class="line-number">347</span>
-<span class="line-number">348</span>
-<span class="line-number">349</span>
-<span class="line-number">350</span>
-<span class="line-number">351</span>
-<span class="line-number">352</span>
-<span class="line-number">353</span>
-<span class="line-number">354</span>
-<span class="line-number">355</span>
-<span class="line-number">356</span>
-<span class="line-number">357</span>
-<span class="line-number">358</span>
-<span class="line-number">359</span>
-<span class="line-number">360</span>
-<span class="line-number">361</span>
-<span class="line-number">362</span>
-<span class="line-number">363</span>
-<span class="line-number">364</span>
-<span class="line-number">365</span>
-<span class="line-number">366</span>
-<span class="line-number">367</span>
-<span class="line-number">368</span>
-<span class="line-number">369</span>
-<span class="line-number">370</span>
-<span class="line-number">371</span>
-<span class="line-number">372</span>
-<span class="line-number">373</span>
-<span class="line-number">374</span>
-<span class="line-number">375</span>
-<span class="line-number">376</span>
-<span class="line-number">377</span>
-<span class="line-number">378</span>
-<span class="line-number">379</span>
-<span class="line-number">380</span>
-<span class="line-number">381</span>
-<span class="line-number">382</span>
-<span class="line-number">383</span>
-<span class="line-number">384</span>
-<span class="line-number">385</span>
-<span class="line-number">386</span>
-<span class="line-number">387</span>
-<span class="line-number">388</span>
-<span class="line-number">389</span>
-<span class="line-number">390</span>
-<span class="line-number">391</span>
-<span class="line-number">392</span>
-<span class="line-number">393</span>
-<span class="line-number">394</span>
-<span class="line-number">395</span>
-<span class="line-number">396</span>
-<span class="line-number">397</span>
-<span class="line-number">398</span>
-<span class="line-number">399</span>
-<span class="line-number">400</span>
-<span class="line-number">401</span>
-<span class="line-number">402</span>
-<span class="line-number">403</span>
-<span class="line-number">404</span>
-<span class="line-number">405</span>
-<span class="line-number">406</span>
-<span class="line-number">407</span>
-<span class="line-number">408</span>
-<span class="line-number">409</span>
-<span class="line-number">410</span>
-<span class="line-number">411</span>
-<span class="line-number">412</span>
-<span class="line-number">413</span>
-<span class="line-number">414</span>
-<span class="line-number">415</span>
-<span class="line-number">416</span>
-<span class="line-number">417</span>
-<span class="line-number">418</span>
-<span class="line-number">419</span>
-<span class="line-number">420</span>
-<span class="line-number">421</span>
-<span class="line-number">422</span>
-<span class="line-number">423</span>
-<span class="line-number">424</span>
-<span class="line-number">425</span>
-<span class="line-number">426</span>
-<span class="line-number">427</span>
-<span class="line-number">428</span>
-<span class="line-number">429</span>
-<span class="line-number">430</span>
-<span class="line-number">431</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line">	<span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
-</span><span class="line"><span class="nb">require</span> <span class="s2">&quot;bundler/setup&quot;</span>
-</span><span class="line"><span class="nb">require</span> <span class="s2">&quot;stringex&quot;</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">## -- Rsync Deploy config -- ##</span>
-</span><span class="line"><span class="c1"># Be sure your public key is listed in your server&#39;s ~/.ssh/authorized_keys file</span>
-</span><span class="line"><span class="n">ssh_user</span>       <span class="o">=</span> <span class="s2">&quot;user@domain.com&quot;</span>
-</span><span class="line"><span class="n">ssh_port</span>       <span class="o">=</span> <span class="s2">&quot;22&quot;</span>
-</span><span class="line"><span class="n">document_root</span>  <span class="o">=</span> <span class="s2">&quot;~/website.com/&quot;</span>
-</span><span class="line"><span class="n">rsync_delete</span>   <span class="o">=</span> <span class="kp">false</span>
-</span><span class="line"><span class="n">rsync_args</span>     <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># Any extra arguments to pass to rsync</span>
-</span><span class="line"><span class="n">deploy_default</span> <span class="o">=</span> <span class="s2">&quot;push&quot;</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># This will be configured for you when you run config_deploy</span>
-</span><span class="line"><span class="n">deploy_branch</span>  <span class="o">=</span> <span class="s2">&quot;master&quot;</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">## -- Misc Configs -- ##</span>
-</span><span class="line">
-</span><span class="line"><span class="n">public_dir</span>      <span class="o">=</span> <span class="s2">&quot;public&quot;</span>    <span class="c1"># compiled site directory</span>
-</span><span class="line"><span class="n">source_dir</span>      <span class="o">=</span> <span class="s2">&quot;source&quot;</span>    <span class="c1"># source file directory</span>
-</span><span class="line"><span class="n">blog_index_dir</span>  <span class="o">=</span> <span class="s1">&#39;source&#39;</span>    <span class="c1"># directory for your blog&#39;s index page (if you put your index in source/blog/index.html, set this to &#39;source/blog&#39;)</span>
-</span><span class="line"><span class="n">deploy_dir</span>      <span class="o">=</span> <span class="s2">&quot;_deploy&quot;</span>   <span class="c1"># deploy directory (for Github pages deployment)</span>
-</span><span class="line"><span class="n">stash_dir</span>       <span class="o">=</span> <span class="s2">&quot;_stash&quot;</span>    <span class="c1"># directory to stash posts for speedy generation</span>
-</span><span class="line"><span class="n">posts_dir</span>       <span class="o">=</span> <span class="s2">&quot;_posts&quot;</span>    <span class="c1"># directory for blog files</span>
-</span><span class="line"><span class="n">themes_dir</span>      <span class="o">=</span> <span class="s2">&quot;.themes&quot;</span>   <span class="c1"># directory for blog files</span>
-</span><span class="line"><span class="n">new_post_ext</span>    <span class="o">=</span> <span class="s2">&quot;markdown&quot;</span>  <span class="c1"># default new post file extension when using the new_post task</span>
-</span><span class="line"><span class="n">new_page_ext</span>    <span class="o">=</span> <span class="s2">&quot;markdown&quot;</span>  <span class="c1"># default new page file extension when using the new_page task</span>
-</span><span class="line"><span class="n">server_port</span>     <span class="o">=</span> <span class="s2">&quot;4000&quot;</span>      <span class="c1"># port for preview server eg. localhost:4000</span>
-</span><span class="line"><span class="n">deploy_local</span>	<span class="o">=</span> <span class="s2">&quot;push_local&quot;</span>	<span class="c1">#hiberabyss:</span>
-</span><span class="line"><span class="n">editor</span>		<span class="o">=</span> <span class="s2">&quot;gvim&quot;</span>		<span class="c1">#hiberabyss: the eidtor after new</span>
-</span><span class="line"><span class="n">source_remote</span>	<span class="o">=</span> <span class="s2">&quot;octopress&quot;</span>	<span class="c1">#hiberabyss: remote ref</span>
-</span><span class="line"><span class="n">source_branch</span>	<span class="o">=</span> <span class="s2">&quot;source&quot;</span>	<span class="c1">#hiberabyss: the source branch</span>
-</span><span class="line">
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Initial setup for Octopress: copies the default theme into the path of Jekyll&#39;s generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:install</span><span class="p">,</span> <span class="ss">:theme</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span> <span class="o">||</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="s2">&quot;sass&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted!&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;A theme is already installed, proceeding will overwrite existing files. Are you sure?&quot;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="o">]</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="c1"># copy theme into working Jekyll directories</span>
-</span><span class="line">  <span class="n">theme</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">theme</span> <span class="o">||</span> <span class="s1">&#39;classic&#39;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Copying &quot;</span><span class="o">+</span><span class="n">theme</span><span class="o">+</span><span class="s2">&quot; theme into ./</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2"> and ./sass&quot;</span>
-</span><span class="line">  <span class="n">mkdir_p</span> <span class="n">source_dir</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">themes_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">theme</span><span class="si">}</span><span class="s2">/source/.&quot;</span><span class="p">,</span> <span class="n">source_dir</span>
-</span><span class="line">  <span class="n">mkdir_p</span> <span class="s2">&quot;sass&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">themes_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">theme</span><span class="si">}</span><span class="s2">/sass/.&quot;</span><span class="p">,</span> <span class="s2">&quot;sass&quot;</span>
-</span><span class="line">  <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="n">mkdir_p</span> <span class="n">public_dir</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">#######################</span>
-</span><span class="line"><span class="c1"># Working with Jekyll #</span>
-</span><span class="line"><span class="c1">#######################</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Generate jekyll site&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:generate</span> <span class="k">do</span>
-</span><span class="line">  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Generating Site with Jekyll&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;jekyll&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Watch the site and regenerate when it changes&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:watch</span> <span class="k">do</span>
-</span><span class="line">  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;Starting to watch source with Jekyll and Compass.&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets/screen.css&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">jekyllPid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">spawn</span><span class="p">({</span><span class="s2">&quot;OCTOPRESS_ENV&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;preview&quot;</span><span class="p">},</span> <span class="s2">&quot;jekyll --auto&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">compassPid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;compass watch&quot;</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line">  <span class="nb">trap</span><span class="p">(</span><span class="s2">&quot;INT&quot;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">    <span class="o">[</span><span class="n">jekyllPid</span><span class="p">,</span> <span class="n">compassPid</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">pid</span><span class="o">|</span> <span class="no">Process</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span> <span class="k">rescue</span> <span class="ss">Errno</span><span class="p">:</span><span class="ss">:ESRCH</span> <span class="p">}</span>
-</span><span class="line">    <span class="nb">exit</span> <span class="mi">0</span>
-</span><span class="line">  <span class="p">}</span>
-</span><span class="line">
-</span><span class="line">  <span class="o">[</span><span class="n">jekyllPid</span><span class="p">,</span> <span class="n">compassPid</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">pid</span><span class="o">|</span> <span class="no">Process</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span> <span class="p">}</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;preview the site in a web browser&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:preview</span> <span class="k">do</span>
-</span><span class="line">  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;Starting to watch source with Jekyll and Compass. Starting Rack on port </span><span class="si">#{</span><span class="n">server_port</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets/screen.css&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">jekyllPid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">spawn</span><span class="p">({</span><span class="s2">&quot;OCTOPRESS_ENV&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;preview&quot;</span><span class="p">},</span> <span class="s2">&quot;jekyll --auto&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">compassPid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;compass watch&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">rackupPid</span> <span class="o">=</span> <span class="no">Process</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;rackup --port </span><span class="si">#{</span><span class="n">server_port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line">  <span class="nb">trap</span><span class="p">(</span><span class="s2">&quot;INT&quot;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">    <span class="o">[</span><span class="n">jekyllPid</span><span class="p">,</span> <span class="n">compassPid</span><span class="p">,</span> <span class="n">rackupPid</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">pid</span><span class="o">|</span> <span class="no">Process</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span> <span class="k">rescue</span> <span class="ss">Errno</span><span class="p">:</span><span class="ss">:ESRCH</span> <span class="p">}</span>
-</span><span class="line">    <span class="nb">exit</span> <span class="mi">0</span>
-</span><span class="line">  <span class="p">}</span>
-</span><span class="line">
-</span><span class="line">  <span class="o">[</span><span class="n">jekyllPid</span><span class="p">,</span> <span class="n">compassPid</span><span class="p">,</span> <span class="n">rackupPid</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">pid</span><span class="o">|</span> <span class="no">Process</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span> <span class="p">}</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)</span>
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Begin a new post in </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:new_post</span><span class="p">,</span> <span class="ss">:title</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">title</span>
-</span><span class="line">    <span class="n">title</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">title</span>
-</span><span class="line">  <span class="k">else</span>
-</span><span class="line">    <span class="n">title</span> <span class="o">=</span> <span class="n">get_stdin</span><span class="p">(</span><span class="s2">&quot;Enter a title for your post: &quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">new_post_ext</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted!&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> already exists. Do you want to overwrite?&quot;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="o">]</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;layout: post&quot;</span>
-</span><span class="line">    <span class="c1">#post.puts &quot;title: \&quot;#{title.gsub(/&amp;/,&#39;&amp;amp;&#39;)}\&quot;&quot;</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;title: </span><span class="se">\&quot;\&quot;</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;date: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;comments: true&quot;</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;categories: &quot;</span>
-</span><span class="line">    <span class="n">post</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">editor</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to &quot;new-page.markdown&quot;)</span>
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Create a new page in </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/(filename)/index.</span><span class="si">#{</span><span class="n">new_page_ext</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:new_page</span><span class="p">,</span> <span class="ss">:filename</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="n">args</span><span class="o">.</span><span class="n">with_defaults</span><span class="p">(</span><span class="ss">:filename</span> <span class="o">=&gt;</span> <span class="s1">&#39;new-page&#39;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">page_dir</span> <span class="o">=</span> <span class="o">[</span><span class="n">source_dir</span><span class="o">]</span>
-</span><span class="line">  <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">downcase</span> <span class="o">=~</span> <span class="sr">/(^.+\/)?(.+)/</span>
-</span><span class="line">    <span class="n">filename</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">extension</span> <span class="o">=</span> <span class="vg">$2</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reject</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:empty?</span><span class="p">)</span>         <span class="c1"># Get filename and extension</span>
-</span><span class="line">    <span class="n">title</span> <span class="o">=</span> <span class="n">filename</span>
-</span><span class="line">    <span class="n">page_dir</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="vg">$1</span><span class="o">.</span><span class="n">downcase</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/^\//</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span> <span class="k">unless</span> <span class="vg">$1</span><span class="o">.</span><span class="n">nil?</span>  <span class="c1"># Add path to page_dir Array</span>
-</span><span class="line">    <span class="k">if</span> <span class="n">extension</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class="line">      <span class="n">page_dir</span> <span class="o">&lt;&lt;</span> <span class="n">filename</span>
-</span><span class="line">      <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;index&quot;</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="n">extension</span> <span class="o">||=</span> <span class="n">new_page_ext</span>
-</span><span class="line">    <span class="n">page_dir</span> <span class="o">=</span> <span class="n">page_dir</span><span class="o">.</span><span class="n">map!</span> <span class="p">{</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span> <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">to_url</span> <span class="p">}</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>                <span class="c1"># Sanitize path</span>
-</span><span class="line">    <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">downcase</span><span class="o">.</span><span class="n">to_url</span>
-</span><span class="line">
-</span><span class="line">    <span class="n">mkdir_p</span> <span class="n">page_dir</span>
-</span><span class="line">    <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">page_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">extension</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span><span class="line">      <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted!&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2"> already exists. Do you want to overwrite?&quot;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="o">]</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;Creating new page: </span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">page</span><span class="o">|</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;layout: page&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;title: </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;date: </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;comments: true&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;sharing: true&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;footer: true&quot;</span>
-</span><span class="line">      <span class="n">page</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;---&quot;</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">editor</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="k">else</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;Syntax error: </span><span class="si">#{</span><span class="n">args</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2"> contains unsupported characters&quot;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># usage rake isolate[my-post]</span>
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much more quickly.&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:isolate</span><span class="p">,</span> <span class="ss">:filename</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="n">stash_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">stash_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="no">FileUtils</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">stash_dir</span><span class="p">)</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">stash_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/*.*&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
-</span><span class="line">    <span class="no">FileUtils</span><span class="o">.</span><span class="n">mv</span> <span class="n">post</span><span class="p">,</span> <span class="n">stash_dir</span> <span class="k">unless</span> <span class="n">post</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Move all stashed posts back into the posts directory, ready for site generation.&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:integrate</span> <span class="k">do</span>
-</span><span class="line">  <span class="no">FileUtils</span><span class="o">.</span><span class="n">mv</span> <span class="no">Dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">stash_dir</span><span class="si">}</span><span class="s2">/*.*&quot;</span><span class="p">),</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Clean out caches: .pygments-cache, .gist-cache, .sass-cache&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:clean</span> <span class="k">do</span>
-</span><span class="line">  <span class="n">rm_rf</span> <span class="o">[</span><span class="s2">&quot;.pygments-cache/**&quot;</span><span class="p">,</span> <span class="s2">&quot;.gist-cache/**&quot;</span><span class="p">,</span> <span class="s2">&quot;.sass-cache/**&quot;</span><span class="p">,</span> <span class="s2">&quot;source/stylesheets/screen.css&quot;</span><span class="o">]</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:update_style</span><span class="p">,</span> <span class="ss">:theme</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="n">theme</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">theme</span> <span class="o">||</span> <span class="s1">&#39;classic&#39;</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="s2">&quot;sass.old&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;removed existing sass.old directory&quot;</span>
-</span><span class="line">    <span class="n">rm_r</span> <span class="s2">&quot;sass.old&quot;</span><span class="p">,</span> <span class="ss">:secure</span><span class="o">=&gt;</span><span class="kp">true</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">mv</span> <span class="s2">&quot;sass&quot;</span><span class="p">,</span> <span class="s2">&quot;sass.old&quot;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Moved styles into sass.old/&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">themes_dir</span><span class="si">}</span><span class="s2">/&quot;</span><span class="o">+</span><span class="n">theme</span><span class="o">+</span><span class="s2">&quot;/sass/&quot;</span><span class="p">,</span> <span class="s2">&quot;sass&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;sass.old/custom/.&quot;</span><span class="p">,</span> <span class="s2">&quot;sass/custom&quot;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Updated Sass ##&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Move source to source.old, install source theme updates, replace source/_includes/navigation.html with source.old&#39;s navigation&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:update_source</span><span class="p">,</span> <span class="ss">:theme</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="n">theme</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">theme</span> <span class="o">||</span> <span class="s1">&#39;classic&#39;</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;## Removed existing </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old directory&quot;</span>
-</span><span class="line">    <span class="n">rm_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old&quot;</span><span class="p">,</span> <span class="ss">:secure</span><span class="o">=&gt;</span><span class="kp">true</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">mkdir</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/.&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old&quot;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Copied </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2"> into </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old/&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">themes_dir</span><span class="si">}</span><span class="s2">/&quot;</span><span class="o">+</span><span class="n">theme</span><span class="o">+</span><span class="s2">&quot;/source/.&quot;</span><span class="p">,</span> <span class="n">source_dir</span><span class="p">,</span> <span class="ss">:remove_destination</span><span class="o">=&gt;</span><span class="kp">true</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old/_includes/custom/.&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/_includes/custom/&quot;</span><span class="p">,</span> <span class="ss">:remove_destination</span><span class="o">=&gt;</span><span class="kp">true</span>
-</span><span class="line">  <span class="n">cp</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old/favicon.png&quot;</span><span class="p">,</span> <span class="n">source_dir</span>
-</span><span class="line">  <span class="n">mv</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">blog_index_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="ss">:force</span><span class="o">=&gt;</span><span class="kp">true</span> <span class="k">if</span> <span class="n">blog_index_dir</span> <span class="o">!=</span> <span class="n">source_dir</span>
-</span><span class="line">  <span class="n">cp</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old/index.html&quot;</span><span class="p">,</span> <span class="n">source_dir</span> <span class="k">if</span> <span class="n">blog_index_dir</span> <span class="o">!=</span> <span class="n">source_dir</span> <span class="o">&amp;&amp;</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">.old/index.html&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Updated </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2"> ##&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">##############</span>
-</span><span class="line"><span class="c1"># Deploying  #</span>
-</span><span class="line"><span class="c1">##############</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Default deploy task&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
-</span><span class="line">  <span class="c1"># Check if preview posts exist, which should not be published</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;## Found posts in preview mode, regenerating files ...&quot;</span>
-</span><span class="line">    <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:generate</span><span class="o">].</span><span class="n">execute</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">
-</span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">public_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_default</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">].</span><span class="n">execute</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">#hiberabyss: deploy to local</span>
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Local deploy task&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:ldeploy</span> <span class="k">do</span>
-</span><span class="line">  <span class="c1"># Check if preview posts exist, which should not be published</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;## Found posts in preview mode, regenerating files ...&quot;</span>
-</span><span class="line">    <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;.preview-mode&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:generate</span><span class="o">].</span><span class="n">execute</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">public_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_local</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">].</span><span class="n">execute</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Generate website and deploy&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:gen_deploy</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:integrate</span><span class="p">,</span> <span class="ss">:generate</span><span class="p">,</span> <span class="ss">:deploy</span><span class="o">]</span> <span class="k">do</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Local Generate and deploy&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:lgdeploy</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:integrate</span><span class="p">,</span> <span class="ss">:generate</span><span class="p">,</span> <span class="ss">:ldeploy</span><span class="o">]</span> <span class="k">do</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;copy dot files for deployment&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:copydot</span><span class="p">,</span> <span class="ss">:source</span><span class="p">,</span> <span class="ss">:dest</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="no">FileList</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">args</span><span class="o">.</span><span class="n">source</span><span class="si">}</span><span class="s2">/**/.*&quot;</span><span class="o">].</span><span class="n">exclude</span><span class="p">(</span><span class="s2">&quot;**/.&quot;</span><span class="p">,</span> <span class="s2">&quot;**/..&quot;</span><span class="p">,</span> <span class="s2">&quot;**/.DS_Store&quot;</span><span class="p">,</span> <span class="s2">&quot;**/._*&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
-</span><span class="line">    <span class="n">cp_r</span> <span class="n">file</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/</span><span class="si">#{</span><span class="n">args</span><span class="o">.</span><span class="n">source</span><span class="si">}</span><span class="sr">/</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">args</span><span class="o">.</span><span class="n">dest</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Deploy website via rsync&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:rsync</span> <span class="k">do</span>
-</span><span class="line">  <span class="n">exclude</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="s1">&#39;./rsync-exclude&#39;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">exclude</span> <span class="o">=</span> <span class="s2">&quot;--exclude-from &#39;</span><span class="si">#{</span><span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s1">&#39;./rsync-exclude&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Deploying website via Rsync&quot;</span>
-</span><span class="line">  <span class="n">ok_failed</span> <span class="nb">system</span><span class="p">(</span><span class="s2">&quot;rsync -avze &#39;ssh -p </span><span class="si">#{</span><span class="n">ssh_port</span><span class="si">}</span><span class="s2">&#39; </span><span class="si">#{</span><span class="n">exclude</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">rsync_args</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="s2">&quot;--delete&quot;</span> <span class="k">unless</span> <span class="n">rsync_delete</span> <span class="o">==</span> <span class="kp">false</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/ </span><span class="si">#{</span><span class="n">ssh_user</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">document_root</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;deploy public directory to local deploy_dir&quot;</span>
-</span><span class="line"><span class="n">multitask</span> <span class="ss">:push_local</span> <span class="k">do</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Deploying branch to local &quot;</span>
-</span><span class="line">  <span class="p">(</span><span class="no">Dir</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">/*&quot;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">rm_rf</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
-</span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">public_dir</span><span class="p">,</span> <span class="n">deploy_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## copying </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/.&quot;</span><span class="p">,</span> <span class="n">deploy_dir</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;deploy public directory to github pages&quot;</span>
-</span><span class="line"><span class="n">multitask</span> <span class="ss">:push</span> <span class="k">do</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;## Deploying branch to Github Pages &quot;</span>
-</span><span class="line">  <span class="p">(</span><span class="no">Dir</span><span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">/*&quot;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">rm_rf</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
-</span><span class="line">  <span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:copydot</span><span class="o">].</span><span class="n">invoke</span><span class="p">(</span><span class="n">public_dir</span><span class="p">,</span> <span class="n">deploy_dir</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## copying </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2"> to </span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="n">cp_r</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/.&quot;</span><span class="p">,</span> <span class="n">deploy_dir</span>
-</span><span class="line">
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git add -u&quot;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Source Commiting&quot;</span>
-</span><span class="line">  <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Source updated at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="nb">system</span> <span class="s2">&quot;git push </span><span class="si">#{</span><span class="n">source_remote</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">source_branch</span><span class="si">}</span><span class="s2"> --force&quot;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Source update complete&quot;</span>
-</span><span class="line">
-</span><span class="line">  <span class="n">cd</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">do</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add -u&quot;</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Commiting: Site updated at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Site updated at </span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">utc</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Pushing generated </span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2"> website&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git push origin </span><span class="si">#{</span><span class="n">deploy_branch</span><span class="si">}</span><span class="s2"> --force&quot;</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">## Github Pages deploy complete&quot;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Update configurations to support publishing to root or sub directory&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:set_root_dir</span><span class="p">,</span> <span class="ss">:dir</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;&gt;&gt;&gt; !! Please provide a directory, eg. rake config_dir[publishing/subdirectory]&quot;</span> <span class="k">unless</span> <span class="n">args</span><span class="o">.</span><span class="n">dir</span>
-</span><span class="line">  <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dir</span>
-</span><span class="line">    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dir</span> <span class="o">==</span> <span class="s2">&quot;/&quot;</span>
-</span><span class="line">      <span class="n">dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</span><span class="line">    <span class="k">else</span>
-</span><span class="line">      <span class="n">dir</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">dir</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/(\/*)(.+)/</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/\/$/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="n">rakefile</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">)</span>
-</span><span class="line">    <span class="n">rakefile</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/public_dir(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;public_dir</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3public</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-</span><span class="line">      <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">rakefile</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="n">compass_config</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;config.rb&#39;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">compass_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/http_path(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;http_path</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">compass_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/http_images_path(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;http_images_path</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/images</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">compass_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/http_fonts_path(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;http_fonts_path</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/fonts</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">compass_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/css_dir(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;css_dir</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3public</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/stylesheets</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;config.rb&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-</span><span class="line">      <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">compass_config</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="n">jekyll_config</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;_config.yml&#39;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">jekyll_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^destination:.+$/</span><span class="p">,</span> <span class="s2">&quot;destination: public</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">jekyll_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^subscribe_rss:\s*\/.+$/</span><span class="p">,</span> <span class="s2">&quot;subscribe_rss: </span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/atom.xml&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">jekyll_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^root:.*$/</span><span class="p">,</span> <span class="s2">&quot;root: /</span><span class="si">#{</span><span class="n">dir</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/^\//</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;_config.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-</span><span class="line">      <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">jekyll_config</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">    <span class="n">rm_rf</span> <span class="n">public_dir</span>
-</span><span class="line">    <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;## Site&#39;s root directory is now &#39;/</span><span class="si">#{</span><span class="n">dir</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/^\//</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; ##&quot;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;Set up _deploy folder and deploy branch for Github Pages deployment&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:setup_github_pages</span><span class="p">,</span> <span class="ss">:repo</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
-</span><span class="line">  <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">repo</span>
-</span><span class="line">    <span class="n">repo_url</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">repo</span>
-</span><span class="line">  <span class="k">else</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;Enter the read/write url for your repository&quot;</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;(For example, &#39;git@github.com:your_username/your_username.github.io)&quot;</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;           or &#39;https://github.com/your_username/your_username.github.io&#39;)&quot;</span>
-</span><span class="line">    <span class="n">repo_url</span> <span class="o">=</span> <span class="n">get_stdin</span><span class="p">(</span><span class="s2">&quot;Repository url: &quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">protocol</span> <span class="o">=</span> <span class="p">(</span><span class="n">repo_url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/(^git)@/</span><span class="p">)</span><span class="o">.</span><span class="n">nil?</span><span class="p">)</span> <span class="p">?</span> <span class="s1">&#39;https&#39;</span> <span class="p">:</span> <span class="s1">&#39;git&#39;</span>
-</span><span class="line">  <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;git&#39;</span>
-</span><span class="line">    <span class="n">user</span> <span class="o">=</span> <span class="n">repo_url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/:([^\/]+)/</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
-</span><span class="line">  <span class="k">else</span>
-</span><span class="line">    <span class="n">user</span> <span class="o">=</span> <span class="n">repo_url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/github\.com\/([^\/]+)/</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">branch</span> <span class="o">=</span> <span class="p">(</span><span class="n">repo_url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/\/[\w-]+\.github\.(?:io|com)/</span><span class="p">)</span><span class="o">.</span><span class="n">nil?</span><span class="p">)</span> <span class="p">?</span> <span class="s1">&#39;gh-pages&#39;</span> <span class="p">:</span> <span class="s1">&#39;master&#39;</span>
-</span><span class="line">  <span class="n">project</span> <span class="o">=</span> <span class="p">(</span><span class="n">branch</span> <span class="o">==</span> <span class="s1">&#39;gh-pages&#39;</span><span class="p">)</span> <span class="p">?</span> <span class="n">repo_url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/\/([^\.]+)/</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span>
-</span><span class="line">  <span class="k">unless</span> <span class="p">(</span><span class="sb">`git remote -v`</span> <span class="o">=~</span> <span class="sr">/origin.+?octopress(?:\.git)?/</span><span class="p">)</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class="line">    <span class="c1"># If octopress is still the origin remote (from cloning) rename it to octopress</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git remote rename origin octopress&quot;</span>
-</span><span class="line">    <span class="k">if</span> <span class="n">branch</span> <span class="o">==</span> <span class="s1">&#39;master&#39;</span>
-</span><span class="line">      <span class="c1"># If this is a user/organization pages repository, add the correct origin remote</span>
-</span><span class="line">      <span class="c1"># and checkout the source branch for committing changes to the blog source.</span>
-</span><span class="line">      <span class="nb">system</span> <span class="s2">&quot;git remote add origin </span><span class="si">#{</span><span class="n">repo_url</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">      <span class="nb">puts</span> <span class="s2">&quot;Added remote </span><span class="si">#{</span><span class="n">repo_url</span><span class="si">}</span><span class="s2"> as origin&quot;</span>
-</span><span class="line">      <span class="nb">system</span> <span class="s2">&quot;git config branch.master.remote origin&quot;</span>
-</span><span class="line">      <span class="nb">puts</span> <span class="s2">&quot;Set origin as default remote&quot;</span>
-</span><span class="line">      <span class="nb">system</span> <span class="s2">&quot;git branch -m master source&quot;</span>
-</span><span class="line">      <span class="nb">puts</span> <span class="s2">&quot;Master branch renamed to &#39;source&#39; for committing your blog source files&quot;</span>
-</span><span class="line">    <span class="k">else</span>
-</span><span class="line">      <span class="k">unless</span> <span class="o">!</span><span class="n">public_dir</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">project</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class="line">        <span class="nb">system</span> <span class="s2">&quot;rake set_root_dir[</span><span class="si">#{</span><span class="n">project</span><span class="si">}</span><span class="s2">]&quot;</span>
-</span><span class="line">      <span class="k">end</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://</span><span class="si">#{</span><span class="n">user</span><span class="si">}</span><span class="s2">.github.io&quot;</span>
-</span><span class="line">  <span class="n">url</span> <span class="o">+=</span> <span class="s2">&quot;/</span><span class="si">#{</span><span class="n">project</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">unless</span> <span class="n">project</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
-</span><span class="line">  <span class="n">jekyll_config</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;_config.yml&#39;</span><span class="p">)</span>
-</span><span class="line">  <span class="n">jekyll_config</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^url:.*$/</span><span class="p">,</span> <span class="s2">&quot;url: </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span class="line">  <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;_config.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-</span><span class="line">    <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">jekyll_config</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">rm_rf</span> <span class="n">deploy_dir</span>
-</span><span class="line">  <span class="n">mkdir</span> <span class="n">deploy_dir</span>
-</span><span class="line">  <span class="n">cd</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">deploy_dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">do</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git init&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;echo &#39;My Octopress Page is coming soon &amp;hellip;&#39; &gt; index.html&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git add .&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git commit -m </span><span class="se">\&quot;</span><span class="s2">Octopress init</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git branch -m gh-pages&quot;</span> <span class="k">unless</span> <span class="n">branch</span> <span class="o">==</span> <span class="s1">&#39;master&#39;</span>
-</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;git remote add origin </span><span class="si">#{</span><span class="n">repo_url</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">    <span class="n">rakefile</span> <span class="o">=</span> <span class="no">IO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">)</span>
-</span><span class="line">    <span class="n">rakefile</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/deploy_branch(\s*)=(\s*)([&quot;&#39;])[\w-]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;deploy_branch</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3</span><span class="si">#{</span><span class="n">branch</span><span class="si">}</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="n">rakefile</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/deploy_default(\s*)=(\s*)([&quot;&#39;])[\w-]*[&quot;&#39;]/</span><span class="p">,</span> <span class="s2">&quot;deploy_default</span><span class="se">\\</span><span class="s2">1=</span><span class="se">\\</span><span class="s2">2</span><span class="se">\\</span><span class="s2">3push</span><span class="se">\\</span><span class="s2">3&quot;</span><span class="p">)</span>
-</span><span class="line">    <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
-</span><span class="line">      <span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="n">rakefile</span>
-</span><span class="line">    <span class="k">end</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">## Now you can deploy to </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> with `rake deploy` ##&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="k">def</span> <span class="nf">ok_failed</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-</span><span class="line">  <span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;OK&quot;</span>
-</span><span class="line">  <span class="k">else</span>
-</span><span class="line">    <span class="nb">puts</span> <span class="s2">&quot;FAILED&quot;</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="k">def</span> <span class="nf">get_stdin</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</span><span class="line">  <span class="nb">print</span> <span class="n">message</span>
-</span><span class="line">  <span class="no">STDIN</span><span class="o">.</span><span class="n">gets</span><span class="o">.</span><span class="n">chomp</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="k">def</span> <span class="nf">ask</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">valid_options</span><span class="p">)</span>
-</span><span class="line">  <span class="k">if</span> <span class="n">valid_options</span>
-</span><span class="line">    <span class="n">answer</span> <span class="o">=</span> <span class="n">get_stdin</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">valid_options</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/&quot;/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/, /</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span> <span class="k">while</span> <span class="o">!</span><span class="n">valid_options</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-</span><span class="line">  <span class="k">else</span>
-</span><span class="line">    <span class="n">answer</span> <span class="o">=</span> <span class="n">get_stdin</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</span><span class="line">  <span class="k">end</span>
-</span><span class="line">  <span class="n">answer</span>
-</span><span class="line"><span class="k">end</span>
-</span><span class="line">
-</span><span class="line"><span class="n">desc</span> <span class="s2">&quot;list tasks&quot;</span>
-</span><span class="line"><span class="n">task</span> <span class="ss">:list</span> <span class="k">do</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;Tasks: </span><span class="si">#{</span><span class="p">(</span><span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">.</span><span class="n">tasks</span> <span class="o">-</span> <span class="o">[</span><span class="ss">Rake</span><span class="p">:</span><span class="ss">:Task</span><span class="o">[</span><span class="ss">:list</span><span class="o">]]</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;(type rake -T for more detail)</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-</span><span class="line"><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/20130625/octopress-custom-cofigure/">继续阅读&rarr;</a>
+    </footer>
   
 
 
@@ -1232,7 +251,7 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/20130625/markdown-syntax/">Markdown和kramdown语法总结</a></h1>
+      <h1 class="entry-title"><a href="/blog/20130625/markdown-syntax/">Octopress中Markdown文件语法总结</a></h1>
     
     
       <p class="meta">
@@ -1259,11 +278,13 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
   </header>
 
 
-  <div class="entry-content"><h2 id="markdown">Markdown语法</h2>
-<p>图灵社区的<a href="http://www.ituring.com.cn/article/504">中文文档</a>；查看该文档<a href="https://github.com/othree/markdown-syntax-zhtw/edit/master/syntax.md">源代码</a>。</p>
-
+  <div class="entry-content"><p>本文主要对<code>Octopress</code>中<code>Markdown</code>文件的语法做一些总结。
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/20130625/markdown-syntax/">继续阅读&rarr;</a>
+    </footer>
   
 
 
@@ -1380,12 +401,20 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/filesystem' style='font-size: 130.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 130.0%'>Git(1)</a>  <a href='/blog/categories/markdown' style='font-size: 130.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(2)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 140.0%'>Linux(2)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130628/bash-summary/">Bash编程的一些总结</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130628/linux-cmd/">Linux常用命令</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130626/git-summary/">Git总结</a>
@@ -1396,15 +425,7 @@ git config --global user.email &quot;my@email.com&quot &hellip;">
       </li>
     
       <li class="post">
-        <a href="/blog/20130625/markdown-syntax/">Markdown和kramdown语法总结</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130624/my-octopress-configure/">个性化Octopress资源整理</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130624/lustre-configture/">Lustre-2.3的安装与配置</a>
+        <a href="/blog/20130625/markdown-syntax/">Octopress中Markdown文件语法总结</a>
       </li>
     
   </ul>

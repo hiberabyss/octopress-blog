@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: FileSystem | 蛰渊-成长的轨迹]]></title>
-  <link href="http://hiberabyss.github.io/blog/categories/filesystem/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Lustre | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/lustre/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
   <updated>2013-06-28T22:59:45+08:00</updated>
   <id>http://hiberabyss.github.io/</id>

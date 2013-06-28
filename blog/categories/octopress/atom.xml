@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-27T10:22:00+08:00</updated>
+  <updated>2013-06-28T22:59:45+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -19,6 +19,8 @@
     <updated>2013-06-25T19:57:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130625/octopress-custom-cofigure</id>
     <content type="html"><![CDATA[<p>这里放置我自己修改的<code>Rakefile</code>配置文件和<code>sass/custom/_styles.scss</code>，显示的代码会和源文件中代码保持一致，主要利用<a href="http://octopress.org/docs/plugins/render-partial/">Render Partial</a>插件实现，该插件以<code>source</code>目录作为工作目录。利用<a href="http://octopress.org/docs/plugins/codeblock/">Codeblock</a>插件可以显示标题，在标题中包括文件扩展名可以自动添加语法高亮。</p>
+
+<!--more-->
 
 <h2 id="section">样式文件</h2>
 <p><code>/sass/custom/</code>下的文件会最后加载，因此会覆盖之前所做的设置。</p>
@@ -528,6 +530,8 @@
 <span class='line-number'>429</span>
 <span class='line-number'>430</span>
 <span class='line-number'>431</span>
+<span class='line-number'>432</span>
+<span class='line-number'>433</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'>	<span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
 </span><span class='line'><span class="nb">require</span> <span class="s2">&quot;bundler/setup&quot;</span>
 </span><span class='line'><span class="nb">require</span> <span class="s2">&quot;stringex&quot;</span>
@@ -635,6 +639,8 @@
 </span><span class='line'>  <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>  <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">new_post_ext</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">system</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">editor</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>    <span class="nb">exit</span>
 </span><span class='line'>    <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted!&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> already exists. Do you want to overwrite?&quot;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="o">]</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -964,6 +970,333 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Octopress中Markdown文件语法总结]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130625/markdown-syntax/"/>
+    <updated>2013-06-25T15:20:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130625/markdown-syntax</id>
+    <content type="html"><![CDATA[<p>本文主要对<code>Octopress</code>中<code>Markdown</code>文件的语法做一些总结。
+<!--more--></p>
+
+<h2 id="first">Markdown语法</h2>
+<p>Markdown的完整语法可以参考图灵社区的<a href="http://www.ituring.com.cn/article/504">中文文档</a>；查看该文档<a href="https://github.com/othree/markdown-syntax-zhtw/edit/master/syntax.md">源代码</a>。</p>
+
+<h2 id="section">首页只显示部分博客内容</h2>
+<p><code>&lt;!--more--&gt;</code>会使得在博客首页只显示这个标记之前的内容。提示继续阅读的文字信息则可以在<code>_config.yml</code>文件中<code>excerpt_link: </code>字段进行修改。</p>
+
+<h2 id="section-1">可以用如下方式添加同一文档内的链接</h2>
+<p>链接到<a href="#first">Markdown语法</a>部分</p>
+
+<h2 id="section-2">关于分类</h2>
+<p>文件中的多个分类直接用空格进行间隔即可，我用的插件会自动把分类名称的首字母大写。</p>
+
+<h2 id="section-3">插入代码</h2>
+<p>可以利用下面的代码插入相对应于<code>source</code>目录的代码文件。</p>
+
+<!--
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>bash.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>
+</span><span class='line'>	 <span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#默认会执行“~/.profile”、“~/.bashrc”脚本文件</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#man bash可以查看到详细的帮助文档</span>
+</span><span class='line'><span class="c">#一些命令参数：</span>
+</span><span class='line'><span class="c">#-n: 测试语法是否正确，不执行</span>
+</span><span class='line'><span class="c">#-x: 显示所执行的每一条命令</span>
+</span><span class='line'><span class="c">#-c &quot;string&quot;: 从string中读取命令</span>
+</span><span class='line'><span class="c">#-l: 以登录shell运行，区别是读取的配置文件不同，具体可参见man bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#取消相应参数</span>
+</span><span class='line'><span class="nb">set</span> +x
+</span><span class='line'><span class="c">#设置相应选项</span>
+</span><span class='line'><span class="nb">set</span> -x
+</span><span class='line'>
+</span><span class='line'><span class="c">#特殊的参数，man bash中“Special Parameters”中有详细介绍：</span>
+</span><span class='line'><span class="c"># $#:表示输入参数的个数，在Linux中常用#表示数字</span>
+</span><span class='line'><span class="c"># $*:所有参数的字符串，分隔符和“IFS”有关，和$@的区别还没有搞清楚</span>
+</span><span class='line'><span class="c"># $@:和上面功能类似</span>
+</span><span class='line'><span class="c"># $?:上一条命令的返回状态</span>
+</span><span class='line'>
+</span><span class='line'>usage<span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="nb">printf</span> <span class="s2">&quot;%b&quot;</span> <span class="s2">&quot;</span>
+</span><span class='line'><span class="s2">    </span>
+</span><span class='line'><span class="s2">Usage</span>
+</span><span class='line'><span class="s2">  example [options] [action]</span>
+</span><span class='line'><span class="s2">Options</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">Examples</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">Actions</span>
+</span><span class='line'><span class="s2">&quot;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#参数处理</span>
+</span><span class='line'><span class="c">#关于for语句等流程控制语句的详细用法参考man bash的“Compound Commands”部分</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> <span class="o">((</span> <span class="nv">$# </span>&gt; 0 <span class="o">))</span>; <span class="k">do</span>
+</span><span class='line'><span class="k">  </span><span class="nv">token</span><span class="o">=</span><span class="s2">&quot;$1&quot;</span>
+</span><span class='line'>  <span class="nb">shift</span>
+</span><span class='line'><span class="nb">  </span><span class="k">case</span> <span class="s2">&quot;$token&quot;</span> in
+</span><span class='line'>    --help|-h<span class="o">)</span>
+</span><span class='line'>      <span class="nb">echo</span> <span class="s2">&quot;haha,help&quot;</span>
+</span><span class='line'>      ;;
+</span><span class='line'>    --nodebug|-n<span class="o">)</span>
+</span><span class='line'>      <span class="nb">set</span> +x
+</span><span class='line'>      ;;
+</span><span class='line'>    *<span class="o">)</span>
+</span><span class='line'>      usage
+</span><span class='line'>      <span class="nb">exit </span>1
+</span><span class='line'>      ;;
+</span><span class='line'>  <span class="k">esac</span>
+</span><span class='line'><span class="k">done</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">sum</span><span class="o">=</span>0
+</span><span class='line'><span class="c">#((expression))用于算术运算和比较，等同于let &quot;expression&quot;</span>
+</span><span class='line'><span class="c">#如果expression非0，则返回0,否则返回1</span>
+</span><span class='line'><span class="c">#关于运算符详细信息参见：ARITHMETIC EVALUATION</span>
+</span><span class='line'><span class="k">for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span>1;i&lt;<span class="o">=</span>10;i++ <span class="o">))</span>; <span class="k">do</span>
+</span><span class='line'><span class="k">  </span><span class="nv">sum</span><span class="o">=</span><span class="k">$((</span>sum <span class="o">+</span> i<span class="k">))</span>
+</span><span class='line'><span class="k">done</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">echo</span> <span class="nv">$sum</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#[[ ]]和[ ]功能类似，但功能更强大，支持字符串的比较 </span>
+</span><span class='line'><span class="nv">SPECIAL_DAY</span><span class="o">=</span><span class="s2">&quot;2012-07-07&quot;</span>
+</span><span class='line'><span class="nv">ADD2YEARS</span><span class="o">=</span><span class="sb">`</span>date -d <span class="s2">&quot;$SPECIAL_DAY 2 years&quot;</span> +%F<span class="sb">`</span>
+</span><span class='line'><span class="nv">TODAY</span><span class="o">=</span><span class="sb">`</span>date +%F<span class="sb">`</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[[</span> <span class="nv">$TODAY</span> &lt; <span class="nv">$SPECIAL_DAY</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">echo</span> <span class="s2">&quot;today is before special day&quot;</span>
+</span><span class='line'><span class="c">#&#39;string&#39;会显示所有的字符串，不区分特殊字符，除了&#39;</span>
+</span><span class='line'><span class="k">elif</span> <span class="o">[[</span> <span class="nv">$TODAY</span> &lt; <span class="nv">$ADD2YEARS</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">echo</span> <span class="s1">&#39;$ADD2YEARS is &#39;</span> <span class="nv">$ADD2YEARS</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'><span class="k">  </span><span class="nb">echo</span> <span class="s2">&quot;the last one&quot;</span>
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># 2&gt; /dev/zero 对stderr进行重定向</span>
+</span><span class='line'><span class="c"># &gt; /dev/zero 对输出进行重定向</span>
+</span><span class='line'><span class="c">#详情参见：REDIRECTION</span>
+</span><span class='line'><span class="k">if </span>ls /mytest 2&gt; /dev/zero ; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">echo</span> <span class="s1">&#39;excute correct&#39;</span>
+</span><span class='line'><span class="k">elif </span>ls /home &gt; /dev/zero ; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">echo</span> <span class="s1">&#39;/home exists&#39;</span>
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#详细条件判断参考：CONDITIONAL EXPRESSIONS</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[[</span> -d <span class="s2">&quot;/home/&quot;</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">echo</span> <span class="s2">&quot;home dirctory exits&quot;</span>
+</span><span class='line'>  <span class="k">if</span> <span class="o">[[</span> ! -f <span class="s2">&quot;/home/haha&quot;</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">    </span><span class="nb">echo</span> <span class="s2">&quot;haha: file not exits&quot;</span>
+</span><span class='line'>  <span class="k">fi</span>
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#关于数组，从0开始；普通的变量相当于是只有一个元素的数组，</span>
+</span><span class='line'><span class="c">#数组元素的引用方式为 ${array[2]}；大括号是必须的；$array则相当于是${array[0]}</span>
+</span><span class='line'><span class="c">#详情参见 Arrays</span>
+</span><span class='line'><span class="nv">name</span><span class="o">=</span>
+</span><span class='line'><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span>1;i&lt;5;i++<span class="o">))</span>; <span class="k">do</span>
+</span><span class='line'><span class="k">  </span>name<span class="o">[</span>i<span class="o">]=</span><span class="s2">&quot;a$i&quot;</span>
+</span><span class='line'><span class="k">done</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#输出数组中的所有元素</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">name</span><span class="p">[*]</span><span class="k">}</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">name</span><span class="p">[@]</span><span class="k">}</span>
+</span><span class='line'><span class="c">#输出某一项的长度</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${#</span><span class="nv">name</span><span class="p">[2]</span><span class="k">}</span>
+</span><span class='line'><span class="c">#输出数组元素的个数，相当于第一个元素为空</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${#</span><span class="nv">name</span><span class="p">[*]</span><span class="k">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#关于字符串处理，替换，拓展等</span>
+</span><span class='line'><span class="c">#详细信息参见 EXPANSION Parameter Expansion</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">echo </span>abc<span class="o">{</span>x,y,z<span class="o">}</span>d	<span class="c">#abcxd,abcyd,abczd</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#最后一个数字为step，默认为1或-1，加前导0会保证数字的宽度</span>
+</span><span class='line'><span class="c">#参见 Brace Expansion</span>
+</span><span class='line'><span class="nb">echo</span> <span class="o">{</span>01..10..1<span class="o">}</span>	<span class="c">#01 02 03 ...</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Parameter Expansion</span>
+</span><span class='line'><span class="nv">mytest</span><span class="o">=</span>aabbbbccccddaa
+</span><span class='line'><span class="nv">myabc</span><span class="o">=</span>lalala
+</span><span class='line'>
+</span><span class='line'><span class="c">#如果未定义则用后面的代替</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">mynull</span><span class="k">:-</span><span class="nv">test</span><span class="k">}</span>	<span class="c">#test</span>
+</span><span class='line'><span class="c">#代替的同时也赋值给前面的变量</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">mynull</span><span class="k">:-</span><span class="nv">test</span><span class="k">}</span>	<span class="c">#test 同时 $mynull也为test</span>
+</span><span class='line'><span class="c">#如果定义则用后面的单词代替</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">myabc</span><span class="p">:+hahaha</span><span class="k">}</span>	<span class="c">#hahaha</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#输出子字符串</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">mytest</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">5</span><span class="k">}</span>	<span class="c">#从第0个字符开始输出5个字符，如果最后的长度省略，则输出到字符串末尾</span>
+</span><span class='line'><span class="c">#用负数计数时 - 号必须和：有间隔</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">mytest</span><span class="p">: -1</span><span class="k">}</span>
+</span><span class='line'><span class="c">#字符串长度</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${#</span><span class="nv">mytest</span><span class="k">}</span>
+</span><span class='line'><span class="c">#下面的字符串删除中 # 表示从行首开始删除匹配项，%表示行尾，## %% 表示最大匹配</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">mytest</span><span class="p">#a</span><span class="k">}</span>
+</span><span class='line'><span class="nb">echo</span> <span class="k">${</span><span class="nv">mytest</span><span class="p">##aa</span><span class="k">}</span>
+</span><span class='line'><span class="c">#表示字符串替换 ${para/pattern/string} 把符合模式的字符串替换为string</span>
+</span><span class='line'><span class="c">#其中 pattern 以 / 开头表示完全匹配，#开头表示匹配行首，%表示匹配行尾</span>
+</span><span class='line'><span class="c">#string为空，则把相应的匹配项删除</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#${para^pattern}</span>
+</span><span class='line'><span class="c">#大小写转换 ^ 表示大写， ’，‘ 表示小写，^^ ,, 表示最大匹配</span>
+</span><span class='line'><span class="c">#如果pattern为空，则默认为 ?</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+-->
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[个性化Octopress资源整理]]></title>
     <link href="http://hiberabyss.github.io/blog/20130624/my-octopress-configure/"/>
     <updated>2013-06-24T17:07:00+08:00</updated>
@@ -1015,13 +1348,17 @@ markdown: kramdown
 <h2 id="latex">使用Latex</h2>
 <p>修改支持Latex的方法参见<a href="http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/">这篇文章</a>。</p>
 
-<h2 id="httpwwwyanjiuyanjiucomblog20130402twitterfacebook">总结 有不少内容参考了<a href="http://www.yanjiuyanjiu.com/blog/20130402/">这篇文章</a>。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。</h2>
-<p>##相关博客
-- <a href="http://yanping.me/cn/">雁起平沙的网络日志</a><br />
-- <a href="http://whbzju.github.io/">知行录（github上有源码）</a>
-- <a href="http://mrzhang.me/">MrZhang.me（做的比较玄的一个博客，有源代码）</a></p>
+<h2 id="section-4">总结</h2>
+<p>有不少内容参考了<a href="http://www.yanjiuyanjiu.com/blog/20130402/">这篇文章</a>。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。 </p>
 
-<h2 id="section-4">参考资料</h2>
+<h2 id="section-5">相关博客</h2>
+<ul>
+  <li><a href="http://yanping.me/cn/">雁起平沙的网络日志</a>  </li>
+  <li><a href="http://whbzju.github.io/">知行录（github上有源码）</a></li>
+  <li><a href="http://mrzhang.me/">MrZhang.me（做的比较玄的一个博客，有源代码）</a></li>
+</ul>
+
+<h2 id="section-6">参考资料</h2>
 <ul>
   <li><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a>  </li>
   <li><a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a></li>

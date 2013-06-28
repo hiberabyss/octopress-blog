@@ -98,6 +98,8 @@
 
 <div class="entry-content"><p>这里放置我自己修改的<code>Rakefile</code>配置文件和<code>sass/custom/_styles.scss</code>，显示的代码会和源文件中代码保持一致，主要利用<a href="http://octopress.org/docs/plugins/render-partial/">Render Partial</a>插件实现，该插件以<code>source</code>目录作为工作目录。利用<a href="http://octopress.org/docs/plugins/codeblock/">Codeblock</a>插件可以显示标题，在标题中包括文件扩展名可以自动添加语法高亮。</p>
 
+<!--more-->
+
 <h2 id="section">样式文件</h2>
 <p><code>/sass/custom/</code>下的文件会最后加载，因此会覆盖之前所做的设置。</p>
 
@@ -606,6 +608,8 @@
 <span class="line-number">429</span>
 <span class="line-number">430</span>
 <span class="line-number">431</span>
+<span class="line-number">432</span>
+<span class="line-number">433</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line">	<span class="nb">require</span> <span class="s2">&quot;rubygems&quot;</span>
 </span><span class="line"><span class="nb">require</span> <span class="s2">&quot;bundler/setup&quot;</span>
 </span><span class="line"><span class="nb">require</span> <span class="s2">&quot;stringex&quot;</span>
@@ -713,6 +717,8 @@
 </span><span class="line">  <span class="n">mkdir_p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class="line">  <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">posts_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%d&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">#{</span><span class="n">title</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">new_post_ext</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class="line">  <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span class="line">    <span class="nb">system</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">editor</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="line">    <span class="nb">exit</span>
 </span><span class="line">    <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted!&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> already exists. Do you want to overwrite?&quot;</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="o">]</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;n&#39;</span>
 </span><span class="line">  <span class="k">end</span>
 </span><span class="line">  <span class="nb">puts</span> <span class="s2">&quot;Creating new post: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -1083,7 +1089,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/20130625/markdown-syntax/" title="Previous Post: Markdown和kramdown语法总结">&laquo; Markdown和kramdown语法总结</a>
+        <a class="basic-alignment left" href="/blog/20130625/markdown-syntax/" title="Previous Post: Octopress中Markdown文件语法总结">&laquo; Octopress中Markdown文件语法总结</a>
       
       
         <a class="basic-alignment right" href="/blog/20130626/git-summary/" title="Next Post: git总结">git总结 &raquo;</a>
@@ -1120,12 +1126,20 @@
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/filesystem' style='font-size: 130.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 130.0%'>Git(1)</a>  <a href='/blog/categories/markdown' style='font-size: 130.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(2)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 140.0%'>Linux(2)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130628/bash-summary/">Bash编程的一些总结</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130628/linux-cmd/">Linux常用命令</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130626/git-summary/">Git总结</a>
@@ -1136,15 +1150,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/20130625/markdown-syntax/">Markdown和kramdown语法总结</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130624/my-octopress-configure/">个性化Octopress资源整理</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130624/lustre-configture/">Lustre-2.3的安装与配置</a>
+        <a href="/blog/20130625/markdown-syntax/">Octopress中Markdown文件语法总结</a>
       </li>
     
   </ul>
