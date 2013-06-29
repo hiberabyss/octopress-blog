@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-06-28T22:59:45+08:00</updated>
+  <updated>2013-06-29T23:05:29+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -14,6 +14,66 @@
 
   
   <entry>
+    <title type="html"><![CDATA[佛祖，你真是太坏了]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130629/fuck-fozu/"/>
+    <updated>2013-06-29T22:54:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130629/fuck-fozu</id>
+    <content type="html"><![CDATA[<p>本文转载自[萝卜网][fozu]
+[fozu]:http://luo.bo/41208/</p>
+
+<p>唐僧师徒一行经历九九八十一难，终于见到了如来佛，求取真经。
+如来问：“你们带U盘了么”
+唐僧师徒：“…………”
+如来又问：“移动硬盘呢”
+唐僧师徒：“…………”
+如来继续问：“IPOD也可以”
+悟空挖起耳朵来。
+如来叹了口气：“那你们就原路返回去吧，我用QQ传给你们”
+唐僧：“靠，早知道加你QQ就完了，老子还走那么远干嘛”。
+四人将要走的时候，
+佛祖忽然问道：“你们带PSP了吗？”
+四人回答：“没带”。
+佛祖惊讶：“那多无聊呀，你们怎么过来的？”
+四人相互看看说：“我们一路打怪升级过来的。”
+唐僧回去以后，加了如来QQ，发现很慢。
+如来一个电话：“喂，小唐，你呀铁通56K？”
+小唐：“是，去年才装的。是不是网络太差传不过来？”
+如来说：“那你再来一次吧，带上U盘”。</p>
+
+<p>于是唐僧师徒带上U盘一行再经历九九八十一难终于见到了如来佛。
+<!--more--></p>
+
+<p>[查看全文][fozu]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[搞笑视频收集]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130629/funny-videoes/"/>
+    <updated>2013-06-29T22:23:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130629/funny-videoes</id>
+    <content type="html"><![CDATA[<p>收集一些比较好玩的视频。</p>
+
+<ul>
+  <li><a href="http://luo.bo/41211/">萌爆！韩国俩小姐妹叉腰对骂</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[生活就是一种态度]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130629/my-life/"/>
+    <updated>2013-06-29T01:23:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130629/my-life</id>
+    <content type="html"><![CDATA[<p>刚刚室友让我看了一条何炅发的微博，大致内容是：今天有人问如果是姚明、郭敬明和我三个人躺在地上能否组成一个三角形？关键是我真的有很用心地算了一下。</p>
+
+<p>生活真的就是需要这么一种自嘲的态度，这样自己也能正视自己的短处，不至于让它不断地酝酿，最后成为一处伤疤，别人一戳就痛，不管是有意的还是无意的；我们需要练就一颗强大的心脏，这样才能够变得坚强，从容面对已知的和未知的生活中的困难，以及人生中的低潮。</p>
+
+<p>自嘲是一种很好的沟通交流手段，向别人释放出一种我没那么容易被激怒的信号，给别人留下一种很随和的印象，不知不觉中就拉近了和别人的距离。在交流的过程中，为了缓解气氛，适当地开一些玩笑是很有必要的，但开玩笑的分寸上是很难把握的；特别是对于不是特别熟的人而言，开一两个玩笑也就差不多了，再多就过火了，可能就会引起别人的反感，也会让被开玩笑的人不高心；所以还是拿自己调侃最安全。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[bash编程的一些总结]]></title>
     <link href="http://hiberabyss.github.io/blog/20130628/bash-summary/"/>
     <updated>2013-06-28T11:51:00+08:00</updated>
@@ -21,7 +81,9 @@
     <content type="html"><![CDATA[<p>对shell编程的一些总结，直接使用代码进行示例。</p>
 
 <!--more-->
-<p>一篇会很有用的文章<a href="http://tech.idv2.com/2008/01/09/bash-pitfalls/">Bash的陷阱</a>，抽时间好好看一下。bash的帮助文档很详细，所有的东西都可以从里面找到，要了解该帮助文档的组织结构。</p>
+<p>##相关文档
+- 一篇会很有用的文章<a href="http://tech.idv2.com/2008/01/09/bash-pitfalls/">Bash的陷阱</a>，抽时间好好看一下。bash的帮助文档很详细，所有的东西都可以从里面找到，要了解该帮助文档的组织结构。
+- <a href="http://kodango.com/simple-bash-programming-skills-2">简洁的Bash编程技巧续篇</a></p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>bash.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
