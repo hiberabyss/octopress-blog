@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 惊悚 | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/惊悚/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-01T20:58:27+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[惊悚系列]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130629/frightened/"/>
+    <updated>2013-06-29T23:33:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130629/frightened</id>
+    <content type="html"><![CDATA[<p>收集的一些惊悚故事。</p>
+
+<ul>
+  <li><a href="http://luo.bo/41225/">日本惊悚系列：记忆摄像机</a></li>
+  <li><a href="http://luo.bo/41128/">日本惊悚系列：不要开门</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>
