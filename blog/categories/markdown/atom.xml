@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Markdown | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/markdown/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-01T21:44:52+08:00</updated>
+  <updated>2013-07-01T22:04:13+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -25,7 +25,7 @@
 <p>Markdown的完整语法可以参考图灵社区的<a href="http://www.ituring.com.cn/article/504">中文文档</a>；查看该文档<a href="https://github.com/othree/markdown-syntax-zhtw/edit/master/syntax.md">源代码</a>。</p>
 
 <h2 id="section">首页只显示部分博客内容</h2>
-<p><code>&lt;!--more--&gt;</code>会使得在博客首页只显示这个标记之前的内容。提示继续阅读的文字信息则可以在<code>_config.yml</code>文件中<code>excerpt_link: </code>字段进行修改。</p>
+<p><code>&lt;!--more--&gt;</code>会使得在博客首页只显示这个标记之前的内容，这个标签后面要空出一行。提示继续阅读的文字信息则可以在<code>_config.yml</code>文件中<code>excerpt_link: </code>字段进行修改。</p>
 
 <h2 id="section-1">可以用如下方式添加同一文档内的链接</h2>
 <p>链接到<a href="#first">Markdown语法</a>部分</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bash | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-01T21:44:52+08:00</updated>
+  <updated>2013-07-01T22:04:13+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -21,9 +21,12 @@
     <content type="html"><![CDATA[<p>对shell编程的一些总结，直接使用代码进行示例。</p>
 
 <!--more-->
-<p>##相关文档
-- 一篇会很有用的文章<a href="http://tech.idv2.com/2008/01/09/bash-pitfalls/">Bash的陷阱</a>，抽时间好好看一下。bash的帮助文档很详细，所有的东西都可以从里面找到，要了解该帮助文档的组织结构。
-- <a href="http://kodango.com/simple-bash-programming-skills-2">简洁的Bash编程技巧续篇</a></p>
+
+<h2 id="section">相关文档</h2>
+<ul>
+  <li>一篇会很有用的文章<a href="http://tech.idv2.com/2008/01/09/bash-pitfalls/">Bash的陷阱</a>，抽时间好好看一下。bash的帮助文档很详细，所有的东西都可以从里面找到，要了解该帮助文档的组织结构。</li>
+  <li><a href="http://kodango.com/simple-bash-programming-skills-2">简洁的Bash编程技巧续篇</a></li>
+</ul>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>bash.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
