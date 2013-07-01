@@ -72,6 +72,8 @@ module Jekyll
 
     def get_category_url(category)
       dir = @config['category_dir'] || 'categories'
+      #File.join @config['root'], dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
+      #hiberabyss: remover downcase
       File.join @config['root'], dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
     end
   end

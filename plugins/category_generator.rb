@@ -110,7 +110,7 @@ module Jekyll
         self.categories.keys.each do |category|
           #self.write_category_index(File.join(dir, category.to_url), category)
 	  #hiberabyss: remove to_url
-          self.write_category_index(File.join(dir, category), category)
+          self.write_category_index(File.join(dir, category.downcase), category)
         end
 
       # Throw an exception if the layout couldn't be found.
@@ -177,7 +177,7 @@ ERR
       dir = @context.registers[:site].config['category_dir']
       #"<a class='category' href='/#{dir}/#{category.to_url}/'>#{category}</a>"
       #hiberabyss: remover to_url
-      "<a class='category' href='/#{dir}/#{category}/'>#{category}</a>"
+      "<a class='category' href='/#{dir}/#{category.downcase}/'>#{category}</a>"
     end
 
     # Outputs the post.date as formatted html, with hooks for CSS styling.

@@ -51,6 +51,24 @@ kramdown的详细语法资料[kramdown Syntax](http://kramdown.rubyforge.org/syn
 ##使用Latex
 修改支持Latex的方法参见[这篇文章](http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/)。
 
+##关于中文分类标签
+把`category_generator.rb`文件中的如下两行代码
+
+{% codeblock category_generator.rb %}
+self.write_category_index(File.join(dir, category.to_url), category)
+  ...
+"<a class='category' href='/#{dir}/#{category.to_url}/'>#{category}</a>"
+{% endcodeblock %}
+
+换为如下的代码（把`to_url`换为`downcase`，也即分类不区分大小写；`to_url`会把中文换为汉语拼音）
+
+{% codeblock category_generator.rb %}
+self.write_category_index(File.join(dir, category.downcase), category)
+  ...
+"<a class='category' href='/#{dir}/#{category.downcase}/'>#{category}</a>"
+{% endcodeblock %}
+
+
 
 ##总结
 有不少内容参考了[这篇文章](http://www.yanjiuyanjiu.com/blog/20130402/)。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。 
