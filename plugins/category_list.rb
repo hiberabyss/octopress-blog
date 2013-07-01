@@ -1,4 +1,7 @@
 # encoding: utf-8
+
+require 'stringex'
+
 module Jekyll
 
   class Site

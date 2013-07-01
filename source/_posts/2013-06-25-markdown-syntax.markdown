@@ -23,9 +23,13 @@ Markdown的完整语法可以参考图灵社区的[中文文档](http://www.itur
 ##插入代码
 可以利用下面的代码插入相对应于`source`目录的代码文件。
 
-<!--
-
+{% raw %}
+```
 {% codeblock bash.sh lang:bash %} 
 	 {% render_partial sample-language/shell/bash.sh %}
 {% endcodeblock %}
--->
+```
+{% endraw %}
+
+[参考](http://stackoverflow.com/questions/15786144/how-to-escape-in-markdown-on-octopress)
+
