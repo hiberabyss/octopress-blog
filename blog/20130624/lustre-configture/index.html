@@ -268,6 +268,8 @@
 <span class="line-number">8</span>
 <span class="line-number">9</span>
 <span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#单个测试文件大小</span>
 </span><span class="line"><span class="nv">FILE_SIZE</span><span class="o">=</span><span class="s2">&quot;16g&quot;</span>
 </span><span class="line"><span class="c">#进行读写的进程的数量</span>
@@ -276,6 +278,8 @@
 </span><span class="line"><span class="nv">TOTAL_FILESIZE</span><span class="o">=</span><span class="k">$((</span>FILE_SIZE*THREAD_NUM<span class="k">))</span>
 </span><span class="line"><span class="c">#-i 0: 代表write/rewrite</span>
 </span><span class="line"><span class="c">#-i 1: 代表read/reread</span>
+</span><span class="line"><span class="c">#-i 2: 表示random-write/random-read</span>
+</span><span class="line"><span class="c">#-o: 表示在写后要立即进行同步，去除该参数后可有效提高写速度</span>
 </span><span class="line"><span class="c">#-+n: 不进行重复测试，即不会进行rewrite和reread</span>
 </span><span class="line">/path/to/iozone -e -c -s <span class="nv">$TOTAL_FILESIZE</span> -r <span class="nv">$RECSIZE</span> -+m <span class="nv">$NODELIST</span> -+k -i 0 -i 1 -t  <span class="nv">$THREAD_NUM</span> -o -w -+n&gt;&gt; <span class="nv">$OUTPUTFILE</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -442,7 +446,7 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
   <h1>友情链接</h1>
   <ul id="friendslink">
     <li>
-      <a href="http://yanping.me/cn/">雁起平沙的网络日志</a>
+      <a target="_blank" href="http://yanping.me/cn/">雁起平沙的网络日志</a>
     </li>
   </ul>
 </section>
