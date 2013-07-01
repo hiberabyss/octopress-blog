@@ -12,7 +12,7 @@ categories: Markdown Octopress
 Markdown的完整语法可以参考图灵社区的[中文文档](http://www.ituring.com.cn/article/504)；查看该文档[源代码](https://github.com/othree/markdown-syntax-zhtw/edit/master/syntax.md)。
 
 ##首页只显示部分博客内容
-`<!--more-->`会使得在博客首页只显示这个标记之前的内容。提示继续阅读的文字信息则可以在`_config.yml`文件中`excerpt_link: `字段进行修改。
+`<!--more-->`会使得在博客首页只显示这个标记之前的内容，这个标签后面要空出一行。提示继续阅读的文字信息则可以在`_config.yml`文件中`excerpt_link: `字段进行修改。
 
 ##可以用如下方式添加同一文档内的链接
 链接到[Markdown语法](#first)部分
