@@ -149,6 +149,8 @@ THREAD_NUM="16"
 TOTAL_FILESIZE=$((FILE_SIZE*THREAD_NUM))
 #-i 0: 代表write/rewrite
 #-i 1: 代表read/reread
+#-i 2: 表示random-write/random-read
+#-o: 表示在写后要立即进行同步，去除该参数后可有效提高写速度
 #-+n: 不进行重复测试，即不会进行rewrite和reread
 /path/to/iozone -e -c -s $TOTAL_FILESIZE -r $RECSIZE -+m $NODELIST -+k -i 0 -i 1 -t  $THREAD_NUM -o -w -+n>> $OUTPUTFILE
 ```
