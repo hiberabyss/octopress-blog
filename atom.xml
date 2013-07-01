@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-01T20:59:58+08:00</updated>
+  <updated>2013-07-01T21:29:55+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -1645,17 +1645,40 @@
 <h2 id="latex">使用Latex</h2>
 <p>修改支持Latex的方法参见<a href="http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/">这篇文章</a>。</p>
 
-<h2 id="section-4">总结</h2>
+<h2 id="section-4">关于中文分类标签</h2>
+<p>把<code>category_generator.rb</code>文件中的如下两行代码</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>category_generator.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="rb"><span class="line"><span class="nb">self</span><span class="o">.</span><span class="n">write_category_index</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">category</span><span class="o">.</span><span class="n">to_url</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span>
+</span><span class="line">  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class="line"><span class="s2">&quot;&lt;a class=&#39;category&#39; href=&#39;/</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">category</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">/&#39;&gt;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&lt;/a&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>换为如下的代码（把<code>to_url</code>换为<code>downcase</code>，也即分类不区分大小写；<code>to_url</code>会把中文换为汉语拼音）</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>category_generator.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="rb"><span class="line"><span class="nb">self</span><span class="o">.</span><span class="n">write_category_index</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">category</span><span class="o">.</span><span class="n">downcase</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span>
+</span><span class="line">  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class="line"><span class="s2">&quot;&lt;a class=&#39;category&#39; href=&#39;/</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">category</span><span class="o">.</span><span class="n">downcase</span><span class="si">}</span><span class="s2">/&#39;&gt;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&lt;/a&gt;&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-5">总结</h2>
 <p>有不少内容参考了<a href="http://www.yanjiuyanjiu.com/blog/20130402/">这篇文章</a>。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。 </p>
 
-<h2 id="section-5">相关博客</h2>
+<h2 id="section-6">相关博客</h2>
 <ul>
   <li><a href="http://yanping.me/cn/">雁起平沙的网络日志</a>  </li>
   <li><a href="http://whbzju.github.io/">知行录（github上有源码）</a></li>
   <li><a href="http://mrzhang.me/">MrZhang.me（做的比较玄的一个博客，有源代码）</a></li>
 </ul>
 
-<h2 id="section-6">参考资料</h2>
+<h2 id="section-7">参考资料</h2>
 <ul>
   <li><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a>  </li>
   <li><a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a></li>
