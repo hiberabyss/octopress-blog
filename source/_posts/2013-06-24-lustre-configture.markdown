@@ -66,10 +66,25 @@ lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm
 ```
 
 ##Lustre的配置
-配置Lustre所使用的借口名称以及相对应的别名；创建*/etc/modprobe.d/lnet.conf*文件，写入以下内容：
+
+配置Lustre所使用的接口名称以及相对应的别名；
+
+- Lustre默认使用的是第一个网络接口，默认的名称为`tcp0`；
+- 如果需要使用光纤接口，则创建*/etc/modprobe.d/lnet.conf*文件，写入以下内容：
 
 ```bash
 options lnet networks="o2ib0(ib0)"
+```
+
+使用光纤接口前需要先确定光纤接口是否配置正常：使用`ifconfig`和`ibv_devinfo`查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。
+
+如果光纤接口出现故障，则首先通过`lspci`确定相关硬件是否存在；接着确定`openibd`服务是否开启，如果未开启则利用以下命令启动并设置开机启动
+
+```bash
+service openibd start
+chkconfig openibd on
+#查看开机启动是否设置成功
+chkconfig --list openibd
 ```
 
 载入相关模块：
