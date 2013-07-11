@@ -1,0 +1,75 @@
+---
+layout: post
+title: "CentOS常用配置"
+date: 2013-07-11 19:47
+comments: true
+categories: Linux CentOS
+---
+本文记录对CentOS的一些配置方法。
+
+<!--more-->
+
+##修改主机名
+
+```
+#临时设置主机名为the-name，重启后失效；需要重新登陆
+hostname the-name
+```
+
+编辑文件`/etc/sysconfig/network`，对如下字段做修改：
+
+```
+HOSTNAME=the-name
+```
+
+##网络接口配置
+修改`/etc/sysconfig/network-scripts/ifconfig-eth0`文件进行相应的网络设置，其中`eth0`可以用相应的网络接口名称代替，如果相应的文件不存在，则可以创建一个新的文件：
+
+```bash
+DEVICE="eth0"
+BOOTPROTO="static"
+HWADDR="网卡物理地址"
+#如果BOOTPROTO设置为dhcp，则不需要下面的设置
+IPADDR=ip地址
+NETMASK=子网掩码
+GATEWAY=网关
+```
+
+修改文件`/etc/resolv.conf`可以配置DNS服务器：
+
+```
+#国内公用DNS服务器
+nameserver 114.114.114.114
+#Google公用dns服务器
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+
+修改文件`/etc/udev/rules.d/70-persistent-net.rules`可以根据相应的`mac`地址修改网络接口的显示名称。
+
+##本地源
+将iso文件挂载到目录`/mnt/iso`，并写入到文件`/etc/fstab`中
+
+```
+mount -o loop /root/iso/CentOS-6.3-x86_64-bin-DVD1.iso /mnt/dvd1/
+```
+
+新建文件`/etc/yum.repos.d/locale.repo`文件，写入一下内容：
+
+```
+[locale]
+name=CentOS-6.3 - DVD1
+baseurl=file:///mnt/dvd1/ file:///mnt/dvd2/
+enable=1
+gpcheck=1
+gpgkey=file:///mnt/dvd1/RPM-GPG-KEY-CentOS-6
+```
+
+把目录`/etc/yum.repos.d/`下`CentOS-Base.repo`文件和`CentOS-Debuginfo.repo`文件更改后缀名，否则会报错。
+
+或者利用如下方式使用`yum`
+
+```
+#只使用本地源
+yum --disablerepo=/* --enablerepo=locale install
+```
