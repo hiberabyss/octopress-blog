@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FileSystem | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/filesystem/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-01T22:04:13+08:00</updated>
+  <updated>2013-07-11T17:24:56+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -85,10 +85,27 @@ lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm
 </code></p>
 
 <h2 id="lustre-1">Lustre的配置</h2>
-<p>配置Lustre所使用的借口名称以及相对应的别名；创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</p>
+
+<p>配置Lustre所使用的接口名称以及相对应的别名；</p>
+
+<ul>
+  <li>Lustre默认使用的是第一个网络接口，默认的名称为<code>tcp0</code>；</li>
+  <li>如果需要使用光纤接口，则创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</li>
+</ul>
 
 <p><code>bash
 options lnet networks="o2ib0(ib0)"
+</code></p>
+
+<p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。</p>
+
+<p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
+
+<p><code>bash
+service openibd start
+chkconfig openibd on
+#查看开机启动是否设置成功
+chkconfig --list openibd
 </code></p>
 
 <p>载入相关模块：</p>

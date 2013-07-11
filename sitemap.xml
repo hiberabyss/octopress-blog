@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://hiberabyss.github.io/blog/20130624/lustre-configture/</loc>
-        <lastmod>2013-07-01T21:41:49+08:00</lastmod>
+        <lastmod>2013-07-11T17:24:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/20130624/my-octopress-configure/</loc>
@@ -42,15 +42,23 @@
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/20130629/frightened/</loc>
-        <lastmod>2013-06-29T23:39:16+08:00</lastmod>
+        <lastmod>2013-07-09T21:49:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/20130629/2013-catch-phrase/</loc>
-        <lastmod>2013-06-29T23:44:45+08:00</lastmod>
+        <lastmod>2013-07-09T22:21:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/20130701/about-female/</loc>
         <lastmod>2013-07-01T21:35:43+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hiberabyss.github.io/blog/20130704/directory-execute-bit/</loc>
+        <lastmod>2013-07-04T11:04:20+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hiberabyss.github.io/blog/20130708/luo-bo/</loc>
+        <lastmod>2013-07-09T22:19:25+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/about/</loc>
@@ -58,11 +66,11 @@
     </url>
     <url>
         <loc>http://hiberabyss.github.io/</loc>
-        <lastmod>2013-07-01T21:54:22+08:00</lastmod>
+        <lastmod>2013-07-11T17:24:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/archives/</loc>
-        <lastmod>2013-07-01T21:54:22+08:00</lastmod>
+        <lastmod>2013-07-11T17:24:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/robots.txt</loc>

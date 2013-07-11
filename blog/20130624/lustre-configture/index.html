@@ -177,10 +177,30 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="lustre-1">Lustre的配置</h2>
-<p>配置Lustre所使用的借口名称以及相对应的别名；创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</p>
+
+<p>配置Lustre所使用的接口名称以及相对应的别名；</p>
+
+<ul>
+  <li>Lustre默认使用的是第一个网络接口，默认的名称为<code>tcp0</code>；</li>
+  <li>如果需要使用光纤接口，则创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</li>
+</ul>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">options lnet <span class="nv">networks</span><span class="o">=</span><span class="s2">&quot;o2ib0(ib0)&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。</p>
+
+<p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">service openibd start
+</span><span class="line">chkconfig openibd on
+</span><span class="line"><span class="c">#查看开机启动是否设置成功</span>
+</span><span class="line">chkconfig --list openibd
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>载入相关模块：</p>
@@ -408,12 +428,20 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/linux' style='font-size: 140.0%'>Linux(2)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130708/luo-bo/">萝卜网</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130704/directory-execute-bit/">Linux目录的可执行权限</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130701/about-female/">一些不成熟的思考</a>
@@ -425,14 +453,6 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
     
       <li class="post">
         <a href="/blog/20130629/frightened/">惊悚系列</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130629/fuck-fozu/">佛祖，你真是太坏了</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130629/funny-videoes/">搞笑视频收集</a>
       </li>
     
   </ul>
