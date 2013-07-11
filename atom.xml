@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-11T17:24:56+08:00</updated>
+  <updated>2013-07-11T22:54:36+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,194 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[tmux的安装]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130711/tmux/"/>
+    <updated>2013-07-11T22:15:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130711/tmux</id>
+    <content type="html"><![CDATA[<p>本文介绍如何编译安装<code>tmux</code>：</p>
+
+<!--more-->
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"># download latest libevent2 and tmux sources, and extract them somewhere
+</span><span class="line">#
+</span><span class="line"># at the time of writing:
+</span><span class="line"># https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+</span><span class="line">#可以下载最新的tmux源代码
+</span><span class="line"># http://downloads.sourceforge.net/tmux/tmux-1.7.tar.gz
+</span><span class="line">#
+</span><span class="line">
+</span><span class="line"># install deps
+</span><span class="line">yum install gcc kernel-devel make ncurses-devel
+</span><span class="line"> 
+</span><span class="line"># cd to libevent2 src
+</span><span class="line">./configure --prefix=/usr/local
+</span><span class="line">make &amp;&amp; make install
+</span><span class="line"> 
+</span><span class="line"># cd to tmux src
+</span><span class="line">LDFLAGS="-L/usr/local/lib -Wl,-rpath=/usr/local/lib" ./configure --prefix=/usr/local
+</span><span class="line">make &amp;&amp; make install
+</span><span class="line"> 
+</span><span class="line"># you're good to go...</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section">编译安装时提示缺少某库</h2>
+<p>如果安装相应的包后还是提示缺少，则</p>
+
+<ul>
+  <li>在ubuntu下面则尝试安装加上dev的包：<code>libevent</code>-&gt;<code>libevent-dev</code></li>
+  <li>在CentOS下面则尝试安装加上devel的包：<code>libevent</code>-&gt;<code>livevent-devel</code></li>
+</ul>
+
+<h2 id="section-1">参考资料</h2>
+<p><a href="https://gist.github.com/sturadnidge/4185338">github</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VirtualBox配置总结]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130711/virtualbox/"/>
+    <updated>2013-07-11T20:12:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130711/virtualbox</id>
+    <content type="html"><![CDATA[<p>本文记录使用VirtualBox时的一些配置和使用技巧。</p>
+
+<!--more-->
+
+<h2 id="nat">利用<code>nat</code>方式连接外网</h2>
+<p>一般把虚拟机的网卡设置为<code>nat</code>连接方式时，会自动分配相应的ip地址和网关地址；如果没有正确地分配到ip地址，则设置成如下的网络配置即可：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">...
+</span><span class="line">IPADDR=10.0.3.15
+</span><span class="line">NETMASK=255.255.255.0
+</span><span class="line">GATEWAY=10.0.3.2
+</span><span class="line">...
+</span><span class="line">
+</span><span class="line">#dns服务器
+</span><span class="line">nameserver=10.0.3.2</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section">连接外网的同时和主机进行通信</h2>
+<p>给虚拟机新添加一个网卡，一个使用<code>nat</code>方式，一个使用<code>Bridged Adapter</code>方式，把后一个网卡的ip地址配置和主机在同一个网段，然后配置和主机相同的网关地址即可。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CentOS常用配置]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130711/centos/"/>
+    <updated>2013-07-11T19:47:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130711/centos</id>
+    <content type="html"><![CDATA[<p>本文记录对CentOS的一些配置方法。</p>
+
+<!--more-->
+
+<h2 id="section">修改主机名</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#临时设置主机名为the-name，重启后失效；需要重新登陆
+</span><span class="line">hostname the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>编辑文件<code>/etc/sysconfig/network</code>，对如下字段做修改：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">HOSTNAME=the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-1">网络接口配置</h2>
+<p>修改<code>/etc/sysconfig/network-scripts/ifconfig-eth0</code>文件进行相应的网络设置，其中<code>eth0</code>可以用相应的网络接口名称代替，如果相应的文件不存在，则可以创建一个新的文件：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
+</span><span class="line"><span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">&quot;static&quot;</span>
+</span><span class="line"><span class="nv">HWADDR</span><span class="o">=</span><span class="s2">&quot;网卡物理地址&quot;</span>
+</span><span class="line"><span class="c">#如果BOOTPROTO设置为dhcp，则不需要下面的设置</span>
+</span><span class="line"><span class="nv">IPADDR</span><span class="o">=</span>ip地址
+</span><span class="line"><span class="nv">NETMASK</span><span class="o">=</span>子网掩码
+</span><span class="line"><span class="nv">GATEWAY</span><span class="o">=</span>网关
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>修改文件<code>/etc/resolv.conf</code>可以配置DNS服务器：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#国内公用DNS服务器</span>
+</span><span class="line">nameserver 114.114.114.114
+</span><span class="line"><span class="c">#Google公用dns服务器</span>
+</span><span class="line">nameserver 8.8.8.8
+</span><span class="line">nameserver 8.8.4.4
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>修改文件<code>/etc/udev/rules.d/70-persistent-net.rules</code>可以根据相应的<code>mac</code>地址修改网络接口的显示名称。</p>
+
+<h2 id="section-2">本地源</h2>
+<p>将iso文件挂载到目录<code>/mnt/iso</code>，并写入到文件<code>/etc/fstab</code>中</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">mount -o loop /root/iso/CentOS-6.3-x86_64-bin-DVD1.iso /mnt/dvd1/
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>新建文件<code>/etc/yum.repos.d/locale.repo</code>文件，写入一下内容：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="o">[</span>locale<span class="o">]</span>
+</span><span class="line"><span class="nv">name</span><span class="o">=</span>CentOS-6.3 - DVD1
+</span><span class="line"><span class="nv">baseurl</span><span class="o">=</span>file:///mnt/dvd1/ file:///mnt/dvd2/
+</span><span class="line"><span class="nb">enable</span><span class="o">=</span>1
+</span><span class="line"><span class="nv">gpcheck</span><span class="o">=</span>1
+</span><span class="line"><span class="nv">gpgkey</span><span class="o">=</span>file:///mnt/dvd1/RPM-GPG-KEY-CentOS-6
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>把目录<code>/etc/yum.repos.d/</code>下<code>CentOS-Base.repo</code>文件和<code>CentOS-Debuginfo.repo</code>文件更改后缀名，否则会报错。</p>
+
+<p>或者利用如下方式使用<code>yum</code></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#只使用本地源</span>
+</span><span class="line">yum --disablerepo<span class="o">=</span>/* --enablerepo<span class="o">=</span>locale install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[萝卜网]]></title>

@@ -5,12 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>一些不成熟的思考 - 蛰渊-成长的轨迹</title>
+  <title>CentOS常用配置 - 蛰渊-成长的轨迹</title>
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="本文记录对CentOS的一些配置方法。 修改主机名 1
+2
+#临时设置主机名为the-name，重启后失效；需要重新登陆
+hostname the-name 编辑文件/etc/sysconfig/network，对如下字段做修改： 1
+HOSTNAME=the-name 网络接口配置
+修改/etc &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130701/about-female">
+  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130711/centos">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="蛰渊-成长的轨迹" type="application/atom+xml">
@@ -70,7 +74,7 @@
   
   <header>
     
-      <h1 class="entry-title">一些不成熟的思考</h1>
+      <h1 class="entry-title">CentOS常用配置</h1>
     
     
       <p class="meta">
@@ -86,7 +90,7 @@
   
 
 
-<time datetime="2013-07-01T13:34:00+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
+<time datetime="2013-07-11T19:47:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2013</time>
         
 
 	 
@@ -97,7 +101,89 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>本文记录对CentOS的一些配置方法。</p>
+
+<!--more-->
+
+<h2 id="section">修改主机名</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#临时设置主机名为the-name，重启后失效；需要重新登陆
+</span><span class="line">hostname the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>编辑文件<code>/etc/sysconfig/network</code>，对如下字段做修改：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">HOSTNAME=the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-1">网络接口配置</h2>
+<p>修改<code>/etc/sysconfig/network-scripts/ifconfig-eth0</code>文件进行相应的网络设置，其中<code>eth0</code>可以用相应的网络接口名称代替，如果相应的文件不存在，则可以创建一个新的文件：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
+</span><span class="line"><span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">&quot;static&quot;</span>
+</span><span class="line"><span class="nv">HWADDR</span><span class="o">=</span><span class="s2">&quot;网卡物理地址&quot;</span>
+</span><span class="line"><span class="c">#如果BOOTPROTO设置为dhcp，则不需要下面的设置</span>
+</span><span class="line"><span class="nv">IPADDR</span><span class="o">=</span>ip地址
+</span><span class="line"><span class="nv">NETMASK</span><span class="o">=</span>子网掩码
+</span><span class="line"><span class="nv">GATEWAY</span><span class="o">=</span>网关
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>修改文件<code>/etc/resolv.conf</code>可以配置DNS服务器：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#国内公用DNS服务器</span>
+</span><span class="line">nameserver 114.114.114.114
+</span><span class="line"><span class="c">#Google公用dns服务器</span>
+</span><span class="line">nameserver 8.8.8.8
+</span><span class="line">nameserver 8.8.4.4
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>修改文件<code>/etc/udev/rules.d/70-persistent-net.rules</code>可以根据相应的<code>mac</code>地址修改网络接口的显示名称。</p>
+
+<h2 id="section-2">本地源</h2>
+<p>将iso文件挂载到目录<code>/mnt/iso</code>，并写入到文件<code>/etc/fstab</code>中</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">mount -o loop /root/iso/CentOS-6.3-x86_64-bin-DVD1.iso /mnt/dvd1/
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>新建文件<code>/etc/yum.repos.d/locale.repo</code>文件，写入一下内容：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="o">[</span>locale<span class="o">]</span>
+</span><span class="line"><span class="nv">name</span><span class="o">=</span>CentOS-6.3 - DVD1
+</span><span class="line"><span class="nv">baseurl</span><span class="o">=</span>file:///mnt/dvd1/ file:///mnt/dvd2/
+</span><span class="line"><span class="nb">enable</span><span class="o">=</span>1
+</span><span class="line"><span class="nv">gpcheck</span><span class="o">=</span>1
+</span><span class="line"><span class="nv">gpgkey</span><span class="o">=</span>file:///mnt/dvd1/RPM-GPG-KEY-CentOS-6
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>把目录<code>/etc/yum.repos.d/</code>下<code>CentOS-Base.repo</code>文件和<code>CentOS-Debuginfo.repo</code>文件更改后缀名，否则会报错。</p>
+
+<p>或者利用如下方式使用<code>yum</code></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#只使用本地源</span>
+</span><span class="line">yum --disablerepo<span class="o">=</span>/* --enablerepo<span class="o">=</span>locale install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 </div>
 
 
@@ -120,12 +206,12 @@
   
 
 
-<time datetime="2013-07-01T13:34:00+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2013</time>
+<time datetime="2013-07-11T19:47:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/female/'>Female</a>
+    <a class='category' href='/blog/categories/centos/'>CentOS</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
   
 </span>
 
@@ -142,10 +228,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/20130629/2013-catch-phrase/" title="Previous Post: 2013流行段子">&laquo; 2013流行段子</a>
+        <a class="basic-alignment left" href="/blog/20130708/luo-bo/" title="Previous Post: 萝卜网">&laquo; 萝卜网</a>
       
       
-        <a class="basic-alignment right" href="/blog/20130704/directory-execute-bit/" title="Next Post: Linux目录的可执行权限">Linux目录的可执行权限 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/20130711/virtualbox/" title="Next Post: VirtualBox配置总结">VirtualBox配置总结 &raquo;</a>
       
     </p>
   </footer>
