@@ -78,6 +78,12 @@ options lnet networks="o2ib0(ib0)"
 
 使用光纤接口前需要先确定光纤接口是否配置正常：使用`ifconfig`和`ibv_devinfo`查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。
 
+如果使用的是`mlnx`驱动，则在加载`lustre`模块时会报错，需要先卸载如下的几个包
+
+```bash
+rpm -qa | grep 'kernel' | grep 'mlnx'
+```
+
 如果光纤接口出现故障，则首先通过`lspci`确定相关硬件是否存在；接着确定`openibd`服务是否开启，如果未开启则利用以下命令启动并设置开机启动
 
 ```bash

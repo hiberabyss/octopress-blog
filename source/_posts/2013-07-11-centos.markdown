@@ -9,6 +9,26 @@ categories: Linux CentOS
 
 <!--more-->
 
+##包管理
+```
+#安装包
+rpm -ivh your.rpm --force --nodeps
+#升级包
+rpm -Uvh your.rpm --force --nodeps
+#卸载包
+rpm -e --nodeps uninstall.rpm
+#查询已安装的包
+rpm -qa pattern
+```
+
+##服务管理
+```
+#设置服务开机启动
+chkconfig the-service on
+#查询某个服务开启状态
+chkconfig --list the-service
+```
+
 ##修改主机名
 
 ```

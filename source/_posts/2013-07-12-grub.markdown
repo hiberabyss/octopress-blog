@@ -1,0 +1,57 @@
+---
+layout: post
+title: "利用Grub2安装启动操作系统"
+date: 2013-07-12 09:28
+comments: true
+categories: Grub
+---
+本文介绍如何利用`Grub2`进行操作系统的启动、安装等。
+
+<!--more-->
+
+##安装Ubuntu
+
+```
+menuentry 'Install Ubuntu' --hotkey='i' {
+    set isofile="/iso/ubuntu.iso"
+    search --set=root -f $isofile --hint (hd0,1)
+    loopback loop $isofile
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+    initrd (loop)/casper/initrd.lz
+}
+```
+
+##利用iso安装CentOS操作系统
+复制iso文件根目录下`images`文件夹到U盘根目录，复制`isolinux`文件夹到U盘根目录（并非必须，可以利用grub2挂载iso文件后进行使用，但直接复制到u盘可以不用指定iso文件名，要方便很多），复制iso文件到U盘根目录。
+
+iso文件和`images`文件夹需要在同一分区，需要把该分区格式化为`fat32`或`ext#`格式，因为CentOS6.3安装时不支持ntfs格式分区。
+
+安装时只需加载内核和初始文件系统即可，在安装界面选择`images`文件夹所在的分区。如果在安装过程中提示`未找到images#`之类的错误，则可能是没有找到iso文件，按<A-F2>切换到`anaconda`字符界面，手动加载iso文件所在的分区到`/mnt/isodir`目录。
+
+具体的启动配置文件见示例`grub.cfg`文件。
+
+PS：抽时间研究一下`anaconda`，以及如何利用`http`、`ftp`网络安装的方式安装操作系统。
+
+##利用memdisk启动WinPE
+
+```
+menuentry 'Win7PE' {
+  MEMDISK_LOC="/boot/memdisk"
+  search --set=root -f $MEMDISK_LOC --hint (hd0,1)
+  echo 'Loading Memdisk...'
+  insmod memdisk
+  linux16 /boot/memdisk iso raw
+  echo 'Loading PE...'
+  initrd16 /iso/WIN7PE.ISO
+}
+```
+
+##启动Linux
+需要先利用`linux`指定内核文件，该文件一般以`vmlinuz`开头，注意加上`root=/dev/sda3`之类的内核参数，指定根分区；然后利用`initrd`指定初始文件系统，该文件一般以`initrd`开头。
+
+##示例grub.cfg配置文件（grub2）
+
+{% codeblock mydata/grub/grub.cfg %}
+	{% render_partial ../Rakefile raw%}
+{% endcodeblock %}
+
