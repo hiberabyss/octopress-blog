@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Lustre | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/lustre/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-11T22:54:36+08:00</updated>
+  <updated>2013-07-12T10:07:56+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -98,6 +98,12 @@ options lnet networks="o2ib0(ib0)"
 </code></p>
 
 <p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。</p>
+
+<p>如果使用的是<code>mlnx</code>驱动，则在加载<code>lustre</code>模块时会报错，需要先卸载如下的几个包</p>
+
+<p><code>bash
+rpm -qa | grep 'kernel' | grep 'mlnx'
+</code></p>
 
 <p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
 

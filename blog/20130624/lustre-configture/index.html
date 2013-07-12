@@ -191,6 +191,12 @@
 
 <p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。</p>
 
+<p>如果使用的是<code>mlnx</code>驱动，则在加载<code>lustre</code>模块时会报错，需要先卸载如下的几个包</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -qa | grep <span class="s1">&#39;kernel&#39;</span> | grep <span class="s1">&#39;mlnx&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -428,12 +434,16 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/centos' style='font-size: 120.0%'>Centos(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 160.0%'>Linux(3)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/tmux' style='font-size: 120.0%'>Tmux(1)</a>  <a href='/blog/categories/virtualbox' style='font-size: 120.0%'>Virtualbox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/centos' style='font-size: 120.0%'>Centos(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/grub' style='font-size: 120.0%'>Grub(1)</a>  <a href='/blog/categories/linux' style='font-size: 160.0%'>Linux(3)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/tmux' style='font-size: 120.0%'>Tmux(1)</a>  <a href='/blog/categories/virtualbox' style='font-size: 120.0%'>Virtualbox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130712/grub/">利用Grub2安装启动操作系统</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130711/tmux/">Tmux的安装</a>
@@ -449,10 +459,6 @@ R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就�
     
       <li class="post">
         <a href="/blog/20130708/luo-bo/">萝卜网</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130704/directory-execute-bit/">Linux目录的可执行权限</a>
       </li>
     
   </ul>

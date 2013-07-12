@@ -9,12 +9,21 @@
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="本文记录对CentOS的一些配置方法。 修改主机名 1
+  <meta name="description" content="本文记录对CentOS的一些配置方法。 包管理
+1
 2
-#临时设置主机名为the-name，重启后失效；需要重新登陆
-hostname the-name 编辑文件/etc/sysconfig/network，对如下字段做修改： 1
-HOSTNAME=the-name 网络接口配置
-修改/etc &hellip;">
+3
+4
+5
+6
+7
+8
+#安装包
+rpm -ivh your.rpm --force --nodeps
+#升级包
+rpm -Uvh your.rpm --force --nodeps
+#卸载包
+rpm -e --nodeps &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,7 +114,35 @@ HOSTNAME=the-name 网络接口配置
 
 <!--more-->
 
-<h2 id="section">修改主机名</h2>
+<h2 id="section">包管理</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#安装包
+</span><span class="line">rpm -ivh your.rpm --force --nodeps
+</span><span class="line">#升级包
+</span><span class="line">rpm -Uvh your.rpm --force --nodeps
+</span><span class="line">#卸载包
+</span><span class="line">rpm -e --nodeps uninstall.rpm
+</span><span class="line">#查询已安装的包
+</span><span class="line">rpm -qa pattern</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-1">服务管理</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">#设置服务开机启动
+</span><span class="line">chkconfig the-service on
+</span><span class="line">#查询某个服务开启状态
+</span><span class="line">chkconfig --list the-service</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">修改主机名</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -117,7 +154,7 @@ HOSTNAME=the-name 网络接口配置
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">HOSTNAME=the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-1">网络接口配置</h2>
+<h2 id="section-3">网络接口配置</h2>
 <p>修改<code>/etc/sysconfig/network-scripts/ifconfig-eth0</code>文件进行相应的网络设置，其中<code>eth0</code>可以用相应的网络接口名称代替，如果相应的文件不存在，则可以创建一个新的文件：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -152,7 +189,7 @@ HOSTNAME=the-name 网络接口配置
 
 <p>修改文件<code>/etc/udev/rules.d/70-persistent-net.rules</code>可以根据相应的<code>mac</code>地址修改网络接口的显示名称。</p>
 
-<h2 id="section-2">本地源</h2>
+<h2 id="section-4">本地源</h2>
 <p>将iso文件挂载到目录<code>/mnt/iso</code>，并写入到文件<code>/etc/fstab</code>中</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -265,12 +302,16 @@ HOSTNAME=the-name 网络接口配置
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/centos' style='font-size: 120.0%'>Centos(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/linux' style='font-size: 160.0%'>Linux(3)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/tmux' style='font-size: 120.0%'>Tmux(1)</a>  <a href='/blog/categories/virtualbox' style='font-size: 120.0%'>Virtualbox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/centos' style='font-size: 120.0%'>Centos(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/grub' style='font-size: 120.0%'>Grub(1)</a>  <a href='/blog/categories/linux' style='font-size: 160.0%'>Linux(3)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/tmux' style='font-size: 120.0%'>Tmux(1)</a>  <a href='/blog/categories/virtualbox' style='font-size: 120.0%'>Virtualbox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130712/grub/">利用Grub2安装启动操作系统</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130711/tmux/">Tmux的安装</a>
@@ -286,10 +327,6 @@ HOSTNAME=the-name 网络接口配置
     
       <li class="post">
         <a href="/blog/20130708/luo-bo/">萝卜网</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130704/directory-execute-bit/">Linux目录的可执行权限</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CentOS | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/centos/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-11T22:54:36+08:00</updated>
+  <updated>2013-07-12T10:07:56+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -22,7 +22,27 @@
 
 <!--more-->
 
-<h2 id="section">修改主机名</h2>
+<h2 id="section">包管理</h2>
+<p><code>
+#安装包
+rpm -ivh your.rpm --force --nodeps
+#升级包
+rpm -Uvh your.rpm --force --nodeps
+#卸载包
+rpm -e --nodeps uninstall.rpm
+#查询已安装的包
+rpm -qa pattern
+</code></p>
+
+<h2 id="section-1">服务管理</h2>
+<p><code>
+#设置服务开机启动
+chkconfig the-service on
+#查询某个服务开启状态
+chkconfig --list the-service
+</code></p>
+
+<h2 id="section-2">修改主机名</h2>
 
 <p><code>
 #临时设置主机名为the-name，重启后失效；需要重新登陆
@@ -35,7 +55,7 @@ hostname the-name
 HOSTNAME=the-name
 </code></p>
 
-<h2 id="section-1">网络接口配置</h2>
+<h2 id="section-3">网络接口配置</h2>
 <p>修改<code>/etc/sysconfig/network-scripts/ifconfig-eth0</code>文件进行相应的网络设置，其中<code>eth0</code>可以用相应的网络接口名称代替，如果相应的文件不存在，则可以创建一个新的文件：</p>
 
 <p><code>bash
@@ -60,7 +80,7 @@ nameserver 8.8.4.4
 
 <p>修改文件<code>/etc/udev/rules.d/70-persistent-net.rules</code>可以根据相应的<code>mac</code>地址修改网络接口的显示名称。</p>
 
-<h2 id="section-2">本地源</h2>
+<h2 id="section-4">本地源</h2>
 <p>将iso文件挂载到目录<code>/mnt/iso</code>，并写入到文件<code>/etc/fstab</code>中</p>
 
 <p><code>
