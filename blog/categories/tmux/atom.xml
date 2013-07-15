@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tmux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/tmux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-12T10:07:56+08:00</updated>
+  <updated>2013-07-15T15:48:01+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -14,13 +14,15 @@
 
   
   <entry>
-    <title type="html"><![CDATA[tmux的安装]]></title>
+    <title type="html"><![CDATA[tmux的安装与使用]]></title>
     <link href="http://hiberabyss.github.io/blog/20130711/tmux/"/>
     <updated>2013-07-11T22:15:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130711/tmux</id>
-    <content type="html"><![CDATA[<p>本文介绍如何编译安装<code>tmux</code>：</p>
+    <content type="html"><![CDATA[<p>本文介绍如何编译安装<code>tmux</code>，以及一些使用方法。</p>
 
 <!--more-->
+
+<h2 id="tmux">tmux的安装</h2>
 
 <p>```
 # download latest libevent2 and tmux sources, and extract them somewhere
@@ -53,7 +55,18 @@ make &amp;&amp; make install</p>
   <li>在CentOS下面则尝试安装加上devel的包：<code>libevent</code>-&gt;<code>livevent-devel</code></li>
 </ul>
 
-<h2 id="section-1">参考资料</h2>
+<h2 id="section-1">使用方法</h2>
+<p>直接运行<code>tmux</code>开启一个新的<code>session</code>；<code>tmux attach</code>自动连接到上一个会话。</p>
+
+<p>在<code>tmux</code>中，快捷键操作都是通过按<code>Ctrl+b</code>再加按键来实现的，一下列举一些常用的快捷键（已按下<code>Ctrl+b</code>）：</p>
+
+<ul>
+  <li>?	#列举所绑定的按键</li>
+  <li>d	#进行detach操作，让tmux后台运行</li>
+  <li>x	#退出当前panel</li>
+</ul>
+
+<h2 id="section-2">参考资料</h2>
 <p><a href="https://gist.github.com/sturadnidge/4185338">github</a></p>
 ]]></content>
   </entry>

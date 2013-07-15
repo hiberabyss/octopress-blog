@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vim | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-15T15:48:01+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[VIM一些使用技巧]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130712/vim/"/>
+    <updated>2013-07-12T15:51:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130712/vim</id>
+    <content type="html"><![CDATA[<p>本文记录一些VIM的使用技巧。</p>
+
+<!--more-->
+
+<h2 id="section">和数字处理有关</h2>
+<p>快捷键<code>Ctrl-a</code>可以将光标处数字加1，<code>Ctrl-x</code>可以将数字减1，支持多种进制。</p>
+
+<p>快速生成1到100的数字：</p>
+
+<ol>
+  <li>插入1，<code>yy</code>复制，<code>99p</code>粘帖99行。</li>
+  <li>输入命令<code>:let i=1 | g/1/s//\="my0".i."test"/g | let i+=1 </code>；<code>g/pattern/s</code>为替换功能；<code>\=</code>把后面的表达式计算出来；字符串需要用“”括起来，并用.连接。</li>
+</ol>
+
+<ul>
+  <li>参考<a href="http://www.vimer.cn/2009/11/vimgvim%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%9f%a5%e6%89%be%e6%9b%bf%e6%8d%a24-%e7%94%9f%e6%88%90%e8%bf%9e%e7%bb%ad%e6%95%b0%e5%ad%97%e6%88%96%e8%a1%8c%e5%8f%b7.html">vim(gvim)正则表达式查找替换(4)-生成连续数字或行号</a></li>
+  <li>参考<a href="http://www.newsmth.net/nForum/#!article/VIM/14355">水木社区</a></li>
+</ul>
+
+<h2 id="section-1">程序代码</h2>
+<ul>
+  <li>]p	#自动调整粘帖代码的缩进。 </li>
+  <li>gd	#跳转到当前光标下函数或者变量的定义处。</li>
+  <li>K	#查看当前光标下的手册页（在gvim下无效）。</li>
+</ul>
+
+<p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
+
+<h2 id="section-2">参考资料</h2>
+<ul>
+  <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

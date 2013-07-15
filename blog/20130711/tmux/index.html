@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>tmux的安装 - 蛰渊-成长的轨迹</title>
+  <title>tmux的安装与使用 - 蛰渊-成长的轨迹</title>
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="本文介绍如何编译安装tmux： 1
+  <meta name="description" content="本文介绍如何编译安装tmux，以及一些使用方法。 tmux的安装 1
 2
 3
 4
@@ -29,9 +29,7 @@
 18
 19
 20
-# download latest libevent2 and tmux sources, and extract them somewhere
-#
-# at &hellip;">
+# download latest libevent2 and tmux sources, and extract them &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,7 +89,7 @@
   
   <header>
     
-      <h1 class="entry-title">Tmux的安装</h1>
+      <h1 class="entry-title">Tmux的安装与使用</h1>
     
     
       <p class="meta">
@@ -118,9 +116,11 @@
   </header>
 
 
-<div class="entry-content"><p>本文介绍如何编译安装<code>tmux</code>：</p>
+<div class="entry-content"><p>本文介绍如何编译安装<code>tmux</code>，以及一些使用方法。</p>
 
 <!--more-->
+
+<h2 id="tmux">tmux的安装</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -171,7 +171,18 @@
   <li>在CentOS下面则尝试安装加上devel的包：<code>libevent</code>-&gt;<code>livevent-devel</code></li>
 </ul>
 
-<h2 id="section-1">参考资料</h2>
+<h2 id="section-1">使用方法</h2>
+<p>直接运行<code>tmux</code>开启一个新的<code>session</code>；<code>tmux attach</code>自动连接到上一个会话。</p>
+
+<p>在<code>tmux</code>中，快捷键操作都是通过按<code>Ctrl+b</code>再加按键来实现的，一下列举一些常用的快捷键（已按下<code>Ctrl+b</code>）：</p>
+
+<ul>
+  <li>?	#列举所绑定的按键</li>
+  <li>d	#进行detach操作，让tmux后台运行</li>
+  <li>x	#退出当前panel</li>
+</ul>
+
+<h2 id="section-2">参考资料</h2>
 <p><a href="https://gist.github.com/sturadnidge/4185338">github</a></p>
 </div>
 
@@ -254,7 +265,7 @@
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/centos' style='font-size: 120.0%'>Centos(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/grub' style='font-size: 120.0%'>Grub(1)</a>  <a href='/blog/categories/linux' style='font-size: 160.0%'>Linux(3)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/tmux' style='font-size: 120.0%'>Tmux(1)</a>  <a href='/blog/categories/virtualbox' style='font-size: 120.0%'>Virtualbox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 120.0%'>Bash(1)</a>  <a href='/blog/categories/beauty' style='font-size: 120.0%'>Beauty(1)</a>  <a href='/blog/categories/centos' style='font-size: 120.0%'>Centos(1)</a>  <a href='/blog/categories/english' style='font-size: 120.0%'>English(1)</a>  <a href='/blog/categories/female' style='font-size: 120.0%'>Female(1)</a>  <a href='/blog/categories/filesystem' style='font-size: 120.0%'>Filesystem(1)</a>  <a href='/blog/categories/fun' style='font-size: 120.0%'>Fun(1)</a>  <a href='/blog/categories/funny' style='font-size: 160.0%'>Funny(3)</a>  <a href='/blog/categories/git' style='font-size: 120.0%'>Git(1)</a>  <a href='/blog/categories/grub' style='font-size: 120.0%'>Grub(1)</a>  <a href='/blog/categories/linux' style='font-size: 160.0%'>Linux(3)</a>  <a href='/blog/categories/linux' style='font-size: 120.0%'>Linux(1)</a>  <a href='/blog/categories/lustre' style='font-size: 120.0%'>Lustre(1)</a>  <a href='/blog/categories/markdown' style='font-size: 120.0%'>Markdown(1)</a>  <a href='/blog/categories/octopress' style='font-size: 160.0%'>Octopress(3)</a>  <a href='/blog/categories/tmux' style='font-size: 120.0%'>Tmux(1)</a>  <a href='/blog/categories/vim' style='font-size: 120.0%'>Vim(1)</a>  <a href='/blog/categories/virtualbox' style='font-size: 120.0%'>Virtualbox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 120.0%'>惊悚(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(1)</a> </span>
 </section>
 
 <section>
@@ -262,23 +273,23 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/20130713/beauty/">Beauty</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130713/8-logic/">各种神逻辑的扒</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130712/vim/">VIM一些使用技巧</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130712/english-words/">英语词汇</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/20130712/grub/">利用Grub2安装启动操作系统</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130711/tmux/">Tmux的安装</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130711/virtualbox/">VirtualBox配置总结</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130711/centos/">CentOS常用配置</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130708/luo-bo/">萝卜网</a>
       </li>
     
   </ul>

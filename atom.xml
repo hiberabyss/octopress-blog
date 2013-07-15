@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-12T10:07:56+08:00</updated>
+  <updated>2013-07-15T15:48:01+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,192 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Beauty]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130713/beauty/"/>
+    <updated>2013-07-13T23:09:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130713/beauty</id>
+    <content type="html"><![CDATA[<ul>
+  <li><a href="http://luo.bo/41841/">壮哉，美哉，茹河瀑布</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[各种神逻辑的扒]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130713/8-logic/"/>
+    <updated>2013-07-13T20:06:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130713/8-logic</id>
+    <content type="html"><![CDATA[<p>收录各种神逻辑的推理。</p>
+
+<!--more-->
+
+<ul>
+  <li><a href="http://luo.bo/41855/">长文神文！新白娘子传奇掩藏惊天大秘密：白素贞的身世之谜</a></li>
+  <li><a href="http://luo.bo/34596/">如果把西游记倒过来看</a></li>
+  <li><a href="http://luo.bo/6116/">想知道西游记为什么是名著，却还有简单的漏洞吗？其实是看不穿</a></li>
+  <li><a href="http://luo.bo/4122/">西游记未解之谜</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VIM一些使用技巧]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130712/vim/"/>
+    <updated>2013-07-12T15:51:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130712/vim</id>
+    <content type="html"><![CDATA[<p>本文记录一些VIM的使用技巧。</p>
+
+<!--more-->
+
+<h2 id="section">和数字处理有关</h2>
+<p>快捷键<code>Ctrl-a</code>可以将光标处数字加1，<code>Ctrl-x</code>可以将数字减1，支持多种进制。</p>
+
+<p>快速生成1到100的数字：</p>
+
+<ol>
+  <li>插入1，<code>yy</code>复制，<code>99p</code>粘帖99行。</li>
+  <li>输入命令<code>:let i=1 | g/1/s//\="my0".i."test"/g | let i+=1 </code>；<code>g/pattern/s</code>为替换功能；<code>\=</code>把后面的表达式计算出来；字符串需要用“”括起来，并用.连接。</li>
+</ol>
+
+<ul>
+  <li>参考<a href="http://www.vimer.cn/2009/11/vimgvim%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%9f%a5%e6%89%be%e6%9b%bf%e6%8d%a24-%e7%94%9f%e6%88%90%e8%bf%9e%e7%bb%ad%e6%95%b0%e5%ad%97%e6%88%96%e8%a1%8c%e5%8f%b7.html">vim(gvim)正则表达式查找替换(4)-生成连续数字或行号</a></li>
+  <li>参考<a href="http://www.newsmth.net/nForum/#!article/VIM/14355">水木社区</a></li>
+</ul>
+
+<h2 id="section-1">程序代码</h2>
+<ul>
+  <li>]p	#自动调整粘帖代码的缩进。 </li>
+  <li>gd	#跳转到当前光标下函数或者变量的定义处。</li>
+  <li>K	#查看当前光标下的手册页（在gvim下无效）。</li>
+</ul>
+
+<p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
+
+<h2 id="section-2">参考资料</h2>
+<ul>
+  <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[英语词汇]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130712/english-words/"/>
+    <updated>2013-07-12T11:08:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130712/english-words</id>
+    <content type="html"><![CDATA[<p>列举平时所遇到的英语词汇。</p>
+
+<!--more-->
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>单词</strong></td>
+      <td><strong>中文解释</strong></td>
+      <td><strong>词频</strong></td>
+    </tr>
+    <tr>
+      <td>bastard</td>
+      <td>私生子</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>gist</td>
+      <td>主旨；要点</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>bizarre</td>
+      <td>奇异的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>candid</td>
+      <td>公正的；坦白的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>salient</td>
+      <td>显著的；突出的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>solitary</td>
+      <td>隐私；孤独的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>bet</td>
+      <td>打赌</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>esteem</td>
+      <td>尊敬</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>paranoia</td>
+      <td>偏执狂</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>dogmatic</td>
+      <td>武断地</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>demean</td>
+      <td>贬低…的身份</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>legitimate</td>
+      <td>合法的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>eeeeeeeeeeeeeeeeeeee</td>
+      <td>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</td>
+      <td>eee</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<!--
+|---
+| Default aligned | Left aligned | Center aligned | Right aligned
+|-|:-|:-:|-:
+| First body part | Second cell | Third cell | fourth cell
+| Second line |foo | **strong** | baz
+| Third line |quux | baz | bar
+|---
+| Second body
+| 2 line
+|===
+| Footer row
+
+|-----------------+------------+-----------------+----------------|
+| Default aligned |Left aligned| Center aligned  | Right aligned  |
+|-----------------|:-----------|:---------------:|---------------:|
+| First body part |Second cell | Third cell      | fourth cell    |
+| Second line     |foo         | **strong**      | baz            |
+| Third line      |quux        | baz             | bar            |
+|-----------------+------------+-----------------+----------------|
+| Second body     |            |                 |                |
+| 2 line          |            |                 |                |
+|=================+============+=================+================|
+| Footer row      |            |                 |                |
+|-----------------+------------+-----------------+----------------|
+-->
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[利用Grub2安装启动操作系统]]></title>
@@ -44,13 +230,14 @@
 
 <p>iso文件和<code>images</code>文件夹需要在同一分区，需要把该分区格式化为<code>fat32</code>或<code>ext#</code>格式，因为CentOS6.3安装时不支持ntfs格式分区。</p>
 
-<p>安装时只需加载内核和初始文件系统即可，在安装界面选择<code>images</code>文件夹所在的分区。如果在安装过程中提示<code>未找到images#</code>之类的错误，则可能是没有找到iso文件，按<a-f2>切换到`anaconda`字符界面，手动加载iso文件所在的分区到`/mnt/isodir`目录。</a-f2></p>
+<p>安装时只需加载内核和初始文件系统即可，在安装界面选择<code>images</code>文件夹所在的分区。如果在安装过程中提示<code>未找到images#</code>之类的错误，则可能是没有找到iso文件，按<code>alt-F2</code>切换到<code>anaconda</code>字符界面，手动加载iso文件所在的分区到<code>/mnt/isodir</code>目录。</p>
 
 <p>具体的启动配置文件见示例<code>grub.cfg</code>文件。</p>
 
-<p>PS：抽时间研究一下<code>anaconda</code>，以及如何利用<code>http</code>、<code>ftp</code>网络安装的方式安装操作系统。</p>
+<p>PS：抽时间研究一下<code>anaconda</code>，以及如何利用<code>http</code>、<code>ftp</code>网络安装的方式安装操作系统。利用<code>kickstart</code>可以进行全自动安装。</p>
 
 <h2 id="memdiskwinpe">利用memdisk启动WinPE</h2>
+<p>需要先下载<code>memdisk</code>文件。具体用法参见<a href="http://www.syslinux.org/wiki/index.php/MEMDISK">syslinux</a>。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -137,825 +324,81 @@
 <span class="line-number">58</span>
 <span class="line-number">59</span>
 <span class="line-number">60</span>
-<span class="line-number">61</span>
-<span class="line-number">62</span>
-<span class="line-number">63</span>
-<span class="line-number">64</span>
-<span class="line-number">65</span>
-<span class="line-number">66</span>
-<span class="line-number">67</span>
-<span class="line-number">68</span>
-<span class="line-number">69</span>
-<span class="line-number">70</span>
-<span class="line-number">71</span>
-<span class="line-number">72</span>
-<span class="line-number">73</span>
-<span class="line-number">74</span>
-<span class="line-number">75</span>
-<span class="line-number">76</span>
-<span class="line-number">77</span>
-<span class="line-number">78</span>
-<span class="line-number">79</span>
-<span class="line-number">80</span>
-<span class="line-number">81</span>
-<span class="line-number">82</span>
-<span class="line-number">83</span>
-<span class="line-number">84</span>
-<span class="line-number">85</span>
-<span class="line-number">86</span>
-<span class="line-number">87</span>
-<span class="line-number">88</span>
-<span class="line-number">89</span>
-<span class="line-number">90</span>
-<span class="line-number">91</span>
-<span class="line-number">92</span>
-<span class="line-number">93</span>
-<span class="line-number">94</span>
-<span class="line-number">95</span>
-<span class="line-number">96</span>
-<span class="line-number">97</span>
-<span class="line-number">98</span>
-<span class="line-number">99</span>
-<span class="line-number">100</span>
-<span class="line-number">101</span>
-<span class="line-number">102</span>
-<span class="line-number">103</span>
-<span class="line-number">104</span>
-<span class="line-number">105</span>
-<span class="line-number">106</span>
-<span class="line-number">107</span>
-<span class="line-number">108</span>
-<span class="line-number">109</span>
-<span class="line-number">110</span>
-<span class="line-number">111</span>
-<span class="line-number">112</span>
-<span class="line-number">113</span>
-<span class="line-number">114</span>
-<span class="line-number">115</span>
-<span class="line-number">116</span>
-<span class="line-number">117</span>
-<span class="line-number">118</span>
-<span class="line-number">119</span>
-<span class="line-number">120</span>
-<span class="line-number">121</span>
-<span class="line-number">122</span>
-<span class="line-number">123</span>
-<span class="line-number">124</span>
-<span class="line-number">125</span>
-<span class="line-number">126</span>
-<span class="line-number">127</span>
-<span class="line-number">128</span>
-<span class="line-number">129</span>
-<span class="line-number">130</span>
-<span class="line-number">131</span>
-<span class="line-number">132</span>
-<span class="line-number">133</span>
-<span class="line-number">134</span>
-<span class="line-number">135</span>
-<span class="line-number">136</span>
-<span class="line-number">137</span>
-<span class="line-number">138</span>
-<span class="line-number">139</span>
-<span class="line-number">140</span>
-<span class="line-number">141</span>
-<span class="line-number">142</span>
-<span class="line-number">143</span>
-<span class="line-number">144</span>
-<span class="line-number">145</span>
-<span class="line-number">146</span>
-<span class="line-number">147</span>
-<span class="line-number">148</span>
-<span class="line-number">149</span>
-<span class="line-number">150</span>
-<span class="line-number">151</span>
-<span class="line-number">152</span>
-<span class="line-number">153</span>
-<span class="line-number">154</span>
-<span class="line-number">155</span>
-<span class="line-number">156</span>
-<span class="line-number">157</span>
-<span class="line-number">158</span>
-<span class="line-number">159</span>
-<span class="line-number">160</span>
-<span class="line-number">161</span>
-<span class="line-number">162</span>
-<span class="line-number">163</span>
-<span class="line-number">164</span>
-<span class="line-number">165</span>
-<span class="line-number">166</span>
-<span class="line-number">167</span>
-<span class="line-number">168</span>
-<span class="line-number">169</span>
-<span class="line-number">170</span>
-<span class="line-number">171</span>
-<span class="line-number">172</span>
-<span class="line-number">173</span>
-<span class="line-number">174</span>
-<span class="line-number">175</span>
-<span class="line-number">176</span>
-<span class="line-number">177</span>
-<span class="line-number">178</span>
-<span class="line-number">179</span>
-<span class="line-number">180</span>
-<span class="line-number">181</span>
-<span class="line-number">182</span>
-<span class="line-number">183</span>
-<span class="line-number">184</span>
-<span class="line-number">185</span>
-<span class="line-number">186</span>
-<span class="line-number">187</span>
-<span class="line-number">188</span>
-<span class="line-number">189</span>
-<span class="line-number">190</span>
-<span class="line-number">191</span>
-<span class="line-number">192</span>
-<span class="line-number">193</span>
-<span class="line-number">194</span>
-<span class="line-number">195</span>
-<span class="line-number">196</span>
-<span class="line-number">197</span>
-<span class="line-number">198</span>
-<span class="line-number">199</span>
-<span class="line-number">200</span>
-<span class="line-number">201</span>
-<span class="line-number">202</span>
-<span class="line-number">203</span>
-<span class="line-number">204</span>
-<span class="line-number">205</span>
-<span class="line-number">206</span>
-<span class="line-number">207</span>
-<span class="line-number">208</span>
-<span class="line-number">209</span>
-<span class="line-number">210</span>
-<span class="line-number">211</span>
-<span class="line-number">212</span>
-<span class="line-number">213</span>
-<span class="line-number">214</span>
-<span class="line-number">215</span>
-<span class="line-number">216</span>
-<span class="line-number">217</span>
-<span class="line-number">218</span>
-<span class="line-number">219</span>
-<span class="line-number">220</span>
-<span class="line-number">221</span>
-<span class="line-number">222</span>
-<span class="line-number">223</span>
-<span class="line-number">224</span>
-<span class="line-number">225</span>
-<span class="line-number">226</span>
-<span class="line-number">227</span>
-<span class="line-number">228</span>
-<span class="line-number">229</span>
-<span class="line-number">230</span>
-<span class="line-number">231</span>
-<span class="line-number">232</span>
-<span class="line-number">233</span>
-<span class="line-number">234</span>
-<span class="line-number">235</span>
-<span class="line-number">236</span>
-<span class="line-number">237</span>
-<span class="line-number">238</span>
-<span class="line-number">239</span>
-<span class="line-number">240</span>
-<span class="line-number">241</span>
-<span class="line-number">242</span>
-<span class="line-number">243</span>
-<span class="line-number">244</span>
-<span class="line-number">245</span>
-<span class="line-number">246</span>
-<span class="line-number">247</span>
-<span class="line-number">248</span>
-<span class="line-number">249</span>
-<span class="line-number">250</span>
-<span class="line-number">251</span>
-<span class="line-number">252</span>
-<span class="line-number">253</span>
-<span class="line-number">254</span>
-<span class="line-number">255</span>
-<span class="line-number">256</span>
-<span class="line-number">257</span>
-<span class="line-number">258</span>
-<span class="line-number">259</span>
-<span class="line-number">260</span>
-<span class="line-number">261</span>
-<span class="line-number">262</span>
-<span class="line-number">263</span>
-<span class="line-number">264</span>
-<span class="line-number">265</span>
-<span class="line-number">266</span>
-<span class="line-number">267</span>
-<span class="line-number">268</span>
-<span class="line-number">269</span>
-<span class="line-number">270</span>
-<span class="line-number">271</span>
-<span class="line-number">272</span>
-<span class="line-number">273</span>
-<span class="line-number">274</span>
-<span class="line-number">275</span>
-<span class="line-number">276</span>
-<span class="line-number">277</span>
-<span class="line-number">278</span>
-<span class="line-number">279</span>
-<span class="line-number">280</span>
-<span class="line-number">281</span>
-<span class="line-number">282</span>
-<span class="line-number">283</span>
-<span class="line-number">284</span>
-<span class="line-number">285</span>
-<span class="line-number">286</span>
-<span class="line-number">287</span>
-<span class="line-number">288</span>
-<span class="line-number">289</span>
-<span class="line-number">290</span>
-<span class="line-number">291</span>
-<span class="line-number">292</span>
-<span class="line-number">293</span>
-<span class="line-number">294</span>
-<span class="line-number">295</span>
-<span class="line-number">296</span>
-<span class="line-number">297</span>
-<span class="line-number">298</span>
-<span class="line-number">299</span>
-<span class="line-number">300</span>
-<span class="line-number">301</span>
-<span class="line-number">302</span>
-<span class="line-number">303</span>
-<span class="line-number">304</span>
-<span class="line-number">305</span>
-<span class="line-number">306</span>
-<span class="line-number">307</span>
-<span class="line-number">308</span>
-<span class="line-number">309</span>
-<span class="line-number">310</span>
-<span class="line-number">311</span>
-<span class="line-number">312</span>
-<span class="line-number">313</span>
-<span class="line-number">314</span>
-<span class="line-number">315</span>
-<span class="line-number">316</span>
-<span class="line-number">317</span>
-<span class="line-number">318</span>
-<span class="line-number">319</span>
-<span class="line-number">320</span>
-<span class="line-number">321</span>
-<span class="line-number">322</span>
-<span class="line-number">323</span>
-<span class="line-number">324</span>
-<span class="line-number">325</span>
-<span class="line-number">326</span>
-<span class="line-number">327</span>
-<span class="line-number">328</span>
-<span class="line-number">329</span>
-<span class="line-number">330</span>
-<span class="line-number">331</span>
-<span class="line-number">332</span>
-<span class="line-number">333</span>
-<span class="line-number">334</span>
-<span class="line-number">335</span>
-<span class="line-number">336</span>
-<span class="line-number">337</span>
-<span class="line-number">338</span>
-<span class="line-number">339</span>
-<span class="line-number">340</span>
-<span class="line-number">341</span>
-<span class="line-number">342</span>
-<span class="line-number">343</span>
-<span class="line-number">344</span>
-<span class="line-number">345</span>
-<span class="line-number">346</span>
-<span class="line-number">347</span>
-<span class="line-number">348</span>
-<span class="line-number">349</span>
-<span class="line-number">350</span>
-<span class="line-number">351</span>
-<span class="line-number">352</span>
-<span class="line-number">353</span>
-<span class="line-number">354</span>
-<span class="line-number">355</span>
-<span class="line-number">356</span>
-<span class="line-number">357</span>
-<span class="line-number">358</span>
-<span class="line-number">359</span>
-<span class="line-number">360</span>
-<span class="line-number">361</span>
-<span class="line-number">362</span>
-<span class="line-number">363</span>
-<span class="line-number">364</span>
-<span class="line-number">365</span>
-<span class="line-number">366</span>
-<span class="line-number">367</span>
-<span class="line-number">368</span>
-<span class="line-number">369</span>
-<span class="line-number">370</span>
-<span class="line-number">371</span>
-<span class="line-number">372</span>
-<span class="line-number">373</span>
-<span class="line-number">374</span>
-<span class="line-number">375</span>
-<span class="line-number">376</span>
-<span class="line-number">377</span>
-<span class="line-number">378</span>
-<span class="line-number">379</span>
-<span class="line-number">380</span>
-<span class="line-number">381</span>
-<span class="line-number">382</span>
-<span class="line-number">383</span>
-<span class="line-number">384</span>
-<span class="line-number">385</span>
-<span class="line-number">386</span>
-<span class="line-number">387</span>
-<span class="line-number">388</span>
-<span class="line-number">389</span>
-<span class="line-number">390</span>
-<span class="line-number">391</span>
-<span class="line-number">392</span>
-<span class="line-number">393</span>
-<span class="line-number">394</span>
-<span class="line-number">395</span>
-<span class="line-number">396</span>
-<span class="line-number">397</span>
-<span class="line-number">398</span>
-<span class="line-number">399</span>
-<span class="line-number">400</span>
-<span class="line-number">401</span>
-<span class="line-number">402</span>
-<span class="line-number">403</span>
-<span class="line-number">404</span>
-<span class="line-number">405</span>
-<span class="line-number">406</span>
-<span class="line-number">407</span>
-<span class="line-number">408</span>
-<span class="line-number">409</span>
-<span class="line-number">410</span>
-<span class="line-number">411</span>
-<span class="line-number">412</span>
-<span class="line-number">413</span>
-<span class="line-number">414</span>
-<span class="line-number">415</span>
-<span class="line-number">416</span>
-<span class="line-number">417</span>
-<span class="line-number">418</span>
-<span class="line-number">419</span>
-<span class="line-number">420</span>
-<span class="line-number">421</span>
-<span class="line-number">422</span>
-<span class="line-number">423</span>
-<span class="line-number">424</span>
-<span class="line-number">425</span>
-<span class="line-number">426</span>
-<span class="line-number">427</span>
-<span class="line-number">428</span>
-<span class="line-number">429</span>
-<span class="line-number">430</span>
-<span class="line-number">431</span>
-<span class="line-number">432</span>
-<span class="line-number">433</span>
-</pre></td><td class="code"><pre><code class="cfg"><span class="line">	<span class="err">require</span> <span class="err">&quot;rubygems&quot;</span>
-</span><span class="line"><span class="err">require</span> <span class="err">&quot;bundler/setup&quot;</span>
-</span><span class="line"><span class="err">require</span> <span class="err">&quot;stringex&quot;</span>
+</pre></td><td class="code"><pre><code class="cfg"><span class="line">	<span class="na">set default</span><span class="o">=</span><span class="s">0</span>
+</span><span class="line"><span class="na">set font</span><span class="o">=</span><span class="s">/boot/grub/fonts/unicode.pf2</span>
 </span><span class="line">
-</span><span class="line"><span class="c1">## -- Rsync Deploy config -- ##</span>
-</span><span class="line"><span class="c1"># Be sure your public key is listed in your server&#39;s ~/.ssh/authorized_keys file</span>
-</span><span class="line"><span class="na">ssh_user</span>       <span class="o">=</span> <span class="s">&quot;user@domain.com&quot;</span>
-</span><span class="line"><span class="na">ssh_port</span>       <span class="o">=</span> <span class="s">&quot;22&quot;</span>
-</span><span class="line"><span class="na">document_root</span>  <span class="o">=</span> <span class="s">&quot;~/website.com/&quot;</span>
-</span><span class="line"><span class="na">rsync_delete</span>   <span class="o">=</span> <span class="s">false</span>
-</span><span class="line"><span class="na">rsync_args</span>     <span class="o">=</span> <span class="s">&quot;&quot;  # Any extra arguments to pass to rsync</span>
-</span><span class="line"><span class="na">deploy_default</span> <span class="o">=</span> <span class="s">&quot;push&quot;</span>
+</span><span class="line"><span class="err">insmod</span> <span class="err">all_video</span>
 </span><span class="line">
-</span><span class="line"><span class="c1"># This will be configured for you when you run config_deploy</span>
-</span><span class="line"><span class="na">deploy_branch</span>  <span class="o">=</span> <span class="s">&quot;master&quot;</span>
+</span><span class="line"><span class="err">if</span> <span class="err">loadfont</span> <span class="err">$font</span> <span class="c1">; then</span>
+</span><span class="line">    <span class="na">set gfxmode</span><span class="o">=</span><span class="s">auto</span>
+</span><span class="line"><span class="s">    insmod gfxterm</span>
+</span><span class="line"><span class="err">fi</span>
 </span><span class="line">
-</span><span class="line"><span class="c1">## -- Misc Configs -- ##</span>
+</span><span class="line"><span class="err">terminal_output</span> <span class="err">gfxterm</span>
 </span><span class="line">
-</span><span class="line"><span class="na">public_dir</span>      <span class="o">=</span> <span class="s">&quot;public&quot;    # compiled site directory</span>
-</span><span class="line"><span class="na">source_dir</span>      <span class="o">=</span> <span class="s">&quot;source&quot;    # source file directory</span>
-</span><span class="line"><span class="na">blog_index_dir</span>  <span class="o">=</span> <span class="s">&#39;source&#39;    # directory for your blog&#39;s index page (if you put your index in source/blog/index.html, set this to &#39;source/blog&#39;)</span>
-</span><span class="line"><span class="na">deploy_dir</span>      <span class="o">=</span> <span class="s">&quot;_deploy&quot;   # deploy directory (for Github pages deployment)</span>
-</span><span class="line"><span class="na">stash_dir</span>       <span class="o">=</span> <span class="s">&quot;_stash&quot;    # directory to stash posts for speedy generation</span>
-</span><span class="line"><span class="na">posts_dir</span>       <span class="o">=</span> <span class="s">&quot;_posts&quot;    # directory for blog files</span>
-</span><span class="line"><span class="na">themes_dir</span>      <span class="o">=</span> <span class="s">&quot;.themes&quot;   # directory for blog files</span>
-</span><span class="line"><span class="na">new_post_ext</span>    <span class="o">=</span> <span class="s">&quot;markdown&quot;  # default new post file extension when using the new_post task</span>
-</span><span class="line"><span class="na">new_page_ext</span>    <span class="o">=</span> <span class="s">&quot;markdown&quot;  # default new page file extension when using the new_page task</span>
-</span><span class="line"><span class="na">server_port</span>     <span class="o">=</span> <span class="s">&quot;4000&quot;      # port for preview server eg. localhost:4000</span>
-</span><span class="line"><span class="na">deploy_local</span>	<span class="o">=</span> <span class="s">&quot;push_local&quot;	#hiberabyss:</span>
-</span><span class="line"><span class="na">editor</span>		<span class="o">=</span> <span class="s">&quot;gvim&quot;		#hiberabyss: the eidtor after new</span>
-</span><span class="line"><span class="na">source_remote</span>	<span class="o">=</span> <span class="s">&quot;octopress&quot;	#hiberabyss: remote ref</span>
-</span><span class="line"><span class="na">source_branch</span>	<span class="o">=</span> <span class="s">&quot;source&quot;	#hiberabyss: the source branch</span>
+</span><span class="line"><span class="c1">#### Theme	###</span>
+</span><span class="line"><span class="na">set menu_color_normal</span><span class="o">=</span><span class="s">white/black</span>
+</span><span class="line"><span class="na">set menu_color_highlight</span><span class="o">=</span><span class="s">black/light-gray</span>
+</span><span class="line"><span class="err">if</span> <span class="err">background_color</span> <span class="err">44,0,30</span><span class="c1">; then</span>
+</span><span class="line">  <span class="err">clear</span>
+</span><span class="line"><span class="err">fi</span>
+</span><span class="line"><span class="c1">### Theme End	###</span>
 </span><span class="line">
+</span><span class="line"><span class="c1">#set timeout=60</span>
+</span><span class="line"><span class="na">menuentry &#39;Install Ubuntu&#39; --hotkey</span><span class="o">=</span><span class="s">&#39;i&#39; {</span>
+</span><span class="line"><span class="s">    set isofile=&quot;/iso/ubuntu.iso&quot;</span>
+</span><span class="line"><span class="s">    search --set=root -f $isofile --hint (hd0,1)</span>
+</span><span class="line"><span class="s">    loopback loop $isofile</span>
+</span><span class="line"><span class="s">    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject</span>
+</span><span class="line"><span class="s">    initrd (loop)/casper/initrd.lz</span>
+</span><span class="line"><span class="err">}</span>
 </span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Initial</span> <span class="err">setup</span> <span class="err">for</span> <span class="err">Octopress:</span> <span class="err">copies</span> <span class="err">the</span> <span class="err">default</span> <span class="err">theme</span> <span class="err">into</span> <span class="err">the</span> <span class="err">path</span> <span class="err">of</span> <span class="err">Jekyll&#39;s</span> <span class="err">generator.</span> <span class="err">Rake</span> <span class="err">install</span> <span class="err">defaults</span> <span class="err">to</span> <span class="err">rake</span> <span class="err">install[classic]</span> <span class="err">to</span> <span class="err">install</span> <span class="err">a</span> <span class="err">different</span> <span class="err">theme</span> <span class="err">run</span> <span class="err">rake</span> <span class="err">install[some_theme_name]&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:install,</span> <span class="err">:theme</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">File.directory?(source_dir)</span> <span class="err">||</span> <span class="err">File.directory?(&quot;sass&quot;)</span>
-</span><span class="line">    <span class="na">abort(&quot;rake aborted!&quot;) if ask(&quot;A theme is already installed, proceeding will overwrite existing files. Are you sure?&quot;, [&#39;y&#39;, &#39;n&#39;])</span> <span class="o">=</span><span class="s">= &#39;n&#39;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  # copy theme into working Jekyll directories</span>
-</span><span class="line"><span class="s">  theme = args.theme || &#39;classic&#39;</span>
-</span><span class="line"><span class="s">  puts &quot;## Copying &quot;+theme+&quot; theme into ./#{source_dir} and ./sass&quot;</span>
-</span><span class="line"><span class="s">  mkdir_p source_dir</span>
-</span><span class="line"><span class="s">  cp_r &quot;#{themes_dir}/#{theme}/source/.&quot;, source_dir</span>
-</span><span class="line"><span class="s">  mkdir_p &quot;sass&quot;</span>
-</span><span class="line"><span class="s">  cp_r &quot;#{themes_dir}/#{theme}/sass/.&quot;, &quot;sass&quot;</span>
-</span><span class="line"><span class="s">  mkdir_p &quot;#{source_dir}/#{posts_dir}&quot;</span>
-</span><span class="line"><span class="s">  mkdir_p public_dir</span>
-</span><span class="line"><span class="err">end</span>
+</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;Install</span> <span class="err">CentOS6.3&#39;{</span>
+</span><span class="line"><span class="c1">#  set isofile=&quot;/CentOS-6.3-x86_64-bin-DVD1.iso&quot;</span>
+</span><span class="line"><span class="c1">#  search --set=root -f $isofile --hint (hd0,2)</span>
+</span><span class="line"><span class="c1">#  loopback loop $isofile</span>
+</span><span class="line">  <span class="na">set flagfile</span><span class="o">=</span><span class="s">&quot;/liu/hong/bo/linux.flag&quot;</span>
+</span><span class="line"><span class="s">  search --set=root -f $flagfile --hint (hd0,2)</span>
+</span><span class="line"><span class="s">  linux /isolinux/vmlinuz </span>
+</span><span class="line"><span class="s">  initrd /isolinux/initrd.img</span>
+</span><span class="line"><span class="err">}</span>
 </span><span class="line">
-</span><span class="line"><span class="c1">#######################</span>
-</span><span class="line"><span class="c1"># Working with Jekyll #</span>
-</span><span class="line"><span class="c1">#######################</span>
+</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;SystemRescueCD&#39;</span> <span class="err">{</span>
+</span><span class="line">    <span class="na">set isofile</span><span class="o">=</span><span class="s">&quot;/iso/systemrescuecd.iso&quot;</span>
+</span><span class="line"><span class="s">    search --set=root -f $isofile --hint (hd0,2)</span>
+</span><span class="line"><span class="s">    loopback loop $isofile</span>
+</span><span class="line"><span class="s">    linux (loop)/isolinux/rescue32 setkmap=us isoloop=$isofile</span>
+</span><span class="line"><span class="s">    initrd (loop)/isolinux/initram.igz</span>
+</span><span class="line"><span class="err">}</span>
 </span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Generate</span> <span class="err">jekyll</span> <span class="err">site&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:generate</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">raise</span> <span class="err">&quot;</span><span class="c1">### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.directory?(source_dir)</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;</span><span class="c1">## Generating Site with Jekyll&quot;</span>
-</span><span class="line">  <span class="err">system</span> <span class="err">&quot;compass</span> <span class="err">compile</span> <span class="err">--css-dir</span> <span class="c1">#{source_dir}/stylesheets&quot;</span>
-</span><span class="line">  <span class="err">system</span> <span class="err">&quot;jekyll&quot;</span>
-</span><span class="line"><span class="err">end</span>
+</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;Win7PE&#39;</span> <span class="err">{</span>
+</span><span class="line">  <span class="na">MEMDISK_LOC</span><span class="o">=</span><span class="s">&quot;/boot/memdisk&quot;</span>
+</span><span class="line"><span class="s">  search --set=root -f $MEMDISK_LOC --hint (hd0,1)</span>
+</span><span class="line"><span class="s">  echo &#39;Loading Memdisk...&#39;</span>
+</span><span class="line"><span class="s">  insmod memdisk</span>
+</span><span class="line"><span class="s">  linux16 /boot/memdisk iso raw</span>
+</span><span class="line"><span class="s">  echo &#39;Loading PE...&#39;</span>
+</span><span class="line"><span class="s">  initrd16 /iso/WIN7PE.ISO</span>
+</span><span class="line"><span class="err">}</span>
 </span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Watch</span> <span class="err">the</span> <span class="err">site</span> <span class="err">and</span> <span class="err">regenerate</span> <span class="err">when</span> <span class="err">it</span> <span class="err">changes&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:watch</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">raise</span> <span class="err">&quot;</span><span class="c1">### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.directory?(source_dir)</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;Starting</span> <span class="err">to</span> <span class="err">watch</span> <span class="err">source</span> <span class="err">with</span> <span class="err">Jekyll</span> <span class="err">and</span> <span class="err">Compass.&quot;</span>
-</span><span class="line">  <span class="err">system</span> <span class="err">&quot;compass</span> <span class="err">compile</span> <span class="err">--css-dir</span> <span class="c1">#{source_dir}/stylesheets&quot; unless File.exist?(&quot;#{source_dir}/stylesheets/screen.css&quot;)</span>
-</span><span class="line">  <span class="na">jekyllPid</span> <span class="o">=</span> <span class="s">Process.spawn({&quot;OCTOPRESS_ENV&quot;=&gt;&quot;preview&quot;}, &quot;jekyll --auto&quot;)</span>
-</span><span class="line"><span class="s">  compassPid = Process.spawn(&quot;compass watch&quot;)</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">trap(&quot;INT&quot;)</span> <span class="err">{</span>
-</span><span class="line">    <span class="err">[jekyllPid,</span> <span class="err">compassPid].each</span> <span class="err">{</span> <span class="err">|pid|</span> <span class="err">Process.kill(9,</span> <span class="err">pid)</span> <span class="err">rescue</span> <span class="err">Errno::ESRCH</span> <span class="err">}</span>
-</span><span class="line">    <span class="err">exit</span> <span class="err">0</span>
-</span><span class="line">  <span class="err">}</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">[jekyllPid,</span> <span class="err">compassPid].each</span> <span class="err">{</span> <span class="err">|pid|</span> <span class="err">Process.wait(pid)</span> <span class="err">}</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;preview</span> <span class="err">the</span> <span class="err">site</span> <span class="err">in</span> <span class="err">a</span> <span class="err">web</span> <span class="err">browser&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:preview</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">raise</span> <span class="err">&quot;</span><span class="c1">### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.directory?(source_dir)</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;Starting</span> <span class="err">to</span> <span class="err">watch</span> <span class="err">source</span> <span class="err">with</span> <span class="err">Jekyll</span> <span class="err">and</span> <span class="err">Compass.</span> <span class="err">Starting</span> <span class="err">Rack</span> <span class="err">on</span> <span class="err">port</span> <span class="c1">#{server_port}&quot;</span>
-</span><span class="line">  <span class="err">system</span> <span class="err">&quot;compass</span> <span class="err">compile</span> <span class="err">--css-dir</span> <span class="c1">#{source_dir}/stylesheets&quot; unless File.exist?(&quot;#{source_dir}/stylesheets/screen.css&quot;)</span>
-</span><span class="line">  <span class="na">jekyllPid</span> <span class="o">=</span> <span class="s">Process.spawn({&quot;OCTOPRESS_ENV&quot;=&gt;&quot;preview&quot;}, &quot;jekyll --auto&quot;)</span>
-</span><span class="line"><span class="s">  compassPid = Process.spawn(&quot;compass watch&quot;)</span>
-</span><span class="line"><span class="s">  rackupPid = Process.spawn(&quot;rackup --port #{server_port}&quot;)</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">trap(&quot;INT&quot;)</span> <span class="err">{</span>
-</span><span class="line">    <span class="err">[jekyllPid,</span> <span class="err">compassPid,</span> <span class="err">rackupPid].each</span> <span class="err">{</span> <span class="err">|pid|</span> <span class="err">Process.kill(9,</span> <span class="err">pid)</span> <span class="err">rescue</span> <span class="err">Errno::ESRCH</span> <span class="err">}</span>
-</span><span class="line">    <span class="err">exit</span> <span class="err">0</span>
-</span><span class="line">  <span class="err">}</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">[jekyllPid,</span> <span class="err">compassPid,</span> <span class="err">rackupPid].each</span> <span class="err">{</span> <span class="err">|pid|</span> <span class="err">Process.wait(pid)</span> <span class="err">}</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># usage rake new_post[my-new-post] or rake new_post[&#39;my new post&#39;] or rake new_post (defaults to &quot;new-post&quot;)</span>
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Begin</span> <span class="err">a</span> <span class="err">new</span> <span class="err">post</span> <span class="err">in</span> <span class="c1">#{source_dir}/#{posts_dir}&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:new_post,</span> <span class="err">:title</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">args.title</span>
-</span><span class="line">    <span class="na">title</span> <span class="o">=</span> <span class="s">args.title</span>
-</span><span class="line"><span class="s">  else</span>
-</span><span class="line"><span class="s">    title = get_stdin(&quot;Enter a title for your post: &quot;)</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  raise &quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.directory?(source_dir)</span>
-</span><span class="line"><span class="s">  mkdir_p &quot;#{source_dir}/#{posts_dir}&quot;</span>
-</span><span class="line"><span class="s">  filename = &quot;#{source_dir}/#{posts_dir}/#{Time.now.strftime(&#39;%Y-%m-%d&#39;)}-#{title.to_url}.#{new_post_ext}&quot;</span>
-</span><span class="line"><span class="s">  if File.exist?(filename)</span>
-</span><span class="line"><span class="s">    system &quot;#{editor} #{filename}&quot;</span>
-</span><span class="line"><span class="s">    exit</span>
-</span><span class="line"><span class="s">    abort(&quot;rake aborted!&quot;) if ask(&quot;#{filename} already exists. Do you want to overwrite?&quot;, [&#39;y&#39;, &#39;n&#39;]) == &#39;n&#39;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  puts &quot;Creating new post: #{filename}&quot;</span>
-</span><span class="line"><span class="s">  open(filename, &#39;w&#39;) do |post|</span>
-</span><span class="line"><span class="s">    post.puts &quot;---&quot;</span>
-</span><span class="line"><span class="s">    post.puts &quot;layout: post&quot;</span>
-</span><span class="line"><span class="s">    #post.puts &quot;title: \&quot;#{title.gsub(/&amp;/,&#39;&amp;amp;&#39;)}\&quot;&quot;</span>
-</span><span class="line"><span class="s">    post.puts &quot;title: \&quot;\&quot;&quot;</span>
-</span><span class="line"><span class="s">    post.puts &quot;date: #{Time.now.strftime(&#39;%Y-%m-%d %H:%M&#39;)}&quot;</span>
-</span><span class="line"><span class="s">    post.puts &quot;comments: true&quot;</span>
-</span><span class="line"><span class="s">    post.puts &quot;categories: &quot;</span>
-</span><span class="line"><span class="s">    post.puts &quot;---&quot;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  system &quot;#{editor} #{filename}&quot;</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to &quot;new-page.markdown&quot;)</span>
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Create</span> <span class="err">a</span> <span class="err">new</span> <span class="err">page</span> <span class="err">in</span> <span class="c1">#{source_dir}/(filename)/index.#{new_page_ext}&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:new_page,</span> <span class="err">:filename</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="err">raise</span> <span class="err">&quot;</span><span class="c1">### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.directory?(source_dir)</span>
-</span><span class="line">  <span class="na">args.with_defaults(:filename</span> <span class="o">=</span><span class="s">&gt; &#39;new-page&#39;)</span>
-</span><span class="line"><span class="s">  page_dir = [source_dir]</span>
-</span><span class="line"><span class="s">  if args.filename.downcase =~ /(^.+\/)?(.+)/</span>
-</span><span class="line"><span class="s">    filename, dot, extension = $2.rpartition(&#39;.&#39;).reject(&amp;:empty?)         # Get filename and extension</span>
-</span><span class="line"><span class="s">    title = filename</span>
-</span><span class="line"><span class="s">    page_dir.concat($1.downcase.sub(/^\//, &#39;&#39;).split(&#39;/&#39;)) unless $1.nil?  # Add path to page_dir Array</span>
-</span><span class="line"><span class="s">    if extension.nil?</span>
-</span><span class="line"><span class="s">      page_dir &lt;&lt; filename</span>
-</span><span class="line"><span class="s">      filename = &quot;index&quot;</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    extension ||= new_page_ext</span>
-</span><span class="line"><span class="s">    page_dir = page_dir.map! { |d| d = d.to_url }.join(&#39;/&#39;)                # Sanitize path</span>
-</span><span class="line"><span class="s">    filename = filename.downcase.to_url</span>
-</span><span class="line">
-</span><span class="line">    <span class="err">mkdir_p</span> <span class="err">page_dir</span>
-</span><span class="line">    <span class="na">file</span> <span class="o">=</span> <span class="s">&quot;#{page_dir}/#{filename}.#{extension}&quot;</span>
-</span><span class="line"><span class="s">    if File.exist?(file)</span>
-</span><span class="line"><span class="s">      abort(&quot;rake aborted!&quot;) if ask(&quot;#{file} already exists. Do you want to overwrite?&quot;, [&#39;y&#39;, &#39;n&#39;]) == &#39;n&#39;</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    puts &quot;Creating new page: #{file}&quot;</span>
-</span><span class="line"><span class="s">    open(file, &#39;w&#39;) do |page|</span>
-</span><span class="line"><span class="s">      page.puts &quot;---&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;layout: page&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;title: \&quot;#{title}\&quot;&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;date: #{Time.now.strftime(&#39;%Y-%m-%d %H:%M&#39;)}&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;comments: true&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;sharing: true&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;footer: true&quot;</span>
-</span><span class="line"><span class="s">      page.puts &quot;---&quot;</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    system &quot;#{editor} #{file}&quot;</span>
-</span><span class="line"><span class="s">  else</span>
-</span><span class="line"><span class="s">    puts &quot;Syntax error: #{args.filename} contains unsupported characters&quot;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1"># usage rake isolate[my-post]</span>
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Move</span> <span class="err">all</span> <span class="err">other</span> <span class="err">posts</span> <span class="err">than</span> <span class="err">the</span> <span class="err">one</span> <span class="err">currently</span> <span class="err">being</span> <span class="err">worked</span> <span class="err">on</span> <span class="err">to</span> <span class="err">a</span> <span class="err">temporary</span> <span class="err">stash</span> <span class="err">location</span> <span class="err">(stash)</span> <span class="err">so</span> <span class="err">regenerating</span> <span class="err">the</span> <span class="err">site</span> <span class="err">happens</span> <span class="err">much</span> <span class="err">more</span> <span class="err">quickly.&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:isolate,</span> <span class="err">:filename</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="na">stash_dir</span> <span class="o">=</span> <span class="s">&quot;#{source_dir}/#{stash_dir}&quot;</span>
-</span><span class="line"><span class="s">  FileUtils.mkdir(stash_dir) unless File.exist?(stash_dir)</span>
-</span><span class="line"><span class="s">  Dir.glob(&quot;#{source_dir}/#{posts_dir}/*.*&quot;) do |post|</span>
-</span><span class="line"><span class="s">    FileUtils.mv post, stash_dir unless post.include?(args.filename)</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Move</span> <span class="err">all</span> <span class="err">stashed</span> <span class="err">posts</span> <span class="err">back</span> <span class="err">into</span> <span class="err">the</span> <span class="err">posts</span> <span class="err">directory,</span> <span class="err">ready</span> <span class="err">for</span> <span class="err">site</span> <span class="err">generation.&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:integrate</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">FileUtils.mv</span> <span class="err">Dir.glob(&quot;</span><span class="c1">#{source_dir}/#{stash_dir}/*.*&quot;), &quot;#{source_dir}/#{posts_dir}/&quot;</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Clean</span> <span class="err">out</span> <span class="err">caches:</span> <span class="err">.pygments-cache,</span> <span class="err">.gist-cache,</span> <span class="err">.sass-cache&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:clean</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">rm_rf</span> <span class="k">[&quot;.pygments-cache/**&quot;, &quot;.gist-cache/**&quot;, &quot;.sass-cache/**&quot;, &quot;source/stylesheets/screen.css&quot;]</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Move</span> <span class="err">sass</span> <span class="err">to</span> <span class="err">sass.old,</span> <span class="err">install</span> <span class="err">sass</span> <span class="err">theme</span> <span class="err">updates,</span> <span class="err">replace</span> <span class="err">sass/custom</span> <span class="err">with</span> <span class="err">sass.old/custom&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:update_style,</span> <span class="err">:theme</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="na">theme</span> <span class="o">=</span> <span class="s">args.theme || &#39;classic&#39;</span>
-</span><span class="line"><span class="s">  if File.directory?(&quot;sass.old&quot;)</span>
-</span><span class="line"><span class="s">    puts &quot;removed existing sass.old directory&quot;</span>
-</span><span class="line"><span class="s">    rm_r &quot;sass.old&quot;, :secure=&gt;true</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  mv &quot;sass&quot;, &quot;sass.old&quot;</span>
-</span><span class="line"><span class="s">  puts &quot;## Moved styles into sass.old/&quot;</span>
-</span><span class="line"><span class="s">  cp_r &quot;#{themes_dir}/&quot;+theme+&quot;/sass/&quot;, &quot;sass&quot;</span>
-</span><span class="line"><span class="s">  cp_r &quot;sass.old/custom/.&quot;, &quot;sass/custom&quot;</span>
-</span><span class="line"><span class="s">  puts &quot;## Updated Sass ##&quot;</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Move</span> <span class="err">source</span> <span class="err">to</span> <span class="err">source.old,</span> <span class="err">install</span> <span class="err">source</span> <span class="err">theme</span> <span class="err">updates,</span> <span class="err">replace</span> <span class="err">source/_includes/navigation.html</span> <span class="err">with</span> <span class="err">source.old&#39;s</span> <span class="err">navigation&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:update_source,</span> <span class="err">:theme</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="na">theme</span> <span class="o">=</span> <span class="s">args.theme || &#39;classic&#39;</span>
-</span><span class="line"><span class="s">  if File.directory?(&quot;#{source_dir}.old&quot;)</span>
-</span><span class="line"><span class="s">    puts &quot;## Removed existing #{source_dir}.old directory&quot;</span>
-</span><span class="line"><span class="s">    rm_r &quot;#{source_dir}.old&quot;, :secure=&gt;true</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  mkdir &quot;#{source_dir}.old&quot;</span>
-</span><span class="line"><span class="s">  cp_r &quot;#{source_dir}/.&quot;, &quot;#{source_dir}.old&quot;</span>
-</span><span class="line"><span class="s">  puts &quot;## Copied #{source_dir} into #{source_dir}.old/&quot;</span>
-</span><span class="line"><span class="s">  cp_r &quot;#{themes_dir}/&quot;+theme+&quot;/source/.&quot;, source_dir, :remove_destination=&gt;true</span>
-</span><span class="line"><span class="s">  cp_r &quot;#{source_dir}.old/_includes/custom/.&quot;, &quot;#{source_dir}/_includes/custom/&quot;, :remove_destination=&gt;true</span>
-</span><span class="line"><span class="s">  cp &quot;#{source_dir}.old/favicon.png&quot;, source_dir</span>
-</span><span class="line"><span class="s">  mv &quot;#{source_dir}/index.html&quot;, &quot;#{blog_index_dir}&quot;, :force=&gt;true if blog_index_dir != source_dir</span>
-</span><span class="line"><span class="s">  cp &quot;#{source_dir}.old/index.html&quot;, source_dir if blog_index_dir != source_dir &amp;&amp; File.exists?(&quot;#{source_dir}.old/index.html&quot;)</span>
-</span><span class="line"><span class="s">  puts &quot;## Updated #{source_dir} ##&quot;</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">##############</span>
-</span><span class="line"><span class="c1"># Deploying  #</span>
-</span><span class="line"><span class="c1">##############</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Default</span> <span class="err">deploy</span> <span class="err">task&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:deploy</span> <span class="err">do</span>
-</span><span class="line">  <span class="c1"># Check if preview posts exist, which should not be published</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">File.exists?(&quot;.preview-mode&quot;)</span>
-</span><span class="line">    <span class="err">puts</span> <span class="err">&quot;</span><span class="c1">## Found posts in preview mode, regenerating files ...&quot;</span>
-</span><span class="line">    <span class="err">File.delete(&quot;.preview-mode&quot;)</span>
-</span><span class="line">    <span class="err">Rake::Task[:generate].execute</span>
-</span><span class="line">  <span class="err">end</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">Rake::Task[:copydot].invoke(source_dir,</span> <span class="err">public_dir)</span>
-</span><span class="line">  <span class="err">Rake::Task[&quot;</span><span class="c1">#{deploy_default}&quot;].execute</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">#hiberabyss: deploy to local</span>
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Local</span> <span class="err">deploy</span> <span class="err">task&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:ldeploy</span> <span class="err">do</span>
-</span><span class="line">  <span class="c1"># Check if preview posts exist, which should not be published</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">File.exists?(&quot;.preview-mode&quot;)</span>
-</span><span class="line">    <span class="err">puts</span> <span class="err">&quot;</span><span class="c1">## Found posts in preview mode, regenerating files ...&quot;</span>
-</span><span class="line">    <span class="err">File.delete(&quot;.preview-mode&quot;)</span>
-</span><span class="line">    <span class="err">Rake::Task[:generate].execute</span>
-</span><span class="line">  <span class="err">end</span>
-</span><span class="line"><span class="err">Rake::Task[:copydot].invoke(source_dir,</span> <span class="err">public_dir)</span>
-</span><span class="line">  <span class="err">Rake::Task[&quot;</span><span class="c1">#{deploy_local}&quot;].execute</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Generate</span> <span class="err">website</span> <span class="err">and</span> <span class="err">deploy&quot;</span>
-</span><span class="line"><span class="na">task :gen_deploy</span> <span class="o">=</span><span class="s">&gt; [:integrate, :generate, :deploy] do</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Local</span> <span class="err">Generate</span> <span class="err">and</span> <span class="err">deploy&quot;</span>
-</span><span class="line"><span class="na">task :lgdeploy</span> <span class="o">=</span><span class="s">&gt; [:integrate, :generate, :ldeploy] do</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;copy</span> <span class="err">dot</span> <span class="err">files</span> <span class="err">for</span> <span class="err">deployment&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:copydot,</span> <span class="err">:source,</span> <span class="err">:dest</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="err">FileList[&quot;</span><span class="c1">#{args.source}/**/.*&quot;].exclude(&quot;**/.&quot;, &quot;**/..&quot;, &quot;**/.DS_Store&quot;, &quot;**/._*&quot;).each do |file|</span>
-</span><span class="line">    <span class="err">cp_r</span> <span class="err">file,</span> <span class="err">file.gsub(/</span><span class="c1">#{args.source}/, &quot;#{args.dest}&quot;) unless File.directory?(file)</span>
-</span><span class="line">  <span class="err">end</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Deploy</span> <span class="err">website</span> <span class="err">via</span> <span class="err">rsync&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:rsync</span> <span class="err">do</span>
-</span><span class="line">  <span class="na">exclude</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
-</span><span class="line"><span class="s">  if File.exists?(&#39;./rsync-exclude&#39;)</span>
-</span><span class="line"><span class="s">    exclude = &quot;--exclude-from &#39;#{File.expand_path(&#39;./rsync-exclude&#39;)}&#39;&quot;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  puts &quot;## Deploying website via Rsync&quot;</span>
-</span><span class="line"><span class="s">  ok_failed system(&quot;rsync -avze &#39;ssh -p #{ssh_port}&#39; #{exclude} #{rsync_args} #{&quot;--delete&quot; unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}&quot;)</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;deploy</span> <span class="err">public</span> <span class="err">directory</span> <span class="err">to</span> <span class="err">local</span> <span class="err">deploy_dir&quot;</span>
-</span><span class="line"><span class="err">multitask</span> <span class="err">:push_local</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;</span><span class="c1">## Deploying branch to local &quot;</span>
-</span><span class="line">  <span class="err">(Dir[&quot;</span><span class="c1">#{deploy_dir}/*&quot;]).each { |f| rm_rf(f) }</span>
-</span><span class="line">  <span class="err">Rake::Task[:copydot].invoke(public_dir,</span> <span class="err">deploy_dir)</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;\n</span><span class="c1">## copying #{public_dir} to #{deploy_dir}&quot;</span>
-</span><span class="line">  <span class="err">cp_r</span> <span class="err">&quot;</span><span class="c1">#{public_dir}/.&quot;, deploy_dir</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;deploy</span> <span class="err">public</span> <span class="err">directory</span> <span class="err">to</span> <span class="err">github</span> <span class="err">pages&quot;</span>
-</span><span class="line"><span class="err">multitask</span> <span class="err">:push</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;</span><span class="c1">## Deploying branch to Github Pages &quot;</span>
-</span><span class="line">  <span class="err">(Dir[&quot;</span><span class="c1">#{deploy_dir}/*&quot;]).each { |f| rm_rf(f) }</span>
-</span><span class="line">  <span class="err">Rake::Task[:copydot].invoke(public_dir,</span> <span class="err">deploy_dir)</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;\n</span><span class="c1">## copying #{public_dir} to #{deploy_dir}&quot;</span>
-</span><span class="line">  <span class="err">cp_r</span> <span class="err">&quot;</span><span class="c1">#{public_dir}/.&quot;, deploy_dir</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">system</span> <span class="err">&quot;git</span> <span class="err">add</span> <span class="err">.&quot;</span>
-</span><span class="line">  <span class="err">system</span> <span class="err">&quot;git</span> <span class="err">add</span> <span class="err">-u&quot;</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;\n</span><span class="c1">## Source Commiting&quot;</span>
-</span><span class="line">  <span class="na">message</span> <span class="o">=</span> <span class="s">&quot;Source updated at #{Time.now.utc}&quot;</span>
-</span><span class="line"><span class="s">  system &quot;git commit -m \&quot;#{message}\&quot;&quot;</span>
-</span><span class="line"><span class="s">  system &quot;git push #{source_remote} #{source_branch} --force&quot;</span>
-</span><span class="line"><span class="s">  puts &quot;\n## Source update complete&quot;</span>
-</span><span class="line">
-</span><span class="line">  <span class="err">cd</span> <span class="err">&quot;</span><span class="c1">#{deploy_dir}&quot; do</span>
-</span><span class="line">    <span class="err">system</span> <span class="err">&quot;git</span> <span class="err">add</span> <span class="err">.&quot;</span>
-</span><span class="line">    <span class="err">system</span> <span class="err">&quot;git</span> <span class="err">add</span> <span class="err">-u&quot;</span>
-</span><span class="line">    <span class="err">puts</span> <span class="err">&quot;\n</span><span class="c1">## Commiting: Site updated at #{Time.now.utc}&quot;</span>
-</span><span class="line">    <span class="na">message</span> <span class="o">=</span> <span class="s">&quot;Site updated at #{Time.now.utc}&quot;</span>
-</span><span class="line"><span class="s">    system &quot;git commit -m \&quot;#{message}\&quot;&quot;</span>
-</span><span class="line"><span class="s">    puts &quot;\n## Pushing generated #{deploy_dir} website&quot;</span>
-</span><span class="line"><span class="s">    system &quot;git push origin #{deploy_branch} --force&quot;</span>
-</span><span class="line"><span class="s">    puts &quot;\n## Github Pages deploy complete&quot;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Update</span> <span class="err">configurations</span> <span class="err">to</span> <span class="err">support</span> <span class="err">publishing</span> <span class="err">to</span> <span class="err">root</span> <span class="err">or</span> <span class="err">sub</span> <span class="err">directory&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:set_root_dir,</span> <span class="err">:dir</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;&gt;&gt;&gt;</span> <span class="err">!!</span> <span class="err">Please</span> <span class="err">provide</span> <span class="err">a</span> <span class="err">directory,</span> <span class="err">eg.</span> <span class="err">rake</span> <span class="err">config_dir[publishing/subdirectory]&quot;</span> <span class="err">unless</span> <span class="err">args.dir</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">args.dir</span>
-</span><span class="line">    <span class="na">if args.dir</span> <span class="o">=</span><span class="s">= &quot;/&quot;</span>
-</span><span class="line"><span class="s">      dir = &quot;&quot;</span>
-</span><span class="line"><span class="s">    else</span>
-</span><span class="line"><span class="s">      dir = &quot;/&quot; + args.dir.sub(/(\/*)(.+)/, &quot;\\2&quot;).sub(/\/$/, &#39;&#39;);</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    rakefile = IO.read(__FILE__)</span>
-</span><span class="line"><span class="s">    rakefile.sub!(/public_dir(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/, &quot;public_dir\\1=\\2\\3public#{dir}\\3&quot;)</span>
-</span><span class="line"><span class="s">    File.open(__FILE__, &#39;w&#39;) do |f|</span>
-</span><span class="line"><span class="s">      f.write rakefile</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    compass_config = IO.read(&#39;config.rb&#39;)</span>
-</span><span class="line"><span class="s">    compass_config.sub!(/http_path(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/, &quot;http_path\\1=\\2\\3#{dir}/\\3&quot;)</span>
-</span><span class="line"><span class="s">    compass_config.sub!(/http_images_path(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/, &quot;http_images_path\\1=\\2\\3#{dir}/images\\3&quot;)</span>
-</span><span class="line"><span class="s">    compass_config.sub!(/http_fonts_path(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/, &quot;http_fonts_path\\1=\\2\\3#{dir}/fonts\\3&quot;)</span>
-</span><span class="line"><span class="s">    compass_config.sub!(/css_dir(\s*)=(\s*)([&quot;&#39;])[\w\-\/]*[&quot;&#39;]/, &quot;css_dir\\1=\\2\\3public#{dir}/stylesheets\\3&quot;)</span>
-</span><span class="line"><span class="s">    File.open(&#39;config.rb&#39;, &#39;w&#39;) do |f|</span>
-</span><span class="line"><span class="s">      f.write compass_config</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    jekyll_config = IO.read(&#39;_config.yml&#39;)</span>
-</span><span class="line"><span class="s">    jekyll_config.sub!(/^destination:.+$/, &quot;destination: public#{dir}&quot;)</span>
-</span><span class="line"><span class="s">    jekyll_config.sub!(/^subscribe_rss:\s*\/.+$/, &quot;subscribe_rss: #{dir}/atom.xml&quot;)</span>
-</span><span class="line"><span class="s">    jekyll_config.sub!(/^root:.*$/, &quot;root: /#{dir.sub(/^\//, &#39;&#39;)}&quot;)</span>
-</span><span class="line"><span class="s">    File.open(&#39;_config.yml&#39;, &#39;w&#39;) do |f|</span>
-</span><span class="line"><span class="s">      f.write jekyll_config</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">    rm_rf public_dir</span>
-</span><span class="line"><span class="s">    mkdir_p &quot;#{public_dir}#{dir}&quot;</span>
-</span><span class="line"><span class="s">    puts &quot;## Site&#39;s root directory is now &#39;/#{dir.sub(/^\//, &#39;&#39;)}&#39; ##&quot;</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;Set</span> <span class="err">up</span> <span class="err">_deploy</span> <span class="err">folder</span> <span class="err">and</span> <span class="err">deploy</span> <span class="err">branch</span> <span class="err">for</span> <span class="err">Github</span> <span class="err">Pages</span> <span class="err">deployment&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:setup_github_pages,</span> <span class="err">:repo</span> <span class="err">do</span> <span class="err">|t,</span> <span class="err">args|</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">args.repo</span>
-</span><span class="line">    <span class="na">repo_url</span> <span class="o">=</span> <span class="s">args.repo</span>
-</span><span class="line"><span class="s">  else</span>
-</span><span class="line"><span class="s">    puts &quot;Enter the read/write url for your repository&quot;</span>
-</span><span class="line"><span class="s">    puts &quot;(For example, &#39;git@github.com:your_username/your_username.github.io)&quot;</span>
-</span><span class="line"><span class="s">    puts &quot;           or &#39;https://github.com/your_username/your_username.github.io&#39;)&quot;</span>
-</span><span class="line"><span class="s">    repo_url = get_stdin(&quot;Repository url: &quot;)</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  protocol = (repo_url.match(/(^git)@/).nil?) ? &#39;https&#39; : &#39;git&#39;</span>
-</span><span class="line"><span class="s">  if protocol == &#39;git&#39;</span>
-</span><span class="line"><span class="s">    user = repo_url.match(/:([^\/]+)/)[1]</span>
-</span><span class="line"><span class="s">  else</span>
-</span><span class="line"><span class="s">    user = repo_url.match(/github\.com\/([^\/]+)/)[1]</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  branch = (repo_url.match(/\/[\w-]+\.github\.(?:io|com)/).nil?) ? &#39;gh-pages&#39; : &#39;master&#39;</span>
-</span><span class="line"><span class="s">  project = (branch == &#39;gh-pages&#39;) ? repo_url.match(/\/([^\.]+)/)[1] : &#39;&#39;</span>
-</span><span class="line"><span class="s">  unless (`git remote -v` =~ /origin.+?octopress(?:\.git)?/).nil?</span>
-</span><span class="line"><span class="s">    # If octopress is still the origin remote (from cloning) rename it to octopress</span>
-</span><span class="line"><span class="s">    system &quot;git remote rename origin octopress&quot;</span>
-</span><span class="line"><span class="s">    if branch == &#39;master&#39;</span>
-</span><span class="line"><span class="s">      # If this is a user/organization pages repository, add the correct origin remote</span>
-</span><span class="line"><span class="s">      # and checkout the source branch for committing changes to the blog source.</span>
-</span><span class="line"><span class="s">      system &quot;git remote add origin #{repo_url}&quot;</span>
-</span><span class="line"><span class="s">      puts &quot;Added remote #{repo_url} as origin&quot;</span>
-</span><span class="line"><span class="s">      system &quot;git config branch.master.remote origin&quot;</span>
-</span><span class="line"><span class="s">      puts &quot;Set origin as default remote&quot;</span>
-</span><span class="line"><span class="s">      system &quot;git branch -m master source&quot;</span>
-</span><span class="line"><span class="s">      puts &quot;Master branch renamed to &#39;source&#39; for committing your blog source files&quot;</span>
-</span><span class="line"><span class="s">    else</span>
-</span><span class="line"><span class="s">      unless !public_dir.match(&quot;#{project}&quot;).nil?</span>
-</span><span class="line"><span class="s">        system &quot;rake set_root_dir[#{project}]&quot;</span>
-</span><span class="line"><span class="s">      end</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  url = &quot;http://#{user}.github.io&quot;</span>
-</span><span class="line"><span class="s">  url += &quot;/#{project}&quot; unless project == &#39;&#39;</span>
-</span><span class="line"><span class="s">  jekyll_config = IO.read(&#39;_config.yml&#39;)</span>
-</span><span class="line"><span class="s">  jekyll_config.sub!(/^url:.*$/, &quot;url: #{url}&quot;)</span>
-</span><span class="line"><span class="s">  File.open(&#39;_config.yml&#39;, &#39;w&#39;) do |f|</span>
-</span><span class="line"><span class="s">    f.write jekyll_config</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  rm_rf deploy_dir</span>
-</span><span class="line"><span class="s">  mkdir deploy_dir</span>
-</span><span class="line"><span class="s">  cd &quot;#{deploy_dir}&quot; do</span>
-</span><span class="line"><span class="s">    system &quot;git init&quot;</span>
-</span><span class="line"><span class="s">    system &quot;echo &#39;My Octopress Page is coming soon &amp;hellip;&#39; &gt; index.html&quot;</span>
-</span><span class="line"><span class="s">    system &quot;git add .&quot;</span>
-</span><span class="line"><span class="s">    system &quot;git commit -m \&quot;Octopress init\&quot;&quot;</span>
-</span><span class="line"><span class="s">    system &quot;git branch -m gh-pages&quot; unless branch == &#39;master&#39;</span>
-</span><span class="line"><span class="s">    system &quot;git remote add origin #{repo_url}&quot;</span>
-</span><span class="line"><span class="s">    rakefile = IO.read(__FILE__)</span>
-</span><span class="line"><span class="s">    rakefile.sub!(/deploy_branch(\s*)=(\s*)([&quot;&#39;])[\w-]*[&quot;&#39;]/, &quot;deploy_branch\\1=\\2\\3#{branch}\\3&quot;)</span>
-</span><span class="line"><span class="s">    rakefile.sub!(/deploy_default(\s*)=(\s*)([&quot;&#39;])[\w-]*[&quot;&#39;]/, &quot;deploy_default\\1=\\2\\3push\\3&quot;)</span>
-</span><span class="line"><span class="s">    File.open(__FILE__, &#39;w&#39;) do |f|</span>
-</span><span class="line"><span class="s">      f.write rakefile</span>
-</span><span class="line"><span class="s">    end</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  puts &quot;\n---\n## Now you can deploy to #{url} with `rake deploy` ##&quot;</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">def</span> <span class="err">ok_failed(condition)</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">(condition)</span>
-</span><span class="line">    <span class="err">puts</span> <span class="err">&quot;OK&quot;</span>
-</span><span class="line">  <span class="err">else</span>
-</span><span class="line">    <span class="err">puts</span> <span class="err">&quot;FAILED&quot;</span>
-</span><span class="line">  <span class="err">end</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">def</span> <span class="err">get_stdin(message)</span>
-</span><span class="line">  <span class="err">print</span> <span class="err">message</span>
-</span><span class="line">  <span class="err">STDIN.gets.chomp</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">def</span> <span class="err">ask(message,</span> <span class="err">valid_options)</span>
-</span><span class="line">  <span class="err">if</span> <span class="err">valid_options</span>
-</span><span class="line">    <span class="na">answer</span> <span class="o">=</span> <span class="s">get_stdin(&quot;#{message} #{valid_options.to_s.gsub(/&quot;/, &#39;&#39;).gsub(/, /,&#39;/&#39;)} &quot;) while !valid_options.include?(answer)</span>
-</span><span class="line"><span class="s">  else</span>
-</span><span class="line"><span class="s">    answer = get_stdin(message)</span>
-</span><span class="line"><span class="s">  end</span>
-</span><span class="line"><span class="s">  answer</span>
-</span><span class="line"><span class="err">end</span>
-</span><span class="line">
-</span><span class="line"><span class="err">desc</span> <span class="err">&quot;list</span> <span class="err">tasks&quot;</span>
-</span><span class="line"><span class="err">task</span> <span class="err">:list</span> <span class="err">do</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;Tasks:</span> <span class="c1">#{(Rake::Task.tasks - [Rake::Task[:list]]).join(&#39;, &#39;)}&quot;</span>
-</span><span class="line">  <span class="err">puts</span> <span class="err">&quot;(type</span> <span class="err">rake</span> <span class="err">-T</span> <span class="err">for</span> <span class="err">more</span> <span class="err">detail)\n\n&quot;</span>
-</span><span class="line"><span class="err">end</span>
+</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;Boot</span> <span class="err">Grub4Dos&#39;</span> <span class="err">{</span>
+</span><span class="line">    <span class="err">linux</span> <span class="err">/grub4dos/grub.exe</span>
+</span><span class="line"><span class="err">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[tmux的安装]]></title>
+    <title type="html"><![CDATA[tmux的安装与使用]]></title>
     <link href="http://hiberabyss.github.io/blog/20130711/tmux/"/>
     <updated>2013-07-11T22:15:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130711/tmux</id>
-    <content type="html"><![CDATA[<p>本文介绍如何编译安装<code>tmux</code>：</p>
+    <content type="html"><![CDATA[<p>本文介绍如何编译安装<code>tmux</code>，以及一些使用方法。</p>
 
 <!--more-->
+
+<h2 id="tmux">tmux的安装</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -1006,7 +449,18 @@
   <li>在CentOS下面则尝试安装加上devel的包：<code>libevent</code>-&gt;<code>livevent-devel</code></li>
 </ul>
 
-<h2 id="section-1">参考资料</h2>
+<h2 id="section-1">使用方法</h2>
+<p>直接运行<code>tmux</code>开启一个新的<code>session</code>；<code>tmux attach</code>自动连接到上一个会话。</p>
+
+<p>在<code>tmux</code>中，快捷键操作都是通过按<code>Ctrl+b</code>再加按键来实现的，一下列举一些常用的快捷键（已按下<code>Ctrl+b</code>）：</p>
+
+<ul>
+  <li>?	#列举所绑定的按键</li>
+  <li>d	#进行detach操作，让tmux后台运行</li>
+  <li>x	#退出当前panel</li>
+</ul>
+
+<h2 id="section-2">参考资料</h2>
 <p><a href="https://gist.github.com/sturadnidge/4185338">github</a></p>
 ]]></content>
   </entry>
@@ -1174,6 +628,7 @@
   <li><a href="http://luo.bo/41691/">其实玻璃才是人类面临的最大威胁</a></li>
   <li><a href="http://luo.bo/41675/">原来强大的动画背景后，有着不为人知的秘密</a></li>
   <li><a href="http://luo.bo/41673/">这个倔老头</a></li>
+  <li><a href="http://luo.bo/41908/">每个中年妇女都是讲故事的天才</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -1227,6 +682,13 @@
 <p>@协和章蓉娅：某论坛看到某一个妹子的帖子：两年前，一陌生男人因移动营业厅妹妹误敲一个数字将50元话费充给了我。该男子倒也大度，发短信跟我说不用还，算是种缘分。聊了几句发现两人上班地方很近，后来见面了。现在这男人是我老公了，每次特讨厌别人问我们是怎么认识的，那厮总是很贱得回一句:充话费送的。。。</p>
 
 <p>小明对妈妈说：“妈妈，我要吃捧棒糖！”妈妈说：“你听不听话?”小明说：“我不听。”妈妈说：“你不听就不给你买棒棒糖了！”“妈妈，我听话！”小明叫道。妈妈说：“儿子乖啊，听话，咱们别买棒棒糖了啊!”小明说：“妈妈，你是在逗我吗?”</p>
+
+<p><a href="http://luo.bo/41856/#8556">“言”和“颜”</a></p>
+
+<p>话说一个特有派的大哥带着大拇指粗的金项链领着小弟到洗浴中心，扑通跳到水里，项链飘起来了</p>
+
+<p>我记得，Google+刚出的时候被称作Facebook杀手，两年过去了，Facebook还活的风生水起，来数数Google+都杀死了哪些英雄，他们是：Google Buzz，Google Reader，Google Talk，Google Latitude…专杀队友（@Eric_RC_Law）</p>
+
 ]]></content>
   </entry>
   
@@ -2750,403 +2212,6 @@
 </span><span class="line"><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress中Markdown文件语法总结]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130625/markdown-syntax/"/>
-    <updated>2013-06-25T15:20:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130625/markdown-syntax</id>
-    <content type="html"><![CDATA[<p>本文主要对<code>Octopress</code>中<code>Markdown</code>文件的语法做一些总结。
-<!--more--></p>
-
-<h2 id="first">Markdown语法</h2>
-<p>Markdown的完整语法可以参考图灵社区的<a href="http://www.ituring.com.cn/article/504">中文文档</a>；查看该文档<a href="https://github.com/othree/markdown-syntax-zhtw/edit/master/syntax.md">源代码</a>。</p>
-
-<h2 id="section">首页只显示部分博客内容</h2>
-<p><code>&lt;!--more--&gt;</code>会使得在博客首页只显示这个标记之前的内容，这个标签后面要空出一行。提示继续阅读的文字信息则可以在<code>_config.yml</code>文件中<code>excerpt_link: </code>字段进行修改。</p>
-
-<h2 id="section-1">可以用如下方式添加同一文档内的链接</h2>
-<p>链接到<a href="#first">Markdown语法</a>部分</p>
-
-<h2 id="section-2">关于分类</h2>
-<p>文件中的多个分类直接用空格进行间隔即可，我用的插件会自动把分类名称的首字母大写。</p>
-
-<h2 id="section-3">插入代码</h2>
-<p>可以利用下面的代码插入相对应于<code>source</code>目录的代码文件。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">{% codeblock bash.sh lang:bash %} 
-</span><span class="line">	 {% render_partial sample-language/shell/bash.sh %}
-</span><span class="line">{% endcodeblock %}</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><a href="http://stackoverflow.com/questions/15786144/how-to-escape-in-markdown-on-octopress">参考</a></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[个性化Octopress资源整理]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130624/my-octopress-configure/"/>
-    <updated>2013-06-24T17:07:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130624/my-octopress-configure</id>
-    <content type="html"><![CDATA[<p>所做个性化修改的资料整理总结。</p>
-
-<!--more-->
-
-<h2 id="section">修改导航栏名称</h2>
-<p>修改<code>source/_includes/custom/navigation.html</code>文件即可：</p>
-
-<h2 id="section-1">修改缩进方式</h2>
-<p>修改文件<code>sass/custom/_layout.scss</code>，设置<code>$indented-lists: true</code>。</p>
-
-<h2 id="disqus">添加Disqus</h2>
-<p>首先需要在<a href="http://www.disqus.com/">Disqus</a>上注册一个帐号，然后修改<code>_config.yml</code>文件：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">#在Disgus官网控制面板中输入使用的网址后会生成一个shortname
-</span><span class="line">disqus_short_name: hiberabyss	
-</span><span class="line">disqus_show_comment_count: true</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-2">添加多说</h2>
-<p>主要参考<a href="http://ihavanna.org/Internet/2013-02/add-duoshuo-commemt-system-into-octopress.html">这篇文章</a>。需要先在多看官网上<a href="http://duoshuo.com/create-site/">创建站点</a>（官网的上写的是我要安装，最开始被我给直接忽略了），在后台控制面板的工具选项的代码中可以获取<code>short_name</code>，可能是和输入的域名是一致的，不太确定。</p>
-
-<h2 id="section-3">国内的社会化工具</h2>
-<ul>
-  <li><a href="http://www.bshare.cn/">bshare</a>：分享按钮，本站使用的工具。  </li>
-  <li><a href="http://duoshuo.com/">多说</a>：评论系统，本站使用的评论工具。</li>
-  <li><a href="http://www.jiathis.com/">加网</a>：包括分享（加网）、评论（<a href="http://www.uyan.cc/">友言</a>）和推荐（<a href="http://www.ujian.cc/">友荐</a>）三个部分。有时间可以尝试下友荐，看着很不错。</li>
-</ul>
-
-<h2 id="kramdown">使用kramdown包</h2>
-<p>安装kramdown包：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="n">install</span> <span class="n">kramdown</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>修改配置文件<code>_config.yml</code>，把<code>rdiscount</code>改为<code>kramdown</code>：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="yaml"><span class="line"><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">kramdown</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>kramdown的详细语法资料<a href="http://kramdown.rubyforge.org/syntax.html#tables">kramdown Syntax</a>。</p>
-
-<h2 id="latex">使用Latex</h2>
-<p>修改支持Latex的方法参见<a href="http://yanping.me/cn/blog/2012/03/10/octopress-with-latex/">这篇文章</a>。</p>
-
-<h2 id="section-4">关于中文分类标签</h2>
-<p>把<code>category_generator.rb</code>文件中的如下两行代码</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>category_generator.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="rb"><span class="line"><span class="nb">self</span><span class="o">.</span><span class="n">write_category_index</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">category</span><span class="o">.</span><span class="n">to_url</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span>
-</span><span class="line">  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class="line"><span class="s2">&quot;&lt;a class=&#39;category&#39; href=&#39;/</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">category</span><span class="o">.</span><span class="n">to_url</span><span class="si">}</span><span class="s2">/&#39;&gt;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&lt;/a&gt;&quot;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>换为如下的代码（把<code>to_url</code>换为<code>downcase</code>，也即分类不区分大小写；<code>to_url</code>会把中文换为汉语拼音）</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>category_generator.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="rb"><span class="line"><span class="nb">self</span><span class="o">.</span><span class="n">write_category_index</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">category</span><span class="o">.</span><span class="n">downcase</span><span class="p">),</span> <span class="n">category</span><span class="p">)</span>
-</span><span class="line">  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class="line"><span class="s2">&quot;&lt;a class=&#39;category&#39; href=&#39;/</span><span class="si">#{</span><span class="n">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">category</span><span class="o">.</span><span class="n">downcase</span><span class="si">}</span><span class="s2">/&#39;&gt;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&lt;/a&gt;&quot;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-5">总结</h2>
-<p>有不少内容参考了<a href="http://www.yanjiuyanjiu.com/blog/20130402/">这篇文章</a>。把无法连接的Twitter、FaceBook之类的插件注释掉，否则会影响页面的加载速度。 </p>
-
-<h2 id="section-6">相关博客</h2>
-<ul>
-  <li><a href="http://yanping.me/cn/">雁起平沙的网络日志</a>  </li>
-  <li><a href="http://whbzju.github.io/">知行录（github上有源码）</a></li>
-  <li><a href="http://mrzhang.me/">MrZhang.me（做的比较玄的一个博客，有源代码）</a></li>
-</ul>
-
-<h2 id="section-7">参考资料</h2>
-<ul>
-  <li><a href="http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/">为Octopress博客追加新浪微博侧栏</a>  </li>
-  <li><a href="http://blog.eddie.com.tw/2011/12/05/add-catetories-to-sidebar-in-octopress/">幫你的Octopress增加文章分類</a></li>
-  <li><a href="http://ihavanna.org/Internet/2013-02/add-duoshuo-commemt-system-into-octopress.html">为 Octopress 添加多说评论系统</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Lustre-2.3的安装与配置]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130624/lustre-configture/"/>
-    <updated>2013-06-24T12:37:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130624/lustre-configture</id>
-    <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
-
-<h2 id="section">主要内容</h2>
-<ul>
-  <li>安装环境  </li>
-  <li>Lustre的安装</li>
-  <li>Lustre的配置</li>
-  <li>用于Lustre管理的实用工具</li>
-  <li>遇到的问题与解决方案</li>
-  <li>有创意的Idea</li>
-</ul>
-
-<!--more-->
-
-<h2 id="section-1">安装环境</h2>
-<ul>
-  <li>操作系统：CentOS 6.3 (x86_64)</li>
-  <li>内核版本：2.6.32-279</li>
-  <li>Lustre版本：2.3</li>
-  <li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
-</ul>
-
-<h2 id="lustre">Lustre的安装</h2>
-<p>安装之前，对系统环境有如下要求：   </p>
-
-<ol>
-  <li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
-  <li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
-</ol>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">SELINUX</span><span class="o">=</span>disabled
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下载<a href="http://downloads.whamcloud.com/public/e2fsprogs/latest/el6/RPMS/x86_64/">e2fsprogs</a>并安装：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -Uvh --nodeps <span class="se">\</span>
-</span><span class="line">e2fsprogs-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">e2fsprogs-libs-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">e2fsprogs-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libcom_err-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libcom_err-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libss-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libss-1.42.7.wc1-7.el6.x86_64.rpm
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下载<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">kernel</a>包并安装（如果要使用InfiniBind连接方式，则必须安装kernel-ib-version包，且需要卸载系统中已经安装的以mlnx开头的kenel包）：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -ivh <span class="se">\</span>
-</span><span class="line">kernel-firmware-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
-</span><span class="line">kernel-devel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
-</span><span class="line">kernel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
-</span><span class="line">kernel-ib-version
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下载并安装<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">Lustre</a>：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -ivh <span class="se">\</span>
-</span><span class="line">lustre-ldiskfs-3.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm <span class="se">\</span>
-</span><span class="line">lustre-modules-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm <span class="se">\</span>
-</span><span class="line">lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="lustre-1">Lustre的配置</h2>
-
-<p>配置Lustre所使用的接口名称以及相对应的别名；</p>
-
-<ul>
-  <li>Lustre默认使用的是第一个网络接口，默认的名称为<code>tcp0</code>；</li>
-  <li>如果需要使用光纤接口，则创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</li>
-</ul>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">options lnet <span class="nv">networks</span><span class="o">=</span><span class="s2">&quot;o2ib0(ib0)&quot;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等。查看通过光纤接口是否可以和其它节点联通。</p>
-
-<p>如果使用的是<code>mlnx</code>驱动，则在加载<code>lustre</code>模块时会报错，需要先卸载如下的几个包</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -qa | grep <span class="s1">&#39;kernel&#39;</span> | grep <span class="s1">&#39;mlnx&#39;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">service openibd start
-</span><span class="line">chkconfig openibd on
-</span><span class="line"><span class="c">#查看开机启动是否设置成功</span>
-</span><span class="line">chkconfig --list openibd
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>载入相关模块：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">modprobe lustre
-</span><span class="line">modprobe ldiskfs
-</span><span class="line">modprobe lnet
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>这时可以查看<em>/sys/modules/lnet/prarameters/networks</em>内容，以确定<em>lnet.conf</em>中的配置信息是否已经加载至内核。</p>
-
-<p>在MDS上的创建Lustre文件系统，并挂载：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mkfs.lustre --fsname<span class="o">=</span>mylustre --mdt --mgs --index<span class="o">=</span>0 --reformat /dev/sdb1
-</span><span class="line">mount.lustre /dev/sdb1 /mnt/mdt
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>其中<em>fsname</em>为安装的lustre文件系统的标志，在MGS、MDS和OSS中都必须保持一致，在客户端挂在Lustre文件系统时也会使用到这个名字，长度不能超过8个字符；本例中MGS和MDS使用同一个服务器；<em>reformat</em>会对磁盘进行重新格式化处理。</p>
-
-<p>在OSS上创建Lustre文件系统，并挂载：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mkfs.lustre --fsname<span class="o">=</span>mylustre --ost --reformat --index<span class="o">=</span>num --mgsnode<span class="o">=</span>host_mds@o2ib0 /dev/sdb2
-</span><span class="line">mount.lustre /dev/sdb2 /mnt/ost
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>必须要在MDT的文件系统挂在之后才能挂载OST的文件系统；<em>host_mds</em>为mds的ip地址或者已经写入<em>hosts</em>文件的主机名，<em>o2ib0</em>和<em>lnet.conf</em>中写入的内容保持一致。
-如果出现无法连接的情况，则可能是防火墙的原因，可以关闭<em>iptables</em>服务：<code>service iptables stop</code></p>
-
-<p>客户端的挂载：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mount.lustre host_mds@o2ib0:/mylustre /mnt/lustre
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-2">实用工具</h2>
-<p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lctl network up
-</span><span class="line">lctl list_nids	<span class="c">#可以查看当前实际的ip地址，以确定是否使用了正确的接口</span>
-</span><span class="line">lctl ping nids	<span class="c">#用来检查OSS和MGS连接是否正常</span>
-</span><span class="line">lctl dl		<span class="c">#查看当前的设备</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>可以通过<em>lfs</em>命令获取已挂载的<em>lustre</em>文件系统信息：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs df -h
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>或者对文件系统的文件写入方式等进行配置：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs setstripe -c -1 -S 128M /mnt/lustre/
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>其中<code>-c -1</code>表示写入到所有的OSS中，<code>-S 128M</code>表示文件分块的大小为128M；上面是对整个文件系统进行设置，也可以单独地对某个文件或者文件夹进行设置；设置完后可以通过如下命令查看配置信息是否正确：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs getstripe /mnt/lustre
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>利用<code>tunefs.lustre</code>可以查看已建立的lustre文件系统的信息，并对部分信息进行调整。</p>
-
-<h2 id="iozone">利用iozone进行测试</h2>
-<p>iozone是对文件系统的读写性能进行测试的工具</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#单个测试文件大小</span>
-</span><span class="line"><span class="nv">FILE_SIZE</span><span class="o">=</span><span class="s2">&quot;16g&quot;</span>
-</span><span class="line"><span class="c">#进行读写的进程的数量</span>
-</span><span class="line"><span class="nv">THREAD_NUM</span><span class="o">=</span><span class="s2">&quot;16&quot;</span>
-</span><span class="line"><span class="c">#总的读写数据量</span>
-</span><span class="line"><span class="nv">TOTAL_FILESIZE</span><span class="o">=</span><span class="k">$((</span>FILE_SIZE*THREAD_NUM<span class="k">))</span>
-</span><span class="line"><span class="c">#-i 0: 代表write/rewrite</span>
-</span><span class="line"><span class="c">#-i 1: 代表read/reread</span>
-</span><span class="line"><span class="c">#-i 2: 表示random-write/random-read</span>
-</span><span class="line"><span class="c">#-o: 表示在写后要立即进行同步，去除该参数后可有效提高写速度</span>
-</span><span class="line"><span class="c">#-+n: 不进行重复测试，即不会进行rewrite和reread</span>
-</span><span class="line">/path/to/iozone -e -c -s <span class="nv">$TOTAL_FILESIZE</span> -r <span class="nv">$RECSIZE</span> -+m <span class="nv">$NODELIST</span> -+k -i 0 -i 1 -t  <span class="nv">$THREAD_NUM</span> -o -w -+n&gt;&gt; <span class="nv">$OUTPUTFILE</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>其中<code>$NODELIST</code>是下面一种格式的节点配置文件，每一行代表一个客户端，用空格区分为不同的列，每一列的含义如下：</p>
-
-<ol>
-  <li>客户端名称</li>
-  <li>要测试的文件系统的一个目录</li>
-  <li>iozone的可执行文件路径</li>
-  <li>文件名，相同的主机名但不同的文件名也表示一个单独的读写测试进程</li>
-</ol>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">snode17 /mnt/lustre /path/to/iozone file170
-</span><span class="line">snode18 /mnt/lustre /path/to/iozone file180
-</span><span class="line">snode17 /mnt/lustre /path/to/iozone file171
-</span><span class="line">snode18 /mnt/lustre /path/to/iozone file181
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="p-problemc-causer-resolve">遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
-<p>P：安装完重启之后，系统无法启动。<br />
-C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br />
-R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。  </p>
-
-<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br />
-C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br />
-R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。  </p>
-
-<h2 id="idea">比较有创意的Idea</h2>
-<p>需要对<em>/dev/sdb</em>进行分区，就在一台机器上利用<code>fdisk</code>按要求分区后，拷贝出该硬盘前512字节启动分区内容：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">dd <span class="k">if</span><span class="o">=</span>/dev/sdb <span class="nv">of</span><span class="o">=</span>boot512.img <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>之后把这个文件写入其他机器的<em>/dev/sdb</em>硬盘，便可完成分区，这样便方便进行批量处理了：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">dd <span class="k">if</span><span class="o">=</span>boot512.img <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>在用<code>fdisk</code>分完区后，在<em>/dev/sdb#</em>中并没有及时地反映出分区后的结果，此时运行<code>partprobe /dev/sdb</code>命令即可。</p>
-
-<h2 id="section-3">参考文献：</h2>
-<p><a href="http://xiaolangit.blog.51cto.com/3343422/1195060">51CTO：Lustre-2.3的安装</a></p>
 ]]></content>
   </entry>
   
