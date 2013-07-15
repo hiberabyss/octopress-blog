@@ -26,13 +26,14 @@ menuentry 'Install Ubuntu' --hotkey='i' {
 
 iso文件和`images`文件夹需要在同一分区，需要把该分区格式化为`fat32`或`ext#`格式，因为CentOS6.3安装时不支持ntfs格式分区。
 
-安装时只需加载内核和初始文件系统即可，在安装界面选择`images`文件夹所在的分区。如果在安装过程中提示`未找到images#`之类的错误，则可能是没有找到iso文件，按<A-F2>切换到`anaconda`字符界面，手动加载iso文件所在的分区到`/mnt/isodir`目录。
+安装时只需加载内核和初始文件系统即可，在安装界面选择`images`文件夹所在的分区。如果在安装过程中提示`未找到images#`之类的错误，则可能是没有找到iso文件，按`alt-F2`切换到`anaconda`字符界面，手动加载iso文件所在的分区到`/mnt/isodir`目录。
 
 具体的启动配置文件见示例`grub.cfg`文件。
 
-PS：抽时间研究一下`anaconda`，以及如何利用`http`、`ftp`网络安装的方式安装操作系统。
+PS：抽时间研究一下`anaconda`，以及如何利用`http`、`ftp`网络安装的方式安装操作系统。利用`kickstart`可以进行全自动安装。
 
 ##利用memdisk启动WinPE
+需要先下载`memdisk`文件。具体用法参见[syslinux](http://www.syslinux.org/wiki/index.php/MEMDISK)。
 
 ```
 menuentry 'Win7PE' {
@@ -52,6 +53,6 @@ menuentry 'Win7PE' {
 ##示例grub.cfg配置文件（grub2）
 
 {% codeblock mydata/grub/grub.cfg %}
-	{% render_partial ../Rakefile raw%}
+	{% render_partial mydata/grub/grub.cfg raw%}
 {% endcodeblock %}
 

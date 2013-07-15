@@ -1,0 +1,31 @@
+---
+layout: post
+title: "VIM一些使用技巧"
+date: 2013-07-12 15:51
+comments: true
+categories: Vim
+---
+本文记录一些VIM的使用技巧。
+
+<!--more-->
+
+##和数字处理有关
+快捷键`Ctrl-a`可以将光标处数字加1，`Ctrl-x`可以将数字减1，支持多种进制。
+
+快速生成1到100的数字：
+
+1. 插入1，`yy`复制，`99p`粘帖99行。
+2. 输入命令`:let i=1 | g/1/s//\="my0".i."test"/g | let i+=1 `；`g/pattern/s`为替换功能；`\=`把后面的表达式计算出来；字符串需要用“”括起来，并用.连接。
+
+- 参考[vim(gvim)正则表达式查找替换(4)-生成连续数字或行号](http://www.vimer.cn/2009/11/vimgvim%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%9f%a5%e6%89%be%e6%9b%bf%e6%8d%a24-%e7%94%9f%e6%88%90%e8%bf%9e%e7%bb%ad%e6%95%b0%e5%ad%97%e6%88%96%e8%a1%8c%e5%8f%b7.html)
+- 参考[水木社区](http://www.newsmth.net/nForum/#!article/VIM/14355)
+
+##程序代码
+- ]p	#自动调整粘帖代码的缩进。 
+- gd	#跳转到当前光标下函数或者变量的定义处。
+- K	#查看当前光标下的手册页（在gvim下无效）。
+
+参考[高效使用vim](http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html)
+
+##参考资料
+- [Vimer的程序世界](http://www.vimer.cn/)

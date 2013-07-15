@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "tmux的安装"
+title: "tmux的安装与使用"
 date: 2013-07-11 22:15
 comments: true
 categories: Tmux
 ---
-本文介绍如何编译安装`tmux`：
+本文介绍如何编译安装`tmux`，以及一些使用方法。
 
 <!--more-->
+
+##tmux的安装
 
 ```
 # download latest libevent2 and tmux sources, and extract them somewhere
@@ -37,6 +39,15 @@ make && make install
 
 - 在ubuntu下面则尝试安装加上dev的包：`libevent`->`libevent-dev`
 - 在CentOS下面则尝试安装加上devel的包：`libevent`->`livevent-devel`
+
+##使用方法
+直接运行`tmux`开启一个新的`session`；`tmux attach`自动连接到上一个会话。
+
+在`tmux`中，快捷键操作都是通过按`Ctrl+b`再加按键来实现的，一下列举一些常用的快捷键（已按下`Ctrl+b`）：
+
+- ?	#列举所绑定的按键
+- d	#进行detach操作，让tmux后台运行
+- x	#退出当前panel
 
 ##参考资料
 [github](https://gist.github.com/sturadnidge/4185338)
