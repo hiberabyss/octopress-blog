@@ -20,6 +20,11 @@ categories: Vim
 - 参考[vim(gvim)正则表达式查找替换(4)-生成连续数字或行号](http://www.vimer.cn/2009/11/vimgvim%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%9f%a5%e6%89%be%e6%9b%bf%e6%8d%a24-%e7%94%9f%e6%88%90%e8%bf%9e%e7%bb%ad%e6%95%b0%e5%ad%97%e6%88%96%e8%a1%8c%e5%8f%b7.html)
 - 参考[水木社区](http://www.newsmth.net/nForum/#!article/VIM/14355)
 
+##切换目录相关
+- cd %:h #切换当前文件所在目录
+- set autochdir	#自动切换目录，最好不启用，否则使用ctags比较麻烦
+- lcd	#仅切换当前缓存区的工作目录
+
 ##程序代码
 - ]p	#自动调整粘帖代码的缩进。 
 - gd	#跳转到当前光标下函数或者变量的定义处。
