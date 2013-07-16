@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-15T17:50:50+08:00</updated>
+  <updated>2013-07-16T10:17:53+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -68,12 +68,19 @@
 
 <h2 id="section-1">切换目录相关</h2>
 <ul>
-  <li>cd %:h #切换当前文件所在目录</li>
+  <li>cd %:h #切换到当前文件所在目录</li>
   <li>set autochdir	#自动切换目录，最好不启用，否则使用ctags比较麻烦</li>
   <li>lcd	#仅切换当前缓存区的工作目录</li>
 </ul>
 
-<h2 id="section-2">程序代码</h2>
+<h2 id="section-2">高亮列</h2>
+<ul>
+  <li>cuc	#高亮当前列</li>
+  <li>set cc= #高亮某一列</li>
+  <li><a href="https://github.com/nathanaelkane/vim-indent-guides">Indent Guides</a>插件 #使用方式为<code>&lt;Leader&gt;ig</code></li>
+</ul>
+
+<h2 id="section-3">程序代码</h2>
 <ul>
   <li>]p	#自动调整粘帖代码的缩进。 </li>
   <li>gd	#跳转到当前光标下函数或者变量的定义处。</li>
@@ -82,7 +89,7 @@
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
 
-<h2 id="section-3">参考资料</h2>
+<h2 id="section-4">参考资料</h2>
 <ul>
   <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
 </ul>
