@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-16T10:17:53+08:00</updated>
+  <updated>2013-07-16T10:33:09+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -43,7 +43,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[VIM一些使用技巧]]></title>
+    <title type="html"><![CDATA[VIM的一些使用技巧]]></title>
     <link href="http://hiberabyss.github.io/blog/20130712/vim/"/>
     <updated>2013-07-12T15:51:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130712/vim</id>
@@ -75,8 +75,8 @@
 
 <h2 id="section-2">高亮列</h2>
 <ul>
-  <li>cuc	#高亮当前列</li>
-  <li>set cc= #高亮某一列</li>
+  <li>set cuc #高亮当前列</li>
+  <li>set cc=col #高亮某一列</li>
   <li><a href="https://github.com/nathanaelkane/vim-indent-guides">Indent Guides</a>插件 #使用方式为<code>&lt;Leader&gt;ig</code></li>
 </ul>
 
