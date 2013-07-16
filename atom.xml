@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-16T10:33:09+08:00</updated>
+  <updated>2013-07-16T10:38:21+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -85,6 +85,7 @@
   <li>]p	#自动调整粘帖代码的缩进。 </li>
   <li>gd	#跳转到当前光标下函数或者变量的定义处。</li>
   <li>K	#查看当前光标下的手册页（在gvim下无效）。</li>
+  <li>==	#进行格式化处理，可以自动进行缩进等</li>
 </ul>
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
