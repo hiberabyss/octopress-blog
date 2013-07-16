@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VIM一些使用技巧"
+title: "VIM的一些使用技巧"
 date: 2013-07-12 15:51
 comments: true
 categories: Vim
@@ -26,8 +26,8 @@ categories: Vim
 - lcd	#仅切换当前缓存区的工作目录
 
 ##高亮列
-- cuc	#高亮当前列
-- set cc= #高亮某一列
+- set cuc #高亮当前列
+- set cc=col #高亮某一列
 - [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides)插件 #使用方式为`<Leader>ig`
 
 ##程序代码
