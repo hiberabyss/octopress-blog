@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "萝卜网"
+title: "Just laugh :)"
 date: 2013-07-08 21:52
 comments: true
-categories: 
+categories: Funny
 ---
-- [你会不会说话](http://luo.bo/41620/)
 - [其实玻璃才是人类面临的最大威胁](http://luo.bo/41691/)
-- [原来强大的动画背景后，有着不为人知的秘密](http://luo.bo/41675/)
-- [这个倔老头](http://luo.bo/41673/)
-- [每个中年妇女都是讲故事的天才](http://luo.bo/41908/)

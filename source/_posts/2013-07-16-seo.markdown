@@ -1,0 +1,23 @@
+---
+layout: post
+title: "搜索引擎优化"
+date: 2013-07-16 14:27
+comments: true
+categories: SEO
+---
+一些关于搜索引擎优化`SEO`的技巧。
+
+<!--more-->
+
+博客搭建很久之后，依然没有被Google检索。最开始以为是没有用独立主机和独立域名的原因，但通过Goole可以检索到许多其他同样搭建到`yourname.github.io`的网站。接着就开始怀疑是不是自己的内容写的太烂了，但也不至于直接用我博客的名字都搜索不到。
+
+[webmaster]: https://www.google.com/webmasters/tools/home?hl=en
+[baiduzhanzhang]: http://zhanzhang.baidu.com/
+
+今天偶然瞥见了Google推出的[Webmaster Tools][webmaster]工具，在上面添加我博客的地址，并提交了几个`url`，今天下午到实验室发现已经可以用Google检索到了。感觉挺不错哈:)。
+
+百度也有个[站长平台][baiduzhanzhang]工具，也在上面添加了我的博客地址，目前还不太清楚具体效果如何。
+
+##相关链接
+- [Webmaster Tools][webmaster]
+- [百度站长平台][baiduzhanzhang]

@@ -1,0 +1,9 @@
+---
+layout: post
+title: "若有所思"
+date: 2013-07-16 14:19
+comments: true
+categories: 若有所思
+---
+- [这个倔老头](http://luo.bo/41673/)
+- [每个中年妇女都是讲故事的天才](http://luo.bo/41908/)
