@@ -21,9 +21,14 @@ categories: Vim
 - 参考[水木社区](http://www.newsmth.net/nForum/#!article/VIM/14355)
 
 ##切换目录相关
-- cd %:h #切换当前文件所在目录
+- cd %:h #切换到当前文件所在目录
 - set autochdir	#自动切换目录，最好不启用，否则使用ctags比较麻烦
 - lcd	#仅切换当前缓存区的工作目录
+
+##高亮列
+- cuc	#高亮当前列
+- set cc= #高亮某一列
+- [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides)插件 #使用方式为`<Leader>ig`
 
 ##程序代码
 - ]p	#自动调整粘帖代码的缩进。 

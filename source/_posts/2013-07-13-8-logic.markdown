@@ -3,7 +3,7 @@ layout: post
 title: "各种神逻辑的扒"
 date: 2013-07-13 20:06
 comments: true
-categories: Fun
+categories: Funny
 ---
 收录各种神逻辑的推理。
 
