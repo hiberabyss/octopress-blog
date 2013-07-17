@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-17T10:04:48+08:00</updated>
+  <updated>2013-07-17T19:46:34+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[书评]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130717/book-review/"/>
+    <updated>2013-07-17T11:33:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130717/book-review</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<ul>
+  <li><a href="http://program-think.blogspot.com/2012/06/book-review-road-less-traveled.html">《少有人走的路——心智成熟的旅程》</a></li>
+  <li><a href="http://blog.csdn.net/pongba/article/details/1662148">《影响力》</a></li>
+  <li><a href="http://program-think.blogspot.com/2013/04/how-to-read-book.html">《如何阅读一本书》</a></li>
+  <li><a href="http://program-think.blogspot.com/2010/10/book-review-asking-right-questions.html">《学会提问——批判性思维指南》</a></li>
+  <li><a href="http://program-think.blogspot.com/2009/07/book-review-are-your-lights-on.html">《你的灯亮着吗？——找到问题的真正所在》</a></li>
+  <li><a href="http://program-think.blogspot.com/2009/06/book-review-1984.html">《一九八四》——反乌托邦的代表作</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[让我有所感触的话]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130717/words-touch-me/"/>
+    <updated>2013-07-17T11:05:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130717/words-touch-me</id>
+    <content type="html"><![CDATA[<p>爱的反面不是恨，是漠然。</p>
+
+<p>你若不想做，总会找到借口；你若想做，总会找到方法。</p>
+
+<p>人可以拒绝任何东西，但绝对不可以拒绝成熟。拒绝成熟，实际上就是在规避问题、逃避痛苦。规避问题和逃避痛苦的趋向，是人类心理疾病的根源，不及时处理，你就会为此付出沉重的代价，承受更大的痛苦。(《少有人走过的路》)</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu的一些配置方法]]></title>
@@ -120,6 +152,11 @@
     <content type="html"><![CDATA[<ul>
   <li><a href="http://luo.bo/41673/">这个倔老头</a></li>
   <li><a href="http://luo.bo/41908/">每个中年妇女都是讲故事的天才</a></li>
+  <li><a href="http://program-think.blogspot.com/2010/07/silent-proof.html">思维的误区：忽视沉默的大多数</a></li>
+  <li><a href="http://program-think.blogspot.com/2009/05/halo-effect.html">光环效应引发的认知误区</a></li>
+  <li><a href="http://program-think.blogspot.com/2012/12/emperor-complex.html">圣君情结</a></li>
+  <li><a href="http://program-think.blogspot.com/2009/07/break-through-berlin-wall.html">学习一下德国人民的翻墙精神</a>（PS：大部分人都是在被逼到绝境之后才会想着去改变的）</li>
+  <li><a href="http://program-think.blogspot.com/2009/02/from-surface-to-essence.html">学会透过现象看本质，即使现象有时候挺诡异</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -305,6 +342,11 @@
     <tr>
       <td>legitimate</td>
       <td>合法的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>guru</td>
+      <td>古鲁（印度教领袖）；领袖；大牛</td>
       <td>1</td>
     </tr>
     <tr>
@@ -799,54 +841,6 @@
     <updated>2013-07-01T13:34:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130701/about-female</id>
     <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2013流行段子]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130629/2013-catch-phrase/"/>
-    <updated>2013-06-29T23:40:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130629/2013-catch-phrase</id>
-    <content type="html"><![CDATA[<p>收集网络流行语。</p>
-
-<p>「买买提」和「穆罕默德」是同一名字的不同译法。
-<!--more--></p>
-
-<p>给大家讲个励志故事，远离中国足球和股市其实不难，贵在坚持：上学时老喜欢去网吧，后来跟网管熟了没事也去聊天，后来发现有个老鬼也天天在，挺奇怪的，后来网管给我讲了老鬼的事迹，这哥们就在网吧附近住，是个吸毒的，每天没事干，就在网吧坐着，后来他们教他玩魔兽，这哥们上瘾了，后来为了攒钱买装备，把毒……戒了</p>
-
-<p>一女子来到山上的寺庙，想向方丈讨教传统功夫，于是方丈随手一指电脑上的水煮鱼图片问：想不想吃？女子答：想吃！方丈又指麻辣串问：想不想吃？女子答：想吃！方丈又指毛血旺问：想不想吃？女子答：想吃！方丈这时说：很好，你已练成了，这功就叫一指馋！</p>
-
-<p>形容挤：你要是拿一袋饼干上车，下车来饼干成面粉了，反过来，你要是拿一袋面粉上车，下去被挤成饼干了。</p>
-
-<p>只要你过的比我好，死的比我早。</p>
-
-<p>@麦田：刚才北京暴雨，大响雷。按理说这个时候，小朋友都应该被吓得直哭，然后钻到爸爸的怀里。但我闺女酣睡如初！真让我失望！于是我摇醒了她。她从睡梦中被惊醒，吓得直哭。于是我把闺女抱在怀里；窗外，电闪雷鸣；屋内，父亲的怀抱温柔的抱着baby。多么温馨、和谐的一幅画面啊！圆满了。</p>
-
-<p>@协和章蓉娅：某论坛看到某一个妹子的帖子：两年前，一陌生男人因移动营业厅妹妹误敲一个数字将50元话费充给了我。该男子倒也大度，发短信跟我说不用还，算是种缘分。聊了几句发现两人上班地方很近，后来见面了。现在这男人是我老公了，每次特讨厌别人问我们是怎么认识的，那厮总是很贱得回一句:充话费送的。。。</p>
-
-<p>小明对妈妈说：“妈妈，我要吃捧棒糖！”妈妈说：“你听不听话?”小明说：“我不听。”妈妈说：“你不听就不给你买棒棒糖了！”“妈妈，我听话！”小明叫道。妈妈说：“儿子乖啊，听话，咱们别买棒棒糖了啊!”小明说：“妈妈，你是在逗我吗?”</p>
-
-<p><a href="http://luo.bo/41856/#8556">“言”和“颜”</a></p>
-
-<p>话说一个特有派的大哥带着大拇指粗的金项链领着小弟到洗浴中心，扑通跳到水里，项链飘起来了</p>
-
-<p>我记得，Google+刚出的时候被称作Facebook杀手，两年过去了，Facebook还活的风生水起，来数数Google+都杀死了哪些英雄，他们是：Google Buzz，Google Reader，Google Talk，Google Latitude…专杀队友（@Eric_RC_Law）</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[惊悚系列]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130629/frightened/"/>
-    <updated>2013-06-29T23:33:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130629/frightened</id>
-    <content type="html"><![CDATA[<p>收集的一些惊悚故事。</p>
-
-<ul>
-  <li><a href="http://luo.bo/41225/">日本惊悚系列：记忆摄像机</a></li>
-  <li><a href="http://luo.bo/41128/">日本惊悚系列：不要开门</a></li>
-  <li><a href="http://luo.bo/41674/">日本惊悚系列：会走路的尸体</a></li>
-</ul>
 ]]></content>
   </entry>
   
