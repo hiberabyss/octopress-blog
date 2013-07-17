@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Beauty | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/Beauty/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-17T10:04:48+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Beauty]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130713/beauty/"/>
+    <updated>2013-07-13T23:09:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130713/beauty</id>
+    <content type="html"><![CDATA[<ul>
+  <li><a href="http://luo.bo/41841/">壮哉，美哉，茹河瀑布</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

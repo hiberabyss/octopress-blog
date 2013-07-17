@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: SEO | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/SEO/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-17T10:04:48+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[搜索引擎优化]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130716/seo/"/>
+    <updated>2013-07-16T14:27:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130716/seo</id>
+    <content type="html"><![CDATA[<p>一些关于搜索引擎优化<code>SEO</code>的技巧。</p>
+
+<!--more-->
+
+<p>博客搭建很久之后，依然没有被Google检索。最开始以为是没有用独立主机和独立域名的原因，但通过Goole可以检索到许多其他同样搭建到<code>yourname.github.io</code>的网站。接着就开始怀疑是不是自己的内容写的太烂了，但也不至于直接用我博客的名字都搜索不到。</p>
+
+<p>今天偶然瞥见了Google推出的<a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a>工具，在上面添加我博客的地址，并提交了几个<code>url</code>，今天下午到实验室发现已经可以用Google检索到了。感觉挺不错哈:)。</p>
+
+<p>百度也有个<a href="http://zhanzhang.baidu.com/">站长平台</a>工具，也在上面添加了我的博客地址，目前还不太清楚具体效果如何。</p>
+
+<h2 id="section">相关链接</h2>
+<ul>
+  <li><a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a></li>
+  <li><a href="http://zhanzhang.baidu.com/">百度站长平台</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

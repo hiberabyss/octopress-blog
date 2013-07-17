@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Grub | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/Grub/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-17T10:04:48+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[利用Grub2安装启动操作系统]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130712/grub/"/>
+    <updated>2013-07-12T09:28:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130712/grub</id>
+    <content type="html"><![CDATA[<p>本文介绍如何利用<code>Grub2</code>进行操作系统的启动、安装等。</p>
+
+<!--more-->
+
+<h2 id="ubuntu">安装Ubuntu</h2>
+
+<p><code>
+menuentry 'Install Ubuntu' --hotkey='i' {
+    set isofile="/iso/ubuntu.iso"
+    search --set=root -f $isofile --hint (hd0,1)
+    loopback loop $isofile
+    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+    initrd (loop)/casper/initrd.lz
+}
+</code></p>
+
+<h2 id="isocentos">利用iso安装CentOS操作系统</h2>
+<p>复制iso文件根目录下<code>images</code>文件夹到U盘根目录，复制<code>isolinux</code>文件夹到U盘根目录（并非必须，可以利用grub2挂载iso文件后进行使用，但直接复制到u盘可以不用指定iso文件名，要方便很多），复制iso文件到U盘根目录。</p>
+
+<p>iso文件和<code>images</code>文件夹需要在同一分区，需要把该分区格式化为<code>fat32</code>或<code>ext#</code>格式，因为CentOS6.3安装时不支持ntfs格式分区。</p>
+
+<p>安装时只需加载内核和初始文件系统即可，在安装界面选择<code>images</code>文件夹所在的分区。如果在安装过程中提示<code>未找到images#</code>之类的错误，则可能是没有找到iso文件，按<code>alt-F2</code>切换到<code>anaconda</code>字符界面，手动加载iso文件所在的分区到<code>/mnt/isodir</code>目录。</p>
+
+<p>具体的启动配置文件见示例<code>grub.cfg</code>文件。</p>
+
+<p>PS：抽时间研究一下<code>anaconda</code>，以及如何利用<code>http</code>、<code>ftp</code>网络安装的方式安装操作系统。利用<code>kickstart</code>可以进行全自动安装。</p>
+
+<h2 id="memdiskwinpe">利用memdisk启动WinPE</h2>
+<p>需要先下载<code>memdisk</code>文件。具体用法参见<a href="http://www.syslinux.org/wiki/index.php/MEMDISK">syslinux</a>。</p>
+
+<p><code>
+menuentry 'Win7PE' {
+  MEMDISK_LOC="/boot/memdisk"
+  search --set=root -f $MEMDISK_LOC --hint (hd0,1)
+  echo 'Loading Memdisk...'
+  insmod memdisk
+  linux16 /boot/memdisk iso raw
+  echo 'Loading PE...'
+  initrd16 /iso/WIN7PE.ISO
+}
+</code></p>
+
+<h2 id="linux">启动Linux</h2>
+<p>需要先利用<code>linux</code>指定内核文件，该文件一般以<code>vmlinuz</code>开头，注意加上<code>root=/dev/sda3</code>之类的内核参数，指定根分区；然后利用<code>initrd</code>指定初始文件系统，该文件一般以<code>initrd</code>开头。</p>
+
+<h2 id="grubcfggrub2">示例grub.cfg配置文件（grub2）</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>mydata/grub/grub.cfg </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+</pre></td><td class='code'><pre><code class='cfg'><span class='line'>	<span class="na">set default</span><span class="o">=</span><span class="s">0</span>
+</span><span class='line'><span class="na">set font</span><span class="o">=</span><span class="s">/boot/grub/fonts/unicode.pf2</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">insmod</span> <span class="err">all_video</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">if</span> <span class="err">loadfont</span> <span class="err">$font</span> <span class="c1">; then</span>
+</span><span class='line'>    <span class="na">set gfxmode</span><span class="o">=</span><span class="s">auto</span>
+</span><span class='line'><span class="s">    insmod gfxterm</span>
+</span><span class='line'><span class="err">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">terminal_output</span> <span class="err">gfxterm</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#### Theme	###</span>
+</span><span class='line'><span class="na">set menu_color_normal</span><span class="o">=</span><span class="s">white/black</span>
+</span><span class='line'><span class="na">set menu_color_highlight</span><span class="o">=</span><span class="s">black/light-gray</span>
+</span><span class='line'><span class="err">if</span> <span class="err">background_color</span> <span class="err">44,0,30</span><span class="c1">; then</span>
+</span><span class='line'>  <span class="err">clear</span>
+</span><span class='line'><span class="err">fi</span>
+</span><span class='line'><span class="c1">### Theme End	###</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#set timeout=60</span>
+</span><span class='line'><span class="na">menuentry &#39;Install Ubuntu&#39; --hotkey</span><span class="o">=</span><span class="s">&#39;i&#39; {</span>
+</span><span class='line'><span class="s">    set isofile=&quot;/iso/ubuntu.iso&quot;</span>
+</span><span class='line'><span class="s">    search --set=root -f $isofile --hint (hd0,1)</span>
+</span><span class='line'><span class="s">    loopback loop $isofile</span>
+</span><span class='line'><span class="s">    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject</span>
+</span><span class='line'><span class="s">    initrd (loop)/casper/initrd.lz</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;Install</span> <span class="err">CentOS6.3&#39;{</span>
+</span><span class='line'><span class="c1">#  set isofile=&quot;/CentOS-6.3-x86_64-bin-DVD1.iso&quot;</span>
+</span><span class='line'><span class="c1">#  search --set=root -f $isofile --hint (hd0,2)</span>
+</span><span class='line'><span class="c1">#  loopback loop $isofile</span>
+</span><span class='line'>  <span class="na">set flagfile</span><span class="o">=</span><span class="s">&quot;/liu/hong/bo/linux.flag&quot;</span>
+</span><span class='line'><span class="s">  search --set=root -f $flagfile --hint (hd0,2)</span>
+</span><span class='line'><span class="s">  linux /isolinux/vmlinuz </span>
+</span><span class='line'><span class="s">  initrd /isolinux/initrd.img</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;SystemRescueCD&#39;</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">set isofile</span><span class="o">=</span><span class="s">&quot;/iso/systemrescuecd.iso&quot;</span>
+</span><span class='line'><span class="s">    search --set=root -f $isofile --hint (hd0,2)</span>
+</span><span class='line'><span class="s">    loopback loop $isofile</span>
+</span><span class='line'><span class="s">    linux (loop)/isolinux/rescue32 setkmap=us isoloop=$isofile</span>
+</span><span class='line'><span class="s">    initrd (loop)/isolinux/initram.igz</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;Win7PE&#39;</span> <span class="err">{</span>
+</span><span class='line'>  <span class="na">MEMDISK_LOC</span><span class="o">=</span><span class="s">&quot;/boot/memdisk&quot;</span>
+</span><span class='line'><span class="s">  search --set=root -f $MEMDISK_LOC --hint (hd0,1)</span>
+</span><span class='line'><span class="s">  echo &#39;Loading Memdisk...&#39;</span>
+</span><span class='line'><span class="s">  insmod memdisk</span>
+</span><span class='line'><span class="s">  linux16 /boot/memdisk iso raw</span>
+</span><span class='line'><span class="s">  echo &#39;Loading PE...&#39;</span>
+</span><span class='line'><span class="s">  initrd16 /iso/WIN7PE.ISO</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;Boot</span> <span class="err">Grub4Dos&#39;</span> <span class="err">{</span>
+</span><span class='line'>    <span class="err">linux</span> <span class="err">/grub4dos/grub.exe</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+]]></content>
+  </entry>
+  
+</feed>

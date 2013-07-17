@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Markdown | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/Markdown/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-17T10:04:48+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress中Markdown文件语法总结]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130625/markdown-syntax/"/>
+    <updated>2013-06-25T15:20:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130625/markdown-syntax</id>
+    <content type="html"><![CDATA[<p>本文主要对<code>Octopress</code>中<code>Markdown</code>文件的语法做一些总结。
+<!--more--></p>
+
+<h2 id="first">Markdown语法</h2>
+<p>Markdown的完整语法可以参考图灵社区的<a href="http://www.ituring.com.cn/article/504">中文文档</a>；查看该文档<a href="https://github.com/othree/markdown-syntax-zhtw/edit/master/syntax.md">源代码</a>。</p>
+
+<h2 id="section">首页只显示部分博客内容</h2>
+<p><code>&lt;!--more--&gt;</code>会使得在博客首页只显示这个标记之前的内容，这个标签后面要空出一行。提示继续阅读的文字信息则可以在<code>_config.yml</code>文件中<code>excerpt_link: </code>字段进行修改。</p>
+
+<h2 id="section-1">可以用如下方式添加同一文档内的链接</h2>
+<p>链接到<a href="#first">Markdown语法</a>部分</p>
+
+<h2 id="section-2">关于分类</h2>
+<p>文件中的多个分类直接用空格进行间隔即可，我用的插件会自动把分类名称的首字母大写。</p>
+
+<h2 id="section-3">插入代码</h2>
+<p>可以利用下面的代码插入相对应于<code>source</code>目录的代码文件。</p>
+
+<p>
+<code>
+{% codeblock bash.sh lang:bash %} 
+	 {% render_partial sample-language/shell/bash.sh %}
+{% endcodeblock %}
+</code>
+</p>
+
+<p><a href="http://stackoverflow.com/questions/15786144/how-to-escape-in-markdown-on-octopress">参考</a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: VirtualBox | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/VirtualBox/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-17T10:04:48+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[VirtualBox配置总结]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130711/virtualbox/"/>
+    <updated>2013-07-11T20:12:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130711/virtualbox</id>
+    <content type="html"><![CDATA[<p>本文记录使用VirtualBox时的一些配置和使用技巧。</p>
+
+<!--more-->
+
+<h2 id="nat">利用<code>nat</code>方式连接外网</h2>
+<p>一般把虚拟机的网卡设置为<code>nat</code>连接方式时，会自动分配相应的ip地址和网关地址；如果没有正确地分配到ip地址，则设置成如下的网络配置即可：</p>
+
+<p>```
+…
+IPADDR=10.0.3.15
+NETMASK=255.255.255.0
+GATEWAY=10.0.3.2
+…</p>
+
+<h1 id="dns">dns服务器</h1>
+<p>nameserver=10.0.3.2
+```</p>
+
+<h2 id="section">连接外网的同时和主机进行通信</h2>
+<p>给虚拟机新添加一个网卡，一个使用<code>nat</code>方式，一个使用<code>Bridged Adapter</code>方式，把后一个网卡的ip地址配置和主机在同一个网段，然后配置和主机相同的网关地址即可。</p>
+]]></content>
+  </entry>
+  
+</feed>
