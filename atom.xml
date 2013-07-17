@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-16T14:46:39+08:00</updated>
+  <updated>2013-07-17T09:29:40+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu的一些配置方法]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130716/ubuntu/"/>
+    <updated>2013-07-16T20:19:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130716/ubuntu</id>
+    <content type="html"><![CDATA[<p>以Ubuntu为主的对Linux的一些配置，标记通用则表示也适用于其他Linux版本。</p>
+
+<!--more-->
+
+<h2 id="section">时间设置（通用）</h2>
+<p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">ntpdate us.pool.ntp.org</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>修改时区：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-1">代理上网</h2>
+<p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lustre原理及优化]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130716/lustre-internal/"/>
+    <updated>2013-07-16T16:30:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130716/lustre-internal</id>
+    <content type="html"><![CDATA[<p>介绍Lustre的内部细节及一些优化措施。</p>
+
+<!--more-->
+
+<h2 id="lustre-stripe">Lustre Stripe</h2>
+<p>Lustre采用对象存储技术，将大文件分片存储在多个OST上。分片的参数包括<code>stripe_count</code>和<code>stripe_size</code>，即所要使用的OST的数量以及分片的大小，默认分别为<code>1</code>和<code>1MB</code>。可以通过<code>lfs setstripe</code>命令进行设定，子目录继承父目录的分片模式。Lustre在创建文件时就按照分片模式和OST选择算法，预先创建好文件所需的OST对象。数据写入后，文件的分片不能修改，现在还未实现OST存储空间的自动均衡。</p>
+
+<p>OST选择算法：
+1. Round-Robin：任意两个OST剩余存储容量之差小于<code>20%</code>时采用该算法；以顺序轮转方式选择OST，算法非常高效。
+2. 随机加权算法：存在两个OST剩余空间之差大于<code>20%</code>时采用该算法；Lustre维护着一张剩余空间的优先列表，采用随机算法在此列表中选择OST，会产生开销并影响性能；当任意两个OST剩余容量之差小于<code>20%</code>时，继续选用<code>Round-Robin</code>算法。</p>
+
+<h2 id="lustre">Lustre性能优化</h2>
+
+<ol>
+  <li>禁用所有客户端的<code>LNET debug</code>功能：<code>sysctl -w lnet.debug=0</code>。</li>
+  <li>增加客户端Dirty Cache大小：<code>lctl set_param osc./*.max_dirty_mb=256</code>，缺省为32MB，增大缓存将提升I/O性能，但数据丢失的风险也随之增大。</li>
+  <li>增加RPC并行数量：echo 32 &gt; /proc/fs/lustre/osc/<em>-OST000</em>/max_rpcs_in_flight，缺省为8，提升至32将提高数据和元数据性能。不利之处是如果服务器压力很大，可能反而会影响性能。</li>
+</ol>
+
+<h2 id="section">参考资料</h2>
+<p><a href="http://blog.csdn.net/liuben/article/details/6455736">Lustre I/O性能特点与最佳实践</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[搜索引擎优化]]></title>
@@ -792,52 +846,6 @@
   <li><a href="http://luo.bo/41225/">日本惊悚系列：记忆摄像机</a></li>
   <li><a href="http://luo.bo/41128/">日本惊悚系列：不要开门</a></li>
   <li><a href="http://luo.bo/41674/">日本惊悚系列：会走路的尸体</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[佛祖，你真是太坏了]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130629/fuck-fozu/"/>
-    <updated>2013-06-29T22:54:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130629/fuck-fozu</id>
-    <content type="html"><![CDATA[<p>本文转载自<a href="http://luo.bo/41208/">萝卜网</a></p>
-
-<p>唐僧师徒一行经历九九八十一难，终于见到了如来佛，求取真经。<br />
-如来问：“你们带U盘了么”<br />
-唐僧师徒：“…………”<br />
-如来又问：“移动硬盘呢”<br />
-唐僧师徒：“…………”<br />
-如来继续问：“IPOD也可以”<br />
-悟空挖起耳朵来。<br />
-如来叹了口气：“那你们就原路返回去吧，我用QQ传给你们”<br />
-唐僧：“靠，早知道加你QQ就完了，老子还走那么远干嘛”。<br />
-四人将要走的时候，<br />
-佛祖忽然问道：“你们带PSP了吗？”<br />
-四人回答：“没带”。<br />
-佛祖惊讶：“那多无聊呀，你们怎么过来的？”<br />
-四人相互看看说：“我们一路打怪升级过来的。”<br />
-唐僧回去以后，加了如来QQ，发现很慢。<br />
-如来一个电话：“喂，小唐，你呀铁通56K？”<br />
-小唐：“是，去年才装的。是不是网络太差传不过来？”<br />
-如来说：“那你再来一次吧，带上U盘”。  </p>
-
-<p>于是唐僧师徒带上U盘一行再经历九九八十一难终于见到了如来佛。<br />
-<!--more--></p>
-
-<p><a href="http://luo.bo/41208/">查看全文</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[搞笑视频收集]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130629/funny-videoes/"/>
-    <updated>2013-06-29T22:23:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130629/funny-videoes</id>
-    <content type="html"><![CDATA[<p>收集一些比较好玩的视频。</p>
-
-<ul>
-  <li><a href="http://luo.bo/41211/">萌爆！韩国俩小姐妹叉腰对骂</a></li>
 </ul>
 ]]></content>
   </entry>

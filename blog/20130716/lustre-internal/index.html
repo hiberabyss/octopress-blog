@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Markdown - 蛰渊-成长的轨迹</title>
+  <title>Lustre原理及优化 - 蛰渊-成长的轨迹</title>
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="Category: Markdown">
+  <meta name="description" content="介绍Lustre的内部细节及一些优化措施。 Lustre Stripe
+Lustre采用对象存储技术，将大文件分片存储在多个OST上。分片的参数包括stripe_count和stripe_size，即所要使用的OST的数量以及分片的大小，默认分别为1和1MB。可以通过lfs &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hiberabyss.github.ioblog/categories/markdown">
+  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130716/lustre-internal">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="蛰渊-成长的轨迹" type="application/atom+xml">
@@ -65,38 +66,131 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Markdown</h1>
+    
+      <h1 class="entry-title">Lustre原理及优化</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-16T16:30:00+08:00" pubdate data-updated="true">Jul 16<span>th</span>, 2013</time>
+        
+
+	 
+	  | <a href="#comments">Comments</a>
+	 
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>介绍Lustre的内部细节及一些优化措施。</p>
 
-  
-  <h2>2013</h2>
+<!--more-->
 
-<article>
-  
-<h1><a href="/blog/20130625/markdown-syntax/">Octopress中Markdown文件语法总结</a></h1>
-<time datetime="2013-06-25T15:20:00+08:00" pubdate><span class='month'>Jun</span> <span class='day'>25</span> <span class='year'>2013</span></time>
+<h2 id="lustre-stripe">Lustre Stripe</h2>
+<p>Lustre采用对象存储技术，将大文件分片存储在多个OST上。分片的参数包括<code>stripe_count</code>和<code>stripe_size</code>，即所要使用的OST的数量以及分片的大小，默认分别为<code>1</code>和<code>1MB</code>。可以通过<code>lfs setstripe</code>命令进行设定，子目录继承父目录的分片模式。Lustre在创建文件时就按照分片模式和OST选择算法，预先创建好文件所需的OST对象。数据写入后，文件的分片不能修改，现在还未实现OST存储空间的自动均衡。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/markdown/'>Markdown</a>, <a class='category' href='/blog/categories/octopress/'>Octopress</a></span>
-</footer>
+<p>OST选择算法：
+1. Round-Robin：任意两个OST剩余存储容量之差小于<code>20%</code>时采用该算法；以顺序轮转方式选择OST，算法非常高效。
+2. 随机加权算法：存在两个OST剩余空间之差大于<code>20%</code>时采用该算法；Lustre维护着一张剩余空间的优先列表，采用随机算法在此列表中选择OST，会产生开销并影响性能；当任意两个OST剩余容量之差小于<code>20%</code>时，继续选用<code>Round-Robin</code>算法。</p>
 
+<h2 id="lustre">Lustre性能优化</h2>
 
-</article>
+<ol>
+  <li>禁用所有客户端的<code>LNET debug</code>功能：<code>sysctl -w lnet.debug=0</code>。</li>
+  <li>增加客户端Dirty Cache大小：<code>lctl set_param osc./*.max_dirty_mb=256</code>，缺省为32MB，增大缓存将提升I/O性能，但数据丢失的风险也随之增大。</li>
+  <li>增加RPC并行数量：echo 32 &gt; /proc/fs/lustre/osc/<em>-OST000</em>/max_rpcs_in_flight，缺省为8，提升至32将提高数据和元数据性能。不利之处是如果服务器压力很大，可能反而会影响性能。</li>
+</ol>
 
+<h2 id="section">参考资料</h2>
+<p><a href="http://blog.csdn.net/liuben/article/details/6455736">Lustre I/O性能特点与最佳实践</a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">hiberabyss</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-16T16:30:00+08:00" pubdate data-updated="true">Jul 16<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/filesystem/'>FileSystem</a>, <a class='category' href='/blog/categories/lustre/'>Lustre</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  <div class="bshare-custom icon-medium-plus"><div class="bsPromo bsPromo1"></div><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style="float: none;">17.3K</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&amp;uuid=e9535cd2-62a6-4e4f-a23c-a6123bf6ee40&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20130716/seo/" title="Previous Post: 搜索引擎优化">&laquo; 搜索引擎优化</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/20130716/ubuntu/" title="Next Post: Ubuntu的一些配置方法">Ubuntu的一些配置方法 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"hiberabyss"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
 
 </div>
 
