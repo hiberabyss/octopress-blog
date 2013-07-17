@@ -26,6 +26,7 @@ categories: English
 |dogmatic|武断地|1
 |demean|贬低...的身份|1
 |legitimate|合法的|1
+|guru|古鲁（印度教领袖）；领袖；大牛|1
 |eeeeeeeeeeeeeeeeeeee|eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee|eee
 
 * * * 
