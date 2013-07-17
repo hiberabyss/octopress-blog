@@ -3,7 +3,7 @@ layout: post
 title: "Linux常用命令"
 date: 2013-06-28 10:54
 comments: true
-categories: linux
+categories: Linux
 ---
 本文主要是对常用的linux命令做一个总结。
 <!--more-->
@@ -22,5 +22,14 @@ man -k keyword
 ##who
 查看启动了多少shell。
 
-##type
+##查看文件类型
+`type`、`whatis`、`which`
 
+##sed
+
+```bash
+#替换
+sed -i 's/pattern/tostring/g' /path/to/file
+#插入新行
+sed -i 'a GATEWAY=' /path/to/file
+```

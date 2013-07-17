@@ -28,9 +28,13 @@ module Jekyll
         url = get_category_url category
         style = "font-size: #{100 + (60 * Float(counter)/max)}%"
         if @config['category_counter']
-          html << " <a href='#{url}' style='#{style}'>#{category.capitalize}(#{@categories[category].count})</a> "
+          #html << " <a href='#{url}' style='#{style}'>#{category.capitalize}(#{@categories[category].count})</a> "
+	  #hiberabyss:
+          html << " <a href='#{url}' style='#{style}'>#{category}(#{@categories[category].count})</a> "
         else
-          html << " <a href='#{url}' style='#{style}'>#{category.capitalize}</a> "
+          #html << " <a href='#{url}' style='#{style}'>#{category.capitalize}</a> "
+	  #hiberabyss: remover capitalize
+          html << " <a href='#{url}' style='#{style}'>#{category}</a> "
         end
       end
 
@@ -53,9 +57,13 @@ module Jekyll
       @categories.keys.sort_by{ |str| str.downcase }.each do |category|
         url = get_category_url category
         if @config['category_counter']
-          html << "  <li><a href='#{url}'>#{category.capitalize} (#{@categories[category].count})</a></li>\n"
+          #html << "  <li><a href='#{url}'>#{category.capitalize} (#{@categories[category].count})</a></li>\n"
+	  #hiberabyss:
+          html << "  <li><a href='#{url}'>#{category} (#{@categories[category].count})</a></li>\n"
         else
-          html << "  <li><a href='#{url}'>#{category.capitalize}</a></li>\n"
+          #html << "  <li><a href='#{url}'>#{category.capitalize}</a></li>\n"
+	  #hiberabyss:
+          html << "  <li><a href='#{url}'>#{category}</a></li>\n"
         end
       end
       html << "</ul>"
@@ -74,7 +82,7 @@ module Jekyll
       dir = @config['category_dir'] || 'categories'
       #File.join @config['root'], dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
       #hiberabyss: remover downcase
-      File.join @config['root'], dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
+      File.join @config['root'], dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-')
     end
   end
 
