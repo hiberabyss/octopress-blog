@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Ubuntu的一些配置方法"
+date: 2013-07-16 20:19
+comments: true
+categories: Linux
+---
+以Ubuntu为主的对Linux的一些配置，标记通用则表示也适用于其他Linux版本。
+
+<!--more-->
+
+##时间设置（通用）
+利用`ntpdate`进行时间同步，需已安装包`ntp`：
+
+```
+ntpdate us.pool.ntp.org
+```
+
+修改时区：
+
+```
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+##代理上网
+只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。

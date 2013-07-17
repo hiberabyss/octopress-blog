@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lustre-2.3的安装与配置"
+title: "Lustre的安装与配置"
 date: 2013-06-24 12:37
 comments: true
 categories: FileSystem Lustre
