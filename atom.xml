@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-17T19:46:34+08:00</updated>
+  <updated>2013-07-19T10:22:24+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,142 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Debug的技巧]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130718/how-to-debug/"/>
+    <updated>2013-07-18T21:41:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130718/how-to-debug</id>
+    <content type="html"><![CDATA[<p>介绍进行debug的一些技巧。</p>
+
+<!--more-->
+
+<h2 id="printf">利用宏和printf进行调试</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#define __DEBUG__  </span>
+</span><span class="line"><span class="cp">#ifdef __DEBUG__  </span>
+</span><span class="line"><span class="cp">#define myprintf(format,...) printf(&quot;File:&quot;__FILE__&quot;, Line:%d: &quot;format&quot;\n&quot;, __LINE__, ##__VA_ARGS__)  </span>
+</span><span class="line"><span class="cp">#else  </span>
+</span><span class="line"><span class="cp">#define myprintf(format,...)  </span>
+</span><span class="line"><span class="cp">#endif</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>其中<code>##</code>用于宏的字符串连接，如果<code>__VA_ARGS__</code>为空，则<code>,</code>会被删除。</p>
+
+<h2 id="assert">利用assert进行调试</h2>
+<p><code>assert(expression)</code>用于对表达式进行断言，使用前需要<code>#include &lt;assert.h&gt;</code>，如下的代码：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">78</span><span class="p">;</span>
+</span><span class="line"><span class="n">assert</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">77</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>会产生这样的错误：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="nl">test:</span> <span class="n">test</span><span class="p">.</span><span class="n">cpp</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span> <span class="kt">int</span> <span class="n">main</span><span class="p">()</span><span class="o">:</span> <span class="n">Assertion</span> <span class="err">`</span><span class="n">a</span> <span class="o">==</span> <span class="mi">77</span><span class="err">&#39;</span> <span class="n">failed</span><span class="p">.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>并自动退出；如果定义<code>#define NDEBUG</code>，则会禁用<code>assert</code>。</p>
+
+<h2 id="section">参考资料</h2>
+
+<ul>
+  <li><a href="http://blog.csdn.net/hinyunsin/article/details/6546670">巧用可变参数宏、编译器内置宏和printf输出调试信息</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GnuPlot基本用法]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130718/gnuplot/"/>
+    <updated>2013-07-18T20:26:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130718/gnuplot</id>
+    <content type="html"><![CDATA[<p>介绍Gnuplot的一些用法。</p>
+
+<!--more-->
+
+<p>编辑后罪名为<code>.gp</code>的文件，用<code>gnuplot -p your.gp</code>编译，其中<code>-p</code>表示总是显示生成的图像，如果设置生成<code>eps</code>格式文件，则不会显示图像，下面是一个示例的<code>.gp</code>文件：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+</pre></td><td class="code"><pre><code class="gnuplot"><span class="line"><span class="c">#设置x,y坐标范围</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">400</span><span class="o">:</span><span class="mi">900</span><span class="p">]</span>
+</span><span class="line">
+</span><span class="line"><span class="c">#按对数格式显示坐标间隔</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">logscale</span> <span class="n">y</span>
+</span><span class="line"><span class="c">#设置表示不同曲线的小列表位置</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">key</span> <span class="n">right</span>
+</span><span class="line"><span class="c">#设置x坐标显示</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">xtics</span> <span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line"><span class="k">set</span> <span class="nb">term</span> <span class="n">postscript</span> <span class="n">font</span> <span class="s">&quot;Times New Roman, 20&quot;</span>
+</span><span class="line">
+</span><span class="line"><span class="c">#设置x,y坐标标题文字</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;X label text&quot;</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;Y label text&quot;</span>
+</span><span class="line">
+</span><span class="line"><span class="k">set</span> <span class="nb">terminal</span> <span class="n">postscript</span> <span class="n">eps</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">output</span> <span class="s">&quot;mypicture.eps&quot;</span>
+</span><span class="line"><span class="c">#data.txt为数据文件，按行列组织，已空白符号间隔</span>
+</span><span class="line"><span class="c">#using 1:2中2表示第二列数据</span>
+</span><span class="line"><span class="k">plot</span> <span class="s">&quot;data.txt&quot;</span> <span class="nb">using</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span> <span class="nb">title</span> <span class="s">&quot;Write&quot;</span> <span class="nb">with</span> <span class="n">lp</span> <span class="o">,</span> <span class="s">&#39;&#39;</span> <span class="nb">u</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span> <span class="nb">title</span> <span class="s">&quot;Read&quot;</span> <span class="nb">w</span> <span class="n">lp</span>
+</span><span class="line">
+</span><span class="line"><span class="c">#画柱状图</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">style</span> <span class="n">data</span> <span class="n">histogram</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">style</span> <span class="n">histogram</span> <span class="n">clustered</span> <span class="n">gap</span> <span class="mi">1</span>
+</span><span class="line"><span class="c">#以颜色进行区分</span>
+</span><span class="line"><span class="c">#set style fill solid 0.4 border</span>
+</span><span class="line"><span class="c">#以斜线进行区分</span>
+</span><span class="line"><span class="k">set</span> <span class="nb">style</span> <span class="n">fill</span> <span class="n">pattern</span> <span class="mi">4</span> <span class="n">border</span> <span class="mi">-1</span>
+</span><span class="line"><span class="c">#2:xticlables(1):表示使用第2列数据，同时以第一列为横坐标文字说明</span>
+</span><span class="line"><span class="k">plot</span> <span class="s">&quot;store04-data.txt&quot;</span> <span class="nb">u</span> <span class="mi">2</span><span class="o">:</span><span class="nf">xticlabels</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nb">title</span> <span class="nf">columnheader</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">,</span> <span class="s">&#39;&#39;</span> <span class="nb">u</span> <span class="mi">3</span><span class="o">:</span><span class="nf">xticlabels</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nb">title</span> <span class="nf">columnheader</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section">参考资料</h2>
+<ul>
+  <li><a href="http://hi.baidu.com/pbskasefcqcfjxr/item/969799ba83ed7a432aebe383">利用Gnuplot画柱状图</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[书评]]></title>
@@ -259,7 +395,14 @@
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
 
-<h2 id="section-4">参考资料</h2>
+<h2 id="section-4">相关插件</h2>
+
+<h3 id="ultisnips">UltiSnips</h3>
+<p>非常好用的一个自动完成的插件。默认触发键为<code>&lt;tab&gt;</code>；可以在插件目录下的<code>ultisnips/UltiSnips/</code>目录里编辑<code>extension.snippets</code>文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用<code>:help UltiSnips</code>查看。</p>
+
+<p>介绍： <a href="http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/">Why UltiSnips</a></p>
+
+<h2 id="section-5">参考资料</h2>
 <ul>
   <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
 </ul>
@@ -815,32 +958,6 @@
     <content type="html"><![CDATA[<ul>
   <li><a href="http://luo.bo/41691/">其实玻璃才是人类面临的最大威胁</a></li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux目录的可执行权限]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130704/directory-execute-bit/"/>
-    <updated>2013-07-04T10:37:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130704/directory-execute-bit</id>
-    <content type="html"><![CDATA[<p>Linux目录必须要有可执行权限，此时<code>x</code>字段并不是真的代表可执行，而只是被重利用，用来表示在路径搜索中是否允许进行搜索，因此目录的<code>x</code>字段又被称为<code>search permision</code>字段。</p>
-
-<!--more-->
-
-<p>例如，当搜索目录<code>/path/to/file</code>时，如果目录<code>to</code>没有可执行权限，则在搜索<code>to</code>目录之前会首选判断<code>x</code>字段是否置位，如果没有，则提示没有权限。但如果有<code>to</code>目录的读取权限，还是可以显示<code>to</code>目录的内容的。</p>
-
-<p>在用<code>cd dir</code>切换目录时，需要<code>dir</code>目录具有可执行权限，否则会提示权限错误。</p>
-
-<p><a href="http://www.cnblogs.com/frydsh/archive/2013/01/15/2862066.html">参考资料</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[一些不成熟的思考]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130701/about-female/"/>
-    <updated>2013-07-01T13:34:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130701/about-female</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
