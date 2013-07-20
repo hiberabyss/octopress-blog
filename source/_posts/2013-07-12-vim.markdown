@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VIM的一些使用技巧"
+title: "VIM总结"
 date: 2013-07-12 15:51
 comments: true
 categories: Vim
@@ -37,6 +37,13 @@ categories: Vim
 - ==	#进行格式化处理，可以自动进行缩进等
 
 参考[高效使用vim](http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html)
+
+##相关插件
+
+###UltiSnips
+非常好用的一个自动完成的插件。默认触发键为`<tab>`；可以在插件目录下的`ultisnips/UltiSnips/`目录里编辑`extension.snippets`文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用`:help UltiSnips`查看。
+
+介绍： [Why UltiSnips](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
 
 ##参考资料
 - [Vimer的程序世界](http://www.vimer.cn/)

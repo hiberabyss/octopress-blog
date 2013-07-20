@@ -22,5 +22,16 @@ ntpdate us.pool.ntp.org
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
+##调整分辨率
+
+```lang
+#设置自动调整
+#LVDS1为一种显示模式，直接运行xrandr可显示当前可用的模式
+xrandr --output LVDS1 --auto
+```
+
+##利用ezame调整右键菜单
+搜索到`Wine Windowns Program Loader`项目，把`No Display`选项关闭，在`Exec`参数前加上`env LANG="zh_CN.UTF-8"`。
+
 ##代理上网
 只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。

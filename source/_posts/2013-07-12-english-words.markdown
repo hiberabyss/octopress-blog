@@ -27,6 +27,8 @@ categories: English
 |demean|贬低...的身份|1
 |legitimate|合法的|1
 |guru|古鲁（印度教领袖）；领袖；大牛|1
+|wrapper|包装纸|1
+|hitch|故障|1
 |eeeeeeeeeeeeeeeeeeee|eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee|eee
 
 * * * 
