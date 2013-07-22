@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Grub | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Grub/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-20T12:31:15+08:00</updated>
+  <updated>2013-07-22T20:47:44+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -62,6 +62,14 @@ menuentry 'Win7PE' {
 
 <h2 id="linux">启动Linux</h2>
 <p>需要先利用<code>linux</code>指定内核文件，该文件一般以<code>vmlinuz</code>开头，注意加上<code>root=/dev/sda3</code>之类的内核参数，指定根分区；然后利用<code>initrd</code>指定初始文件系统，该文件一般以<code>initrd</code>开头。</p>
+
+<h2 id="grub-rescue">Grub Rescue</h2>
+
+<p><code>lang
+set prefix=(hd0,msdos#)/boot/grub
+insmod normal
+normal
+</code></p>
 
 <h2 id="grubcfggrub2">示例grub.cfg配置文件（grub2）</h2>
 

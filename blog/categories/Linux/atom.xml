@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Linux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-20T12:31:15+08:00</updated>
+  <updated>2013-07-22T20:47:44+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -44,7 +44,48 @@ xrandr --output LVDS1 --auto
 </code></p>
 
 <h2 id="ezame">利用ezame调整右键菜单</h2>
-<p>搜索到<code>Wine Windowns Program Loader</code>项目，把<code>No Display</code>选项关闭，在<code>Exec</code>参数前加上<code>env LANG="zh_CN.UTF-8"</code>。</p>
+<p>搜索到<code>Wine Windowns Program Loader</code>项目，把<code>No Display</code>选项关闭（这样便可以在右键菜单选择默认程序时出现该程序），在<code>Exec</code>参数前加上<code>env LANG="zh_CN.UTF-8"</code>。</p>
+
+<h2 id="uuid">查看UUID</h2>
+
+<p><code>bash
+sudo blkid
+ls -l /dev/disk/by-uuid/
+</code></p>
+
+<h2 id="linux">编译Linux内核</h2>
+
+<p><code>lang
+#查看帮助文档
+make help
+#参考当前内核加载的模块生成config文件
+make localmodinstall
+make
+#将生成的模块复制到 /lib/modules/version 目录下
+make modules_install
+#生成内核文件、initrd文件等，并复制到 /boot/ 目录下
+make install
+#以上四步即可完成内核的编译与安装
+</code></p>
+
+<h2 id="cache">手动清除cache内存</h2>
+
+<p><code>bash
+sync
+echo 3 &gt; /proc/sys/vm/drop_caches
+#To free pagecache, use 
+echo 1 &gt; /proc/sys/vm/drop_caches
+#to free dentries and inodes, use
+echo 2 &gt; /proc/sys/vm/drop_caches
+#to free pagecache, dentries and inodes, use 
+echo 3 &gt; /proc/sys/vm/drop_caches
+#Because this is a non-destructive operation and dirty objects
+#are not freeable, the user should run sync first.
+</code></p>
+
+<ul>
+  <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
+</ul>
 
 <h2 id="section-2">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
@@ -160,7 +201,10 @@ yum --disablerepo=/* --enablerepo=locale install
 
 <p>在用<code>cd dir</code>切换目录时，需要<code>dir</code>目录具有可执行权限，否则会提示权限错误。</p>
 
-<p><a href="http://www.cnblogs.com/frydsh/archive/2013/01/15/2862066.html">参考资料</a></p>
+<ul>
+  <li><a href="http://www.cnblogs.com/frydsh/archive/2013/01/15/2862066.html">参考资料</a></li>
+  <li><a href="http://bbs.51cto.com/thread-886747-1.html">Linux文件权限学习总结</a></li>
+</ul>
 ]]></content>
   </entry>
   
