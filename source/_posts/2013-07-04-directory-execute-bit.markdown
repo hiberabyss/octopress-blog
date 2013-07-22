@@ -13,4 +13,5 @@ Linux目录必须要有可执行权限，此时`x`字段并不是真的代表可
 
 在用`cd dir`切换目录时，需要`dir`目录具有可执行权限，否则会提示权限错误。
 
-[参考资料](http://www.cnblogs.com/frydsh/archive/2013/01/15/2862066.html)
+- [参考资料](http://www.cnblogs.com/frydsh/archive/2013/01/15/2862066.html)
+- [Linux文件权限学习总结](http://bbs.51cto.com/thread-886747-1.html)

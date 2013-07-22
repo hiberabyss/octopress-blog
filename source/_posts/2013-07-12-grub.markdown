@@ -50,6 +50,14 @@ menuentry 'Win7PE' {
 ##启动Linux
 需要先利用`linux`指定内核文件，该文件一般以`vmlinuz`开头，注意加上`root=/dev/sda3`之类的内核参数，指定根分区；然后利用`initrd`指定初始文件系统，该文件一般以`initrd`开头。
 
+##Grub Rescue
+
+```lang
+set prefix=(hd0,msdos#)/boot/grub
+insmod normal
+normal
+```
+
 ##示例grub.cfg配置文件（grub2）
 
 {% codeblock mydata/grub/grub.cfg %}
