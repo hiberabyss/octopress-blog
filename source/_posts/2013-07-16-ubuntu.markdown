@@ -24,7 +24,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ##调整分辨率
 
-```lang
+```bash
 #设置自动调整
 #LVDS1为一种显示模式，直接运行xrandr可显示当前可用的模式
 xrandr --output LVDS1 --auto
@@ -42,7 +42,7 @@ ls -l /dev/disk/by-uuid/
 
 ##编译Linux内核
 
-```lang
+```bash
 #查看帮助文档
 make help
 #参考当前内核加载的模块生成config文件

@@ -38,6 +38,11 @@ categories: Vim
 
 参考[高效使用vim](http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html)
 
+##文件类型filetype
+在目录`~/.vim/ftdetect/`目录下建立`.vim`文件，用于设置识别特定类型文件后的操作。
+
+在目录`~/.vim/ftplugin/`目录建立以`filetype`开头的文件，如`cpp.vim`，则在编辑`*.cpp`文件时，便会应用`cpp.vim`里所做的设定。
+
 ##相关插件
 
 ###UltiSnips
