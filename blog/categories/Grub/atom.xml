@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Grub | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Grub/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-23T12:54:35+08:00</updated>
+  <updated>2013-07-23T17:29:16+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -65,7 +65,7 @@ menuentry 'Win7PE' {
 
 <h2 id="grub-rescue">Grub Rescue</h2>
 
-<p><code>lang
+<p><code>bash
 set prefix=(hd0,msdos#)/boot/grub
 insmod normal
 normal
@@ -73,9 +73,128 @@ normal
 
 <h2 id="grubcfggrub2">示例grub.cfg配置文件（grub2）</h2>
 
-<p>{% codeblock mydata/grub/grub.cfg %}
-	{% render_partial mydata/grub/grub.cfg raw%}
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>mydata/grub/grub.cfg </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+</pre></td><td class='code'><pre><code class='cfg'><span class='line'>	<span class="na">set default</span><span class="o">=</span><span class="s">0</span>
+</span><span class='line'><span class="na">set font</span><span class="o">=</span><span class="s">/boot/grub/fonts/unicode.pf2</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">insmod</span> <span class="err">all_video</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">if</span> <span class="err">loadfont</span> <span class="err">$font</span> <span class="c1">; then</span>
+</span><span class='line'>    <span class="na">set gfxmode</span><span class="o">=</span><span class="s">auto</span>
+</span><span class='line'><span class="s">    insmod gfxterm</span>
+</span><span class='line'><span class="err">fi</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">terminal_output</span> <span class="err">gfxterm</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#### Theme	###</span>
+</span><span class='line'><span class="na">set menu_color_normal</span><span class="o">=</span><span class="s">white/black</span>
+</span><span class='line'><span class="na">set menu_color_highlight</span><span class="o">=</span><span class="s">black/light-gray</span>
+</span><span class='line'><span class="err">if</span> <span class="err">background_color</span> <span class="err">44,0,30</span><span class="c1">; then</span>
+</span><span class='line'>  <span class="err">clear</span>
+</span><span class='line'><span class="err">fi</span>
+</span><span class='line'><span class="c1">### Theme End	###</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#set timeout=60</span>
+</span><span class='line'><span class="na">menuentry &#39;Install Ubuntu&#39; --hotkey</span><span class="o">=</span><span class="s">&#39;i&#39; {</span>
+</span><span class='line'><span class="s">    set isofile=&quot;/iso/ubuntu.iso&quot;</span>
+</span><span class='line'><span class="s">    search --set=root -f $isofile --hint (hd0,1)</span>
+</span><span class='line'><span class="s">    loopback loop $isofile</span>
+</span><span class='line'><span class="s">    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject</span>
+</span><span class='line'><span class="s">    initrd (loop)/casper/initrd.lz</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;Install</span> <span class="err">CentOS6.3&#39;{</span>
+</span><span class='line'><span class="c1">#  set isofile=&quot;/CentOS-6.3-x86_64-bin-DVD1.iso&quot;</span>
+</span><span class='line'><span class="c1">#  search --set=root -f $isofile --hint (hd0,2)</span>
+</span><span class='line'><span class="c1">#  loopback loop $isofile</span>
+</span><span class='line'>  <span class="na">set flagfile</span><span class="o">=</span><span class="s">&quot;/liu/hong/bo/linux.flag&quot;</span>
+</span><span class='line'><span class="s">  search --set=root -f $flagfile --hint (hd0,2)</span>
+</span><span class='line'><span class="s">  linux /isolinux/vmlinuz </span>
+</span><span class='line'><span class="s">  initrd /isolinux/initrd.img</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;SystemRescueCD&#39;</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">set isofile</span><span class="o">=</span><span class="s">&quot;/iso/systemrescuecd.iso&quot;</span>
+</span><span class='line'><span class="s">    search --set=root -f $isofile --hint (hd0,2)</span>
+</span><span class='line'><span class="s">    loopback loop $isofile</span>
+</span><span class='line'><span class="s">    linux (loop)/isolinux/rescue32 setkmap=us isoloop=$isofile</span>
+</span><span class='line'><span class="s">    initrd (loop)/isolinux/initram.igz</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;Win7PE&#39;</span> <span class="err">{</span>
+</span><span class='line'>  <span class="na">MEMDISK_LOC</span><span class="o">=</span><span class="s">&quot;/boot/memdisk&quot;</span>
+</span><span class='line'><span class="s">  search --set=root -f $MEMDISK_LOC --hint (hd0,1)</span>
+</span><span class='line'><span class="s">  echo &#39;Loading Memdisk...&#39;</span>
+</span><span class='line'><span class="s">  insmod memdisk</span>
+</span><span class='line'><span class="s">  linux16 /boot/memdisk iso raw</span>
+</span><span class='line'><span class="s">  echo &#39;Loading PE...&#39;</span>
+</span><span class='line'><span class="s">  initrd16 /iso/WIN7PE.ISO</span>
+</span><span class='line'><span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">menuentry</span> <span class="err">&#39;Boot</span> <span class="err">Grub4Dos&#39;</span> <span class="err">{</span>
+</span><span class='line'>    <span class="err">linux</span> <span class="err">/grub4dos/grub.exe</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 ]]></content>
   </entry>

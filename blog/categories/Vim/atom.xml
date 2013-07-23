@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Vim | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Vim/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-23T12:54:35+08:00</updated>
+  <updated>2013-07-23T17:29:16+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -60,6 +60,11 @@
 </ul>
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
+
+<h2 id="filetype">文件类型filetype</h2>
+<p>在目录<code>~/.vim/ftdetect/</code>目录下建立<code>.vim</code>文件，用于设置识别特定类型文件后的操作。</p>
+
+<p>在目录<code>~/.vim/ftplugin/</code>目录建立以<code>filetype</code>开头的文件，如<code>cpp.vim</code>，则在编辑<code>*.cpp</code>文件时，便会应用<code>cpp.vim</code>里所做的设定。</p>
 
 <h2 id="section-4">相关插件</h2>
 

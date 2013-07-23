@@ -114,7 +114,80 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-1">代理上网</h2>
+<h2 id="section-1">调整分辨率</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#设置自动调整</span>
+</span><span class="line"><span class="c">#LVDS1为一种显示模式，直接运行xrandr可显示当前可用的模式</span>
+</span><span class="line">xrandr --output LVDS1 --auto
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="ezame">利用ezame调整右键菜单</h2>
+<p>搜索到<code>Wine Windowns Program Loader</code>项目，把<code>No Display</code>选项关闭（这样便可以在右键菜单选择默认程序时出现该程序），在<code>Exec</code>参数前加上<code>env LANG="zh_CN.UTF-8"</code>。</p>
+
+<h2 id="uuid">查看UUID</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo blkid
+</span><span class="line">ls -l /dev/disk/by-uuid/
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="linux">编译Linux内核</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看帮助文档</span>
+</span><span class="line">make <span class="nb">help</span>
+</span><span class="line"><span class="c">#参考当前内核加载的模块生成config文件</span>
+</span><span class="line">make localmodinstall
+</span><span class="line">make
+</span><span class="line"><span class="c">#将生成的模块复制到 /lib/modules/version 目录下</span>
+</span><span class="line">make modules_install
+</span><span class="line"><span class="c">#生成内核文件、initrd文件等，并复制到 /boot/ 目录下</span>
+</span><span class="line">make install
+</span><span class="line"><span class="c">#以上四步即可完成内核的编译与安装</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="cache">手动清除cache内存</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sync
+</span><span class="line"><span class="nb">echo </span>3 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#To free pagecache, use </span>
+</span><span class="line"><span class="nb">echo </span>1 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#to free dentries and inodes, use</span>
+</span><span class="line"><span class="nb">echo </span>2 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#to free pagecache, dentries and inodes, use </span>
+</span><span class="line"><span class="nb">echo </span>3 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#Because this is a non-destructive operation and dirty objects</span>
+</span><span class="line"><span class="c">#are not freeable, the user should run sync first.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
+</ul>
+
+<h2 id="section-2">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 </div>
 
@@ -197,12 +270,20 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 110.0%'>bash(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 110.0%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 110.0%'>CentOS(1)</a>  <a href='/blog/categories/Debug' style='font-size: 110.0%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 110.0%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 110.0%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 120.0%'>FileSystem(2)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(6)</a>  <a href='/blog/categories/git' style='font-size: 110.0%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 110.0%'>GnuPlot(1)</a>  <a href='/blog/categories/Grub' style='font-size: 110.0%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 150.0%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 120.0%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 110.0%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 130.0%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 110.0%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 110.0%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 110.0%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 110.0%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 110.0%'>惊悚(1)</a>  <a href='/blog/categories/温馨' style='font-size: 110.0%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 110.0%'>生活(1)</a>  <a href='/blog/categories/若有所思' style='font-size: 130.0%'>若有所思(3)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 110.0%'>bash(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 110.0%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 110.0%'>CentOS(1)</a>  <a href='/blog/categories/Debug' style='font-size: 110.0%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 110.0%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 110.0%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 130.0%'>FileSystem(3)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(6)</a>  <a href='/blog/categories/git' style='font-size: 110.0%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 110.0%'>GnuPlot(1)</a>  <a href='/blog/categories/Grub' style='font-size: 110.0%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 150.0%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 120.0%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 110.0%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 130.0%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 110.0%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 110.0%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 110.0%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 110.0%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 110.0%'>惊悚(1)</a>  <a href='/blog/categories/温馨' style='font-size: 110.0%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 110.0%'>生活(1)</a>  <a href='/blog/categories/若有所思' style='font-size: 130.0%'>若有所思(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130723/fuse-skill/">利用FUSE挂载文件系统</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130719/incisive-words/">精辟的话</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130718/how-to-debug/">Debug的技巧</a>
@@ -214,14 +295,6 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
     
       <li class="post">
         <a href="/blog/20130717/book-review/">书评</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130717/words-touch-me/">让我有所感触的话</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130716/ubuntu/">Ubuntu的一些配置方法</a>
       </li>
     
   </ul>

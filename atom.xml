@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-19T10:22:24+08:00</updated>
+  <updated>2013-07-23T17:29:16+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[利用FUSE挂载文件系统]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130723/fuse-skill/"/>
+    <updated>2013-07-23T09:18:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130723/fuse-skill</id>
+    <content type="html"><![CDATA[<p>从《Linux内核精髓》这本书得到的关于<code>fuse</code>的一些使用技巧。</p>
+
+<!--more-->
+
+<h2 id="sshfs">sshfs</h2>
+<p>利用<code>sshfs</code>可以把 SSH 远程登录的机器的目录挂载到本地机器上。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sshfs username@remote:foo ~/remote-foo
+</span><span class="line"><span class="c">#卸载</span>
+</span><span class="line">fusermount -u -z ~/remote-foo
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>##普通用户挂在iso文件</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">fuseiso foo.iso ~/iso
+</span><span class="line">fusermount -u -z ~/remote-foo
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[精辟的话]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130719/incisive-words/"/>
+    <updated>2013-07-19T15:36:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130719/incisive-words</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<ul>
+  <li>every rose has its thorn</li>
+  <li>要知道，想养个恐龙当宠物，得从孵化恐龙蛋开始，科莫多喂得再大也还是蜥蜴。</li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Debug的技巧]]></title>
@@ -201,7 +245,80 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-1">代理上网</h2>
+<h2 id="section-1">调整分辨率</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#设置自动调整</span>
+</span><span class="line"><span class="c">#LVDS1为一种显示模式，直接运行xrandr可显示当前可用的模式</span>
+</span><span class="line">xrandr --output LVDS1 --auto
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="ezame">利用ezame调整右键菜单</h2>
+<p>搜索到<code>Wine Windowns Program Loader</code>项目，把<code>No Display</code>选项关闭（这样便可以在右键菜单选择默认程序时出现该程序），在<code>Exec</code>参数前加上<code>env LANG="zh_CN.UTF-8"</code>。</p>
+
+<h2 id="uuid">查看UUID</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo blkid
+</span><span class="line">ls -l /dev/disk/by-uuid/
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="linux">编译Linux内核</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看帮助文档</span>
+</span><span class="line">make <span class="nb">help</span>
+</span><span class="line"><span class="c">#参考当前内核加载的模块生成config文件</span>
+</span><span class="line">make localmodinstall
+</span><span class="line">make
+</span><span class="line"><span class="c">#将生成的模块复制到 /lib/modules/version 目录下</span>
+</span><span class="line">make modules_install
+</span><span class="line"><span class="c">#生成内核文件、initrd文件等，并复制到 /boot/ 目录下</span>
+</span><span class="line">make install
+</span><span class="line"><span class="c">#以上四步即可完成内核的编译与安装</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="cache">手动清除cache内存</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">sync
+</span><span class="line"><span class="nb">echo </span>3 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#To free pagecache, use </span>
+</span><span class="line"><span class="nb">echo </span>1 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#to free dentries and inodes, use</span>
+</span><span class="line"><span class="nb">echo </span>2 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#to free pagecache, dentries and inodes, use </span>
+</span><span class="line"><span class="nb">echo </span>3 &gt; /proc/sys/vm/drop_caches
+</span><span class="line"><span class="c">#Because this is a non-destructive operation and dirty objects</span>
+</span><span class="line"><span class="c">#are not freeable, the user should run sync first.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
+</ul>
+
+<h2 id="section-2">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 ]]></content>
   </entry>
@@ -276,6 +393,7 @@
     <id>http://hiberabyss.github.io/blog/20130716/warm-sweet</id>
     <content type="html"><![CDATA[<ul>
   <li><a href="http://luo.bo/41620/">你会不会说话</a></li>
+  <li><a href="http://luo.bo/42313/">关于“到底为什么我会脑子进水的喜欢上你这件事”的若干分析</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -293,6 +411,9 @@
   <li><a href="http://program-think.blogspot.com/2012/12/emperor-complex.html">圣君情结</a></li>
   <li><a href="http://program-think.blogspot.com/2009/07/break-through-berlin-wall.html">学习一下德国人民的翻墙精神</a>（PS：大部分人都是在被逼到绝境之后才会想着去改变的）</li>
   <li><a href="http://program-think.blogspot.com/2009/02/from-surface-to-essence.html">学会透过现象看本质，即使现象有时候挺诡异</a></li>
+  <li><a href="http://blog.csdn.net/fsdev/article/details/7657978">互联网商业模式之我见：从电子邮箱为什么无法收费谈起</a>  </li>
+  <li><a href="http://blog.csdn.net/fsdev/article/details/7657978">互联网商业模式之我见：从电子邮箱为什么无法收费谈起</a></li>
+  <li><a href="http://luo.bo/42227/">被侮辱被损害的男友</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -348,7 +469,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[VIM的一些使用技巧]]></title>
+    <title type="html"><![CDATA[VIM总结]]></title>
     <link href="http://hiberabyss.github.io/blog/20130712/vim/"/>
     <updated>2013-07-12T15:51:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130712/vim</id>
@@ -394,6 +515,11 @@
 </ul>
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
+
+<h2 id="filetype">文件类型filetype</h2>
+<p>在目录<code>~/.vim/ftdetect/</code>目录下建立<code>.vim</code>文件，用于设置识别特定类型文件后的操作。</p>
+
+<p>在目录<code>~/.vim/ftplugin/</code>目录建立以<code>filetype</code>开头的文件，如<code>cpp.vim</code>，则在编辑<code>*.cpp</code>文件时，便会应用<code>cpp.vim</code>里所做的设定。</p>
 
 <h2 id="section-4">相关插件</h2>
 
@@ -490,6 +616,16 @@
     <tr>
       <td>guru</td>
       <td>古鲁（印度教领袖）；领袖；大牛</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>wrapper</td>
+      <td>包装纸</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>hitch</td>
+      <td>故障</td>
       <td>1</td>
     </tr>
     <tr>
@@ -592,6 +728,16 @@
 
 <h2 id="linux">启动Linux</h2>
 <p>需要先利用<code>linux</code>指定内核文件，该文件一般以<code>vmlinuz</code>开头，注意加上<code>root=/dev/sda3</code>之类的内核参数，指定根分区；然后利用<code>initrd</code>指定初始文件系统，该文件一般以<code>initrd</code>开头。</p>
+
+<h2 id="grub-rescue">Grub Rescue</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">set </span><span class="nv">prefix</span><span class="o">=(</span>hd0,msdos#<span class="o">)</span>/boot/grub
+</span><span class="line">insmod normal
+</span><span class="line">normal
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="grubcfggrub2">示例grub.cfg配置文件（grub2）</h2>
 
@@ -828,136 +974,6 @@
 
 <h2 id="section">连接外网的同时和主机进行通信</h2>
 <p>给虚拟机新添加一个网卡，一个使用<code>nat</code>方式，一个使用<code>Bridged Adapter</code>方式，把后一个网卡的ip地址配置和主机在同一个网段，然后配置和主机相同的网关地址即可。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CentOS常用配置]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130711/centos/"/>
-    <updated>2013-07-11T19:47:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130711/centos</id>
-    <content type="html"><![CDATA[<p>本文记录对CentOS的一些配置方法。</p>
-
-<!--more-->
-
-<h2 id="section">包管理</h2>
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">#安装包
-</span><span class="line">rpm -ivh your.rpm --force --nodeps
-</span><span class="line">#升级包
-</span><span class="line">rpm -Uvh your.rpm --force --nodeps
-</span><span class="line">#卸载包
-</span><span class="line">rpm -e --nodeps uninstall.rpm
-</span><span class="line">#查询已安装的包
-</span><span class="line">rpm -qa pattern</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-1">服务管理</h2>
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">#设置服务开机启动
-</span><span class="line">chkconfig the-service on
-</span><span class="line">#查询某个服务开启状态
-</span><span class="line">chkconfig --list the-service</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-2">修改主机名</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">#临时设置主机名为the-name，重启后失效；需要重新登陆
-</span><span class="line">hostname the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>编辑文件<code>/etc/sysconfig/network</code>，对如下字段做修改：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">HOSTNAME=the-name</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-3">网络接口配置</h2>
-<p>修改<code>/etc/sysconfig/network-scripts/ifconfig-eth0</code>文件进行相应的网络设置，其中<code>eth0</code>可以用相应的网络接口名称代替，如果相应的文件不存在，则可以创建一个新的文件：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
-</span><span class="line"><span class="nv">BOOTPROTO</span><span class="o">=</span><span class="s2">&quot;static&quot;</span>
-</span><span class="line"><span class="nv">HWADDR</span><span class="o">=</span><span class="s2">&quot;网卡物理地址&quot;</span>
-</span><span class="line"><span class="c">#如果BOOTPROTO设置为dhcp，则不需要下面的设置</span>
-</span><span class="line"><span class="nv">IPADDR</span><span class="o">=</span>ip地址
-</span><span class="line"><span class="nv">NETMASK</span><span class="o">=</span>子网掩码
-</span><span class="line"><span class="nv">GATEWAY</span><span class="o">=</span>网关
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>修改文件<code>/etc/resolv.conf</code>可以配置DNS服务器：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#国内公用DNS服务器</span>
-</span><span class="line">nameserver 114.114.114.114
-</span><span class="line"><span class="c">#Google公用dns服务器</span>
-</span><span class="line">nameserver 8.8.8.8
-</span><span class="line">nameserver 8.8.4.4
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>修改文件<code>/etc/udev/rules.d/70-persistent-net.rules</code>可以根据相应的<code>mac</code>地址修改网络接口的显示名称。</p>
-
-<h2 id="section-4">本地源</h2>
-<p>将iso文件挂载到目录<code>/mnt/iso</code>，并写入到文件<code>/etc/fstab</code>中</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mount -o loop /root/iso/CentOS-6.3-x86_64-bin-DVD1.iso /mnt/dvd1/
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>新建文件<code>/etc/yum.repos.d/locale.repo</code>文件，写入一下内容：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="o">[</span>locale<span class="o">]</span>
-</span><span class="line"><span class="nv">name</span><span class="o">=</span>CentOS-6.3 - DVD1
-</span><span class="line"><span class="nv">baseurl</span><span class="o">=</span>file:///mnt/dvd1/ file:///mnt/dvd2/
-</span><span class="line"><span class="nb">enable</span><span class="o">=</span>1
-</span><span class="line"><span class="nv">gpcheck</span><span class="o">=</span>1
-</span><span class="line"><span class="nv">gpgkey</span><span class="o">=</span>file:///mnt/dvd1/RPM-GPG-KEY-CentOS-6
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>把目录<code>/etc/yum.repos.d/</code>下<code>CentOS-Base.repo</code>文件和<code>CentOS-Debuginfo.repo</code>文件更改后缀名，否则会报错。</p>
-
-<p>或者利用如下方式使用<code>yum</code></p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#只使用本地源</span>
-</span><span class="line">yum --disablerepo<span class="o">=</span>/* --enablerepo<span class="o">=</span>locale install
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just laugh :)]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130708/luo-bo/"/>
-    <updated>2013-07-08T21:52:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130708/luo-bo</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://luo.bo/41691/">其实玻璃才是人类面临的最大威胁</a></li>
-</ul>
 ]]></content>
   </entry>
   
