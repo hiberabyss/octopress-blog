@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Lustre | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Lustre/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-23T17:29:16+08:00</updated>
+  <updated>2013-07-25T15:13:28+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -38,7 +38,9 @@
 </ol>
 
 <h2 id="section">参考资料</h2>
-<p><a href="http://blog.csdn.net/liuben/article/details/6455736">Lustre I/O性能特点与最佳实践</a></p>
+<ul>
+  <li><a href="http://blog.csdn.net/liuben/article/details/6455736">Lustre I/O性能特点与最佳实践</a></li>
+</ul>
 ]]></content>
   </entry>
   

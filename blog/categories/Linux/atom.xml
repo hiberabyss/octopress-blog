@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Linux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-23T17:29:16+08:00</updated>
+  <updated>2013-07-25T15:13:28+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -41,6 +41,12 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 #设置自动调整
 #LVDS1为一种显示模式，直接运行xrandr可显示当前可用的模式
 xrandr --output LVDS1 --auto
+</code></p>
+
+<h2 id="section-2">切换输入法</h2>
+
+<p><code>bash
+im-switch -c
 </code></p>
 
 <h2 id="ezame">利用ezame调整右键菜单</h2>
@@ -87,7 +93,7 @@ echo 3 &gt; /proc/sys/vm/drop_caches
   <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
 </ul>
 
-<h2 id="section-2">代理上网</h2>
+<h2 id="section-3">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 ]]></content>
   </entry>
@@ -217,7 +223,41 @@ yum --disablerepo=/* --enablerepo=locale install
 
 <!--more-->
 
-<h2 id="section">相关文档</h2>
+<h2 id="section">自动补全</h2>
+<p>编辑如下的文件：</p>
+
+<ul>
+  <li><a href="http://marlonyao.iteye.com/blog/695225">自定义Bash自动完成</a></li>
+</ul>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>bash_completion </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>
+</span><span class='line'>_octopress_completion<span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="nb">local </span>cur
+</span><span class='line'>  <span class="nv">COMPREPLY</span><span class="o">=()</span>
+</span><span class='line'>  <span class="nv">cur</span><span class="o">=</span><span class="k">${</span><span class="nv">COMP_WORDS</span><span class="p">[COMP_CWORD]</span><span class="k">}</span>
+</span><span class='line'>  <span class="nv">COMPREPLY</span><span class="o">=(</span><span class="k">$(</span> <span class="nb">compgen</span> -W <span class="s1">&#39;new_post gen_deploy lgdeploy&#39;</span> -- <span class="nv">$cur</span> <span class="k">)</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return </span>0
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">complete</span> -F _octopress_completion octo-rake
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>并用<code>. bash_completion</code>导入即可，则在输入<code>octo-rake</code> 后按<code>Tab</code>键即可自动补全。</p>
+
+<h2 id="section-1">相关文档</h2>
 <ul>
   <li>一篇会很有用的文章<a href="http://tech.idv2.com/2008/01/09/bash-pitfalls/">Bash的陷阱</a>，抽时间好好看一下。bash的帮助文档很详细，所有的东西都可以从里面找到，要了解该帮助文档的组织结构。</li>
   <li><a href="http://kodango.com/simple-bash-programming-skills-2">简洁的Bash编程技巧续篇</a></li>

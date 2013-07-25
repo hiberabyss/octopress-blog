@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Games | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/Games/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-07-25T15:13:28+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[对游戏的一些设定]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130724/game-setting/"/>
+    <updated>2013-07-24T15:04:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130724/game-setting</id>
+    <content type="html"><![CDATA[<h2 id="section">魔兽争霸-修改分辨率</h2>
+<p>对注册表项<code>HKEY_CURRENT_USER\Software\Blizzard Entertainment\Warcraft III\Video</code>的如下两个字段做修改：</p>
+
+<ul>
+  <li>resheight 900 #选择十进制</li>
+  <li>reswidth 1600 #选择十进制</li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

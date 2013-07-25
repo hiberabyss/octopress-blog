@@ -5,17 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>利用FUSE挂载文件系统 - 蛰渊-成长的轨迹</title>
+  <title>对游戏的一些设定 - 蛰渊-成长的轨迹</title>
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="从《Linux内核精髓》这本书得到的关于fuse的一些使用技巧。 sshfs
-利用sshfs可以把 SSH 远程登录的机器的目录挂载到本地机器上。 1
-2
-3
-sshfs username@remote:foo ~/remote-foo
-#卸载
-fusermount -u -z ~/remote- &hellip;">
+  <meta name="description" content="魔兽争霸-修改分辨率
+对注册表项HKEY_CURRENT_USER\Software\Blizzard Entertainment\Warcraft III\Video的如下两个字段做修改： resheight 900 #选择十进制 reswidth 1600 #选择十进制 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +19,7 @@ fusermount -u -z ~/remote- &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130723/fuse-skill">
+  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130724/game-setting">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="蛰渊-成长的轨迹" type="application/atom+xml">
@@ -75,7 +70,7 @@ fusermount -u -z ~/remote- &hellip;">
   
   <header>
     
-      <h1 class="entry-title">利用FUSE挂载文件系统</h1>
+      <h1 class="entry-title">对游戏的一些设定</h1>
     
     
       <p class="meta">
@@ -91,7 +86,7 @@ fusermount -u -z ~/remote- &hellip;">
   
 
 
-<time datetime="2013-07-23T09:18:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-24T15:04:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
         
 
 	 
@@ -102,28 +97,13 @@ fusermount -u -z ~/remote- &hellip;">
   </header>
 
 
-<div class="entry-content"><p>从《Linux内核精髓》这本书得到的关于<code>fuse</code>的一些使用技巧。</p>
+<div class="entry-content"><h2 id="section">魔兽争霸-修改分辨率</h2>
+<p>对注册表项<code>HKEY_CURRENT_USER\Software\Blizzard Entertainment\Warcraft III\Video</code>的如下两个字段做修改：</p>
 
-<!--more-->
-
-<h2 id="sshfs">sshfs</h2>
-<p>利用<code>sshfs</code>可以把 SSH 远程登录的机器的目录挂载到本地机器上。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">sshfs username@remote:foo ~/remote-foo
-</span><span class="line"><span class="c">#卸载</span>
-</span><span class="line">fusermount -u -z ~/remote-foo
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>##普通用户挂在iso文件</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">fuseiso foo.iso ~/iso
-</span><span class="line">fusermount -u -z ~/remote-foo
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
+<ul>
+  <li>resheight 900 #选择十进制</li>
+  <li>reswidth 1600 #选择十进制</li>
+</ul>
 </div>
 
 
@@ -146,12 +126,12 @@ fusermount -u -z ~/remote- &hellip;">
   
 
 
-<time datetime="2013-07-23T09:18:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-24T15:04:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/FileSystem/'>FileSystem</a>
+    <a class='category' href='/blog/categories/Games/'>Games</a>
   
 </span>
 
@@ -168,10 +148,8 @@ fusermount -u -z ~/remote- &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/20130719/incisive-words/" title="Previous Post: 精辟的话">&laquo; 精辟的话</a>
+        <a class="basic-alignment left" href="/blog/20130723/fuse-skill/" title="Previous Post: 利用FUSE挂载文件系统">&laquo; 利用FUSE挂载文件系统</a>
       
-      
-        <a class="basic-alignment right" href="/blog/20130724/game-setting/" title="Next Post: 对游戏的一些设定">对游戏的一些设定 &raquo;</a>
       
     </p>
   </footer>
