@@ -23,4 +23,4 @@ OST选择算法：
 3. 增加RPC并行数量：echo 32 > /proc/fs/lustre/osc/*-OST000*/max_rpcs_in_flight，缺省为8，提升至32将提高数据和元数据性能。不利之处是如果服务器压力很大，可能反而会影响性能。
 
 ##参考资料
-[Lustre I/O性能特点与最佳实践](http://blog.csdn.net/liuben/article/details/6455736)
+- [Lustre I/O性能特点与最佳实践](http://blog.csdn.net/liuben/article/details/6455736)

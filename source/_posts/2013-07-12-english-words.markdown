@@ -29,6 +29,18 @@ categories: English
 |guru|古鲁（印度教领袖）；领袖；大牛|1
 |wrapper|包装纸|1
 |hitch|故障|1
+|lieutenant|中尉|1
+|colonel|上校|1
+|consort|n.配偶，伙伴 vt.结交|1
+|consortium|n.团伙|1
+|negro|黑人；“内个”|1
+|Phobos|火卫一|1
+|incarcerate|vt.监禁，下狱|1
+|glossary|n.词汇表|1
+|stale|n.尿 adj.陈腐的|1
+|concert|n.音乐会；和谐；一致|1
+|indie|adj.独立的 n.独立制片人|1
+|heterogeneous|adj.异质的；由不同部分组成的|1
 |eeeeeeeeeeeeeeeeeeee|eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee|eee
 
 * * * 

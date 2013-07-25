@@ -11,6 +11,17 @@ categories:
 
 <!--more-->
 
+##自动补全
+编辑如下的文件：
+
+- [自定义Bash自动完成](http://marlonyao.iteye.com/blog/695225)
+
+{% codeblock bash_completion lang:bash %}
+    {% render_partial sample-language/shell/bash_completion raw %}
+{% endcodeblock %}
+
+并用`. bash_completion`导入即可，则在输入`octo-rake` 后按`Tab`键即可自动补全。
+
 ##相关文档
 * 一篇会很有用的文章[Bash的陷阱](http://tech.idv2.com/2008/01/09/bash-pitfalls/)，抽时间好好看一下。bash的帮助文档很详细，所有的东西都可以从里面找到，要了解该帮助文档的组织结构。
 * [简洁的Bash编程技巧续篇](http://kodango.com/simple-bash-programming-skills-2)
