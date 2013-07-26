@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-25T15:13:28+08:00</updated>
+  <updated>2013-07-26T10:56:34+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -47,7 +47,8 @@
 </span><span class="line"><span class="c">#卸载</span>
 </span><span class="line">fusermount -u -z ~/remote-foo
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>##普通用户挂在iso文件</p>
+
+<h2 id="iso">普通用户挂载iso文件</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -239,12 +240,6 @@
 
 <p>很多内向的人都是这样的，在遇到不合理的待遇的时候，他们不断忍耐，不断让步，也不说什么，好像会一直忍下去。但突然到了某一点的时候，他们的极限就到了，然后就以分手或者离婚为结束，并且不接受挽回。固然这种不善沟通的性格有问题，但另一方的性格也都强势到了把明显不合理不合情视为理所应当，根本失去了感受对方心情的意愿和能力。你把对方从你身边赶到厕所的时候，难道你感觉不出他身上的挫败，失望和不满？你能自欺欺人的觉得他很满足很开心？还是你只是习惯了他的忍耐，觉得他就应该如此，就配如此。</p>
 
-<p>我的一个朋友就要去草原玩了。作为内蒙人，我给她讲解了一些基本的安全常识。比如当她孤身遭遇野狼的话，不要转头逃跑，人类永远没法和狼比速度。正确的做法应该是原地不动，与狼的目光正面接触，死死盯住，不要移开，能坚持多久就坚持多久，这样会死的比较有尊严一点。（@马伯庸）</p>
-
-<p>对相信大家都看不爽一些经常秀恩爱的情侣，机智而真诚的我传授给你们一个办法：在他们恩爱的微博下留言“好幸福呀你们什么时候结婚呀”，一般情况下女的就会去逼问男的，然后这些狗男女十有八九会为这个问题吵架接着打起来。，这时你就可以适时出现，安慰到：看他也不是真爱你，不行就分手吧。(@自黑狂魔唐大夫)</p>
-
-<p>“今日比武大会为免出现伤亡，点到为止即可！下面开始点名，华山弟子！”“到！”“武当弟子！”“到！”“嵩山派弟子！”“到！”……“既然大家都到了，那就到此为止，散会！”</p>
-
 ]]></content>
   </entry>
   
@@ -364,9 +359,12 @@
 <h2 id="lustre-stripe">Lustre Stripe</h2>
 <p>Lustre采用对象存储技术，将大文件分片存储在多个OST上。分片的参数包括<code>stripe_count</code>和<code>stripe_size</code>，即所要使用的OST的数量以及分片的大小，默认分别为<code>1</code>和<code>1MB</code>。可以通过<code>lfs setstripe</code>命令进行设定，子目录继承父目录的分片模式。Lustre在创建文件时就按照分片模式和OST选择算法，预先创建好文件所需的OST对象。数据写入后，文件的分片不能修改，现在还未实现OST存储空间的自动均衡。</p>
 
-<p>OST选择算法：
-1. Round-Robin：任意两个OST剩余存储容量之差小于<code>20%</code>时采用该算法；以顺序轮转方式选择OST，算法非常高效。
-2. 随机加权算法：存在两个OST剩余空间之差大于<code>20%</code>时采用该算法；Lustre维护着一张剩余空间的优先列表，采用随机算法在此列表中选择OST，会产生开销并影响性能；当任意两个OST剩余容量之差小于<code>20%</code>时，继续选用<code>Round-Robin</code>算法。</p>
+<p>OST选择算法：</p>
+
+<ol>
+  <li>Round-Robin：任意两个OST剩余存储容量之差小于<code>20%</code>时采用该算法；以顺序轮转方式选择OST，算法非常高效。</li>
+  <li>随机加权算法：存在两个OST剩余空间之差大于<code>20%</code>时采用该算法；Lustre维护着一张剩余空间的优先列表，采用随机算法在此列表中选择OST，会产生开销并影响性能；当任意两个OST剩余容量之差小于<code>20%</code>时，继续选用<code>Round-Robin</code>算法。</li>
+</ol>
 
 <h2 id="lustre">Lustre性能优化</h2>
 
@@ -719,6 +717,11 @@
     <tr>
       <td>heterogeneous</td>
       <td>adj.异质的；由不同部分组成的</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>topology</td>
+      <td>拓扑学</td>
       <td>1</td>
     </tr>
     <tr>
