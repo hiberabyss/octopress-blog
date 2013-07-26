@@ -17,7 +17,8 @@ sshfs username@remote:foo ~/remote-foo
 #卸载
 fusermount -u -z ~/remote-foo
 ```
-##普通用户挂在iso文件
+
+##普通用户挂载iso文件
 
 ```bash
 fuseiso foo.iso ~/iso

@@ -158,6 +158,15 @@ lfs getstripe /mnt/lustre
 
 利用`tunefs.lustre`可以查看已建立的lustre文件系统的信息，并对部分信息进行调整。
 
+###Stopping LNET
+
+```bash
+lctl network unconfigure
+modprobe -r <any lnd and the lnet modules>
+#卸载所有Lustre模块
+lctl modules | awk '{print $2}' | xargs rmmod
+```
+
 ##利用iozone进行测试
 iozone是对文件系统的读写性能进行测试的工具
 

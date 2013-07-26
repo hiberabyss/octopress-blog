@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2013.4.19)  4 JUL 2013 15:48
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2013.4.19)  26 JUL 2013 09:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1186,7 +1186,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
 )
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 44.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 46.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmtt.fd
@@ -1199,19 +1199,19 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * 
 * Try to use \setCJKmonofont[...]{...} to define it.
 *************************************************
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (./sample.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 46.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 46.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 48.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
  21664 strings out of 494941
- 425292 string characters out of 3176915
+ 425287 string characters out of 3176915
  467356 words of memory out of 3000000
  24588 multiletter control sequences out of 15000+200000
  10097 words of font info for 71 fonts, out of 3000000 for 9000
