@@ -43,11 +43,12 @@ make && make install
 ##使用方法
 直接运行`tmux`开启一个新的`session`；`tmux attach`自动连接到上一个会话。
 
-在`tmux`中，快捷键操作都是通过按`Ctrl+b`再加按键来实现的，一下列举一些常用的快捷键（已按下`Ctrl+b`）：
+在`tmux`中，快捷键操作都是通过按`Ctrl+b`再加按键来实现的，以下列举一些常用的快捷键（已按下`Ctrl+b`）：
 
 - ?	#列举所绑定的按键
 - d	#进行detach操作，让tmux后台运行
 - x	#退出当前panel
+- s	#显示当前的窗口列表
 
 ##参考资料
 [github](https://gist.github.com/sturadnidge/4185338)
