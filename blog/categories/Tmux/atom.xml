@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tmux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Tmux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-07-26T10:56:34+08:00</updated>
+  <updated>2013-08-13T14:20:52+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -58,12 +58,13 @@ make &amp;&amp; make install</p>
 <h2 id="section-1">使用方法</h2>
 <p>直接运行<code>tmux</code>开启一个新的<code>session</code>；<code>tmux attach</code>自动连接到上一个会话。</p>
 
-<p>在<code>tmux</code>中，快捷键操作都是通过按<code>Ctrl+b</code>再加按键来实现的，一下列举一些常用的快捷键（已按下<code>Ctrl+b</code>）：</p>
+<p>在<code>tmux</code>中，快捷键操作都是通过按<code>Ctrl+b</code>再加按键来实现的，以下列举一些常用的快捷键（已按下<code>Ctrl+b</code>）：</p>
 
 <ul>
   <li>?	#列举所绑定的按键</li>
   <li>d	#进行detach操作，让tmux后台运行</li>
   <li>x	#退出当前panel</li>
+  <li>s	#显示当前的窗口列表</li>
 </ul>
 
 <h2 id="section-2">参考资料</h2>
