@@ -42,6 +42,13 @@ categories: English
 |indie|adj.独立的 n.独立制片人|1
 |heterogeneous|adj.异质的；由不同部分组成的|1
 |topology|拓扑学|1
+|unmet|未满足的|1
+|saturate|浸透的，饱和的；|1
+|scavenge|打扫|1
+|radical|基础；激进分子|1
+|phishing|网络钓鱼|1
+|malware|恶意软件|1
+|mutate|变异|1
 |eeeeeeeeeeeeeeeeeeee|eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee|eee
 
 * * * 

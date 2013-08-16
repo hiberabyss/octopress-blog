@@ -90,6 +90,18 @@ hello.c
 #to exclude file whose name begin with !.
 ```
 
+##创建一个本地git共享仓库
+
+```bash
+cd ~/git/project
+git init --bare
+cd ~/project
+git remote add orig ~/git/project
+git push orig master
+```
+
+- [参考--坚果云](http://help.jianguoyun.com/?p=894)
+
 ##其他常用命令
 
 ```bash

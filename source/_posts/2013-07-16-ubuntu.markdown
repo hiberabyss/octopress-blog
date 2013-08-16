@@ -9,6 +9,39 @@ categories: Linux
 
 <!--more-->
 
+##安装deepin软件
+将如下源添加到`/etc/apt/sources.list`即可（注意不要`sudo apt-get upgrade`，否则会变成deepin源里的包:(）
+
+```bash
+deb http://mirrors.ustc.edu.cn/deepin/ raring main non-free
+```
+
+然后安装音乐和视频播放器：
+
+```bash
+#需要先安装如下包
+sudo apt-get install python-deepin-gsettings
+sudo apt-get install deepin-music-player
+sudo apt-get install deepin-media-player
+```
+
+- [Ubuntu 13.04安装Linux Deepin特色软件](http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html)
+
+##软件卸载及修复
+用`apt-get remove`卸载时会卸载相应的依赖的包，可以用`dpkg --force-all -r package`进行强制卸载。
+
+如果不小心卸载了许多包，可以查看`/var/log/apt/history.log`文件，根据日志记录信息进行修复。
+
+##自动更新
+- [Chrome自动更新](http://my.oschina.net/yangphere/blog/131165)
+
+##修改登陆显示信息
+tty里的第一行显示的是`/etc/issue`里的内容。   
+可以修改`/etc/lsb-release`里的信息。   
+修改`/etc/update-motd.d/`文件夹里的内容可以更改登陆之后的显示信息，可以用命令`sudo run-parts /etc/update-motd.d/`来预览。  
+
+- [Ubuntu的登陆和欢迎信息控制](http://blog.csdn.net/mal327/article/details/6595796)
+
 ##时间设置（通用）
 利用`ntpdate`进行时间同步，需已安装包`ntp`：
 

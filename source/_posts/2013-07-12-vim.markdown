@@ -30,6 +30,15 @@ categories: Vim
 - set cc=col #高亮某一列
 - [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides)插件 #使用方式为`<Leader>ig`
 
+##禁止扫描`include`文件
+使用`include`之后会导致自动完成很慢，可以用以下方法禁止扫描`include`文件
+
+```vim
+set complete-=i
+```
+
+在`vim`中使用`:help 'option'`查看相应选项帮助。
+
 ##程序代码
 - ]p	#自动调整粘帖代码的缩进。 
 - gd	#跳转到当前光标下函数或者变量的定义处。
@@ -37,6 +46,10 @@ categories: Vim
 - ==	#进行格式化处理，可以自动进行缩进等
 
 参考[高效使用vim](http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html)
+
+##正则表达式
+- 匹配单词：\<word\>
+- 贪婪模式`.*`，非贪婪模式`.\{-}`
 
 ##文件类型filetype
 在目录`~/.vim/ftdetect/`目录下建立`.vim`文件，用于设置识别特定类型文件后的操作。
