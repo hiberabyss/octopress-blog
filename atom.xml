@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-13T14:20:52+08:00</updated>
+  <updated>2013-08-16T13:37:23+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -14,12 +14,62 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Google使用技巧]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130816/google-skills/"/>
+    <updated>2013-08-16T13:21:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130816/google-skills</id>
+    <content type="html"><![CDATA[<h2 id="chrome">可以在chrome地址栏输入算式直接进行运算</h2>
+<p>例如：((1+2)*3)^2 <br />
+可以使用常见数学函数(log,ln,sin,cos)等</p>
+
+<!--more-->
+
+<h2 id="section">换算汇率</h2>
+<p>1 usd to cny</p>
+
+<h2 id="section-1">字典</h2>
+<p>define:hello</p>
+
+<h2 id="section-2">换算温度</h2>
+<p>100 c to f</p>
+
+<ul>
+  <li><a href="http://program-think.blogspot.com/2013/03/internet-resource-discovery-2.html">Google 搜索的基本语法</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux相关文章]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130815/linux-article/"/>
+    <updated>2013-08-15T16:44:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130815/linux-article</id>
+    <content type="html"><![CDATA[<ul>
+  <li><a href="http://www.ibm.com/developerworks/cn/linux/l-journaling-filesystems/">Linux 日志文件系统剖析</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[常识]]></title>
     <link href="http://hiberabyss.github.io/blog/20130813/commen-sense/"/>
     <updated>2013-08-13T14:19:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130813/commen-sense</id>
     <content type="html"><![CDATA[<h2 id="section">单位</h2>
-<p>1匹=735W</p>
+<p>1匹=735W
+1亩=2000/3(m^2)</p>
+
+<!--more-->
+
+<h2 id="section-1">地域</h2>
+<ul>
+  <li>北京（16410.54平方公里）（2069.3万）（2012）</li>
+  <li>上海（6340）(2380）(2012）</li>
+  <li>武汉（8494）(1012）(2012）</li>
+  <li>台湾（36193）(2334）(2013）</li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -250,6 +300,8 @@
 
 <p>很多内向的人都是这样的，在遇到不合理的待遇的时候，他们不断忍耐，不断让步，也不说什么，好像会一直忍下去。但突然到了某一点的时候，他们的极限就到了，然后就以分手或者离婚为结束，并且不接受挽回。固然这种不善沟通的性格有问题，但另一方的性格也都强势到了把明显不合理不合情视为理所应当，根本失去了感受对方心情的意愿和能力。你把对方从你身边赶到厕所的时候，难道你感觉不出他身上的挫败，失望和不满？你能自欺欺人的觉得他很满足很开心？还是你只是习惯了他的忍耐，觉得他就应该如此，就配如此。</p>
 
+<p>艰难时刻总会过去的，就算不能根治，也会维持在表面的和平。因为经历过，你才会成为你。</p>
+
 ]]></content>
   </entry>
   
@@ -262,18 +314,62 @@
 
 <!--more-->
 
-<h2 id="section">时间设置（通用）</h2>
+<h2 id="deepin">安装deepin软件</h2>
+<p>将如下源添加到<code>/etc/apt/sources.list</code>即可（注意不要<code>sudo apt-get upgrade</code>，否则会变成deepin源里的包:(）</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">deb http://mirrors.ustc.edu.cn/deepin/ raring main non-free
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>然后安装音乐和视频播放器：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#需要先安装如下包</span>
+</span><span class="line">sudo apt-get install python-deepin-gsettings
+</span><span class="line">sudo apt-get install deepin-music-player
+</span><span class="line">sudo apt-get install deepin-media-player
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li><a href="http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html">Ubuntu 13.04安装Linux Deepin特色软件</a></li>
+</ul>
+
+<h2 id="section">软件卸载及修复</h2>
+<p>用<code>apt-get remove</code>卸载时会卸载相应的依赖的包，可以用<code>dpkg --force-all -r package</code>进行强制卸载。</p>
+
+<p>如果不小心卸载了许多包，可以查看<code>/var/log/apt/history.log</code>文件，根据日志记录信息进行修复。</p>
+
+<h2 id="section-1">自动更新</h2>
+<ul>
+  <li><a href="http://my.oschina.net/yangphere/blog/131165">Chrome自动更新</a></li>
+</ul>
+
+<h2 id="section-2">修改登陆显示信息</h2>
+<p>tty里的第一行显示的是<code>/etc/issue</code>里的内容。 <br />
+可以修改<code>/etc/lsb-release</code>里的信息。 <br />
+修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
+
+<ul>
+  <li><a href="http://blog.csdn.net/mal327/article/details/6595796">Ubuntu的登陆和欢迎信息控制</a></li>
+</ul>
+
+<h2 id="section-3">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">ntpdate us.pool.ntp.org</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">ntpdate us.pool.ntp.org
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>修改时区：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-1">调整分辨率</h2>
+<h2 id="section-4">调整分辨率</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -283,7 +379,7 @@
 </span><span class="line">xrandr --output LVDS1 --auto
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-2">切换输入法</h2>
+<h2 id="section-5">切换输入法</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">im-switch -c
@@ -352,7 +448,7 @@
   <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
 </ul>
 
-<h2 id="section-3">代理上网</h2>
+<h2 id="section-6">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 ]]></content>
   </entry>
@@ -548,6 +644,15 @@
   <li><a href="https://github.com/nathanaelkane/vim-indent-guides">Indent Guides</a>插件 #使用方式为<code>&lt;Leader&gt;ig</code></li>
 </ul>
 
+<h2 id="include">禁止扫描<code>include</code>文件</h2>
+<p>使用<code>include</code>之后会导致自动完成很慢，可以用以下方法禁止扫描<code>include</code>文件</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="vim"><span class="line"><span class="k">set</span> <span class="nb">complete</span><span class="p">-=</span><span class="k">i</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>在<code>vim</code>中使用<code>:help 'option'</code>查看相应选项帮助。</p>
+
 <h2 id="section-3">程序代码</h2>
 <ul>
   <li>]p	#自动调整粘帖代码的缩进。 </li>
@@ -558,419 +663,28 @@
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
 
+<h2 id="section-4">正则表达式</h2>
+<ul>
+  <li>匹配单词：&lt;word&gt;</li>
+  <li>贪婪模式<code>.*</code>，非贪婪模式<code>.\{-}</code></li>
+</ul>
+
 <h2 id="filetype">文件类型filetype</h2>
 <p>在目录<code>~/.vim/ftdetect/</code>目录下建立<code>.vim</code>文件，用于设置识别特定类型文件后的操作。</p>
 
 <p>在目录<code>~/.vim/ftplugin/</code>目录建立以<code>filetype</code>开头的文件，如<code>cpp.vim</code>，则在编辑<code>*.cpp</code>文件时，便会应用<code>cpp.vim</code>里所做的设定。</p>
 
-<h2 id="section-4">相关插件</h2>
+<h2 id="section-5">相关插件</h2>
 
 <h3 id="ultisnips">UltiSnips</h3>
 <p>非常好用的一个自动完成的插件。默认触发键为<code>&lt;tab&gt;</code>；可以在插件目录下的<code>ultisnips/UltiSnips/</code>目录里编辑<code>extension.snippets</code>文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用<code>:help UltiSnips</code>查看。</p>
 
 <p>介绍： <a href="http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/">Why UltiSnips</a></p>
 
-<h2 id="section-5">参考资料</h2>
+<h2 id="section-6">参考资料</h2>
 <ul>
   <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[英语词汇]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130712/english-words/"/>
-    <updated>2013-07-12T11:08:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130712/english-words</id>
-    <content type="html"><![CDATA[<p>列举平时所遇到的英语词汇。</p>
-
-<!--more-->
-
-<hr />
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>单词</strong></td>
-      <td><strong>中文解释</strong></td>
-      <td><strong>词频</strong></td>
-    </tr>
-    <tr>
-      <td>bastard</td>
-      <td>私生子</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>gist</td>
-      <td>主旨；要点</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>bizarre</td>
-      <td>奇异的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>candid</td>
-      <td>公正的；坦白的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>salient</td>
-      <td>显著的；突出的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>solitary</td>
-      <td>隐私；孤独的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>bet</td>
-      <td>打赌</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>esteem</td>
-      <td>尊敬</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>paranoia</td>
-      <td>偏执狂</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>dogmatic</td>
-      <td>武断地</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>demean</td>
-      <td>贬低…的身份</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>legitimate</td>
-      <td>合法的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>guru</td>
-      <td>古鲁（印度教领袖）；领袖；大牛</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>wrapper</td>
-      <td>包装纸</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>hitch</td>
-      <td>故障</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>lieutenant</td>
-      <td>中尉</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>colonel</td>
-      <td>上校</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>consort</td>
-      <td>n.配偶，伙伴 vt.结交</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>consortium</td>
-      <td>n.团伙</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>negro</td>
-      <td>黑人；“内个”</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Phobos</td>
-      <td>火卫一</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>incarcerate</td>
-      <td>vt.监禁，下狱</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>glossary</td>
-      <td>n.词汇表</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>stale</td>
-      <td>n.尿 adj.陈腐的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>concert</td>
-      <td>n.音乐会；和谐；一致</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>indie</td>
-      <td>adj.独立的 n.独立制片人</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>heterogeneous</td>
-      <td>adj.异质的；由不同部分组成的</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>topology</td>
-      <td>拓扑学</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>eeeeeeeeeeeeeeeeeeee</td>
-      <td>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</td>
-      <td>eee</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<!--
-|---
-| Default aligned | Left aligned | Center aligned | Right aligned
-|-|:-|:-:|-:
-| First body part | Second cell | Third cell | fourth cell
-| Second line |foo | **strong** | baz
-| Third line |quux | baz | bar
-|---
-| Second body
-| 2 line
-|===
-| Footer row
-
-|-----------------+------------+-----------------+----------------|
-| Default aligned |Left aligned| Center aligned  | Right aligned  |
-|-----------------|:-----------|:---------------:|---------------:|
-| First body part |Second cell | Third cell      | fourth cell    |
-| Second line     |foo         | **strong**      | baz            |
-| Third line      |quux        | baz             | bar            |
-|-----------------+------------+-----------------+----------------|
-| Second body     |            |                 |                |
-| 2 line          |            |                 |                |
-|=================+============+=================+================|
-| Footer row      |            |                 |                |
-|-----------------+------------+-----------------+----------------|
--->
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[利用Grub2安装启动操作系统]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130712/grub/"/>
-    <updated>2013-07-12T09:28:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130712/grub</id>
-    <content type="html"><![CDATA[<p>本文介绍如何利用<code>Grub2</code>进行操作系统的启动、安装等。</p>
-
-<!--more-->
-
-<h2 id="ubuntu">安装Ubuntu</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">menuentry 'Install Ubuntu' --hotkey='i' {
-</span><span class="line">    set isofile="/iso/ubuntu.iso"
-</span><span class="line">    search --set=root -f $isofile --hint (hd0,1)
-</span><span class="line">    loopback loop $isofile
-</span><span class="line">    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
-</span><span class="line">    initrd (loop)/casper/initrd.lz
-</span><span class="line">}</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="isocentos">利用iso安装CentOS操作系统</h2>
-<p>复制iso文件根目录下<code>images</code>文件夹到U盘根目录，复制<code>isolinux</code>文件夹到U盘根目录（并非必须，可以利用grub2挂载iso文件后进行使用，但直接复制到u盘可以不用指定iso文件名，要方便很多），复制iso文件到U盘根目录。</p>
-
-<p>iso文件和<code>images</code>文件夹需要在同一分区，需要把该分区格式化为<code>fat32</code>或<code>ext#</code>格式，因为CentOS6.3安装时不支持ntfs格式分区。</p>
-
-<p>安装时只需加载内核和初始文件系统即可，在安装界面选择<code>images</code>文件夹所在的分区。如果在安装过程中提示<code>未找到images#</code>之类的错误，则可能是没有找到iso文件，按<code>alt-F2</code>切换到<code>anaconda</code>字符界面，手动加载iso文件所在的分区到<code>/mnt/isodir</code>目录。</p>
-
-<p>具体的启动配置文件见示例<code>grub.cfg</code>文件。</p>
-
-<p>PS：抽时间研究一下<code>anaconda</code>，以及如何利用<code>http</code>、<code>ftp</code>网络安装的方式安装操作系统。利用<code>kickstart</code>可以进行全自动安装。</p>
-
-<h2 id="memdiskwinpe">利用memdisk启动WinPE</h2>
-<p>需要先下载<code>memdisk</code>文件。具体用法参见<a href="http://www.syslinux.org/wiki/index.php/MEMDISK">syslinux</a>。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">menuentry 'Win7PE' {
-</span><span class="line">  MEMDISK_LOC="/boot/memdisk"
-</span><span class="line">  search --set=root -f $MEMDISK_LOC --hint (hd0,1)
-</span><span class="line">  echo 'Loading Memdisk...'
-</span><span class="line">  insmod memdisk
-</span><span class="line">  linux16 /boot/memdisk iso raw
-</span><span class="line">  echo 'Loading PE...'
-</span><span class="line">  initrd16 /iso/WIN7PE.ISO
-</span><span class="line">}</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="linux">启动Linux</h2>
-<p>需要先利用<code>linux</code>指定内核文件，该文件一般以<code>vmlinuz</code>开头，注意加上<code>root=/dev/sda3</code>之类的内核参数，指定根分区；然后利用<code>initrd</code>指定初始文件系统，该文件一般以<code>initrd</code>开头。</p>
-
-<h2 id="grub-rescue">Grub Rescue</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">set </span><span class="nv">prefix</span><span class="o">=(</span>hd0,msdos#<span class="o">)</span>/boot/grub
-</span><span class="line">insmod normal
-</span><span class="line">normal
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="grubcfggrub2">示例grub.cfg配置文件（grub2）</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>mydata/grub/grub.cfg </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span>
-<span class="line-number">35</span>
-<span class="line-number">36</span>
-<span class="line-number">37</span>
-<span class="line-number">38</span>
-<span class="line-number">39</span>
-<span class="line-number">40</span>
-<span class="line-number">41</span>
-<span class="line-number">42</span>
-<span class="line-number">43</span>
-<span class="line-number">44</span>
-<span class="line-number">45</span>
-<span class="line-number">46</span>
-<span class="line-number">47</span>
-<span class="line-number">48</span>
-<span class="line-number">49</span>
-<span class="line-number">50</span>
-<span class="line-number">51</span>
-<span class="line-number">52</span>
-<span class="line-number">53</span>
-<span class="line-number">54</span>
-<span class="line-number">55</span>
-<span class="line-number">56</span>
-<span class="line-number">57</span>
-<span class="line-number">58</span>
-<span class="line-number">59</span>
-<span class="line-number">60</span>
-</pre></td><td class="code"><pre><code class="cfg"><span class="line">	<span class="na">set default</span><span class="o">=</span><span class="s">0</span>
-</span><span class="line"><span class="na">set font</span><span class="o">=</span><span class="s">/boot/grub/fonts/unicode.pf2</span>
-</span><span class="line">
-</span><span class="line"><span class="err">insmod</span> <span class="err">all_video</span>
-</span><span class="line">
-</span><span class="line"><span class="err">if</span> <span class="err">loadfont</span> <span class="err">$font</span> <span class="c1">; then</span>
-</span><span class="line">    <span class="na">set gfxmode</span><span class="o">=</span><span class="s">auto</span>
-</span><span class="line"><span class="s">    insmod gfxterm</span>
-</span><span class="line"><span class="err">fi</span>
-</span><span class="line">
-</span><span class="line"><span class="err">terminal_output</span> <span class="err">gfxterm</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">#### Theme	###</span>
-</span><span class="line"><span class="na">set menu_color_normal</span><span class="o">=</span><span class="s">white/black</span>
-</span><span class="line"><span class="na">set menu_color_highlight</span><span class="o">=</span><span class="s">black/light-gray</span>
-</span><span class="line"><span class="err">if</span> <span class="err">background_color</span> <span class="err">44,0,30</span><span class="c1">; then</span>
-</span><span class="line">  <span class="err">clear</span>
-</span><span class="line"><span class="err">fi</span>
-</span><span class="line"><span class="c1">### Theme End	###</span>
-</span><span class="line">
-</span><span class="line"><span class="c1">#set timeout=60</span>
-</span><span class="line"><span class="na">menuentry &#39;Install Ubuntu&#39; --hotkey</span><span class="o">=</span><span class="s">&#39;i&#39; {</span>
-</span><span class="line"><span class="s">    set isofile=&quot;/iso/ubuntu.iso&quot;</span>
-</span><span class="line"><span class="s">    search --set=root -f $isofile --hint (hd0,1)</span>
-</span><span class="line"><span class="s">    loopback loop $isofile</span>
-</span><span class="line"><span class="s">    linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject</span>
-</span><span class="line"><span class="s">    initrd (loop)/casper/initrd.lz</span>
-</span><span class="line"><span class="err">}</span>
-</span><span class="line">
-</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;Install</span> <span class="err">CentOS6.3&#39;{</span>
-</span><span class="line"><span class="c1">#  set isofile=&quot;/CentOS-6.3-x86_64-bin-DVD1.iso&quot;</span>
-</span><span class="line"><span class="c1">#  search --set=root -f $isofile --hint (hd0,2)</span>
-</span><span class="line"><span class="c1">#  loopback loop $isofile</span>
-</span><span class="line">  <span class="na">set flagfile</span><span class="o">=</span><span class="s">&quot;/liu/hong/bo/linux.flag&quot;</span>
-</span><span class="line"><span class="s">  search --set=root -f $flagfile --hint (hd0,2)</span>
-</span><span class="line"><span class="s">  linux /isolinux/vmlinuz </span>
-</span><span class="line"><span class="s">  initrd /isolinux/initrd.img</span>
-</span><span class="line"><span class="err">}</span>
-</span><span class="line">
-</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;SystemRescueCD&#39;</span> <span class="err">{</span>
-</span><span class="line">    <span class="na">set isofile</span><span class="o">=</span><span class="s">&quot;/iso/systemrescuecd.iso&quot;</span>
-</span><span class="line"><span class="s">    search --set=root -f $isofile --hint (hd0,2)</span>
-</span><span class="line"><span class="s">    loopback loop $isofile</span>
-</span><span class="line"><span class="s">    linux (loop)/isolinux/rescue32 setkmap=us isoloop=$isofile</span>
-</span><span class="line"><span class="s">    initrd (loop)/isolinux/initram.igz</span>
-</span><span class="line"><span class="err">}</span>
-</span><span class="line">
-</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;Win7PE&#39;</span> <span class="err">{</span>
-</span><span class="line">  <span class="na">MEMDISK_LOC</span><span class="o">=</span><span class="s">&quot;/boot/memdisk&quot;</span>
-</span><span class="line"><span class="s">  search --set=root -f $MEMDISK_LOC --hint (hd0,1)</span>
-</span><span class="line"><span class="s">  echo &#39;Loading Memdisk...&#39;</span>
-</span><span class="line"><span class="s">  insmod memdisk</span>
-</span><span class="line"><span class="s">  linux16 /boot/memdisk iso raw</span>
-</span><span class="line"><span class="s">  echo &#39;Loading PE...&#39;</span>
-</span><span class="line"><span class="s">  initrd16 /iso/WIN7PE.ISO</span>
-</span><span class="line"><span class="err">}</span>
-</span><span class="line">
-</span><span class="line"><span class="err">menuentry</span> <span class="err">&#39;Boot</span> <span class="err">Grub4Dos&#39;</span> <span class="err">{</span>
-</span><span class="line">    <span class="err">linux</span> <span class="err">/grub4dos/grub.exe</span>
-</span><span class="line"><span class="err">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
 ]]></content>
   </entry>
   

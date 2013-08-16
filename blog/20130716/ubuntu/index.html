@@ -9,10 +9,9 @@
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="以Ubuntu为主的对Linux的一些配置，标记通用则表示也适用于其他Linux版本。 时间设置（通用）
-利用ntpdate进行时间同步，需已安装包ntp： 1
-ntpdate us.pool.ntp.org 修改时区： 1
-cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
+  <meta name="description" content="以Ubuntu为主的对Linux的一些配置，标记通用则表示也适用于其他Linux版本。 安装deepin软件
+将如下源添加到/etc/apt/sources.list即可（注意不要sudo apt-get upgrade，否则会变成deepin源里的包:(） 1
+deb http:// &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -103,18 +102,62 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
 
 <!--more-->
 
-<h2 id="section">时间设置（通用）</h2>
+<h2 id="deepin">安装deepin软件</h2>
+<p>将如下源添加到<code>/etc/apt/sources.list</code>即可（注意不要<code>sudo apt-get upgrade</code>，否则会变成deepin源里的包:(）</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">deb http://mirrors.ustc.edu.cn/deepin/ raring main non-free
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>然后安装音乐和视频播放器：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#需要先安装如下包</span>
+</span><span class="line">sudo apt-get install python-deepin-gsettings
+</span><span class="line">sudo apt-get install deepin-music-player
+</span><span class="line">sudo apt-get install deepin-media-player
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li><a href="http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html">Ubuntu 13.04安装Linux Deepin特色软件</a></li>
+</ul>
+
+<h2 id="section">软件卸载及修复</h2>
+<p>用<code>apt-get remove</code>卸载时会卸载相应的依赖的包，可以用<code>dpkg --force-all -r package</code>进行强制卸载。</p>
+
+<p>如果不小心卸载了许多包，可以查看<code>/var/log/apt/history.log</code>文件，根据日志记录信息进行修复。</p>
+
+<h2 id="section-1">自动更新</h2>
+<ul>
+  <li><a href="http://my.oschina.net/yangphere/blog/131165">Chrome自动更新</a></li>
+</ul>
+
+<h2 id="section-2">修改登陆显示信息</h2>
+<p>tty里的第一行显示的是<code>/etc/issue</code>里的内容。 <br />
+可以修改<code>/etc/lsb-release</code>里的信息。 <br />
+修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
+
+<ul>
+  <li><a href="http://blog.csdn.net/mal327/article/details/6595796">Ubuntu的登陆和欢迎信息控制</a></li>
+</ul>
+
+<h2 id="section-3">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">ntpdate us.pool.ntp.org</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">ntpdate us.pool.ntp.org
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>修改时区：</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-1">调整分辨率</h2>
+<h2 id="section-4">调整分辨率</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -124,7 +167,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
 </span><span class="line">xrandr --output LVDS1 --auto
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-2">切换输入法</h2>
+<h2 id="section-5">切换输入法</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">im-switch -c
@@ -193,7 +236,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
   <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
 </ul>
 
-<h2 id="section-3">代理上网</h2>
+<h2 id="section-6">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 </div>
 
@@ -276,12 +319,20 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 110.0%'>bash(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 110.0%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 110.0%'>CentOS(1)</a>  <a href='/blog/categories/Debug' style='font-size: 110.0%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 110.0%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 110.0%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 130.0%'>FileSystem(3)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(6)</a>  <a href='/blog/categories/Games' style='font-size: 110.0%'>Games(1)</a>  <a href='/blog/categories/git' style='font-size: 110.0%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 110.0%'>GnuPlot(1)</a>  <a href='/blog/categories/Grub' style='font-size: 110.0%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 150.0%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 120.0%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 110.0%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 130.0%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 110.0%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 110.0%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 110.0%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 110.0%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 110.0%'>惊悚(1)</a>  <a href='/blog/categories/温馨' style='font-size: 110.0%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(2)</a>  <a href='/blog/categories/若有所思' style='font-size: 130.0%'>若有所思(3)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 110.0%'>bash(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 110.0%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 110.0%'>CentOS(1)</a>  <a href='/blog/categories/chrome' style='font-size: 110.0%'>chrome(1)</a>  <a href='/blog/categories/Debug' style='font-size: 110.0%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 110.0%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 110.0%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 130.0%'>FileSystem(3)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(6)</a>  <a href='/blog/categories/Games' style='font-size: 110.0%'>Games(1)</a>  <a href='/blog/categories/git' style='font-size: 110.0%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 110.0%'>GnuPlot(1)</a>  <a href='/blog/categories/Google' style='font-size: 110.0%'>Google(1)</a>  <a href='/blog/categories/Grub' style='font-size: 110.0%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 150.0%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 120.0%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 110.0%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 130.0%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 110.0%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 110.0%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 110.0%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 110.0%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 110.0%'>惊悚(1)</a>  <a href='/blog/categories/温馨' style='font-size: 110.0%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 120.0%'>生活(2)</a>  <a href='/blog/categories/若有所思' style='font-size: 130.0%'>若有所思(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130816/google-skills/">Google使用技巧</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20130815/linux-article/">Linux相关文章</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130813/commen-sense/">常识</a>
@@ -293,14 +344,6 @@ cp /usr/share/zoneinfo/Asia/Shanghai &hellip;">
     
       <li class="post">
         <a href="/blog/20130723/fuse-skill/">利用FUSE挂载文件系统</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130719/incisive-words/">精辟的话</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130718/how-to-debug/">Debug的技巧</a>
       </li>
     
   </ul>
