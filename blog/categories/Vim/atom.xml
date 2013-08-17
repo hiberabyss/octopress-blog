@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Vim | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Vim/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-16T13:37:23+08:00</updated>
+  <updated>2013-08-17T10:59:25+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -51,6 +51,13 @@
   <li><a href="https://github.com/nathanaelkane/vim-indent-guides">Indent Guides</a>插件 #使用方式为<code>&lt;Leader&gt;ig</code></li>
 </ul>
 
+<h2 id="section-3">高亮匹配文本</h2>
+<ul>
+  <li>set incsearch	#显示第一个匹配的文本</li>
+  <li>set hlsearch	#高亮所有匹配的文本</li>
+  <li>nohlsearch	#取消高亮显示</li>
+</ul>
+
 <h2 id="include">禁止扫描<code>include</code>文件</h2>
 <p>使用<code>include</code>之后会导致自动完成很慢，可以用以下方法禁止扫描<code>include</code>文件</p>
 
@@ -60,17 +67,20 @@ set complete-=i
 
 <p>在<code>vim</code>中使用<code>:help 'option'</code>查看相应选项帮助。</p>
 
-<h2 id="section-3">程序代码</h2>
+<h2 id="section-4">程序代码</h2>
 <ul>
   <li>]p	#自动调整粘帖代码的缩进。 </li>
   <li>gd	#跳转到当前光标下函数或者变量的定义处。</li>
   <li>K	#查看当前光标下的手册页（在gvim下无效）。</li>
   <li>==	#进行格式化处理，可以自动进行缩进等</li>
+  <li>[{	#跳转到当前代码’{‘处</li>
+  <li>]}	#跳转到当前代码‘}’处</li>
+  <li>[I	#从包括include文件的所有文件中搜索光标所在的单词</li>
 </ul>
 
 <p>参考<a href="http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html">高效使用vim</a></p>
 
-<h2 id="section-4">正则表达式</h2>
+<h2 id="section-5">正则表达式</h2>
 <ul>
   <li>匹配单词：&lt;word&gt;</li>
   <li>贪婪模式<code>.*</code>，非贪婪模式<code>.\{-}</code></li>
@@ -81,14 +91,14 @@ set complete-=i
 
 <p>在目录<code>~/.vim/ftplugin/</code>目录建立以<code>filetype</code>开头的文件，如<code>cpp.vim</code>，则在编辑<code>*.cpp</code>文件时，便会应用<code>cpp.vim</code>里所做的设定。</p>
 
-<h2 id="section-5">相关插件</h2>
+<h2 id="section-6">相关插件</h2>
 
 <h3 id="ultisnips">UltiSnips</h3>
 <p>非常好用的一个自动完成的插件。默认触发键为<code>&lt;tab&gt;</code>；可以在插件目录下的<code>ultisnips/UltiSnips/</code>目录里编辑<code>extension.snippets</code>文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用<code>:help UltiSnips</code>查看。</p>
 
 <p>介绍： <a href="http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/">Why UltiSnips</a></p>
 
-<h2 id="section-6">参考资料</h2>
+<h2 id="section-7">参考资料</h2>
 <ul>
   <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
 </ul>

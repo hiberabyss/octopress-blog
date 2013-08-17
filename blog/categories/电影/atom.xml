@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 电影 | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/电影/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-08-17T10:59:25+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[电影收集]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130817/favor-movies/"/>
+    <updated>2013-08-17T10:55:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130817/favor-movies</id>
+    <content type="html"><![CDATA[<ul>
+  <li><a href="http://baike.baidu.com/view/353312.htm">机器人总动员</a></li>
+  <li><a href="http://baike.baidu.com/view/4059797.htm">三傻大闹宝莱坞</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>
