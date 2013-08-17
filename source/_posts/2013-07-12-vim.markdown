@@ -30,6 +30,11 @@ categories: Vim
 - set cc=col #高亮某一列
 - [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides)插件 #使用方式为`<Leader>ig`
 
+##高亮匹配文本
+- set incsearch	#显示第一个匹配的文本
+- set hlsearch	#高亮所有匹配的文本
+- nohlsearch	#取消高亮显示
+
 ##禁止扫描`include`文件
 使用`include`之后会导致自动完成很慢，可以用以下方法禁止扫描`include`文件
 
@@ -44,6 +49,9 @@ set complete-=i
 - gd	#跳转到当前光标下函数或者变量的定义处。
 - K	#查看当前光标下的手册页（在gvim下无效）。
 - ==	#进行格式化处理，可以自动进行缩进等
+- [{	#跳转到当前代码'{'处
+- ]}	#跳转到当前代码‘}’处
+- [I	#从包括include文件的所有文件中搜索光标所在的单词
 
 参考[高效使用vim](http://www.cnblogs.com/hyddd/archive/2010/04/08/1706863.html)
 

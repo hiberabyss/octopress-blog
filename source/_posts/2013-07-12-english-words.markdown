@@ -9,6 +9,9 @@ categories: English
 
 <!--more-->
 
+- [老码农教你学英语](http://blog.jobbole.com/45296/)
+- [老码农教你学英语：补充一些英语学习素材](http://blog.jobbole.com/45795/)
+
 * * *
 
 |---
