@@ -140,9 +140,14 @@ deb http:// &hellip;">
 可以修改<code>/etc/lsb-release</code>里的信息。 <br />
 修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
 
+<p>ubuntu登录主题相关包<code>plymouth</code></p>
+
 <ul>
   <li><a href="http://blog.csdn.net/mal327/article/details/6595796">Ubuntu的登陆和欢迎信息控制</a></li>
 </ul>
+
+<h2 id="update-initramfs">内核编译update-initramfs</h2>
+<p>编译了一次<code>linux-3.10.1</code>，卸载之后，每次运行<code>update-initramfs</code>都会自动在<code>boot</code>目录下生成<code>initramfs-3.10.1</code>文件，删除<code>/var/lib/initramfs-tools/</code>下相应文件即可。</p>
 
 <h2 id="section-3">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
@@ -238,6 +243,11 @@ deb http:// &hellip;">
 
 <h2 id="section-6">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
+
+<h2 id="section-7">参考资料</h2>
+<ul>
+  <li><a href="http://www.linuxde.net/2013/06/14506.html">教你在不同机器间迁移Linux</a></li>
+</ul>
 </div>
 
 
@@ -358,6 +368,9 @@ deb http:// &hellip;">
   <ul id="friendslink">
     <li>
       <a target="_blank" href="http://yanping.me/cn/">雁起平沙的网络日志</a>
+    </li>
+
+    <li>
       <a target="_blank" href="http://program-think.blogspot.com/">编程随想的博客</a>
     </li>
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-17T10:59:25+08:00</updated>
+  <updated>2013-08-22T13:05:38+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -326,6 +326,9 @@
 
 <p>艰难时刻总会过去的，就算不能根治，也会维持在表面的和平。因为经历过，你才会成为你。</p>
 
+<p>讲就天下无敌，做就有心无力</p>
+
+<p>关于平等：自愿的时候随便，不自愿的时候追求平等。</p>
 ]]></content>
   </entry>
   
@@ -376,9 +379,14 @@
 可以修改<code>/etc/lsb-release</code>里的信息。 <br />
 修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
 
+<p>ubuntu登录主题相关包<code>plymouth</code></p>
+
 <ul>
   <li><a href="http://blog.csdn.net/mal327/article/details/6595796">Ubuntu的登陆和欢迎信息控制</a></li>
 </ul>
+
+<h2 id="update-initramfs">内核编译update-initramfs</h2>
+<p>编译了一次<code>linux-3.10.1</code>，卸载之后，每次运行<code>update-initramfs</code>都会自动在<code>boot</code>目录下生成<code>initramfs-3.10.1</code>文件，删除<code>/var/lib/initramfs-tools/</code>下相应文件即可。</p>
 
 <h2 id="section-3">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
@@ -474,6 +482,11 @@
 
 <h2 id="section-6">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
+
+<h2 id="section-7">参考资料</h2>
+<ul>
+  <li><a href="http://www.linuxde.net/2013/06/14506.html">教你在不同机器间迁移Linux</a></li>
+</ul>
 ]]></content>
   </entry>
   
@@ -577,6 +590,7 @@
   <li><a href="http://luo.bo/42387/">三十二岁渣男，无妻无子无车，存款不到五位数，感觉这一生完</a></li>
   <li><a href="http://bbs.hupu.com/6119947.html">本来是去商量结婚的，结果却在女朋友家分手了</a></li>
   <li><a href="http://www.zhihu.com/question/21482390">如何看待恋爱中女友让你交出工资卡</a></li>
+  <li><a href="http://v.baidu.com/kan/tvshow/?id=461&amp;site=ifeng.com&amp;n=20130809&amp;url=http://v.ifeng.com/news/society/201308/01be625e-23f0-4a21-af28-5e2861388c75.shtml?_ref=baidu#frp=v.baidu.com/v">2013-08-09锵锵三人行 女人要的是男人的全部</a></li>
 </ul>
 ]]></content>
   </entry>
