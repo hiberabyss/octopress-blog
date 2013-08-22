@@ -40,7 +40,12 @@ tty里的第一行显示的是`/etc/issue`里的内容。
 可以修改`/etc/lsb-release`里的信息。   
 修改`/etc/update-motd.d/`文件夹里的内容可以更改登陆之后的显示信息，可以用命令`sudo run-parts /etc/update-motd.d/`来预览。  
 
+ubuntu登录主题相关包`plymouth`
+
 - [Ubuntu的登陆和欢迎信息控制](http://blog.csdn.net/mal327/article/details/6595796)
+
+##内核编译update-initramfs
+编译了一次`linux-3.10.1`，卸载之后，每次运行`update-initramfs`都会自动在`boot`目录下生成`initramfs-3.10.1`文件，删除`/var/lib/initramfs-tools/`下相应文件即可。
 
 ##时间设置（通用）
 利用`ntpdate`进行时间同步，需已安装包`ntp`：
@@ -113,3 +118,6 @@ echo 3 > /proc/sys/vm/drop_caches
 
 ##代理上网
 只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。
+
+##参考资料
+- [教你在不同机器间迁移Linux](http://www.linuxde.net/2013/06/14506.html)
