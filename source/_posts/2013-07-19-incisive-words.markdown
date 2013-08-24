@@ -8,5 +8,3 @@ categories:
 
 <!--more-->
 
-- every rose has its thorn
-- 要知道，想养个恐龙当宠物，得从孵化恐龙蛋开始，科莫多喂得再大也还是蜥蜴。

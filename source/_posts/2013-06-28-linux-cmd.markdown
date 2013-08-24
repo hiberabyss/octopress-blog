@@ -25,6 +25,9 @@ man -k keyword
 ##查看文件类型
 `type`、`whatis`、`which`
 
+##ls
+- `ls -I pattern` #过滤某些项
+
 ##sed
 
 ```bash
