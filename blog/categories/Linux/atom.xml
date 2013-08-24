@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Linux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-22T13:05:38+08:00</updated>
+  <updated>2013-08-24T15:26:42+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -638,6 +638,11 @@ man -k keyword
 
 <h2 id="section">查看文件类型</h2>
 <p><code>type</code>、<code>whatis</code>、<code>which</code></p>
+
+<h2 id="ls">ls</h2>
+<ul>
+  <li><code>ls -I pattern</code> #过滤某些项</li>
+</ul>
 
 <h2 id="sed">sed</h2>
 

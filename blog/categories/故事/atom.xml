@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 故事 | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/故事/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-08-24T15:26:42+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[各类故事]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130824/stories/"/>
+    <updated>2013-08-24T13:02:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130824/stories</id>
+    <content type="html"><![CDATA[<ul>
+  <li><a href="http://bbs.csdn.net/topics/390550705">已经两天了，我打电话她不接，短信她不回，不经意的触碰，后果竟然这样严重</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

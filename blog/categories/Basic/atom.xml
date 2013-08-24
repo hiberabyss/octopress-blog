@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Basic | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/Basic/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-08-24T15:26:42+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[计算机基础知识]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130823/cs-basics/"/>
+    <updated>2013-08-23T10:47:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130823/cs-basics</id>
+    <content type="html"><![CDATA[<h2 id="section">编码理论</h2>
+<ul>
+  <li>汉明距离：不一样的位的个数，两个数异或之后1的个数。如101和110的汉明距离为2</li>
+  <li>一个编码的距离d，为所有合法编码之间最小的汉明距离</li>
+  <li>一个编码能检测到d个错误，则要求编码距离至少为<code>d+1</code>；能纠正d位错误，则编码距离至少为<code>2d+1</code></li>
+</ul>
+
+<!--more-->
+
+<h2 id="c">c语言</h2>
+<ul>
+  <li>某个参数未使用时，为了防止编译器报warnning，可以使用<code>(void) var;</code>的方式去除警告。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
