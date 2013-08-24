@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-24T15:26:42+08:00</updated>
+  <updated>2013-08-24T19:00:35+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[创意商品]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130824/creative-commodity/"/>
+    <updated>2013-08-24T18:43:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130824/creative-commodity</id>
+    <content type="html"><![CDATA[<ul>
+  <li>创意枕头</li>
+</ul>
+
+<p><img src="http://t3.qpic.cn/mblogpic/e99d158335de960cd828/460" alt="创意枕头" /> </p>
+
+<ul>
+  <li>储蓄罐</li>
+</ul>
+
+<p><img src="http://t1.qpic.cn/mblogpic/139b847ccf406357039c/460" alt="pic alt" title="opt title" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[各类故事]]></title>
@@ -31,6 +50,7 @@
     <id>http://hiberabyss.github.io/blog/20130823/fuse-tutorial</id>
     <content type="html"><![CDATA[<ul>
   <li><a href="http://www.ibm.com/developerworks/library/l-fuse/">Develop your own filesystem with FUSE</a></li>
+  <li><a href="http://ouonline.net/create-your-own-fs-with-fuse-1">使用fuse编写文件系统</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -613,17 +633,6 @@
 <ul>
   <li><a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a></li>
   <li><a href="http://zhanzhang.baidu.com/">百度站长平台</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[揭秘]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130716/uncover/"/>
-    <updated>2013-07-16T14:24:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130716/uncover</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://luo.bo/41675/">原来强大的动画背景后，有着不为人知的秘密</a></li>
 </ul>
 ]]></content>
   </entry>

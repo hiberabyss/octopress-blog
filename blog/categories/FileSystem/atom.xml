@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FileSystem | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/FileSystem/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-24T15:26:42+08:00</updated>
+  <updated>2013-08-24T19:00:35+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -20,6 +20,7 @@
     <id>http://hiberabyss.github.io/blog/20130823/fuse-tutorial</id>
     <content type="html"><![CDATA[<ul>
   <li><a href="http://www.ibm.com/developerworks/library/l-fuse/">Develop your own filesystem with FUSE</a></li>
+  <li><a href="http://ouonline.net/create-your-own-fs-with-fuse-1">使用fuse编写文件系统</a></li>
 </ul>
 ]]></content>
   </entry>
