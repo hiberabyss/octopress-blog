@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-24T19:00:35+08:00</updated>
+  <updated>2013-08-27T14:02:17+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[日本惊悚系列：会走路的尸体]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130826/walking-corpse/"/>
+    <updated>2013-08-26T13:53:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130826/walking-corpse</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<p><img src="http://h.90g.org/files/2013/07/09/3570f10db2b18011d49525ce95bf3014.jpg" alt="会走路的尸体" title="会走路的尸体" /> </p>
+
+<p><img src="http://h.90g.org/files/2013/07/09/64165db4486617ca0229739252574967.jpg" alt="会走路的尸体" title="会走路的尸体" /> </p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[日本惊悚系列：不要开门]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130826/dont-open-the-door/"/>
+    <updated>2013-08-26T13:49:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130826/dont-open-the-door</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<p><img src="http://h.90g.org/files/2013/06/27/fe73f687e5bc5280214e0486b273a5f9.3.jpg" alt="不要开门" title="不要开门" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[日本惊悚系列：记忆摄像机]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130826/memory-camcorder/"/>
+    <updated>2013-08-26T13:36:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130826/memory-camcorder</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<p><img src="http://h.90g.org/files/2013/06/29/3a06a23a8fc134ba0484e91468789f2e.jpg" alt="记忆摄像机" title="记忆摄像机" /></p>
+
+<p><img src="http://h.90g.org/files/2013/06/29/92d2d056dc06100565d96ead9c834846.jpg" alt="记忆摄像机" title="记忆摄像机" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[创意商品]]></title>
@@ -96,9 +133,30 @@
     <link href="http://hiberabyss.github.io/blog/20130817/favor-movies/"/>
     <updated>2013-08-17T10:55:00+08:00</updated>
     <id>http://hiberabyss.github.io/blog/20130817/favor-movies</id>
-    <content type="html"><![CDATA[<ul>
+    <content type="html"><![CDATA[<!--more-->
+
+<ul>
   <li><a href="http://baike.baidu.com/view/353312.htm">机器人总动员</a></li>
-  <li><a href="http://baike.baidu.com/view/4059797.htm">三傻大闹宝莱坞</a></li>
+  <li><a href="http://www.tudou.com/programs/view/pUzrutHx4-k/">三傻大闹宝莱坞</a></li>
+</ul>
+
+<embed src="http://www.tudou.com/v/pUzrutHx4-k/&amp;resourceId=0_05_05_99&amp;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="800" height="500" />
+
+<ul>
+  <li><a href="http://www.tudou.com/albumplay/1lqFjwuh1I0/8pF_eQNKlJw">你好，陌生人</a></li>
+</ul>
+
+<embed src="http://www.tudou.com/a/1lqFjwuh1I0/&amp;resourceId=0_05_05_99&amp;iid=130948202&amp;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="800" height="520" />
+
+<ul>
+  <li><a href="http://www.tudou.com/programs/view/IUVMyubn5w4/">想听你说爱我</a></li>
+</ul>
+
+<embed src="http://www.tudou.com/v/IUVMyubn5w4/&amp;resourceId=0_05_05_99&amp;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400" />
+
+<h2 id="section">青春励志</h2>
+<ul>
+  <li>怪兽大学</li>
 </ul>
 ]]></content>
   </entry>
@@ -418,221 +476,6 @@
   <li>
     <p>要知道，想养个恐龙当宠物，得从孵化恐龙蛋开始，科莫多喂得再大也还是蜥蜴。</p>
   </li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ubuntu的一些配置方法]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130716/ubuntu/"/>
-    <updated>2013-07-16T20:19:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130716/ubuntu</id>
-    <content type="html"><![CDATA[<p>以Ubuntu为主的对Linux的一些配置，标记通用则表示也适用于其他Linux版本。</p>
-
-<!--more-->
-
-<h2 id="deepin">安装deepin软件</h2>
-<p>将如下源添加到<code>/etc/apt/sources.list</code>即可（注意不要<code>sudo apt-get upgrade</code>，否则会变成deepin源里的包:(）</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">deb http://mirrors.ustc.edu.cn/deepin/ raring main non-free
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>然后安装音乐和视频播放器：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#需要先安装如下包</span>
-</span><span class="line">sudo apt-get install python-deepin-gsettings
-</span><span class="line">sudo apt-get install deepin-music-player
-</span><span class="line">sudo apt-get install deepin-media-player
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<ul>
-  <li><a href="http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html">Ubuntu 13.04安装Linux Deepin特色软件</a></li>
-</ul>
-
-<h2 id="section">软件卸载及修复</h2>
-<p>用<code>apt-get remove</code>卸载时会卸载相应的依赖的包，可以用<code>dpkg --force-all -r package</code>进行强制卸载。</p>
-
-<p>如果不小心卸载了许多包，可以查看<code>/var/log/apt/history.log</code>文件，根据日志记录信息进行修复。</p>
-
-<h2 id="section-1">自动更新</h2>
-<ul>
-  <li><a href="http://my.oschina.net/yangphere/blog/131165">Chrome自动更新</a></li>
-</ul>
-
-<h2 id="section-2">修改登陆显示信息</h2>
-<p>tty里的第一行显示的是<code>/etc/issue</code>里的内容。 <br />
-可以修改<code>/etc/lsb-release</code>里的信息。 <br />
-修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
-
-<p>ubuntu登录主题相关包<code>plymouth</code></p>
-
-<ul>
-  <li><a href="http://blog.csdn.net/mal327/article/details/6595796">Ubuntu的登陆和欢迎信息控制</a></li>
-</ul>
-
-<h2 id="update-initramfs">内核编译update-initramfs</h2>
-<p>编译了一次<code>linux-3.10.1</code>，卸载之后，每次运行<code>update-initramfs</code>都会自动在<code>boot</code>目录下生成<code>initramfs-3.10.1</code>文件，删除<code>/var/lib/initramfs-tools/</code>下相应文件即可。</p>
-
-<h2 id="section-3">时间设置（通用）</h2>
-<p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">ntpdate us.pool.ntp.org
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>修改时区：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-4">调整分辨率</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#设置自动调整</span>
-</span><span class="line"><span class="c">#LVDS1为一种显示模式，直接运行xrandr可显示当前可用的模式</span>
-</span><span class="line">xrandr --output LVDS1 --auto
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-5">切换输入法</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">im-switch -c
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="ezame">利用ezame调整右键菜单</h2>
-<p>搜索到<code>Wine Windowns Program Loader</code>项目，把<code>No Display</code>选项关闭（这样便可以在右键菜单选择默认程序时出现该程序），在<code>Exec</code>参数前加上<code>env LANG="zh_CN.UTF-8"</code>。</p>
-
-<h2 id="uuid">查看UUID</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">sudo blkid
-</span><span class="line">ls -l /dev/disk/by-uuid/
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="linux">编译Linux内核</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#查看帮助文档</span>
-</span><span class="line">make <span class="nb">help</span>
-</span><span class="line"><span class="c">#参考当前内核加载的模块生成config文件</span>
-</span><span class="line">make localmodinstall
-</span><span class="line">make
-</span><span class="line"><span class="c">#将生成的模块复制到 /lib/modules/version 目录下</span>
-</span><span class="line">make modules_install
-</span><span class="line"><span class="c">#生成内核文件、initrd文件等，并复制到 /boot/ 目录下</span>
-</span><span class="line">make install
-</span><span class="line"><span class="c">#以上四步即可完成内核的编译与安装</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="cache">手动清除cache内存</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">sync
-</span><span class="line"><span class="nb">echo </span>3 &gt; /proc/sys/vm/drop_caches
-</span><span class="line"><span class="c">#To free pagecache, use </span>
-</span><span class="line"><span class="nb">echo </span>1 &gt; /proc/sys/vm/drop_caches
-</span><span class="line"><span class="c">#to free dentries and inodes, use</span>
-</span><span class="line"><span class="nb">echo </span>2 &gt; /proc/sys/vm/drop_caches
-</span><span class="line"><span class="c">#to free pagecache, dentries and inodes, use </span>
-</span><span class="line"><span class="nb">echo </span>3 &gt; /proc/sys/vm/drop_caches
-</span><span class="line"><span class="c">#Because this is a non-destructive operation and dirty objects</span>
-</span><span class="line"><span class="c">#are not freeable, the user should run sync first.</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<ul>
-  <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
-</ul>
-
-<h2 id="section-6">代理上网</h2>
-<p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
-
-<h2 id="section-7">参考资料</h2>
-<ul>
-  <li><a href="http://www.linuxde.net/2013/06/14506.html">教你在不同机器间迁移Linux</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Lustre原理及优化]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130716/lustre-internal/"/>
-    <updated>2013-07-16T16:30:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130716/lustre-internal</id>
-    <content type="html"><![CDATA[<p>介绍Lustre的内部细节及一些优化措施。</p>
-
-<!--more-->
-
-<h2 id="lustre-stripe">Lustre Stripe</h2>
-<p>Lustre采用对象存储技术，将大文件分片存储在多个OST上。分片的参数包括<code>stripe_count</code>和<code>stripe_size</code>，即所要使用的OST的数量以及分片的大小，默认分别为<code>1</code>和<code>1MB</code>。可以通过<code>lfs setstripe</code>命令进行设定，子目录继承父目录的分片模式。Lustre在创建文件时就按照分片模式和OST选择算法，预先创建好文件所需的OST对象。数据写入后，文件的分片不能修改，现在还未实现OST存储空间的自动均衡。</p>
-
-<p>OST选择算法：</p>
-
-<ol>
-  <li>Round-Robin：任意两个OST剩余存储容量之差小于<code>20%</code>时采用该算法；以顺序轮转方式选择OST，算法非常高效。</li>
-  <li>随机加权算法：存在两个OST剩余空间之差大于<code>20%</code>时采用该算法；Lustre维护着一张剩余空间的优先列表，采用随机算法在此列表中选择OST，会产生开销并影响性能；当任意两个OST剩余容量之差小于<code>20%</code>时，继续选用<code>Round-Robin</code>算法。</li>
-</ol>
-
-<h2 id="lustre">Lustre性能优化</h2>
-
-<ol>
-  <li>禁用所有客户端的<code>LNET debug</code>功能：<code>sysctl -w lnet.debug=0</code>。</li>
-  <li>增加客户端Dirty Cache大小：<code>lctl set_param osc./*.max_dirty_mb=256</code>，缺省为32MB，增大缓存将提升I/O性能，但数据丢失的风险也随之增大。</li>
-  <li>增加RPC并行数量：echo 32 &gt; /proc/fs/lustre/osc/<em>-OST000</em>/max_rpcs_in_flight，缺省为8，提升至32将提高数据和元数据性能。不利之处是如果服务器压力很大，可能反而会影响性能。</li>
-</ol>
-
-<h2 id="section">参考资料</h2>
-<ul>
-  <li><a href="http://blog.csdn.net/liuben/article/details/6455736">Lustre I/O性能特点与最佳实践</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[搜索引擎优化]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130716/seo/"/>
-    <updated>2013-07-16T14:27:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130716/seo</id>
-    <content type="html"><![CDATA[<p>一些关于搜索引擎优化<code>SEO</code>的技巧。</p>
-
-<!--more-->
-
-<p>博客搭建很久之后，依然没有被Google检索。最开始以为是没有用独立主机和独立域名的原因，但通过Goole可以检索到许多其他同样搭建到<code>yourname.github.io</code>的网站。接着就开始怀疑是不是自己的内容写的太烂了，但也不至于直接用我博客的名字都搜索不到。</p>
-
-<p>今天偶然瞥见了Google推出的<a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a>工具，在上面添加我博客的地址，并提交了几个<code>url</code>，今天下午到实验室发现已经可以用Google检索到了。感觉挺不错哈:)。</p>
-
-<p>百度也有个<a href="http://zhanzhang.baidu.com/">站长平台</a>工具，也在上面添加了我的博客地址，目前还不太清楚具体效果如何。</p>
-
-<h2 id="section">相关链接</h2>
-<ul>
-  <li><a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a></li>
-  <li><a href="http://zhanzhang.baidu.com/">百度站长平台</a></li>
 </ul>
 ]]></content>
   </entry>
