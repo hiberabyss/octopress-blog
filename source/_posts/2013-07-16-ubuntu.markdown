@@ -32,6 +32,26 @@ sudo apt-get install deepin-media-player
 
 如果不小心卸载了许多包，可以查看`/var/log/apt/history.log`文件，根据日志记录信息进行修复。
 
+##休眠唤醒后执行脚本
+编辑目录`/etc/pm/sleep.d/`下文件：
+
+```bash
+#!/bin/bash
+case "$1" in
+    hibernate|suspend)
+        ACTION BEFORE SUSPEND/HIBERNATE
+        ;;
+    thaw|resume)
+        ACTION AFTER RESUME
+        ;;
+    *)
+        ;;
+esac
+exit $?
+```
+
+编辑完成后加上可执行权限。
+
 ##自动更新
 - [Chrome自动更新](http://my.oschina.net/yangphere/blog/131165)
 
@@ -68,6 +88,9 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 xrandr --output LVDS1 --auto
 ```
 
+##终端下复制粘贴
+- [terminal 复制粘帖 (mac , ubuntu)](http://justcoding.iteye.com/blog/1829963)
+
 ##切换输入法
 
 ```bash
@@ -83,6 +106,12 @@ im-switch -c
 sudo blkid
 ls -l /dev/disk/by-uuid/
 ```
+
+##远程桌面
+
+- 服务器端安装`vnc4server`，记录下执行时显示的`nums`
+- 客户端使用`gvncview server:nums`进行连接，或使用其它远程桌面软件
+- [Linux中的远程连接 SSH and VNC图形模式](http://www.cnblogs.com/ayuan/archive/2008/04/26/1171803.html)
 
 ##编译Linux内核
 

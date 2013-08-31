@@ -28,6 +28,9 @@ man -k keyword
 ##ls
 - `ls -I pattern` #过滤某些项
 
+##objdump
+- `objdump -p libxxx`	#查看库文件版本信息等
+
 ##sed
 
 ```bash

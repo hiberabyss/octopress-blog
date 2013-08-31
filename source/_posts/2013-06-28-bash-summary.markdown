@@ -16,7 +16,7 @@ categories:
 
 - [自定义Bash自动完成](http://marlonyao.iteye.com/blog/695225)
 
-{% codeblock bash_completion lang:bash %}
+{% codeblock ~/etc/bash_completion lang:bash %}
     {% render_partial sample-language/shell/bash_completion raw %}
 {% endcodeblock %}
 
