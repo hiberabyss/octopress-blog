@@ -9,7 +9,7 @@
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="">
+  <meta name="description" content="找出数组中3个只出现一次的数 程序员面试题精选100题(63)-数组中三个只出现一次的数字[算法] 有数组A，除a,b,c三个数字只出现一次外，其它数字都出现2次。 主要基于以下几个结论 两个相同的数的异或结果为0 两个数异或结果中某一位为1，则说明这两个数的这一位肯定不相同 设x=a^b^c，f &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,66 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/20130829/algorithm/">剑指Offer算法题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-29T15:33:00+08:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
+        
+
+	 
+	  | <a href="/blog/20130829/algorithm/#comments">Comments</a>
+	 
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="section">找出数组中3个只出现一次的数</h2>
+
+<ul>
+  <li><a href="http://zhedahht.blog.163.com/blog/static/25411174201283084246412">程序员面试题精选100题(63)-数组中三个只出现一次的数字[算法] </a></li>
+  <li>有数组<code>A</code>，除<code>a,b,c</code>三个数字只出现一次外，其它数字都出现2次。</li>
+</ul>
+
+<h4 id="section-1">主要基于以下几个结论</h4>
+
+<ol>
+  <li>两个相同的数的异或结果为0</li>
+  <li>两个数异或结果中某一位为1，则说明这两个数的这一位肯定不相同</li>
+  <li>设<code>x=a^b^c</code>，<code>f(n)</code>表示只保留n最后一位的1，<code>f(110)=010</code>；则<code>y=f(x^a)^f(x^b)^f(x^c)</code>肯定不可能为0，取<code>f(y)</code>，则不可能<code>f(x^a)=f(x^b)=f(x^c)=f(y)</code></li>
+</ol>
+
+<p>f(n)的实现技巧：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -471,49 +531,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/20130816/intresting-truth/">一些很有意思的真相</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-16T17:57:00+08:00" pubdate data-updated="true">Aug 16<span>th</span>, 2013</time>
-        
-
-	 
-	  | <a href="/blog/20130816/intresting-truth/#comments">Comments</a>
-	 
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-  <li><a href="http://blog.jobbole.com/18650/">为什么 Vim 使用 HJKL 键作为方向键</a></li>
-  <li><a href="http://blog.jobbole.com/45756/">为什么软件开发周期通常是预期的两三倍</a></li>
-</ul>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -527,12 +544,16 @@
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 108.57142857142857%'>bash(1)</a>  <a href='/blog/categories/Basic' style='font-size: 108.57142857142857%'>Basic(1)</a>  <a href='/blog/categories/Beamer' style='font-size: 108.57142857142857%'>Beamer(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 108.57142857142857%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 108.57142857142857%'>CentOS(1)</a>  <a href='/blog/categories/chrome' style='font-size: 108.57142857142857%'>chrome(1)</a>  <a href='/blog/categories/Debug' style='font-size: 108.57142857142857%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 108.57142857142857%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 108.57142857142857%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 134.28571428571428%'>FileSystem(4)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(7)</a>  <a href='/blog/categories/Games' style='font-size: 108.57142857142857%'>Games(1)</a>  <a href='/blog/categories/git' style='font-size: 108.57142857142857%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 108.57142857142857%'>GnuPlot(1)</a>  <a href='/blog/categories/Google' style='font-size: 108.57142857142857%'>Google(1)</a>  <a href='/blog/categories/Grub' style='font-size: 108.57142857142857%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 142.85714285714286%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 117.14285714285714%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 108.57142857142857%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 125.71428571428572%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 108.57142857142857%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 108.57142857142857%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 108.57142857142857%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 108.57142857142857%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 134.28571428571428%'>惊悚(4)</a>  <a href='/blog/categories/故事' style='font-size: 108.57142857142857%'>故事(1)</a>  <a href='/blog/categories/温馨' style='font-size: 108.57142857142857%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 125.71428571428572%'>生活(3)</a>  <a href='/blog/categories/电影' style='font-size: 108.57142857142857%'>电影(1)</a>  <a href='/blog/categories/若有所思' style='font-size: 125.71428571428572%'>若有所思(3)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 108.57142857142857%'>bash(1)</a>  <a href='/blog/categories/Basic' style='font-size: 108.57142857142857%'>Basic(1)</a>  <a href='/blog/categories/Beamer' style='font-size: 108.57142857142857%'>Beamer(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 108.57142857142857%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 108.57142857142857%'>CentOS(1)</a>  <a href='/blog/categories/chrome' style='font-size: 108.57142857142857%'>chrome(1)</a>  <a href='/blog/categories/Debug' style='font-size: 108.57142857142857%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 108.57142857142857%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 108.57142857142857%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 134.28571428571428%'>FileSystem(4)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(7)</a>  <a href='/blog/categories/Games' style='font-size: 108.57142857142857%'>Games(1)</a>  <a href='/blog/categories/git' style='font-size: 108.57142857142857%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 108.57142857142857%'>GnuPlot(1)</a>  <a href='/blog/categories/Google' style='font-size: 108.57142857142857%'>Google(1)</a>  <a href='/blog/categories/Grub' style='font-size: 108.57142857142857%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 142.85714285714286%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 117.14285714285714%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 108.57142857142857%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 125.71428571428572%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 108.57142857142857%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 108.57142857142857%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 108.57142857142857%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 108.57142857142857%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 134.28571428571428%'>惊悚(4)</a>  <a href='/blog/categories/故事' style='font-size: 108.57142857142857%'>故事(1)</a>  <a href='/blog/categories/温馨' style='font-size: 108.57142857142857%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 125.71428571428572%'>生活(3)</a>  <a href='/blog/categories/电影' style='font-size: 108.57142857142857%'>电影(1)</a>  <a href='/blog/categories/算法' style='font-size: 108.57142857142857%'>算法(1)</a>  <a href='/blog/categories/若有所思' style='font-size: 125.71428571428572%'>若有所思(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130829/algorithm/">剑指Offer算法题</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130826/walking-corpse/">日本惊悚系列：会走路的尸体</a>
@@ -548,10 +569,6 @@
     
       <li class="post">
         <a href="/blog/20130824/creative-commodity/">创意商品</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130824/stories/">各类故事</a>
       </li>
     
   </ul>

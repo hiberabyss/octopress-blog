@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Linux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-27T14:02:17+08:00</updated>
+  <updated>2013-08-31T21:16:02+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -47,12 +47,32 @@ sudo apt-get install deepin-media-player
 
 <p>如果不小心卸载了许多包，可以查看<code>/var/log/apt/history.log</code>文件，根据日志记录信息进行修复。</p>
 
-<h2 id="section-1">自动更新</h2>
+<h2 id="section-1">休眠唤醒后执行脚本</h2>
+<p>编辑目录<code>/etc/pm/sleep.d/</code>下文件：</p>
+
+<p><code>bash
+#!/bin/bash
+case "$1" in
+    hibernate|suspend)
+        ACTION BEFORE SUSPEND/HIBERNATE
+        ;;
+    thaw|resume)
+        ACTION AFTER RESUME
+        ;;
+    *)
+        ;;
+esac
+exit $?
+</code></p>
+
+<p>编辑完成后加上可执行权限。</p>
+
+<h2 id="section-2">自动更新</h2>
 <ul>
   <li><a href="http://my.oschina.net/yangphere/blog/131165">Chrome自动更新</a></li>
 </ul>
 
-<h2 id="section-2">修改登陆显示信息</h2>
+<h2 id="section-3">修改登陆显示信息</h2>
 <p>tty里的第一行显示的是<code>/etc/issue</code>里的内容。 <br />
 可以修改<code>/etc/lsb-release</code>里的信息。 <br />
 修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
@@ -66,7 +86,7 @@ sudo apt-get install deepin-media-player
 <h2 id="update-initramfs">内核编译update-initramfs</h2>
 <p>编译了一次<code>linux-3.10.1</code>，卸载之后，每次运行<code>update-initramfs</code>都会自动在<code>boot</code>目录下生成<code>initramfs-3.10.1</code>文件，删除<code>/var/lib/initramfs-tools/</code>下相应文件即可。</p>
 
-<h2 id="section-3">时间设置（通用）</h2>
+<h2 id="section-4">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
 
 <p><code>
@@ -79,7 +99,7 @@ ntpdate us.pool.ntp.org
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></p>
 
-<h2 id="section-4">调整分辨率</h2>
+<h2 id="section-5">调整分辨率</h2>
 
 <p><code>bash
 #设置自动调整
@@ -87,7 +107,12 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 xrandr --output LVDS1 --auto
 </code></p>
 
-<h2 id="section-5">切换输入法</h2>
+<h2 id="section-6">终端下复制粘贴</h2>
+<ul>
+  <li><a href="http://justcoding.iteye.com/blog/1829963">terminal 复制粘帖 (mac , ubuntu)</a></li>
+</ul>
+
+<h2 id="section-7">切换输入法</h2>
 
 <p><code>bash
 im-switch -c
@@ -102,6 +127,14 @@ im-switch -c
 sudo blkid
 ls -l /dev/disk/by-uuid/
 </code></p>
+
+<h2 id="section-8">远程桌面</h2>
+
+<ul>
+  <li>服务器端安装<code>vnc4server</code>，记录下执行时显示的<code>nums</code></li>
+  <li>客户端使用<code>gvncview server:nums</code>进行连接，或使用其它远程桌面软件</li>
+  <li><a href="http://www.cnblogs.com/ayuan/archive/2008/04/26/1171803.html">Linux中的远程连接 SSH and VNC图形模式</a></li>
+</ul>
 
 <h2 id="linux">编译Linux内核</h2>
 
@@ -137,10 +170,10 @@ echo 3 &gt; /proc/sys/vm/drop_caches
   <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
 </ul>
 
-<h2 id="section-6">代理上网</h2>
+<h2 id="section-9">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 
-<h2 id="section-7">参考资料</h2>
+<h2 id="section-10">参考资料</h2>
 <ul>
   <li><a href="http://www.linuxde.net/2013/06/14506.html">教你在不同机器间迁移Linux</a></li>
 </ul>
@@ -279,7 +312,7 @@ yum --disablerepo=/* --enablerepo=locale install
   <li><a href="http://marlonyao.iteye.com/blog/695225">自定义Bash自动完成</a></li>
 </ul>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>bash_completion </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>~/etc/bash_completion </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -296,7 +329,7 @@ yum --disablerepo=/* --enablerepo=locale install
 </span><span class='line'>  <span class="nb">local </span>cur
 </span><span class='line'>  <span class="nv">COMPREPLY</span><span class="o">=()</span>
 </span><span class='line'>  <span class="nv">cur</span><span class="o">=</span><span class="k">${</span><span class="nv">COMP_WORDS</span><span class="p">[COMP_CWORD]</span><span class="k">}</span>
-</span><span class='line'>  <span class="nv">COMPREPLY</span><span class="o">=(</span><span class="k">$(</span> <span class="nb">compgen</span> -W <span class="s1">&#39;new_post gen_deploy lgdeploy&#39;</span> -- <span class="nv">$cur</span> <span class="k">)</span><span class="o">)</span>
+</span><span class='line'>  <span class="nv">COMPREPLY</span><span class="o">=(</span><span class="k">$(</span> <span class="nb">compgen</span> -W <span class="s1">&#39;new_post gen_deploy lgdeploy preview&#39;</span> -- <span class="nv">$cur</span> <span class="k">)</span><span class="o">)</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="k">return </span>0
 </span><span class='line'><span class="o">}</span>
@@ -642,6 +675,11 @@ man -k keyword
 <h2 id="ls">ls</h2>
 <ul>
   <li><code>ls -I pattern</code> #过滤某些项</li>
+</ul>
+
+<h2 id="objdump">objdump</h2>
+<ul>
+  <li><code>objdump -p libxxx</code>	#查看库文件版本信息等</li>
 </ul>
 
 <h2 id="sed">sed</h2>

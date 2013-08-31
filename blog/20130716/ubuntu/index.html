@@ -130,12 +130,43 @@ deb http:// &hellip;">
 
 <p>如果不小心卸载了许多包，可以查看<code>/var/log/apt/history.log</code>文件，根据日志记录信息进行修复。</p>
 
-<h2 id="section-1">自动更新</h2>
+<h2 id="section-1">休眠唤醒后执行脚本</h2>
+<p>编辑目录<code>/etc/pm/sleep.d/</code>下文件：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
+</span><span class="line"><span class="k">case</span> <span class="s2">&quot;$1&quot;</span> in
+</span><span class="line">    hibernate|suspend<span class="o">)</span>
+</span><span class="line">        ACTION BEFORE SUSPEND/HIBERNATE
+</span><span class="line">        ;;
+</span><span class="line">    thaw|resume<span class="o">)</span>
+</span><span class="line">        ACTION AFTER RESUME
+</span><span class="line">        ;;
+</span><span class="line">    *<span class="o">)</span>
+</span><span class="line">        ;;
+</span><span class="line"><span class="k">esac</span>
+</span><span class="line"><span class="nb">exit</span> <span class="nv">$?</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>编辑完成后加上可执行权限。</p>
+
+<h2 id="section-2">自动更新</h2>
 <ul>
   <li><a href="http://my.oschina.net/yangphere/blog/131165">Chrome自动更新</a></li>
 </ul>
 
-<h2 id="section-2">修改登陆显示信息</h2>
+<h2 id="section-3">修改登陆显示信息</h2>
 <p>tty里的第一行显示的是<code>/etc/issue</code>里的内容。 <br />
 可以修改<code>/etc/lsb-release</code>里的信息。 <br />
 修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
@@ -149,7 +180,7 @@ deb http:// &hellip;">
 <h2 id="update-initramfs">内核编译update-initramfs</h2>
 <p>编译了一次<code>linux-3.10.1</code>，卸载之后，每次运行<code>update-initramfs</code>都会自动在<code>boot</code>目录下生成<code>initramfs-3.10.1</code>文件，删除<code>/var/lib/initramfs-tools/</code>下相应文件即可。</p>
 
-<h2 id="section-3">时间设置（通用）</h2>
+<h2 id="section-4">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -162,7 +193,7 @@ deb http:// &hellip;">
 </pre></td><td class="code"><pre><code class="bash"><span class="line">cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-4">调整分辨率</h2>
+<h2 id="section-5">调整分辨率</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -172,7 +203,12 @@ deb http:// &hellip;">
 </span><span class="line">xrandr --output LVDS1 --auto
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-5">切换输入法</h2>
+<h2 id="section-6">终端下复制粘贴</h2>
+<ul>
+  <li><a href="http://justcoding.iteye.com/blog/1829963">terminal 复制粘帖 (mac , ubuntu)</a></li>
+</ul>
+
+<h2 id="section-7">切换输入法</h2>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">im-switch -c
@@ -188,6 +224,14 @@ deb http:// &hellip;">
 </pre></td><td class="code"><pre><code class="bash"><span class="line">sudo blkid
 </span><span class="line">ls -l /dev/disk/by-uuid/
 </span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-8">远程桌面</h2>
+
+<ul>
+  <li>服务器端安装<code>vnc4server</code>，记录下执行时显示的<code>nums</code></li>
+  <li>客户端使用<code>gvncview server:nums</code>进行连接，或使用其它远程桌面软件</li>
+  <li><a href="http://www.cnblogs.com/ayuan/archive/2008/04/26/1171803.html">Linux中的远程连接 SSH and VNC图形模式</a></li>
+</ul>
 
 <h2 id="linux">编译Linux内核</h2>
 
@@ -241,10 +285,10 @@ deb http:// &hellip;">
   <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
 </ul>
 
-<h2 id="section-6">代理上网</h2>
+<h2 id="section-9">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 
-<h2 id="section-7">参考资料</h2>
+<h2 id="section-10">参考资料</h2>
 <ul>
   <li><a href="http://www.linuxde.net/2013/06/14506.html">教你在不同机器间迁移Linux</a></li>
 </ul>
@@ -329,12 +373,16 @@ deb http:// &hellip;">
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 108.57142857142857%'>bash(1)</a>  <a href='/blog/categories/Basic' style='font-size: 108.57142857142857%'>Basic(1)</a>  <a href='/blog/categories/Beamer' style='font-size: 108.57142857142857%'>Beamer(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 108.57142857142857%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 108.57142857142857%'>CentOS(1)</a>  <a href='/blog/categories/chrome' style='font-size: 108.57142857142857%'>chrome(1)</a>  <a href='/blog/categories/Debug' style='font-size: 108.57142857142857%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 108.57142857142857%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 108.57142857142857%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 134.28571428571428%'>FileSystem(4)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(7)</a>  <a href='/blog/categories/Games' style='font-size: 108.57142857142857%'>Games(1)</a>  <a href='/blog/categories/git' style='font-size: 108.57142857142857%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 108.57142857142857%'>GnuPlot(1)</a>  <a href='/blog/categories/Google' style='font-size: 108.57142857142857%'>Google(1)</a>  <a href='/blog/categories/Grub' style='font-size: 108.57142857142857%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 142.85714285714286%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 117.14285714285714%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 108.57142857142857%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 125.71428571428572%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 108.57142857142857%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 108.57142857142857%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 108.57142857142857%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 108.57142857142857%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 134.28571428571428%'>惊悚(4)</a>  <a href='/blog/categories/故事' style='font-size: 108.57142857142857%'>故事(1)</a>  <a href='/blog/categories/温馨' style='font-size: 108.57142857142857%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 125.71428571428572%'>生活(3)</a>  <a href='/blog/categories/电影' style='font-size: 108.57142857142857%'>电影(1)</a>  <a href='/blog/categories/若有所思' style='font-size: 125.71428571428572%'>若有所思(3)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/bash' style='font-size: 108.57142857142857%'>bash(1)</a>  <a href='/blog/categories/Basic' style='font-size: 108.57142857142857%'>Basic(1)</a>  <a href='/blog/categories/Beamer' style='font-size: 108.57142857142857%'>Beamer(1)</a>  <a href='/blog/categories/Beauty' style='font-size: 108.57142857142857%'>Beauty(1)</a>  <a href='/blog/categories/CentOS' style='font-size: 108.57142857142857%'>CentOS(1)</a>  <a href='/blog/categories/chrome' style='font-size: 108.57142857142857%'>chrome(1)</a>  <a href='/blog/categories/Debug' style='font-size: 108.57142857142857%'>Debug(1)</a>  <a href='/blog/categories/English' style='font-size: 108.57142857142857%'>English(1)</a>  <a href='/blog/categories/Female' style='font-size: 108.57142857142857%'>Female(1)</a>  <a href='/blog/categories/FileSystem' style='font-size: 134.28571428571428%'>FileSystem(4)</a>  <a href='/blog/categories/Funny' style='font-size: 160.0%'>Funny(7)</a>  <a href='/blog/categories/Games' style='font-size: 108.57142857142857%'>Games(1)</a>  <a href='/blog/categories/git' style='font-size: 108.57142857142857%'>git(1)</a>  <a href='/blog/categories/GnuPlot' style='font-size: 108.57142857142857%'>GnuPlot(1)</a>  <a href='/blog/categories/Google' style='font-size: 108.57142857142857%'>Google(1)</a>  <a href='/blog/categories/Grub' style='font-size: 108.57142857142857%'>Grub(1)</a>  <a href='/blog/categories/Linux' style='font-size: 142.85714285714286%'>Linux(5)</a>  <a href='/blog/categories/Lustre' style='font-size: 117.14285714285714%'>Lustre(2)</a>  <a href='/blog/categories/Markdown' style='font-size: 108.57142857142857%'>Markdown(1)</a>  <a href='/blog/categories/Octopress' style='font-size: 125.71428571428572%'>Octopress(3)</a>  <a href='/blog/categories/SEO' style='font-size: 108.57142857142857%'>SEO(1)</a>  <a href='/blog/categories/Tmux' style='font-size: 108.57142857142857%'>Tmux(1)</a>  <a href='/blog/categories/Vim' style='font-size: 108.57142857142857%'>Vim(1)</a>  <a href='/blog/categories/VirtualBox' style='font-size: 108.57142857142857%'>VirtualBox(1)</a>  <a href='/blog/categories/惊悚' style='font-size: 134.28571428571428%'>惊悚(4)</a>  <a href='/blog/categories/故事' style='font-size: 108.57142857142857%'>故事(1)</a>  <a href='/blog/categories/温馨' style='font-size: 108.57142857142857%'>温馨(1)</a>  <a href='/blog/categories/生活' style='font-size: 125.71428571428572%'>生活(3)</a>  <a href='/blog/categories/电影' style='font-size: 108.57142857142857%'>电影(1)</a>  <a href='/blog/categories/算法' style='font-size: 108.57142857142857%'>算法(1)</a>  <a href='/blog/categories/若有所思' style='font-size: 125.71428571428572%'>若有所思(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20130829/algorithm/">剑指Offer算法题</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20130826/walking-corpse/">日本惊悚系列：会走路的尸体</a>
@@ -350,10 +398,6 @@ deb http:// &hellip;">
     
       <li class="post">
         <a href="/blog/20130824/creative-commodity/">创意商品</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20130824/stories/">各类故事</a>
       </li>
     
   </ul>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 算法 | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/算法/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2013-08-31T21:16:02+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[剑指Offer算法题]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130829/algorithm/"/>
+    <updated>2013-08-29T15:33:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130829/algorithm</id>
+    <content type="html"><![CDATA[<h2 id="section">找出数组中3个只出现一次的数</h2>
+
+<ul>
+  <li><a href="http://zhedahht.blog.163.com/blog/static/25411174201283084246412">程序员面试题精选100题(63)-数组中三个只出现一次的数字[算法] </a></li>
+  <li>有数组<code>A</code>，除<code>a,b,c</code>三个数字只出现一次外，其它数字都出现2次。</li>
+</ul>
+
+<h4 id="section-1">主要基于以下几个结论</h4>
+
+<ol>
+  <li>两个相同的数的异或结果为0</li>
+  <li>两个数异或结果中某一位为1，则说明这两个数的这一位肯定不相同</li>
+  <li>设<code>x=a^b^c</code>，<code>f(n)</code>表示只保留n最后一位的1，<code>f(110)=010</code>；则<code>y=f(x^a)^f(x^b)^f(x^c)</code>肯定不可能为0，取<code>f(y)</code>，则不可能<code>f(x^a)=f(x^b)=f(x^c)=f(y)</code></li>
+</ol>
+
+<p>f(n)的实现技巧：</p>
+
+<p><code>c
+return (n &amp; ~(n-1))
+</code></p>
+
+]]></content>
+  </entry>
+  
+</feed>

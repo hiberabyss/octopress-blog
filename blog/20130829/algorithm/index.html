@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>搜索引擎优化 - 蛰渊-成长的轨迹</title>
+  <title>剑指Offer算法题 - 蛰渊-成长的轨迹</title>
   <meta name="author" content="hiberabyss">
 
   
-  <meta name="description" content="一些关于搜索引擎优化SEO的技巧。 博客搭建很久之后，依然没有被Google检索。最开始以为是没有用独立主机和独立域名的原因，但通过Goole可以检索到许多其他同样搭建到yourname.github.io的网站。接着就开始怀疑是不是自己的内容写的太烂了，但也不至于直接用我博客的名字都搜索不到。 &hellip;">
+  <meta name="description" content="找出数组中3个只出现一次的数 程序员面试题精选100题(63)-数组中三个只出现一次的数字[算法] 有数组A，除a,b,c三个数字只出现一次外，其它数字都出现2次。 主要基于以下几个结论 两个相同的数的异或结果为0 两个数异或结果中某一位为1，则说明这两个数的这一位肯定不相同 设x=a^b^c，f &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130716/seo">
+  <link rel="canonical" href="http://hiberabyss.github.io/blog/20130829/algorithm">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="蛰渊-成长的轨迹" type="application/atom+xml">
@@ -69,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">搜索引擎优化</h1>
+      <h1 class="entry-title">剑指Offer算法题</h1>
     
     
       <p class="meta">
@@ -85,7 +85,7 @@
   
 
 
-<time datetime="2013-07-16T14:27:00+08:00" pubdate data-updated="true">Jul 16<span>th</span>, 2013</time>
+<time datetime="2013-08-29T15:33:00+08:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
         
 
 	 
@@ -96,21 +96,27 @@
   </header>
 
 
-<div class="entry-content"><p>一些关于搜索引擎优化<code>SEO</code>的技巧。</p>
+<div class="entry-content"><h2 id="section">找出数组中3个只出现一次的数</h2>
 
-<!--more-->
-
-<p>博客搭建很久之后，依然没有被Google检索。最开始以为是没有用独立主机和独立域名的原因，但通过Goole可以检索到许多其他同样搭建到<code>yourname.github.io</code>的网站。接着就开始怀疑是不是自己的内容写的太烂了，但也不至于直接用我博客的名字都搜索不到。</p>
-
-<p>今天偶然瞥见了Google推出的<a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a>工具，在上面添加我博客的地址，并提交了几个<code>url</code>，今天下午到实验室发现已经可以用Google检索到了。感觉挺不错哈:)。</p>
-
-<p>百度也有个<a href="http://zhanzhang.baidu.com/">站长平台</a>工具，也在上面添加了我的博客地址，目前还不太清楚具体效果如何。</p>
-
-<h2 id="section">相关链接</h2>
 <ul>
-  <li><a href="https://www.google.com/webmasters/tools/home?hl=en">Webmaster Tools</a></li>
-  <li><a href="http://zhanzhang.baidu.com/">百度站长平台</a></li>
+  <li><a href="http://zhedahht.blog.163.com/blog/static/25411174201283084246412">程序员面试题精选100题(63)-数组中三个只出现一次的数字[算法] </a></li>
+  <li>有数组<code>A</code>，除<code>a,b,c</code>三个数字只出现一次外，其它数字都出现2次。</li>
 </ul>
+
+<h4 id="section-1">主要基于以下几个结论</h4>
+
+<ol>
+  <li>两个相同的数的异或结果为0</li>
+  <li>两个数异或结果中某一位为1，则说明这两个数的这一位肯定不相同</li>
+  <li>设<code>x=a^b^c</code>，<code>f(n)</code>表示只保留n最后一位的1，<code>f(110)=010</code>；则<code>y=f(x^a)^f(x^b)^f(x^c)</code>肯定不可能为0，取<code>f(y)</code>，则不可能<code>f(x^a)=f(x^b)=f(x^c)=f(y)</code></li>
+</ol>
+
+<p>f(n)的实现技巧：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 </div>
 
 
@@ -133,12 +139,12 @@
   
 
 
-<time datetime="2013-07-16T14:27:00+08:00" pubdate data-updated="true">Jul 16<span>th</span>, 2013</time>
+<time datetime="2013-08-29T15:33:00+08:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/SEO/'>SEO</a>
+    <a class='category' href='/blog/categories/算法/'>算法</a>
   
 </span>
 
@@ -155,10 +161,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/20130716/uncover/" title="Previous Post: 揭秘">&laquo; 揭秘</a>
+        <a class="basic-alignment left" href="/blog/20130826/walking-corpse/" title="Previous Post: 日本惊悚系列：会走路的尸体">&laquo; 日本惊悚系列：会走路的尸体</a>
       
-      
-        <a class="basic-alignment right" href="/blog/20130716/lustre-internal/" title="Next Post: Lustre原理及优化">Lustre原理及优化 &raquo;</a>
       
     </p>
   </footer>
