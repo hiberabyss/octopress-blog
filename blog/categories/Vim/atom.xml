@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Vim | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Vim/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-08-31T21:16:02+08:00</updated>
+  <updated>2013-09-02T22:16:43+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -91,12 +91,24 @@ set complete-=i
 
 <p>在目录<code>~/.vim/ftplugin/</code>目录建立以<code>filetype</code>开头的文件，如<code>cpp.vim</code>，则在编辑<code>*.cpp</code>文件时，便会应用<code>cpp.vim</code>里所做的设定。</p>
 
+<h2 id="cscope">cscope</h2>
+<ul>
+  <li><a href="http://blog.csdn.net/mci2004/article/details/7944074">Vim中自动加载cscope.out</a></li>
+</ul>
+
 <h2 id="section-6">相关插件</h2>
 
 <h3 id="ultisnips">UltiSnips</h3>
 <p>非常好用的一个自动完成的插件。默认触发键为<code>&lt;tab&gt;</code>；可以在插件目录下的<code>ultisnips/UltiSnips/</code>目录里编辑<code>extension.snippets</code>文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用<code>:help UltiSnips</code>查看。</p>
 
 <p>介绍： <a href="http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/">Why UltiSnips</a></p>
+
+<h3 id="omnicppcomplete">OmniCppComplete</h3>
+<p>在<code>~/.vimrc</code>文件中包含语句<code>set path=./**</code>会导致补全很慢。</p>
+
+<ul>
+  <li><a href="http://blog.csdn.net/liumengxinfly/article/details/6967687">在vim中针对c++自动补全</a></li>
+</ul>
 
 <h2 id="section-7">参考资料</h2>
 <ul>
