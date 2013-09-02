@@ -64,12 +64,20 @@ set complete-=i
 
 在目录`~/.vim/ftplugin/`目录建立以`filetype`开头的文件，如`cpp.vim`，则在编辑`*.cpp`文件时，便会应用`cpp.vim`里所做的设定。
 
+##cscope
+- [Vim中自动加载cscope.out](http://blog.csdn.net/mci2004/article/details/7944074)
+
 ##相关插件
 
 ###UltiSnips
 非常好用的一个自动完成的插件。默认触发键为`<tab>`；可以在插件目录下的`ultisnips/UltiSnips/`目录里编辑`extension.snippets`文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用`:help UltiSnips`查看。
 
 介绍： [Why UltiSnips](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
+
+###OmniCppComplete
+在`~/.vimrc`文件中包含语句`set path=./**`会导致补全很慢。
+
+- [在vim中针对c++自动补全](http://blog.csdn.net/liumengxinfly/article/details/6967687)
 
 ##参考资料
 - [Vimer的程序世界](http://www.vimer.cn/)
