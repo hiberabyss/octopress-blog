@@ -51,4 +51,6 @@ make && make install
 - s	#显示当前的窗口列表
 
 ##参考资料
-[github](https://gist.github.com/sturadnidge/4185338)
+- [linux下远程管理利器-tmux](http://rainbird.blog.51cto.com/211214/248701)
+- [tmux复制模式使用说明](http://blog.csdn.net/yangzhongxuan/article/details/6890232)
+- [github](https://gist.github.com/sturadnidge/4185338)

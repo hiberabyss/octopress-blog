@@ -59,6 +59,9 @@ set complete-=i
 - 匹配单词：\<word\>
 - 贪婪模式`.*`，非贪婪模式`.\{-}`
 
+##查看ASCII码
+- `ga` #查看当前光标下ascii码
+
 ##文件类型filetype
 在目录`~/.vim/ftdetect/`目录下建立`.vim`文件，用于设置识别特定类型文件后的操作。
 
@@ -66,6 +69,16 @@ set complete-=i
 
 ##cscope
 - [Vim中自动加载cscope.out](http://blog.csdn.net/mci2004/article/details/7944074)
+
+##统计行数
+- `w !wc` #w把文件内容写到标准输出
+
+##统计出现次数
+- `:%s#pattern##gn`
+- `:%s#pattern#&#g`
+
+##sudo执行
+- `w !sudo tee %` #用sudo写入当前文件内容
 
 ##相关插件
 
