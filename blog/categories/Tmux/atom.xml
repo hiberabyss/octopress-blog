@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tmux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Tmux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-09-02T22:16:43+08:00</updated>
+  <updated>2013-09-03T21:07:32+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -68,7 +68,11 @@ make &amp;&amp; make install</p>
 </ul>
 
 <h2 id="section-2">参考资料</h2>
-<p><a href="https://gist.github.com/sturadnidge/4185338">github</a></p>
+<ul>
+  <li><a href="http://rainbird.blog.51cto.com/211214/248701">linux下远程管理利器-tmux</a></li>
+  <li><a href="http://blog.csdn.net/yangzhongxuan/article/details/6890232">tmux复制模式使用说明</a></li>
+  <li><a href="https://gist.github.com/sturadnidge/4185338">github</a></li>
+</ul>
 ]]></content>
   </entry>
   

@@ -165,6 +165,11 @@
   <li>贪婪模式<code>.*</code>，非贪婪模式<code>.\{-}</code></li>
 </ul>
 
+<h2 id="ascii">查看ASCII码</h2>
+<ul>
+  <li><code>ga</code> #查看当前光标下ascii码</li>
+</ul>
+
 <h2 id="filetype">文件类型filetype</h2>
 <p>在目录<code>~/.vim/ftdetect/</code>目录下建立<code>.vim</code>文件，用于设置识别特定类型文件后的操作。</p>
 
@@ -175,7 +180,23 @@
   <li><a href="http://blog.csdn.net/mci2004/article/details/7944074">Vim中自动加载cscope.out</a></li>
 </ul>
 
-<h2 id="section-6">相关插件</h2>
+<h2 id="section-6">统计行数</h2>
+<ul>
+  <li><code>w !wc</code> #w把文件内容写到标准输出</li>
+</ul>
+
+<h2 id="section-7">统计出现次数</h2>
+<ul>
+  <li><code>:%s#pattern##gn</code></li>
+  <li><code>:%s#pattern#&amp;#g</code></li>
+</ul>
+
+<h2 id="sudo">sudo执行</h2>
+<ul>
+  <li><code>w !sudo tee %</code> #用sudo写入当前文件内容</li>
+</ul>
+
+<h2 id="section-8">相关插件</h2>
 
 <h3 id="ultisnips">UltiSnips</h3>
 <p>非常好用的一个自动完成的插件。默认触发键为<code>&lt;tab&gt;</code>；可以在插件目录下的<code>ultisnips/UltiSnips/</code>目录里编辑<code>extension.snippets</code>文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用<code>:help UltiSnips</code>查看。</p>
@@ -189,7 +210,7 @@
   <li><a href="http://blog.csdn.net/liumengxinfly/article/details/6967687">在vim中针对c++自动补全</a></li>
 </ul>
 
-<h2 id="section-7">参考资料</h2>
+<h2 id="section-9">参考资料</h2>
 <ul>
   <li><a href="http://www.vimer.cn/">Vimer的程序世界</a></li>
 </ul>
