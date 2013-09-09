@@ -29,6 +29,7 @@ sudo apt-add-repository ppa:noobslab/deepin-sc
 sudo apt-get install python-deepin-gsettings
 sudo apt-get install deepin-music-player
 sudo apt-get install deepin-media-player
+sudo apt-get install dmusic-plugin-baidumusic
 ```
 
 - [Ubuntu 13.04安装Linux Deepin特色软件](http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html)
