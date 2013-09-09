@@ -94,3 +94,4 @@ set complete-=i
 
 ##参考资料
 - [Vimer的程序世界](http://www.vimer.cn/)
+- [拼装的艺术：vim之IDE进化实录](http://blog.csdn.net/yangyang_gnu/article/details/6642271)

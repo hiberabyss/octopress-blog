@@ -27,10 +27,32 @@ sudo apt-get install deepin-media-player
 
 - [Ubuntu 13.04安装Linux Deepin特色软件](http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html)
 
+##输出当前终端(tty)的内容
+
+```bash
+sudo screendump > /tmp/screen.txt
+```
+
+##修改声音面板默认程序
+- [Sound Menu](http://helpdeskgeek.com/linux-tips/show-only-your-favorite-music-players-in-the-ubuntu-sound-menu/)
+
+##电源管理（省电）
+- [TLP](http://www.noobslab.com/2013/07/how-to-improve-laptop-power-management.html)
+
 ##软件卸载及修复
 用`apt-get remove`卸载时会卸载相应的依赖的包，可以用`dpkg --force-all -r package`进行强制卸载。
 
 如果不小心卸载了许多包，可以查看`/var/log/apt/history.log`文件，根据日志记录信息进行修复。
+
+##显示屏多窗口
+
+```bash
+sudo apt-get install compizconfig-settings-manager
+```
+
+按win键，再输入`compiz`，搜索`grid`插件。
+
+- [CCSM](http://askubuntu.com/questions/89503/gtile-for-unity)
 
 ##休眠唤醒后执行脚本
 编辑目录`/etc/pm/sleep.d/`下文件：
@@ -150,3 +172,5 @@ echo 3 > /proc/sys/vm/drop_caches
 
 ##参考资料
 - [教你在不同机器间迁移Linux](http://www.linuxde.net/2013/06/14506.html)
+- [Ubuntu常用效率软件简介](http://ghosertblog.github.io/blog/2013/01/07/ubuntu-efficient-software/)
+
