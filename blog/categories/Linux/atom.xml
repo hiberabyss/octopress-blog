@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Linux/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-09-03T21:07:32+08:00</updated>
+  <updated>2013-09-09T20:29:33+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -42,12 +42,40 @@ sudo apt-get install deepin-media-player
   <li><a href="http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html">Ubuntu 13.04安装Linux Deepin特色软件</a></li>
 </ul>
 
-<h2 id="section">软件卸载及修复</h2>
+<h2 id="tty">输出当前终端(tty)的内容</h2>
+
+<p><code>bash
+sudo screendump &gt; /tmp/screen.txt
+</code></p>
+
+<h2 id="section">修改声音面板默认程序</h2>
+<ul>
+  <li><a href="http://helpdeskgeek.com/linux-tips/show-only-your-favorite-music-players-in-the-ubuntu-sound-menu/">Sound Menu</a></li>
+</ul>
+
+<h2 id="section-1">电源管理（省电）</h2>
+<ul>
+  <li><a href="http://www.noobslab.com/2013/07/how-to-improve-laptop-power-management.html">TLP</a></li>
+</ul>
+
+<h2 id="section-2">软件卸载及修复</h2>
 <p>用<code>apt-get remove</code>卸载时会卸载相应的依赖的包，可以用<code>dpkg --force-all -r package</code>进行强制卸载。</p>
 
 <p>如果不小心卸载了许多包，可以查看<code>/var/log/apt/history.log</code>文件，根据日志记录信息进行修复。</p>
 
-<h2 id="section-1">休眠唤醒后执行脚本</h2>
+<h2 id="section-3">显示屏多窗口</h2>
+
+<p><code>bash
+sudo apt-get install compizconfig-settings-manager
+</code></p>
+
+<p>按win键，再输入<code>compiz</code>，搜索<code>grid</code>插件。</p>
+
+<ul>
+  <li><a href="http://askubuntu.com/questions/89503/gtile-for-unity">CCSM</a></li>
+</ul>
+
+<h2 id="section-4">休眠唤醒后执行脚本</h2>
 <p>编辑目录<code>/etc/pm/sleep.d/</code>下文件：</p>
 
 <p><code>bash
@@ -67,12 +95,12 @@ exit $?
 
 <p>编辑完成后加上可执行权限。</p>
 
-<h2 id="section-2">自动更新</h2>
+<h2 id="section-5">自动更新</h2>
 <ul>
   <li><a href="http://my.oschina.net/yangphere/blog/131165">Chrome自动更新</a></li>
 </ul>
 
-<h2 id="section-3">修改登陆显示信息</h2>
+<h2 id="section-6">修改登陆显示信息</h2>
 <p>tty里的第一行显示的是<code>/etc/issue</code>里的内容。 <br />
 可以修改<code>/etc/lsb-release</code>里的信息。 <br />
 修改<code>/etc/update-motd.d/</code>文件夹里的内容可以更改登陆之后的显示信息，可以用命令<code>sudo run-parts /etc/update-motd.d/</code>来预览。  </p>
@@ -86,7 +114,7 @@ exit $?
 <h2 id="update-initramfs">内核编译update-initramfs</h2>
 <p>编译了一次<code>linux-3.10.1</code>，卸载之后，每次运行<code>update-initramfs</code>都会自动在<code>boot</code>目录下生成<code>initramfs-3.10.1</code>文件，删除<code>/var/lib/initramfs-tools/</code>下相应文件即可。</p>
 
-<h2 id="section-4">时间设置（通用）</h2>
+<h2 id="section-7">时间设置（通用）</h2>
 <p>利用<code>ntpdate</code>进行时间同步，需已安装包<code>ntp</code>：</p>
 
 <p><code>
@@ -99,7 +127,7 @@ ntpdate us.pool.ntp.org
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></p>
 
-<h2 id="section-5">调整分辨率</h2>
+<h2 id="section-8">调整分辨率</h2>
 
 <p><code>bash
 #设置自动调整
@@ -107,12 +135,12 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 xrandr --output LVDS1 --auto
 </code></p>
 
-<h2 id="section-6">终端下复制粘贴</h2>
+<h2 id="section-9">终端下复制粘贴</h2>
 <ul>
   <li><a href="http://justcoding.iteye.com/blog/1829963">terminal 复制粘帖 (mac , ubuntu)</a></li>
 </ul>
 
-<h2 id="section-7">切换输入法</h2>
+<h2 id="section-10">切换输入法</h2>
 
 <p><code>bash
 im-switch -c
@@ -128,7 +156,7 @@ sudo blkid
 ls -l /dev/disk/by-uuid/
 </code></p>
 
-<h2 id="section-8">远程桌面</h2>
+<h2 id="section-11">远程桌面</h2>
 
 <ul>
   <li>服务器端安装<code>vnc4server</code>，记录下执行时显示的<code>nums</code></li>
@@ -170,13 +198,15 @@ echo 3 &gt; /proc/sys/vm/drop_caches
   <li><a href="http://www.linuxany.com/archives/814.html">手工释放linux内存</a></li>
 </ul>
 
-<h2 id="section-9">代理上网</h2>
+<h2 id="section-12">代理上网</h2>
 <p>只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。</p>
 
-<h2 id="section-10">参考资料</h2>
+<h2 id="section-13">参考资料</h2>
 <ul>
   <li><a href="http://www.linuxde.net/2013/06/14506.html">教你在不同机器间迁移Linux</a></li>
+  <li><a href="http://ghosertblog.github.io/blog/2013/01/07/ubuntu-efficient-software/">Ubuntu常用效率软件简介</a></li>
 </ul>
+
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-09-03T21:07:32+08:00</updated>
+  <updated>2013-09-09T20:29:33+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[C和C++总结]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130904/cpp-summary/"/>
+    <updated>2013-09-04T11:03:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130904/cpp-summary</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<h2 id="section">打印当前文件名、行数、函数名</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;File:%s,Line:%d,Func:%s&quot;</span><span class="p">,</span> <span class="n">__FILE__</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">,</span> <span class="n">__func__</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Gauss Fact]]></title>
@@ -442,90 +458,6 @@
 
 <ul>
   <li><a href="http://blog.csdn.net/hinyunsin/article/details/6546670">巧用可变参数宏、编译器内置宏和printf输出调试信息</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GnuPlot基本用法]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130718/gnuplot/"/>
-    <updated>2013-07-18T20:26:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130718/gnuplot</id>
-    <content type="html"><![CDATA[<p>介绍Gnuplot的一些用法。</p>
-
-<!--more-->
-
-<p>编辑后罪名为<code>.gp</code>的文件，用<code>gnuplot -p your.gp</code>编译，其中<code>-p</code>表示总是显示生成的图像，如果设置生成<code>eps</code>格式文件，则不会显示图像，下面是一个示例的<code>.gp</code>文件：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-</pre></td><td class="code"><pre><code class="gnuplot"><span class="line"><span class="c">#设置x,y坐标范围</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">xrange</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">9</span><span class="p">]</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">yrange</span> <span class="p">[</span><span class="mi">400</span><span class="o">:</span><span class="mi">900</span><span class="p">]</span>
-</span><span class="line">
-</span><span class="line"><span class="c">#按对数格式显示坐标间隔</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">logscale</span> <span class="n">y</span>
-</span><span class="line"><span class="c">#设置表示不同曲线的小列表位置</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">key</span> <span class="n">right</span>
-</span><span class="line"><span class="c">#设置x坐标显示</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">xtics</span> <span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="p">)</span>
-</span><span class="line">
-</span><span class="line"><span class="k">set</span> <span class="nb">term</span> <span class="n">postscript</span> <span class="n">font</span> <span class="s">&quot;Times New Roman, 20&quot;</span>
-</span><span class="line">
-</span><span class="line"><span class="c">#设置x,y坐标标题文字</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">xlabel</span> <span class="s">&quot;X label text&quot;</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">ylabel</span> <span class="s">&quot;Y label text&quot;</span>
-</span><span class="line">
-</span><span class="line"><span class="k">set</span> <span class="nb">terminal</span> <span class="n">postscript</span> <span class="n">eps</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">output</span> <span class="s">&quot;mypicture.eps&quot;</span>
-</span><span class="line"><span class="c">#data.txt为数据文件，按行列组织，已空白符号间隔</span>
-</span><span class="line"><span class="c">#using 1:2中2表示第二列数据</span>
-</span><span class="line"><span class="k">plot</span> <span class="s">&quot;data.txt&quot;</span> <span class="nb">using</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span> <span class="nb">title</span> <span class="s">&quot;Write&quot;</span> <span class="nb">with</span> <span class="n">lp</span> <span class="o">,</span> <span class="s">&#39;&#39;</span> <span class="nb">u</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span> <span class="nb">title</span> <span class="s">&quot;Read&quot;</span> <span class="nb">w</span> <span class="n">lp</span>
-</span><span class="line">
-</span><span class="line"><span class="c">#画柱状图</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">style</span> <span class="n">data</span> <span class="n">histogram</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">style</span> <span class="n">histogram</span> <span class="n">clustered</span> <span class="n">gap</span> <span class="mi">1</span>
-</span><span class="line"><span class="c">#以颜色进行区分</span>
-</span><span class="line"><span class="c">#set style fill solid 0.4 border</span>
-</span><span class="line"><span class="c">#以斜线进行区分</span>
-</span><span class="line"><span class="k">set</span> <span class="nb">style</span> <span class="n">fill</span> <span class="n">pattern</span> <span class="mi">4</span> <span class="n">border</span> <span class="mi">-1</span>
-</span><span class="line"><span class="c">#2:xticlables(1):表示使用第2列数据，同时以第一列为横坐标文字说明</span>
-</span><span class="line"><span class="k">plot</span> <span class="s">&quot;store04-data.txt&quot;</span> <span class="nb">u</span> <span class="mi">2</span><span class="o">:</span><span class="nf">xticlabels</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nb">title</span> <span class="nf">columnheader</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">,</span> <span class="s">&#39;&#39;</span> <span class="nb">u</span> <span class="mi">3</span><span class="o">:</span><span class="nf">xticlabels</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nb">title</span> <span class="nf">columnheader</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section">参考资料</h2>
-<ul>
-  <li><a href="http://hi.baidu.com/pbskasefcqcfjxr/item/969799ba83ed7a432aebe383">利用Gnuplot画柱状图</a></li>
 </ul>
 ]]></content>
   </entry>
