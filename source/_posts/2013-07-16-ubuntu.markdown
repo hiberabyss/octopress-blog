@@ -16,6 +16,12 @@ categories: Linux
 deb http://mirrors.ustc.edu.cn/deepin/ raring main non-free
 ```
 
+或者添加如下源：
+
+```bash
+sudo apt-add-repository ppa:noobslab/deepin-sc
+```
+
 然后安装音乐和视频播放器：
 
 ```bash
