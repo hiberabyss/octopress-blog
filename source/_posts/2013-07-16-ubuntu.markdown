@@ -34,6 +34,9 @@ sudo apt-get install dmusic-plugin-baidumusic
 
 - [Ubuntu 13.04安装Linux Deepin特色软件](http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html)
 
+##更新单个.list文件
+- [apt-get update only for a specific repository](http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository)
+
 ##输出当前终端(tty)的内容
 
 ```bash
@@ -117,7 +120,13 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 xrandr --output LVDS1 --auto
 ```
 
-##终端下复制粘贴
+##复制粘贴
+- `Ctrl+Insert` or `Ctrl+Shift+C`: copy to the clipboard
+- `Shift+insert` or `Ctrl+Shift+V`: paste from clipboard
+
+- [Reference](http://askubuntu.com/questions/26655/how-do-you-know-when-to-use-shiftinsert-vs-ctrl-v-vs-right-click-paste-to-paste)
+
+##命令行复制粘贴
 - [terminal 复制粘帖 (mac , ubuntu)](http://justcoding.iteye.com/blog/1829963)
 
 ##切换输入法

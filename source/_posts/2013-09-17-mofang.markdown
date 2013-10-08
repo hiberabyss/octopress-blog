@@ -1,0 +1,9 @@
+---
+layout: post
+title: "魔方教程"
+date: 2013-09-17 14:33
+comments: true
+categories: Funny
+---
+
+- [七步还原法](http://blog.sina.com.cn/s/blog_6f1033f201016j37.html)
