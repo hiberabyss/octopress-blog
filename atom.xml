@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-09-09T20:34:41+08:00</updated>
+  <updated>2013-10-08T09:08:19+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[罗辑思维 2013：你的女神你不懂]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130919/think-videoes/"/>
+    <updated>2013-09-19T23:12:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130919/think-videoes</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<embed src="http://player.youku.com/player.php/sid/XNTgxODEyODA0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" />
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[有启发意义的短故事]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130917/short-stories/"/>
+    <updated>2013-09-17T16:52:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130917/short-stories</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<ul>
+  <li>关于Cargo Cults 这个词儿来自二战期间的某些太平洋上小岛里的土著人。在战争期间，美国利用这些小岛作为太平洋战场上的补给站。他们在这些小岛上修建自己的飞机跑道以用来运输战争物资。而那些小岛上的土著人从来没有见过飞机，当他们看到飞机的时候，觉得相当的牛，可以为那些白人带来各种各样的物品和食物。当二战结束后，那些土著人仿照着修建了飞机跑道，并用竹子修建了塔台。然后就在那期望着有飞机为他们送来物品和食物。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[魔方教程]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130917/mofang/"/>
+    <updated>2013-09-17T14:33:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130917/mofang</id>
+    <content type="html"><![CDATA[<ul>
+  <li><a href="http://blog.sina.com.cn/s/blog_6f1033f201016j37.html">七步还原法</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[C和C++总结]]></title>
@@ -191,13 +228,14 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[各类故事]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130824/stories/"/>
+    <title type="html"><![CDATA[长故事]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130824/long-stories/"/>
     <updated>2013-08-24T13:02:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130824/stories</id>
+    <id>http://hiberabyss.github.io/blog/20130824/long-stories</id>
     <content type="html"><![CDATA[<ul>
   <li><a href="http://bbs.csdn.net/topics/390550705">已经两天了，我打电话她不接，短信她不回，不经意的触碰，后果竟然这样严重</a></li>
 </ul>
+
 ]]></content>
   </entry>
   
@@ -277,7 +315,12 @@
 
 <h2 id="section">青春励志</h2>
 <ul>
-  <li>怪兽大学</li>
+  <li>
+    <p>怪兽大学</p>
+  </li>
+  <li>
+    <p>疯狂原始人</p>
+  </li>
 </ul>
 ]]></content>
   </entry>
@@ -365,99 +408,6 @@
 <ul>
   <li>resheight 900 #选择十进制</li>
   <li>reswidth 1600 #选择十进制</li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[利用FUSE挂载文件系统]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130723/fuse-skill/"/>
-    <updated>2013-07-23T09:18:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130723/fuse-skill</id>
-    <content type="html"><![CDATA[<p>从《Linux内核精髓》这本书得到的关于<code>fuse</code>的一些使用技巧。</p>
-
-<!--more-->
-
-<h2 id="sshfs">sshfs</h2>
-<p>利用<code>sshfs</code>可以把 SSH 远程登录的机器的目录挂载到本地机器上。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">sshfs username@remote:foo ~/remote-foo
-</span><span class="line"><span class="c">#卸载</span>
-</span><span class="line">fusermount -u -z ~/remote-foo
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="iso">普通用户挂载iso文件</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">fuseiso foo.iso ~/iso
-</span><span class="line">fusermount -u -z ~/remote-foo
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[精辟的话]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130719/incisive-words/"/>
-    <updated>2013-07-19T15:36:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130719/incisive-words</id>
-    <content type="html"><![CDATA[<!--more-->
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Debug的技巧]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130718/how-to-debug/"/>
-    <updated>2013-07-18T21:41:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130718/how-to-debug</id>
-    <content type="html"><![CDATA[<p>介绍进行debug的一些技巧。</p>
-
-<!--more-->
-
-<h2 id="printf">利用宏和printf进行调试</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#define __DEBUG__  </span>
-</span><span class="line"><span class="cp">#ifdef __DEBUG__  </span>
-</span><span class="line"><span class="cp">#define myprintf(format,...) printf(&quot;File:&quot;__FILE__&quot;, Line:%d: &quot;format&quot;\n&quot;, __LINE__, ##__VA_ARGS__)  </span>
-</span><span class="line"><span class="cp">#else  </span>
-</span><span class="line"><span class="cp">#define myprintf(format,...)  </span>
-</span><span class="line"><span class="cp">#endif</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>其中<code>##</code>用于宏的字符串连接，如果<code>__VA_ARGS__</code>为空，则<code>,</code>会被删除。</p>
-
-<h2 id="assert">利用assert进行调试</h2>
-<p><code>assert(expression)</code>用于对表达式进行断言，使用前需要<code>#include &lt;assert.h&gt;</code>，如下的代码：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">78</span><span class="p">;</span>
-</span><span class="line"><span class="n">assert</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="mi">77</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>会产生这样的错误：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="nl">test:</span> <span class="n">test</span><span class="p">.</span><span class="n">cpp</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span> <span class="kt">int</span> <span class="n">main</span><span class="p">()</span><span class="o">:</span> <span class="n">Assertion</span> <span class="err">`</span><span class="n">a</span> <span class="o">==</span> <span class="mi">77</span><span class="err">&#39;</span> <span class="n">failed</span><span class="p">.</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>并自动退出；如果定义<code>#define NDEBUG</code>，则会禁用<code>assert</code>。</p>
-
-<h2 id="section">参考资料</h2>
-
-<ul>
-  <li><a href="http://blog.csdn.net/hinyunsin/article/details/6546670">巧用可变参数宏、编译器内置宏和printf输出调试信息</a></li>
 </ul>
 ]]></content>
   </entry>

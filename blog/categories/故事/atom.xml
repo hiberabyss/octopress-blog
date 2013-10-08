@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 故事 | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/故事/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-09-09T20:34:41+08:00</updated>
+  <updated>2013-10-08T09:08:19+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -14,13 +14,28 @@
 
   
   <entry>
-    <title type="html"><![CDATA[各类故事]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130824/stories/"/>
+    <title type="html"><![CDATA[有启发意义的短故事]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130917/short-stories/"/>
+    <updated>2013-09-17T16:52:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130917/short-stories</id>
+    <content type="html"><![CDATA[<!--more-->
+
+<ul>
+  <li>关于Cargo Cults 这个词儿来自二战期间的某些太平洋上小岛里的土著人。在战争期间，美国利用这些小岛作为太平洋战场上的补给站。他们在这些小岛上修建自己的飞机跑道以用来运输战争物资。而那些小岛上的土著人从来没有见过飞机，当他们看到飞机的时候，觉得相当的牛，可以为那些白人带来各种各样的物品和食物。当二战结束后，那些土著人仿照着修建了飞机跑道，并用竹子修建了塔台。然后就在那期望着有飞机为他们送来物品和食物。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[长故事]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130824/long-stories/"/>
     <updated>2013-08-24T13:02:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130824/stories</id>
+    <id>http://hiberabyss.github.io/blog/20130824/long-stories</id>
     <content type="html"><![CDATA[<ul>
   <li><a href="http://bbs.csdn.net/topics/390550705">已经两天了，我打电话她不接，短信她不回，不经意的触碰，后果竟然这样严重</a></li>
 </ul>
+
 ]]></content>
   </entry>
   
