@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-10-17T18:55:50+08:00</updated>
+  <updated>2013-10-17T18:58:25+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -59,7 +59,6 @@
 
 <embed src="http://player.youku.com/player.php/sid/XNTgxODEyODA0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" />
 
-<p>&lt;button onclick=&#8221;TogetherJS(this); return false;&#8221;&gt;Start TogetherJS&lt;/button&gt;</p>
 ]]></content>
   </entry>
   
