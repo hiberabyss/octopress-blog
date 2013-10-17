@@ -80,6 +80,9 @@ set complete-=i
 ##sudo执行
 - `w !sudo tee %` #用sudo写入当前文件内容
 
+##命令搜索模式下粘贴
+- `ctrl+r` + `寄存器名`
+
 ##相关插件
 
 ###UltiSnips

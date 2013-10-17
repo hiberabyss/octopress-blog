@@ -9,3 +9,5 @@ categories: 若有所思
 <!--more-->
 
 <embed src="http://player.youku.com/player.php/sid/XNTgxODEyODA0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
+
+<button onclick="TogetherJS(this); return false;">Start TogetherJS</button>

@@ -26,3 +26,5 @@ categories: 电影
 - 怪兽大学
 
 - 疯狂原始人
+
+- [上百部经典电影里的数学应用](http://www.csdn.net/article/2013-10-15/2817186-math-in-classic-movies)

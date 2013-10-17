@@ -17,3 +17,10 @@ categories: Funny
 
 <embed width="640" height="515"  allowfullscreen="true" allowscriptaccess="always" quality="high" src="http://share.vrs.sohu.com/my/v.swf&#038;autoplay=false&#038;id=57848545&#038;skinNum=1&#038;topBar=1&#038;xuid=" type="application/x-shockwave-flash"/>
 
+- 谭谈交通：和土豪做朋友的正确方法
+
+<embed src="http://v.ifeng.com/include/exterior.swf?guid=0468a403-c5b7-4646-8f75-68035fbafa84&pageurl=http://www.ifeng.com&fromweb=other&AutoPlay=false" quality="high"  allowScriptAccess="always" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="325">
+
+- 当现实遇到超能力
+
+<embed src="http://player.56.com/v_OTgzMjM1MDc.swf" type="application/x-shockwave-flash" width="560" height="470" allowfullscreen="true" allownetworking="all" allowscriptaccess="always">
