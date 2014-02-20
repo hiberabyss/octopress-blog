@@ -40,17 +40,38 @@ make && make install
 - 在ubuntu下面则尝试安装加上dev的包：`libevent`->`libevent-dev`
 - 在CentOS下面则尝试安装加上devel的包：`libevent`->`livevent-devel`
 
+##配置
+- 配置文件`~/.tumx.conf`
+- 修改为`vi`操作方式：`setw -g mode-keys vi`
+
+##嵌套使用
+按两次Ctrl+B就相当于在第二层tmux里面按了一次Ctrl+B。
+
 ##使用方法
 直接运行`tmux`开启一个新的`session`；`tmux attach`自动连接到上一个会话。
 
 在`tmux`中，快捷键操作都是通过按`Ctrl+b`再加按键来实现的，以下列举一些常用的快捷键（已按下`Ctrl+b`）：
 
-- ?	#列举所绑定的按键
+- `tmux new -s session-name` #创建新的`session`
+- `tmux a -t target-session` #连接到指定的`session`
+- `tmux ls` #列出当前`session`
+ ?	#列举所绑定的按键
 - d	#进行detach操作，让tmux后台运行
-- x	#退出当前panel
-- s	#显示当前的窗口列表
+- x	#退出当前`panel`
+- s	#显示session列表
+- $ #重命名当前`session`
+- c #创建新的`window`
+- w #显示`window`列表
+- & #退出当前`window`
+- , #重命名`window`
+- z #最大化当前`pane`
+- " #水平切割当前`pane`
+- % #垂直切割当前`pane`
+- ! #关闭当前`pane`以外的其它`pane`
+- Up,Down,Left,Right #切换`pane
 
 ##参考资料
 - [linux下远程管理利器-tmux](http://rainbird.blog.51cto.com/211214/248701)
 - [tmux复制模式使用说明](http://blog.csdn.net/yangzhongxuan/article/details/6890232)
+- [使用tmux改进终端体验](http://blog.xeonxu.info/blog/2012/11/04/shi-yong-tmuxgai-jin-zhong-duan-ti-yan/)
 - [github](https://gist.github.com/sturadnidge/4185338)

@@ -11,6 +11,10 @@ categories:
 
 <!--more-->
 
+##数字序列
+- `echo {01..10}`
+- `$(seq -w 02 08)` # `$()` like \`\` , will substitute '\n' to <space>
+
 ##自动补全
 编辑如下的文件：
 

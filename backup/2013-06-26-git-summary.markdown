@@ -84,8 +84,8 @@ git tag −a tagname −m 'message ' <commit >
 #this is comments. To see detail, execute 'git help ignore '
 hello.c
 *.o
-!foo.o
 #to include foo.o which is excluded by *.o.
+!foo.o
 \!important!.o
 #to exclude file whose name begin with !.
 ```
@@ -117,3 +117,4 @@ git pull
 
 ##参考资料
 - [git学习笔记](http://wlog.cn/soft/git-quick-start.html)
+- [使用Git管理自己的dotfiles](http://mingxinglai.com/cn/2012/09/use-git-to-manage-your-dotfiles/)

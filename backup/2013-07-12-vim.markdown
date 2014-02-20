@@ -83,6 +83,12 @@ set complete-=i
 ##命令搜索模式下粘贴
 - `ctrl+r` + `寄存器名`
 
+##多window，tab，buffer执行命令
+- [Run a command in multiple buffers](http://vim.wikia.com/wiki/Run_a_command_in_multiple_buffers)
+
+##fold
+- [Navigate to the next open fold](http://vim.wikia.com/wiki/Navigate_to_the_next_open_fold)
+
 ##相关插件
 
 ###UltiSnips
@@ -95,6 +101,20 @@ set complete-=i
 
 - [在vim中针对c++自动补全](http://blog.csdn.net/liumengxinfly/article/details/6967687)
 
+##批量修改变量名
+- `help argdo`
+- [VIM批量修改变量名](http://www.cnblogs.com/esta-pessoa/archive/2013/04/29/3051159.html)
+
+##调试vim启动时间
+- [Profiling vim startup time](http://stackoverflow.com/questions/1687799/profiling-vim-startup-time)
+- [Vim response quite slow](http://stackoverflow.com/questions/9341768/vim-response-quite-slow)
+
+##用新的文件名复制文件
+- `:f newname`
+
 ##参考资料
 - [Vimer的程序世界](http://www.vimer.cn/)
 - [拼装的艺术：vim之IDE进化实录](http://blog.csdn.net/yangyang_gnu/article/details/6642271)
+- [折叠::Vim进阶索引](http://blah.blogsome.com/2006/04/13/vim_tut_folding/)
+- [vim tips and tricks](http://web.cs.swarthmore.edu/help/vim/home.html)
+

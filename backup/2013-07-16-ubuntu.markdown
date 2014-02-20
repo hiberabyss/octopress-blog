@@ -37,13 +37,24 @@ sudo apt-get install dmusic-plugin-baidumusic
 ##更新单个.list文件
 - [apt-get update only for a specific repository](http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository)
 
+##PDF阅读器
+- [zathura](http://pwmt.org/projects/zathura/)
+- [apvlv](http://naihe2010.github.io/apvlv/)
+
 ##输出当前终端(tty)的内容
 
 ```bash
 sudo screendump > /tmp/screen.txt
 ```
 
-##修改声音面板默认程序
+##替换stdin字符
+
+```bash
+echo {00..10} | sed -e 's/\ /\n/g'
+```
+ 
+
+##修改声音面板默认程序（dconf）
 - [Sound Menu](http://helpdeskgeek.com/linux-tips/show-only-your-favorite-music-players-in-the-ubuntu-sound-menu/)
 
 ##电源管理（省电）
@@ -135,8 +146,20 @@ xrandr --output LVDS1 --auto
 im-switch -c
 ```
 
-##利用ezame调整右键菜单
-搜索到`Wine Windowns Program Loader`项目，把`No Display`选项关闭（这样便可以在右键菜单选择默认程序时出现该程序），在`Exec`参数前加上`env LANG="zh_CN.UTF-8"`。
+##利用ezame调整右键菜单(wine)
+- 搜索到`Wine Windowns Program Loader`项目，把`No Display`选项关闭（这样便可以在右键菜单选择默认程序时出现该程序），在`Exec`参数前加上`env LANG="zh_CN.UTF-8"`。
+- 把`/usr/share/applications/wine.desktop`文件复制到`~/.local/share/applications/wine.desktop`以避免升级wine时所做的修改被重置。
+
+##Wine
+用wine在线安装软件
+
+```bash
+winetricks flash
+```
+
+##给程序添加扩展
+- `libpeas`
+
 
 ##查看UUID
 
@@ -145,11 +168,21 @@ sudo blkid
 ls -l /dev/disk/by-uuid/
 ```
 
+##lsof查看网络端口
+- `lsof -i@[hostname|addr]:[service|port],port`
+
 ##远程桌面
 
-- 服务器端安装`vnc4server`，记录下执行时显示的`nums`
+- 远程主机安装`vnc4server`，运行`vncserver`，记录下执行时显示的`nums`，
+- 可以使用`vncpasswd`重置密码
 - 客户端使用`gvncview server:nums`进行连接，或使用其它远程桌面软件
 - [Linux中的远程连接 SSH and VNC图形模式](http://www.cnblogs.com/ayuan/archive/2008/04/26/1171803.html)
+
+##rsync文件夹同步
+
+```bash
+rsync -a user@host:/src/ /dest/
+```
 
 ##编译Linux内核
 
@@ -165,6 +198,10 @@ make modules_install
 make install
 #以上四步即可完成内核的编译与安装
 ```
+
+##分布式编译系统
+- `make -j num` #多线程编译
+- [搭建Linux下的分布式编译系统](http://blog.xeonxu.info/blog/2012/08/30/da-jian-linuxxia-de-fen-bu-shi-bian-yi-xi-tong/)
 
 ##手动清除cache内存
 
@@ -186,7 +223,108 @@ echo 3 > /proc/sys/vm/drop_caches
 ##代理上网
 只要把网关和DNS地址设置为能上外网的电脑的ip地址即可。
 
+##Apache
+出现`Apache: You don't have permission to access / on this server`错误时，修改`/etc/apache2/apache2.conf`文件，修改根目录权限为`granted`。
+
+##查看安装包信息
+- 查看离线安装包
+
+```bash
+dpkg -I(--info) package.deb
+```
+
+- 查看已安装软件
+
+```bash
+dpkg -s pacage
+```
+
+- 查看已安装包的文件信息
+
+```bash
+dpkg -L package
+```
+
+- 在线显示某个包的文件
+
+```bash
+apt-file list package
+```
+
+##文件比较工具
+`comm`，`diff`
+
+##比较两个文件夹
+`diff -rq dir1 dir2`
+
+##配置文件相关库
+- [libconfig](http://www.hyperrealm.com/main.php?s=libconfig)
+
+##安装java JDK
+- [Ubuntu 下安装配置 JDK 7](http://blog.csdn.net/snowdream86/article/details/6677450)
+
+##亮度控制 brightness
+安装`sudo apt-get install laptop-mode-tools`
+
+```bash
+
+# Should laptop mode tools control LCD brightness?
+
+# 设为1，启用
+# /etc/laptop-mode/laptop-mode.conf
+
+CONTROL_BRIGHTNESS=1
+
+# Commands to execute to set the brightness on your LCD
+
+# “echo 6” 就是要将亮度值6 写入 BRIGHTNESS_OUTPUT文件中，亮度值根据自己的情况进行取值。
+# /etc/laptop-mode/conf.d/lcd-brightness.conf
+
+BATT_BRIGHTNESS_COMMAND="echo 10"
+
+LM_AC_BRIGHTNESS_COMMAND="echo 12"
+
+NOLM_AC_BRIGHTNESS_COMMAND="echo 12"
+
+BRIGHTNESS_OUTPUT="/sys/class/backlight/acpi_video0/brightness"
+```
+
+- [屏幕亮度保存](http://blog.csdn.net/hun_ying/article/details/15026529)
+
+##GPG ERROR
+
+```bash
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5(the key lost)
+```
+
+##禁用ipv6
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+
+##查看软件包大小
+- dpkg-query --showformat='${Package}\t${Installed-Size}\n'
+- [LIst all installed packages in size order](http://ubuntuforums.org/showthread.php?t=599424)
+
+##WireShark配置
+- [Installing Wireshark on Ubuntu](http://www.dickson.me.uk/2012/09/17/installing-wireshark-on-ubuntu-12-04-lts/)
+
+##rsync+inotify实现文件的实时同步
+- [rsync+inotify实现文件的实时同步](http://bbs.51cto.com/thread-937242-1.html)
+
+##nmap
+扫描某一地址段
+
+```bash
+nmap -sn 10.18.129-132.141-172/16
+```
+
+##查看硬件信息
+- `hwinfo --wlan`或 `lspci -v`
+
+##更改sda编号
+- [Change the number of the partition from sda1 to sda2](http://unix.stackexchange.com/questions/18752/change-the-number-of-the-partition-from-sda1-to-sda2)
+
 ##参考资料
 - [教你在不同机器间迁移Linux](http://www.linuxde.net/2013/06/14506.html)
 - [Ubuntu常用效率软件简介](http://ghosertblog.github.io/blog/2013/01/07/ubuntu-efficient-software/)
+- [linux命令行工具妙用](http://mingxinglai.com/cn/2012/08/toos-of-bash/)
 

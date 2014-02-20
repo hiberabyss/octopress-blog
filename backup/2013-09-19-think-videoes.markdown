@@ -3,7 +3,7 @@ layout: post
 title: "罗辑思维 2013：你的女神你不懂"
 date: 2013-09-19 23:12
 comments: true
-categories: 若有所思
+categories: Videos
 ---
 
 <!--more-->
