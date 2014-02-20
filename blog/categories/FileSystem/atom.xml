@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FileSystem | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/FileSystem/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-10-17T19:12:46+08:00</updated>
+  <updated>2014-02-20T14:58:17+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -12,80 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[FUSE入门]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130823/fuse-tutorial/"/>
-    <updated>2013-08-23T17:46:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130823/fuse-tutorial</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://www.ibm.com/developerworks/library/l-fuse/">Develop your own filesystem with FUSE</a></li>
-  <li><a href="http://ouonline.net/create-your-own-fs-with-fuse-1">使用fuse编写文件系统</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[利用FUSE挂载文件系统]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130723/fuse-skill/"/>
-    <updated>2013-07-23T09:18:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130723/fuse-skill</id>
-    <content type="html"><![CDATA[<p>从《Linux内核精髓》这本书得到的关于<code>fuse</code>的一些使用技巧。</p>
-
-<!--more-->
-
-<h2 id="sshfs">sshfs</h2>
-<p>利用<code>sshfs</code>可以把 SSH 远程登录的机器的目录挂载到本地机器上。</p>
-
-<p><code>bash
-sshfs username@remote:foo ~/remote-foo
-#卸载
-fusermount -u -z ~/remote-foo
-</code></p>
-
-<h2 id="iso">普通用户挂载iso文件</h2>
-
-<p><code>bash
-fuseiso foo.iso ~/iso
-fusermount -u -z ~/remote-foo
-</code></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Lustre原理及优化]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130716/lustre-internal/"/>
-    <updated>2013-07-16T16:30:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130716/lustre-internal</id>
-    <content type="html"><![CDATA[<p>介绍Lustre的内部细节及一些优化措施。</p>
-
-<!--more-->
-
-<h2 id="lustre-stripe">Lustre Stripe</h2>
-<p>Lustre采用对象存储技术，将大文件分片存储在多个OST上。分片的参数包括<code>stripe_count</code>和<code>stripe_size</code>，即所要使用的OST的数量以及分片的大小，默认分别为<code>1</code>和<code>1MB</code>。可以通过<code>lfs setstripe</code>命令进行设定，子目录继承父目录的分片模式。Lustre在创建文件时就按照分片模式和OST选择算法，预先创建好文件所需的OST对象。数据写入后，文件的分片不能修改，现在还未实现OST存储空间的自动均衡。</p>
-
-<p>OST选择算法：</p>
-
-<ol>
-  <li>Round-Robin：任意两个OST剩余存储容量之差小于<code>20%</code>时采用该算法；以顺序轮转方式选择OST，算法非常高效。</li>
-  <li>随机加权算法：存在两个OST剩余空间之差大于<code>20%</code>时采用该算法；Lustre维护着一张剩余空间的优先列表，采用随机算法在此列表中选择OST，会产生开销并影响性能；当任意两个OST剩余容量之差小于<code>20%</code>时，继续选用<code>Round-Robin</code>算法。</li>
-</ol>
-
-<h2 id="lustre">Lustre性能优化</h2>
-
-<ol>
-  <li>禁用所有客户端的<code>LNET debug</code>功能：<code>sysctl -w lnet.debug=0</code>。</li>
-  <li>增加客户端Dirty Cache大小：<code>lctl set_param osc./*.max_dirty_mb=256</code>，缺省为32MB，增大缓存将提升I/O性能，但数据丢失的风险也随之增大。</li>
-  <li>增加RPC并行数量：echo 32 &gt; /proc/fs/lustre/osc/<em>-OST000</em>/max_rpcs_in_flight，缺省为8，提升至32将提高数据和元数据性能。不利之处是如果服务器压力很大，可能反而会影响性能。</li>
-</ol>
-
-<h2 id="section">参考资料</h2>
-<ul>
-  <li><a href="http://blog.csdn.net/liuben/article/details/6455736">Lustre I/O性能特点与最佳实践</a></li>
-</ul>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lustre的安装与配置]]></title>

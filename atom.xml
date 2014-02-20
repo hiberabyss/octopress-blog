@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2013-10-17T19:12:46+08:00</updated>
+  <updated>2014-02-20T14:58:17+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -14,404 +14,281 @@
 
   
   <entry>
-    <title type="html"><![CDATA[[转] 谈情说爱]]></title>
-    <link href="http://hiberabyss.github.io/blog/20131010/about-love/"/>
-    <updated>2013-10-10T15:26:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20131010/about-love</id>
-    <content type="html"><![CDATA[<!--more-->
+    <title type="html"><![CDATA[Lustre的安装与配置]]></title>
+    <link href="http://hiberabyss.github.io/blog/20130624/lustre-configture/"/>
+    <updated>2013-06-24T12:37:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20130624/lustre-configture</id>
+    <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
 
-<p>我二哥和我二嫂谈恋爱4年，结婚15年。可以说是男才女貌，所有浪漫和甜蜜他们都经历过。可是几分钟前，他们就在我面前上演了一场最残酷的现实，两个人用最恶毒的话诅咒着对方谩骂着彼此。因为彼此间最熟悉，所以能戳到最痛的地方。忽然间觉得时间真的是一个残酷的事。
-争吵到最后两个人说明天法院见。临走前二嫂哭红了眼对我说：合平，以后找男朋友一定要睁大眼睛看清楚别瞎了眼和我一样，我跟了他15年到头来落得这样一个下场！然后一个向东一个向西，悲剧散场。
-我不是当事人，我不能说谁对谁错，我只是唏嘘，当年他们两个一路从穷的连日子都过不下去的开始走到现在，一起共患难，却不能共富贵。爱情到底是怎么样，能让人沦落到如此地步。然后就想起来我的一个特好的朋友。她和她男朋友从初中谈恋爱，到高中，到大学。期间，老师阻拦，家长打骂，同学劝说，都没有动摇他们在一起。我记得清清楚楚冬天的夜里她爬到我的被窝拉着我的手说：怎么办，我都快撑不下去了，我爸妈几乎用尽了手段甚至跪下来求我离开他。可是我爱他，他爱我，我们错了吗？当时我也跟着哭红了眼，我甚至都忘了我怎么劝她，只是知道他们还是勇敢的在一起，一起走进大学。可是呢，前一段时间我问她过得怎么样她说，分了。彼此之间都折腾累了，在一次争吵后分了，然后她遇见了一个特别好的男生，没有风雨，没有反对，没有彼此纠结和摇摆不定。所以就在一起了。然后他们两个成了仇人，男孩子骂我朋友各种不要脸各种背叛各种辜负。七年的时间，所有的外力都没有拆开他们两个，时间却做到了而且做得更彻底。
-20岁以前，爱一个人就是爱，无关一切，各种疯狂执着。20岁以后，看多了分分合合，看懂了爱情不是两个人你情我愿就可以的，也就恐惧了爱情。在我眼里的爱情是不食人间烟火的，有情饮水饱，那怕跟着他一起去流浪也好。可是现实却慢慢教会了我，童话里王子和公主快乐的生活在一起不是结局，而是开始，然后公主衰老生子，婆媳关系不和，然后王子妻妾成群，然后公主变成了曾经的后妈模样，然后各种然后，然后变成了生活。这就是爱情。
-我记的去年和驴一起去打工的那个老板，玩真心话大冒险输了，他告诉了我们一个实话，就是在他妻子怀孕的时候，他的初恋女友来找他，他一个没把持住就出轨了。重点是那个女友第二天问他借5万块，他刚工作，东借西借给了她两万，然后他的女友就从此消失了。他说，他知道那钱回不来了，他现在不心疼钱也不缺钱，可是她带走了他对初恋所有的美好回忆。在此之后他几乎都不在相信任何人。我和驴都感慨万千～～我不知道是不是我太过于点背，遇见了各种各样在爱情里受伤的人，还是我被赤裸裸的现实震呆了，对于爱情，我很悲观。我遇见过在身上纹过男友名字刺身的女孩在分手后忍痛一遍一遍激光洗纹身，我遇见过两个爱的可以一起死的一对情侣男生下手痛打女生打到女生住院，我遇见过异地恋女孩不远千里嫁到我们这里，生了小孩两个人吵架然后各种回各子的家一纸协议离婚。我觉得最伤人的莫过于情侣爱人之间的吵架打架，曾经你疼的几乎拿命来护着的小小女孩，如今你们翻脸相向几乎恨不得对方去死，你们说这是不是最残酷的事实。
-爱之欲其生，恨之欲其死。爱你时一切美好，恨你时人生灰暗。我跟家里抱怨婚姻黑暗，她们说哪家哪户都是这样过日子的，哪里给你们这个年纪一样就知道成天瞎想什么脑袋一热一辈子各种以身相许各种不计较出身家庭，头脑简单各种不切实际的幻想。说的我一愣一愣的也没有听出来什么名堂。只是自己特别多的感慨。我还是感谢我的父母姨家姑家舅家，他们都老老实实守着满满亲情的婚姻幸福的生活着，没有什么背叛和出轨，他们承担了很多婚姻中的责任，疼爱自己的家庭和小孩，为我们这些小辈树立了很多好的榜样。记得有次家里吵架了我和弟弟就说要不你们离婚吧，然后吵架的人也不吵架了反过来教育我们，家长吵架很正常，但是婚咋能随随便便离，我们从没想过这辈子会和别人一起过。
-在时间里，有些人把爱情转为亲情，一家人磕磕碰碰的一路走下去，却也最是完美，羡煞旁人。有些人把爱情转化成了恨，因为太爱而熟悉彼此，却也因为彼此最熟悉，最知道怎么才能伤他最深。结果呢，彼此痛快吗？幸福吗？
-现在的我坚持一种信仰，那就是出来混的，迟早要还的。所以，身边的你们，如果还是游戏爱情，那就早点退出吧，放别人一条生路也放自己一条生路。而坚持爱情的人，带着责任和包容借着时间把爱转化为亲情，坚持就会有好的结果。</p>
-
+<h2 id="section">主要内容</h2>
 <ul>
-  <li><a href="http://user.qzone.qq.com/415121939/blog/1381287736#!app=2&amp;via=QZ.HashRefresh&amp;pos=1381287736">原文</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[搞笑图片]]></title>
-    <link href="http://hiberabyss.github.io/blog/20131010/funny-pictures/"/>
-    <updated>2013-10-10T14:42:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20131010/funny-pictures</id>
-    <content type="html"><![CDATA[<!--more-->
-
-<ul>
-  <li>在印度勒克瑙的一个池塘里，一只老鼠抓着一些碎片在水面上漂着。这时候，一只蟾蜍跳进了池塘，并游到了老鼠身边。老鼠见状，赶快爬到蟾蜍背上，牢牢抓住了蟾蜍。接下来，蟾蜍背着老鼠，游回了岸边。摄影师说，由于事件演进得太快，他没能拍到两个小生物上岸的场景。</li>
-</ul>
-
-<p><img src="http://ki.ki.ki/files/2013/10/09/8aa1b26e8894d47e53bb395af1cf58ea.jpg" alt="蟾蜍-便车" title="opt title" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[罗辑思维 2013：你的女神你不懂]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130919/think-videoes/"/>
-    <updated>2013-09-19T23:12:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130919/think-videoes</id>
-    <content type="html"><![CDATA[<!--more-->
-
-<embed src="http://player.youku.com/player.php/sid/XNTgxODEyODA0/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" />
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[有启发意义的短故事]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130917/short-stories/"/>
-    <updated>2013-09-17T16:52:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130917/short-stories</id>
-    <content type="html"><![CDATA[<!--more-->
-
-<ul>
-  <li>关于Cargo Cults 这个词儿来自二战期间的某些太平洋上小岛里的土著人。在战争期间，美国利用这些小岛作为太平洋战场上的补给站。他们在这些小岛上修建自己的飞机跑道以用来运输战争物资。而那些小岛上的土著人从来没有见过飞机，当他们看到飞机的时候，觉得相当的牛，可以为那些白人带来各种各样的物品和食物。当二战结束后，那些土著人仿照着修建了飞机跑道，并用竹子修建了塔台。然后就在那期望着有飞机为他们送来物品和食物。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[魔方教程]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130917/mofang/"/>
-    <updated>2013-09-17T14:33:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130917/mofang</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://blog.sina.com.cn/s/blog_6f1033f201016j37.html">七步还原法</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[C和C++总结]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130904/cpp-summary/"/>
-    <updated>2013-09-04T11:03:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130904/cpp-summary</id>
-    <content type="html"><![CDATA[<!--more-->
-
-<h2 id="section">打印当前文件名、行数、函数名</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;File:%s,Line:%d,Func:%s&quot;</span><span class="p">,</span> <span class="n">__FILE__</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">,</span> <span class="n">__func__</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gauss Fact]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130902/gauss-fact/"/>
-    <updated>2013-09-02T14:49:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130902/gauss-fact</id>
-    <content type="html"><![CDATA[<ul>
-  <li>Erdős 相信上帝手中有一本包含世间所有精妙证明的天书。上帝相信这本书在 Gauss 手上。</li>
-  <li>Gauss 把无穷当作归纳证明中的第一个非平凡的情况。</li>
-  <li>Gauss 不用任何公理就能证明一个定理。</li>
-  <li>Gauss 不理解什么是 P=NP。在他看来，一切都是常数级别的。</li>
-  <li>Gauss 从后往前列举了一下质数，就知道了质数有无穷多。</li>
-  <li>Gauss 从来不会用光书本页面边缘的空白。</li>
-  <li>Gauss 的 Erdős 数为 -1。</li>
-  <li>Gauss 等于自己的幂集。</li>
-  <li>Gauss 可以化圆为方，再把它变成一个四维球。</li>
-  <li>Gauss 可以既无重复又无遗漏地走遍 Königsberg 的七座桥。</li>
-  <li>Gauss 可以用尺规作图三等分角。</li>
-  <li>Gauss 可以在六步以内解决骑士周游问题。</li>
-  <li>Gauss 同时给 Bertrand Russell 和自己理发。</li>
-  <li>Gauss 想喝果汁时，直接对橙子使用夹挤定理。</li>
-  <li>Gauss 唱完 “Aleph-Null Bottles of Beer on the Wall” 只用了四分钟。</li>
-  <li>Gauss 用 Klein 瓶喝酒。</li>
-  <li>Gauss 做俯卧撑时，他不是把自己撑起来，而是把整个地球按下去。</li>
-  <li>Hilbert 不能住进 Gauss 旅馆，因为 Gauss 旅馆已经满房了。</li>
-  <li>不是 Gauss 发现了正态分布，而是自然规律遵循着 Gauss 的模型。</li>
-  <li>读了 Gauss 的书之后，Maxwell 决定退出数学界，从事咖啡行业。</li>
-  <li>对于 Gauss 来说，算术公理体系同时满足完备性和一致性。</li>
-  <li>尽管微积分在 Gauss 生前 100 年诞生，但 Gauss 仍然发明了微积分。</li>
-  <li>如果 Gauss 发表了他的所有发现，数学界里就没啥可证的了。</li>
-  <li>有一次，Gauss 和自己玩了一个零和游戏，然后赢了 50 块钱。</li>
-  <li>有一次，Fermat 惹怒了 Gauss，于是就有了 Fermat 最终定理。</li>
-  <li>
-    <p>只有 Gauss 才知道 Schrödinger 的猫是死是活。</p>
-  </li>
-  <li><a href="http://www.matrix67.com/blog/archives/4253">用事实告诉你高斯有多牛B</a></li>
+  <li>安装环境  </li>
+  <li>Lustre的安装</li>
+  <li>Lustre的配置</li>
+  <li>用于Lustre管理的实用工具</li>
+  <li>遇到的问题与解决方案</li>
+  <li>有创意的Idea</li>
 </ul>
 
 <!--more-->
 
-<p>解释：</p>
-
+<h2 id="section-1">安装环境</h2>
 <ul>
-  <li>大概是说Gauss是古往今来最伟大的数学家之一，是数学家的代名词。</li>
-  <li>P. Erdoes是匈牙利数学家，他认为上帝有本很薄的书，里面写着最优美的数学定理的简洁证明。</li>
-  <li>“无穷当作归纳证明中的第一个非平凡的情况”写的不清楚，但Cantor表明自然数的个数是第一级的无穷大。</li>
-  <li>没有人能不用任何公理就能证明一个定理。</li>
-  <li>P=NP是七个千年问题之一。</li>
-  <li>“从后往前列举了一下质数，就知道了质数有无穷多”事实上不可能的，也许说的是Fermat的无穷下降法。</li>
-  <li>“不会用光书本页面边缘的空白”是Fermat说他已经证明了大定理，页面边缘太窄写不下。</li>
-  <li>和Erdoes合作的人特别多，那些人的Erdoes数是1，和这些人合作的人的Erdoes数是2，以此类推。</li>
-  <li>没有集合等于自己的幂集，这是Cantor的一个定理。</li>
-  <li>化圆为方和三等分角都是古希腊几何难题，不可解。</li>
-  <li>Koenigsberg七桥问题由Euler解决，是不可能的。</li>
-  <li>骑士周游问题是说国际象棋里的马走的路径。</li>
-  <li>Russell用理发师悖论来指出当时集合论的弱点。</li>
-  <li>夹挤定理不清楚指的是什么，可能是极限理论的那个定理。</li>
-  <li>Aleph-Null是自然数的势。</li>
-  <li>Klein瓶是Klein做出的一个不分里外的瓶子。</li>
-  <li>“他不是把自己撑起来，而是把整个地球按下去”，类似于Archimedes说“给我一个支点，我可以把地球翘起来”</li>
-  <li>Hilbert旅馆据说是Hilbert为了解释无穷大性质讲的一个故事。</li>
-  <li>正态分布是Gauss的著名发现，原来10马克正面就是Gauss的头像和正态分布曲线。</li>
-  <li>Maxwell是苏格兰大物理学家，电磁理论的创立者。他对Gauss在磁学上的研究有高度的评价。</li>
-  <li>“算术公理体系同时满足完备性和一致性”，是Hilbert第二问题，由Goedel和Gentzen等人解答。</li>
-  <li>“Gauss仍然发明了微积分”，Gauss当然没有发明微积分，不过他在微积分的严格化方面有重要作用。</li>
-  <li>“Gauss发表了他的所有发现，数学界里就没啥可证的了”，Gauss有个习惯，不愿意将自己发现的成果公布出来，而是记成日记，这里面有椭圆函数和非欧几何。</li>
-  <li>零和游戏是博弈论的一个概念。</li>
-  <li>Fermat最终定理即大定理，最终由Wiles证明。</li>
-  <li>
-    <p>Schroedinger猫是量子力学里一个著名悖论。</p>
-  </li>
-  <li><a href="http://zhidao.baidu.com/question/247668255.html">参考</a></li>
+  <li>操作系统：CentOS 6.3 (x86_64)</li>
+  <li>内核版本：2.6.32-279</li>
+  <li>Lustre版本：2.3</li>
+  <li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[剑指Offer算法题]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130829/algorithm/"/>
-    <updated>2013-08-29T15:33:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130829/algorithm</id>
-    <content type="html"><![CDATA[<h2 id="section">找出数组中3个只出现一次的数</h2>
-
-<ul>
-  <li><a href="http://zhedahht.blog.163.com/blog/static/25411174201283084246412">程序员面试题精选100题(63)-数组中三个只出现一次的数字[算法] </a></li>
-  <li>有数组<code>A</code>，除<code>a,b,c</code>三个数字只出现一次外，其它数字都出现2次。</li>
-</ul>
-
-<h4 id="section-1">主要基于以下几个结论</h4>
+<h2 id="lustre">Lustre的安装</h2>
+<p>安装之前，对系统环境有如下要求：   </p>
 
 <ol>
-  <li>两个相同的数的异或结果为0</li>
-  <li>两个数异或结果中某一位为1，则说明这两个数的这一位肯定不相同</li>
-  <li>设<code>x=a^b^c</code>，<code>f(n)</code>表示只保留n最后一位的1，<code>f(110)=010</code>；则<code>y=f(x^a)^f(x^b)^f(x^c)</code>肯定不可能为0，取<code>f(y)</code>，则不可能<code>f(x^a)=f(x^b)=f(x^c)=f(y)</code></li>
+  <li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
+  <li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
 </ol>
 
-<p>f(n)的实现技巧：</p>
-
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">SELINUX</span><span class="o">=</span>disabled
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[日本惊悚系列：会走路的尸体]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130826/walking-corpse/"/>
-    <updated>2013-08-26T13:53:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130826/walking-corpse</id>
-    <content type="html"><![CDATA[<!--more-->
+<p>下载<a href="http://downloads.whamcloud.com/public/e2fsprogs/latest/el6/RPMS/x86_64/">e2fsprogs</a>并安装：</p>
 
-<p><img src="http://h.90g.org/files/2013/07/09/3570f10db2b18011d49525ce95bf3014.jpg" alt="会走路的尸体" title="会走路的尸体" /> </p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -Uvh --nodeps <span class="se">\</span>
+</span><span class="line">e2fsprogs-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
+</span><span class="line">e2fsprogs-libs-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
+</span><span class="line">e2fsprogs-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
+</span><span class="line">libcom_err-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
+</span><span class="line">libcom_err-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
+</span><span class="line">libss-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
+</span><span class="line">libss-1.42.7.wc1-7.el6.x86_64.rpm
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><img src="http://h.90g.org/files/2013/07/09/64165db4486617ca0229739252574967.jpg" alt="会走路的尸体" title="会走路的尸体" /> </p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[日本惊悚系列：不要开门]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130826/dont-open-the-door/"/>
-    <updated>2013-08-26T13:49:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130826/dont-open-the-door</id>
-    <content type="html"><![CDATA[<!--more-->
+<p>下载<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">kernel</a>包并安装（如果要使用InfiniBind连接方式，则必须安装kernel-ib-version包，且需要卸载系统中已经安装的以mlnx开头的kenel包）：</p>
 
-<p><img src="http://h.90g.org/files/2013/06/27/fe73f687e5bc5280214e0486b273a5f9.3.jpg" alt="不要开门" title="不要开门" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[日本惊悚系列：记忆摄像机]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130826/memory-camcorder/"/>
-    <updated>2013-08-26T13:36:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130826/memory-camcorder</id>
-    <content type="html"><![CDATA[<!--more-->
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -ivh <span class="se">\</span>
+</span><span class="line">kernel-firmware-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
+</span><span class="line">kernel-devel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
+</span><span class="line">kernel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
+</span><span class="line">kernel-ib-version
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><img src="http://h.90g.org/files/2013/06/29/3a06a23a8fc134ba0484e91468789f2e.jpg" alt="记忆摄像机" title="记忆摄像机" /></p>
+<p>下载并安装<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">Lustre</a>：</p>
 
-<p><img src="http://h.90g.org/files/2013/06/29/92d2d056dc06100565d96ead9c834846.jpg" alt="记忆摄像机" title="记忆摄像机" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[创意商品]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130824/creative-commodity/"/>
-    <updated>2013-08-24T18:43:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130824/creative-commodity</id>
-    <content type="html"><![CDATA[<ul>
-  <li>创意枕头</li>
-</ul>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -ivh <span class="se">\</span>
+</span><span class="line">lustre-ldiskfs-3.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm <span class="se">\</span>
+</span><span class="line">lustre-modules-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm <span class="se">\</span>
+</span><span class="line">lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><img src="http://t3.qpic.cn/mblogpic/e99d158335de960cd828/460" alt="创意枕头" /> </p>
+<h2 id="lustre-1">Lustre的配置</h2>
 
-<ul>
-  <li>储蓄罐</li>
-</ul>
-
-<p><img src="http://t1.qpic.cn/mblogpic/139b847ccf406357039c/460" alt="pic alt" title="opt title" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[长故事]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130824/long-stories/"/>
-    <updated>2013-08-24T13:02:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130824/long-stories</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://bbs.csdn.net/topics/390550705">已经两天了，我打电话她不接，短信她不回，不经意的触碰，后果竟然这样严重</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[FUSE入门]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130823/fuse-tutorial/"/>
-    <updated>2013-08-23T17:46:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130823/fuse-tutorial</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://www.ibm.com/developerworks/library/l-fuse/">Develop your own filesystem with FUSE</a></li>
-  <li><a href="http://ouonline.net/create-your-own-fs-with-fuse-1">使用fuse编写文件系统</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[计算机基础知识]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130823/cs-basics/"/>
-    <updated>2013-08-23T10:47:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130823/cs-basics</id>
-    <content type="html"><![CDATA[<h2 id="section">编码理论</h2>
-<ul>
-  <li>汉明距离：不一样的位的个数，两个数异或之后1的个数。如101和110的汉明距离为2</li>
-  <li>一个编码的距离d，为所有合法编码之间最小的汉明距离</li>
-  <li>一个编码能检测到d个错误，则要求编码距离至少为<code>d+1</code>；能纠正d位错误，则编码距离至少为<code>2d+1</code></li>
-</ul>
-
-<!--more-->
-
-<h2 id="c">c语言</h2>
-<ul>
-  <li>某个参数未使用时，为了防止编译器报warnning，可以使用<code>(void) var;</code>的方式去除警告。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Beamer总结]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130823/beamer-summory/"/>
-    <updated>2013-08-23T10:29:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130823/beamer-summory</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://blog.ofey.me/2011/12/beamer%e4%bd%bf%e7%94%a8%e7%ac%94%e8%ae%b0/">Beamer使用笔记</a></li>
-</ul>
-
-<!--more-->
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[电影收集]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130817/favor-movies/"/>
-    <updated>2013-08-17T10:55:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130817/favor-movies</id>
-    <content type="html"><![CDATA[<!--more-->
+<p>配置Lustre所使用的接口名称以及相对应的别名；</p>
 
 <ul>
-  <li><a href="http://baike.baidu.com/view/353312.htm">机器人总动员</a></li>
-  <li><a href="http://www.tudou.com/programs/view/pUzrutHx4-k/">三傻大闹宝莱坞</a></li>
+  <li>Lustre默认使用的是第一个网络接口，默认的名称为<code>tcp0</code>；</li>
+  <li>如果需要使用光纤接口，则创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</li>
 </ul>
 
-<embed src="http://www.tudou.com/v/pUzrutHx4-k/&amp;resourceId=0_05_05_99&amp;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="800" height="500" />
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">options lnet <span class="nv">networks</span><span class="o">=</span><span class="s2">&quot;o2ib0(ib0)&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<ul>
-  <li><a href="http://www.tudou.com/albumplay/1lqFjwuh1I0/8pF_eQNKlJw">你好，陌生人</a></li>
-</ul>
+<p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等，否则会报错。查看通过光纤接口是否可以和其它节点联通。</p>
 
-<embed src="http://www.tudou.com/a/1lqFjwuh1I0/&amp;resourceId=0_05_05_99&amp;iid=130948202&amp;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="800" height="520" />
+<p>如果使用的是<code>mlnx</code>驱动，则在加载<code>lustre</code>模块时会报错，需要先卸载如下的几个包</p>
 
-<ul>
-  <li><a href="http://www.tudou.com/programs/view/IUVMyubn5w4/">想听你说爱我</a></li>
-</ul>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -qa | grep <span class="s1">&#39;kernel&#39;</span> | grep <span class="s1">&#39;mlnx&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<embed src="http://www.tudou.com/v/IUVMyubn5w4/&amp;resourceId=0_05_05_99&amp;bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400" />
+<p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
 
-<h2 id="section">青春励志</h2>
-<ul>
-  <li>
-    <p>怪兽大学</p>
-  </li>
-  <li>
-    <p>疯狂原始人</p>
-  </li>
-  <li>
-    <p><a href="http://www.csdn.net/article/2013-10-15/2817186-math-in-classic-movies">上百部经典电影里的数学应用</a></p>
-  </li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[一些很有意思的真相]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130816/intresting-truth/"/>
-    <updated>2013-08-16T17:57:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130816/intresting-truth</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://blog.jobbole.com/18650/">为什么 Vim 使用 HJKL 键作为方向键</a></li>
-  <li><a href="http://blog.jobbole.com/45756/">为什么软件开发周期通常是预期的两三倍</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Google使用技巧]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130816/google-skills/"/>
-    <updated>2013-08-16T13:21:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130816/google-skills</id>
-    <content type="html"><![CDATA[<h2 id="chrome">可以在chrome地址栏输入算式直接进行运算</h2>
-<p>例如：((1+2)*3)^2 <br />
-可以使用常见数学函数(log,ln,sin,cos)等</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">service openibd start
+</span><span class="line">chkconfig openibd on
+</span><span class="line"><span class="c">#查看开机启动是否设置成功</span>
+</span><span class="line">chkconfig --list openibd
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<!--more-->
+<p>载入相关模块：</p>
 
-<h2 id="section">换算汇率</h2>
-<p>1 usd to cny</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">modprobe lustre
+</span><span class="line">modprobe ldiskfs
+</span><span class="line">modprobe lnet
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="section-1">字典</h2>
-<p>define:hello</p>
+<p>这时可以查看<em>/sys/modules/lnet/prarameters/networks</em>内容，以确定<em>lnet.conf</em>中的配置信息是否已经加载至内核。</p>
 
-<h2 id="section-2">换算温度</h2>
-<p>100 c to f</p>
+<p>在MDS上的创建Lustre文件系统，并挂载：</p>
 
-<ul>
-  <li><a href="http://program-think.blogspot.com/2013/03/internet-resource-discovery-2.html">Google 搜索的基本语法</a></li>
-</ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux相关文章]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130815/linux-article/"/>
-    <updated>2013-08-15T16:44:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130815/linux-article</id>
-    <content type="html"><![CDATA[<ul>
-  <li><a href="http://www.ibm.com/developerworks/cn/linux/l-journaling-filesystems/">Linux 日志文件系统剖析</a></li>
-  <li><a href="http://www.ibm.com/developerworks/cn/linux/l-linux-filesystem/">Linux 文件系统剖析</a></li>
-</ul>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">mkfs.lustre --fsname<span class="o">=</span>mylustre --mdt --mgs --index<span class="o">=</span>0 --reformat /dev/sdb1
+</span><span class="line">mount.lustre /dev/sdb1 /mnt/mdt
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>其中<em>fsname</em>为安装的lustre文件系统的标志，在MGS、MDS和OSS中都必须保持一致，在客户端挂在Lustre文件系统时也会使用到这个名字，长度不能超过8个字符；本例中MGS和MDS使用同一个服务器；<em>reformat</em>会对磁盘进行重新格式化处理。</p>
+
+<p>在OSS上创建Lustre文件系统，并挂载：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">mkfs.lustre --fsname<span class="o">=</span>mylustre --ost --reformat --index<span class="o">=</span>num --mgsnode<span class="o">=</span>host_mds@o2ib0 /dev/sdb2
+</span><span class="line">mount.lustre /dev/sdb2 /mnt/ost
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>必须要在MDT的文件系统挂在之后才能挂载OST的文件系统；<em>host_mds</em>为mds的ip地址或者已经写入<em>hosts</em>文件的主机名，<em>o2ib0</em>和<em>lnet.conf</em>中写入的内容保持一致。
+如果出现无法连接的情况，则可能是防火墙的原因，可以关闭<em>iptables</em>服务：<code>service iptables stop</code></p>
+
+<p>客户端的挂载：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">mount.lustre host_mds@o2ib0:/mylustre /mnt/lustre
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">实用工具</h2>
+<p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">lctl network up
+</span><span class="line">lctl list_nids	<span class="c">#可以查看当前实际的ip地址，以确定是否使用了正确的接口</span>
+</span><span class="line">lctl ping nids	<span class="c">#用来检查OSS和MGS连接是否正常</span>
+</span><span class="line">lctl dl		<span class="c">#查看当前的设备</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>可以通过<em>lfs</em>命令获取已挂载的<em>lustre</em>文件系统信息：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs df -h
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>或者对文件系统的文件写入方式等进行配置：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs setstripe -c -1 -S 128M /mnt/lustre/
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>其中<code>-c -1</code>表示写入到所有的OSS中，<code>-S 128M</code>表示文件分块的大小为128M；上面是对整个文件系统进行设置，也可以单独地对某个文件或者文件夹进行设置；设置完后可以通过如下命令查看配置信息是否正确：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs getstripe /mnt/lustre
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>利用<code>tunefs.lustre</code>可以查看已建立的lustre文件系统的信息，并对部分信息进行调整。</p>
+
+<h3 id="stopping-lnet">Stopping LNET</h3>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">lctl network unconfigure
+</span><span class="line">modprobe -r &lt;any lnd and the lnet modules&gt;
+</span><span class="line"><span class="c">#卸载所有Lustre模块</span>
+</span><span class="line">lctl modules | awk <span class="s1">&#39;{print $2}&#39;</span> | xargs rmmod
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="iozone">利用iozone进行测试</h2>
+<p>iozone是对文件系统的读写性能进行测试的工具</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#单个测试文件大小</span>
+</span><span class="line"><span class="nv">FILE_SIZE</span><span class="o">=</span><span class="s2">&quot;16g&quot;</span>
+</span><span class="line"><span class="c">#进行读写的进程的数量</span>
+</span><span class="line"><span class="nv">THREAD_NUM</span><span class="o">=</span><span class="s2">&quot;16&quot;</span>
+</span><span class="line"><span class="c">#总的读写数据量</span>
+</span><span class="line"><span class="nv">TOTAL_FILESIZE</span><span class="o">=</span><span class="k">$((</span>FILE_SIZE*THREAD_NUM<span class="k">))</span>
+</span><span class="line"><span class="c">#-i 0: 代表write/rewrite</span>
+</span><span class="line"><span class="c">#-i 1: 代表read/reread</span>
+</span><span class="line"><span class="c">#-i 2: 表示random-write/random-read</span>
+</span><span class="line"><span class="c">#-o: 表示在写后要立即进行同步，去除该参数后可有效提高写速度</span>
+</span><span class="line"><span class="c">#-+n: 不进行重复测试，即不会进行rewrite和reread</span>
+</span><span class="line">/path/to/iozone -e -c -s <span class="nv">$TOTAL_FILESIZE</span> -r <span class="nv">$RECSIZE</span> -+m <span class="nv">$NODELIST</span> -+k -i 0 -i 1 -t  <span class="nv">$THREAD_NUM</span> -o -w -+n&gt;&gt; <span class="nv">$OUTPUTFILE</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>其中<code>$NODELIST</code>是下面一种格式的节点配置文件，每一行代表一个客户端，用空格区分为不同的列，每一列的含义如下：</p>
+
+<ol>
+  <li>客户端名称</li>
+  <li>要测试的文件系统的一个目录</li>
+  <li>iozone的可执行文件路径</li>
+  <li>文件名，相同的主机名但不同的文件名也表示一个单独的读写测试进程</li>
+</ol>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">snode17 /mnt/lustre /path/to/iozone file170
+</span><span class="line">snode18 /mnt/lustre /path/to/iozone file180
+</span><span class="line">snode17 /mnt/lustre /path/to/iozone file171
+</span><span class="line">snode18 /mnt/lustre /path/to/iozone file181
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="p-problemc-causer-resolve">遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
+<p>P：安装完重启之后，系统无法启动。<br />
+C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br />
+R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。  </p>
+
+<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br />
+C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br />
+R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。  </p>
+
+<h2 id="idea">比较有创意的Idea</h2>
+<p>需要对<em>/dev/sdb</em>进行分区，就在一台机器上利用<code>fdisk</code>按要求分区后，拷贝出该硬盘前512字节启动分区内容：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">dd <span class="k">if</span><span class="o">=</span>/dev/sdb <span class="nv">of</span><span class="o">=</span>boot512.img <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>之后把这个文件写入其他机器的<em>/dev/sdb</em>硬盘，便可完成分区，这样便方便进行批量处理了：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">dd <span class="k">if</span><span class="o">=</span>boot512.img <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>在用<code>fdisk</code>分完区后，在<em>/dev/sdb#</em>中并没有及时地反映出分区后的结果，此时运行<code>partprobe /dev/sdb</code>命令即可。</p>
+
+<h2 id="section-3">参考文献：</h2>
+<p><a href="http://xiaolangit.blog.51cto.com/3343422/1195060">51CTO：Lustre-2.3的安装</a></p>
 ]]></content>
   </entry>
   
