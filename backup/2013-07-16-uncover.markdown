@@ -1,8 +1,0 @@
----
-layout: post
-title: "揭秘"
-date: 2013-07-16 14:24
-comments: true
-categories: Funny
----
-- [原来强大的动画背景后，有着不为人知的秘密](http://luo.bo/41675/)

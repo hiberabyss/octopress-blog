@@ -27,7 +27,7 @@ new_post_ext    = "markdown"  # default new post file extension when using the n
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
 server_port     = "4000"      # port for preview server eg. localhost:4000
 deploy_local	= "push_local"	#hiberabyss:
-editor		= "gvim"		#hiberabyss: the eidtor after new
+editor		= "vim"		#hiberabyss: the eidtor after new
 source_remote	= "octopress"	#hiberabyss: remote ref
 source_branch	= "source"	#hiberabyss: the source branch
 

@@ -9,31 +9,6 @@ categories: Linux
 
 <!--more-->
 
-##安装deepin软件
-将如下源添加到`/etc/apt/sources.list`即可（注意不要`sudo apt-get upgrade`，否则会变成deepin源里的包:(）
-
-```bash
-deb http://mirrors.ustc.edu.cn/deepin/ raring main non-free
-```
-
-或者添加如下源：
-
-```bash
-sudo apt-add-repository ppa:noobslab/deepin-sc
-```
-
-然后安装音乐和视频播放器：
-
-```bash
-#需要先安装如下包
-sudo apt-get install python-deepin-gsettings
-sudo apt-get install deepin-music-player
-sudo apt-get install deepin-media-player
-sudo apt-get install dmusic-plugin-baidumusic
-```
-
-- [Ubuntu 13.04安装Linux Deepin特色软件](http://www.bentutu.com/ubuntu-add-linuxdeepin-repo.html)
-
 ##更新单个.list文件
 - [apt-get update only for a specific repository](http://askubuntu.com/questions/65245/apt-get-update-only-for-a-specific-repository)
 
@@ -52,7 +27,6 @@ sudo screendump > /tmp/screen.txt
 ```bash
 echo {00..10} | sed -e 's/\ /\n/g'
 ```
- 
 
 ##修改声音面板默认程序（dconf）
 - [Sound Menu](http://helpdeskgeek.com/linux-tips/show-only-your-favorite-music-players-in-the-ubuntu-sound-menu/)
@@ -94,9 +68,6 @@ exit $?
 ```
 
 编辑完成后加上可执行权限。
-
-##自动更新
-- [Chrome自动更新](http://my.oschina.net/yangphere/blog/131165)
 
 ##修改登陆显示信息
 tty里的第一行显示的是`/etc/issue`里的内容。   
@@ -160,29 +131,8 @@ winetricks flash
 ##给程序添加扩展
 - `libpeas`
 
-
-##查看UUID
-
-```bash
-sudo blkid
-ls -l /dev/disk/by-uuid/
-```
-
 ##lsof查看网络端口
 - `lsof -i@[hostname|addr]:[service|port],port`
-
-##远程桌面
-
-- 远程主机安装`vnc4server`，运行`vncserver`，记录下执行时显示的`nums`，
-- 可以使用`vncpasswd`重置密码
-- 客户端使用`gvncview server:nums`进行连接，或使用其它远程桌面软件
-- [Linux中的远程连接 SSH and VNC图形模式](http://www.cnblogs.com/ayuan/archive/2008/04/26/1171803.html)
-
-##rsync文件夹同步
-
-```bash
-rsync -a user@host:/src/ /dest/
-```
 
 ##编译Linux内核
 
@@ -226,30 +176,6 @@ echo 3 > /proc/sys/vm/drop_caches
 ##Apache
 出现`Apache: You don't have permission to access / on this server`错误时，修改`/etc/apache2/apache2.conf`文件，修改根目录权限为`granted`。
 
-##查看安装包信息
-- 查看离线安装包
-
-```bash
-dpkg -I(--info) package.deb
-```
-
-- 查看已安装软件
-
-```bash
-dpkg -s pacage
-```
-
-- 查看已安装包的文件信息
-
-```bash
-dpkg -L package
-```
-
-- 在线显示某个包的文件
-
-```bash
-apt-file list package
-```
 
 ##文件比较工具
 `comm`，`diff`
@@ -263,34 +189,6 @@ apt-file list package
 ##安装java JDK
 - [Ubuntu 下安装配置 JDK 7](http://blog.csdn.net/snowdream86/article/details/6677450)
 
-##亮度控制 brightness
-安装`sudo apt-get install laptop-mode-tools`
-
-```bash
-
-# Should laptop mode tools control LCD brightness?
-
-# 设为1，启用
-# /etc/laptop-mode/laptop-mode.conf
-
-CONTROL_BRIGHTNESS=1
-
-# Commands to execute to set the brightness on your LCD
-
-# “echo 6” 就是要将亮度值6 写入 BRIGHTNESS_OUTPUT文件中，亮度值根据自己的情况进行取值。
-# /etc/laptop-mode/conf.d/lcd-brightness.conf
-
-BATT_BRIGHTNESS_COMMAND="echo 10"
-
-LM_AC_BRIGHTNESS_COMMAND="echo 12"
-
-NOLM_AC_BRIGHTNESS_COMMAND="echo 12"
-
-BRIGHTNESS_OUTPUT="/sys/class/backlight/acpi_video0/brightness"
-```
-
-- [屏幕亮度保存](http://blog.csdn.net/hun_ying/article/details/15026529)
-
 ##GPG ERROR
 
 ```bash
@@ -299,10 +197,6 @@ sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5(t
 
 ##禁用ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-
-##查看软件包大小
-- dpkg-query --showformat='${Package}\t${Installed-Size}\n'
-- [LIst all installed packages in size order](http://ubuntuforums.org/showthread.php?t=599424)
 
 ##WireShark配置
 - [Installing Wireshark on Ubuntu](http://www.dickson.me.uk/2012/09/17/installing-wireshark-on-ubuntu-12-04-lts/)

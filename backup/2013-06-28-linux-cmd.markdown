@@ -36,9 +36,6 @@ man -k keyword
 ##修改文件属性
 - chattr +i file
 
-##读取符号连接
-- readlink
-
 ##按列拼接
 - paste
 
@@ -54,9 +51,6 @@ man -k keyword
 
 ##查看系统模块信息
 - modinfo
-
-##who
-查看启动了多少shell。
 
 ##查看文件类型
 `type`、`whatis`、`which`
@@ -79,9 +73,6 @@ man -k keyword
 ##监控文件或目录的访问记录
 - inotifywait
 
-##网络
-- fping -a -d -g 10.18.10.141 10.18.10.172 (ping多台主机)
-
 ##连接无线
 - iwlist scan
 - iwconfig 
@@ -89,15 +80,6 @@ man -k keyword
 ##日志
 - logrotate --日志大小限定，压缩工具
 - logger --记录日志
-
-##后台执行&可实现并行，添加wait命令可保证脚本在所有子进程结束后再退出
-- wait
-
-##命令
-- apropos -- 查询相关命令
-
-##固定时间间隔运行某命令
-- watch -d
 
 ##sed
 

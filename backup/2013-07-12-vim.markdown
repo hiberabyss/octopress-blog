@@ -9,27 +9,6 @@ categories: Vim
 
 <!--more-->
 
-##和数字处理有关
-快捷键`Ctrl-a`可以将光标处数字加1，`Ctrl-x`可以将数字减1，支持多种进制。
-
-快速生成1到100的数字：
-
-1. 插入1，`yy`复制，`99p`粘帖99行。
-2. 输入命令`:let i=1 | g/1/s//\="my0".i."test"/g | let i+=1 `；`g/pattern/s`为替换功能；`\=`把后面的表达式计算出来；字符串需要用“”括起来，并用.连接。
-
-- 参考[vim(gvim)正则表达式查找替换(4)-生成连续数字或行号](http://www.vimer.cn/2009/11/vimgvim%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e6%9f%a5%e6%89%be%e6%9b%bf%e6%8d%a24-%e7%94%9f%e6%88%90%e8%bf%9e%e7%bb%ad%e6%95%b0%e5%ad%97%e6%88%96%e8%a1%8c%e5%8f%b7.html)
-- 参考[水木社区](http://www.newsmth.net/nForum/#!article/VIM/14355)
-
-##切换目录相关
-- cd %:h #切换到当前文件所在目录
-- set autochdir	#自动切换目录，最好不启用，否则使用ctags比较麻烦
-- lcd	#仅切换当前缓存区的工作目录
-
-##高亮列
-- set cuc #高亮当前列
-- set cc=col #高亮某一列
-- [Indent Guides](https://github.com/nathanaelkane/vim-indent-guides)插件 #使用方式为`<Leader>ig`
-
 ##高亮匹配文本
 - set incsearch	#显示第一个匹配的文本
 - set hlsearch	#高亮所有匹配的文本
@@ -59,16 +38,10 @@ set complete-=i
 - 匹配单词：\<word\>
 - 贪婪模式`.*`，非贪婪模式`.\{-}`
 
-##查看ASCII码
-- `ga` #查看当前光标下ascii码
-
 ##文件类型filetype
 在目录`~/.vim/ftdetect/`目录下建立`.vim`文件，用于设置识别特定类型文件后的操作。
 
 在目录`~/.vim/ftplugin/`目录建立以`filetype`开头的文件，如`cpp.vim`，则在编辑`*.cpp`文件时，便会应用`cpp.vim`里所做的设定。
-
-##cscope
-- [Vim中自动加载cscope.out](http://blog.csdn.net/mci2004/article/details/7944074)
 
 ##统计行数
 - `w !wc` #w把文件内容写到标准输出
@@ -86,20 +59,7 @@ set complete-=i
 ##多window，tab，buffer执行命令
 - [Run a command in multiple buffers](http://vim.wikia.com/wiki/Run_a_command_in_multiple_buffers)
 
-##fold
-- [Navigate to the next open fold](http://vim.wikia.com/wiki/Navigate_to_the_next_open_fold)
-
 ##相关插件
-
-###UltiSnips
-非常好用的一个自动完成的插件。默认触发键为`<tab>`；可以在插件目录下的`ultisnips/UltiSnips/`目录里编辑`extension.snippets`文件，其中extension表示所要应用的文件类型。具体用法可以在vim中用`:help UltiSnips`查看。
-
-介绍： [Why UltiSnips](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
-
-###OmniCppComplete
-在`~/.vimrc`文件中包含语句`set path=./**`会导致补全很慢。
-
-- [在vim中针对c++自动补全](http://blog.csdn.net/liumengxinfly/article/details/6967687)
 
 ##批量修改变量名
 - `help argdo`

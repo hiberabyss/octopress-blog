@@ -1,0 +1,16 @@
+---
+layout: post
+title: "字符串比较算法"
+date: 2014-06-23 14:50
+comments: true
+categories: Algorithm
+---
+
+本文介绍三种字符串搜索算法：朴素比较算法、Karp-Rabin算法和KMP算法。leetcode上有对应题目[Implement strStr](https://oj.leetcode.com/problems/implement-strstr/)。算法描述：
+> 对于字符串`haystack`和`needle`，返回`needle`在`haystack`中第一次出现的位置，如果不存在则返回NULL。
+
+
+<!--more-->
+
+##朴素字符串比较算法
+

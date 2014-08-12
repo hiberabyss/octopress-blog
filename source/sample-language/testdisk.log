@@ -1,0 +1,24 @@
+
+
+Wed Feb 26 21:39:08 2014
+Command line: TestDisk
+
+TestDisk 6.14, Data Recovery Utility, July 2013
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 3.11.0-18-generic (#32-Ubuntu SMP Tue Feb 18 21:13:28 UTC 2014) i686
+Compiler: GCC 4.8
+Compilation date: 2013-08-23T16:52:16
+ext2fs lib: 1.42.8, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none
+/dev/sda: LBA, HPA, LBA48, DCO support
+/dev/sda: size       976773168 sectors
+/dev/sda: user_max   976773168 sectors
+/dev/sda: native_max 976773168 sectors
+/dev/sda: dco        976773168 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 1 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - ST9500420AS, S/N:5VJFG5Y2, FW:0003LVM1
+Disk /dev/sdc - 32 GB / 29 GiB - CHS 30535 64 32, sector size=512 - General USB Flash Disk, FW:1.00
+
+
+TestDisk exited normally.

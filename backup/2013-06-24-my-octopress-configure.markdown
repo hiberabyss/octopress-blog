@@ -77,6 +77,7 @@ self.write_category_index(File.join(dir, category.downcase), category)
 - [雁起平沙的网络日志](http://yanping.me/cn/)  
 - [知行录（github上有源码）](http://whbzju.github.io/)
 - [MrZhang.me（做的比较玄的一个博客，有源代码）](http://mrzhang.me/)
+- [Jeklly模板](http://webfrogs.me/)
 
 ##参考资料
 * [为Octopress博客追加新浪微博侧栏](http://programus.github.io/blog/2012/03/03/add-weibo-sidebar-into-octopress/)  
