@@ -125,7 +125,7 @@ myabc=lalala
 #如果未定义则用后面的代替
 echo ${mynull:-test}	#test
 #代替的同时也赋值给前面的变量
-echo ${mynull:-test}	#test 同时 $mynull也为test
+echo ${mynull:=test}	#test 同时 $mynull也为test
 #如果定义则用后面的单词代替
 echo ${myabc:+hahaha}	#hahaha
 
@@ -143,5 +143,5 @@ echo ${mytest##aa}
 #string为空，则把相应的匹配项删除
 
 #${para^pattern}
-#大小写转换 ^ 表示大写， ’，‘ 表示小写，^^ ,, 表示最大匹配
+#大小写转换 ^ 表示大写， ',' 表示小写， ^^ ,, 表示最大匹配
 #如果pattern为空，则默认为 ?

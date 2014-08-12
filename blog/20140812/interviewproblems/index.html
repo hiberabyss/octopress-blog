@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>2014面试题 - 蛰渊-成长的轨迹</title>
+  <meta name="author" content="hiberabyss">
+
+  
+  <meta name="description" content="根据同学面试经历总结，解答仅供参考。(by hiberabyss) 目录 算法相关 海量数据问题 操作系统相关 算法相关 给定完全二叉树，求最后一层最右节点。要求时间复杂度小于O(N)（赵子汉——百度二面） 直接对二叉树进行层次遍历，用last变量记录每次访问的值，遍历完成直接返回last即可； &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://hiberabyss.github.io/blog/20140812/interviewproblems">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="蛰渊-成长的轨迹" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">蛰渊-成长的轨迹</a></h1>
+  
+    <h2>温故而知新</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:hiberabyss.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">博客主页</a></li>
+  <li><a href="/blog/archives">文章列表</a></li>
+  <li><a href="/about">关于本站</a></li>
+  <li><button onclick="TogetherJS(this); return false;">聊天</button></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">2014面试题</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-12T14:51:00+08:00" pubdate data-updated="true">Aug 12<span>th</span>, 2014</time>
+        
+
+	 
+	  | <a href="#comments">Comments</a>
+	 
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>根据同学面试经历总结，解答仅供参考。(by hiberabyss)</p>
+
+<!--more-->
+
+<h2 id="section">目录</h2>
+<ul>
+  <li><a href="#s1">算法相关</a></li>
+  <li><a href="#s2">海量数据问题</a></li>
+  <li><a href="#s3">操作系统相关</a></li>
+</ul>
+
+<h3 id="s1">算法相关</h3>
+
+<h4 id="on">给定完全二叉树，求最后一层最右节点。要求时间复杂度小于<code>O(N)</code>（赵子汉——百度二面）</h4>
+<ul>
+  <li>直接对二叉树进行层次遍历，用<code>last</code>变量记录每次访问的值，遍历完成直接返回<code>last</code>即可；时间复杂度为<code>O(N)</code>。</li>
+  <li>采用递归的思路：
+    <ul>
+      <li>结束条件：如果根节点为叶子节点，即为所求，直接返回；</li>
+      <li>如果左子树高度大于右子树，则最右节点在左子树；</li>
+      <li>如果左子树高度等于右子树，则最右节点在右子树。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>因为是完全二叉树，树的高度可以通过从根节点不断往左遍历求得，递归也可以很方便的用迭代的方法来实现，时间复杂度为<code>O(logN*logN)</code>。代码如下：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="n">TreeNode</span> <span class="o">*</span><span class="n">getRightMost</span><span class="p">(</span><span class="n">TreeNode</span> <span class="o">*</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">root</span> <span class="p">)</span> <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">||</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">lh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">        <span class="n">TreeNode</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">        <span class="k">while</span> <span class="p">(</span> <span class="n">tmp</span> <span class="p">)</span> <span class="n">lh</span><span class="o">++</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">        <span class="kt">int</span> <span class="n">rh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">        <span class="n">tmp</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+</span><span class="line">        <span class="k">while</span> <span class="p">(</span> <span class="n">tmp</span> <span class="p">)</span> <span class="n">rh</span><span class="o">++</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">        <span class="k">if</span> <span class="p">(</span> <span class="n">lh</span> <span class="o">==</span> <span class="n">rh</span> <span class="p">)</span> <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+</span><span class="line">        <span class="k">else</span> <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="reverse">给定一个链表内的两个指针，对指针间的节点做<code>reverse</code>（李强强——百度电面）</h4>
+<ul>
+  <li>通过交换节点数据来实现翻转，时间复杂度为<code>O(N)</code>，空间复杂度为<code>O(N)</code>；代码如下：</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="k">struct</span> <span class="n">ListNode</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">ListNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">void</span> <span class="n">reverseNodes</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">p1</span><span class="p">,</span> <span class="n">ListNode</span> <span class="o">*</span><span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">p1</span> <span class="o">||</span> <span class="o">!</span><span class="n">p2</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">*&gt;</span> <span class="n">nodes</span><span class="p">;</span>
+</span><span class="line">    <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">node</span> <span class="o">=</span> <span class="n">p1</span><span class="p">;</span> <span class="p">;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">nodes</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span><span class="line">        <span class="k">if</span> <span class="p">(</span> <span class="n">node</span> <span class="o">==</span> <span class="n">p2</span> <span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">j</span> <span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">,</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="o">--</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>按照要求翻转的是指针之间的节点（不包括p1和p2）的方式理解的话，可以通过更改链表指针在<code>O(N)</code>的时间复杂度和<code>O(1)</code>的空间复杂度内解决；（如果包含p1和p2，也可以先交换p1和p2的值，便可转化为这种情况），代码如下：</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">void</span> <span class="n">reverseNodes</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">p1</span><span class="p">,</span> <span class="n">ListNode</span> <span class="o">*</span><span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">p1</span> <span class="o">||</span> <span class="o">!</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span><span class="line">    <span class="k">auto</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">    <span class="k">auto</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">pre</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span> <span class="n">cur</span> <span class="o">!=</span> <span class="n">p2</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pre</span><span class="p">;</span>
+</span><span class="line">        <span class="n">pre</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+</span><span class="line">        <span class="n">cur</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+</span><span class="line">    <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pre</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="section-1">随机数相关算法</h4>
+<p>该类算法的思路在于先由给定随机数生成器生成一个序列，剔除一部分数，由剩下的序列来生成要求的结果。</p>
+
+<ul>
+  <li>给定随机数生成器<code>rand1p</code>，以概率<code>p</code>生成1，以概率<code>1-p</code>生成0，设计<code>rand1</code>，等概率生成0和1 ( 思路：两个<code>rand1p</code>之和为0或2的概率相等 )</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">int</span> <span class="n">rand1</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">res</span> <span class="o">=</span> <span class="n">rand1p</span><span class="p">()</span> <span class="o">+</span> <span class="n">rand1p</span><span class="p">();</span>
+</span><span class="line">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="n">res</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>给定<code>rand5</code>（等概率生成1-5），设计<code>rand7</code>（等概率生成1-7）（思路：由两个<code>rand5</code>组成一个2位的5进制数，则可等概率生成序列0-24，剔除最后4个数，则可得到一个有21个数的等概率序列）</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">int</span> <span class="n">rand7</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">res</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">rand5</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">rand5</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">res</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="p">(</span><span class="n">res</span><span class="o">%</span><span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="k">找第K个数</h4>
+
+<h4 id="section-2">两个有序数组求中位数</h4>
+
+<h4 id="inplace-mergesort">Inplace MergeSort</h4>
+
+<h4 id="section-3">非递归快排</h4>
+
+<h2 id="s2">海量数据问题</h2>
+<p>这篇<a href="http://www.cnblogs.com/gw811/archive/2012/10/11/2719232.html">博客</a>总结的挺好的。</p>
+
+<h4 id="nunsigned-intn">求N个整数（unsigned int）的中位数，N很大（强强——百度电面）</h4>
+<ul>
+  <li>用外排序的方法排好序，返回第<code>N/2</code>个元素，时间复杂度<code>O(N*logN)</code></li>
+  <li>类似桶排序的思想；对整数区间进行划分（例如划分为16个区间：0 ~ 2^28 - 1, …, 15*2^28 ~ 2^32 - 1），遍历所有整数，把属于同一个区间内的整数写到同一个文件中，并统计整数数量（N0, N1, …, N7)，找到k，使得<code>sum{N0~Nk} &gt;= N/2</code>且<code>sum{N0~Nk-1} &lt; N/2</code>，则该问题转化为求第k个区间内的整数的第<code>N/2-sum{N0~Nk-1}</code>个数的问题。如果区间内的整数还是太多，则可以对区间再做进一步细分，重复上述过程。</li>
+</ul>
+
+<h3 id="s3">操作系统相关</h3>
+
+<h4 id="shell">shell的实现原理（中海——百度一面）</h4>
+<ul>
+  <li>读取输入，fork出新的进程，在子进程中调用<code>exec</code>运行相应程序。</li>
+</ul>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">hiberabyss</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-12T14:51:00+08:00" pubdate data-updated="true">Aug 12<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/Algorithm/'>Algorithm</a>, <a class='category' href='/blog/categories/Job/'>Job</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  <div class="bshare-custom icon-medium-plus"><div class="bsPromo bsPromo1"></div><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style="float: none;">17.3K</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&amp;uuid=e9535cd2-62a6-4e4f-a23c-a6123bf6ee40&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"hiberabyss"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+<h1>分类目录</h1>
+<span class='categories_tag'> <a href='/blog/categories/Algorithm' style='font-size: 160.0%'>Algorithm(1)</a>  <a href='/blog/categories/Job' style='font-size: 160.0%'>Job(1)</a> </span>
+</section>
+
+<section>
+  <h1>近期文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20140812/interviewproblems/">2014面试题</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>近期评论</h1>
+<ul class="ds-recent-comments" data-num-items="10" data-show-avatars="1" data-show-time="0" data-show-title="0" data-show-admin="0" data-excerpt-length="18"></ul>
+
+</section>
+<section>
+  <h1>友情链接</h1>
+  <ul id="friendslink">
+    <li>
+      <a target="_blank" href="http://yanping.me/cn/">雁起平沙的网络日志</a>
+    </li>
+
+    <li>
+      <a target="_blank" href="http://program-think.blogspot.com/">编程随想的博客</a>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h1>新浪微博</h1>
+  <ul id="weibo">
+    <li>
+      <iframe 
+        width="100%" 
+        height="550" 
+        class="share_self" 
+        frameborder="0" 
+        scrolling="no" 
+        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=1679398612&verifier=4f9db57b">
+      </iframe>
+    </li>
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script src="https://togetherjs.com/togetherjs-min.js"></script>
+<p>
+  Copyright &copy; 2014 - hiberabyss -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

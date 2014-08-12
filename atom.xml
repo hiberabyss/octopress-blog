@@ -4,7 +4,7 @@
   <title><![CDATA[蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2014-02-20T14:58:17+08:00</updated>
+  <updated>2014-08-12T17:09:48+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -14,209 +14,36 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Lustre的安装与配置]]></title>
-    <link href="http://hiberabyss.github.io/blog/20130624/lustre-configture/"/>
-    <updated>2013-06-24T12:37:00+08:00</updated>
-    <id>http://hiberabyss.github.io/blog/20130624/lustre-configture</id>
-    <content type="html"><![CDATA[<p>Lustre是一个分布式文件系统，由MDS（元数据服务器）、OSS（对象存储服务器）和Client（客户端）三部分组成。其中MDS和OSS都可以有多个节点，通过MGS进行管理，MGS只能有一个。</p>
-
-<h2 id="section">主要内容</h2>
-<ul>
-  <li>安装环境  </li>
-  <li>Lustre的安装</li>
-  <li>Lustre的配置</li>
-  <li>用于Lustre管理的实用工具</li>
-  <li>遇到的问题与解决方案</li>
-  <li>有创意的Idea</li>
-</ul>
+    <title type="html"><![CDATA[2014面试题]]></title>
+    <link href="http://hiberabyss.github.io/blog/20140812/interviewproblems/"/>
+    <updated>2014-08-12T14:51:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20140812/interviewproblems</id>
+    <content type="html"><![CDATA[<p>根据同学面试经历总结，解答仅供参考。(by hiberabyss)</p>
 
 <!--more-->
 
-<h2 id="section-1">安装环境</h2>
+<h2 id="section">目录</h2>
 <ul>
-  <li>操作系统：CentOS 6.3 (x86_64)</li>
-  <li>内核版本：2.6.32-279</li>
-  <li>Lustre版本：2.3</li>
-  <li>Lustre节点：一个MGS和MDT，使用同一个服务器；多个OSS。</li>
+  <li><a href="#s1">算法相关</a></li>
+  <li><a href="#s2">海量数据问题</a></li>
+  <li><a href="#s3">操作系统相关</a></li>
 </ul>
 
-<h2 id="lustre">Lustre的安装</h2>
-<p>安装之前，对系统环境有如下要求：   </p>
+<h3 id="s1">算法相关</h3>
 
-<ol>
-  <li>必须已安装<em>net-snmp</em>，否则在安装<em>lustre-version.rpm</em>时会报错；</li>
-  <li>selinux必须被设置为disabled，如果未关闭则在<em>mkfs.lustre</em>操作时会报错；可通过sestatus查看selinux当前状态，如果为enforcing则表示未关闭；可通过命令<code>setenforce [permissive|0]</code>临时性关闭;永久关闭则需要修改配置文件<em>/etc/selinux/config</em>，做如下修改重启后生效：</li>
-</ol>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nv">SELINUX</span><span class="o">=</span>disabled
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下载<a href="http://downloads.whamcloud.com/public/e2fsprogs/latest/el6/RPMS/x86_64/">e2fsprogs</a>并安装：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -Uvh --nodeps <span class="se">\</span>
-</span><span class="line">e2fsprogs-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">e2fsprogs-libs-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">e2fsprogs-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libcom_err-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libcom_err-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libss-devel-1.42.7.wc1-7.el6.x86_64.rpm <span class="se">\</span>
-</span><span class="line">libss-1.42.7.wc1-7.el6.x86_64.rpm
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下载<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">kernel</a>包并安装（如果要使用InfiniBind连接方式，则必须安装kernel-ib-version包，且需要卸载系统中已经安装的以mlnx开头的kenel包）：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -ivh <span class="se">\</span>
-</span><span class="line">kernel-firmware-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
-</span><span class="line">kernel-devel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
-</span><span class="line">kernel-2.6.32-279.5.1.el6_lustre.gb16fe80.x86_64.rpm <span class="se">\</span>
-</span><span class="line">kernel-ib-version
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下载并安装<a href="http://downloads.whamcloud.com/public/lustre/lustre-2.3.0/el6/server/RPMS/x86_64/">Lustre</a>：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -ivh <span class="se">\</span>
-</span><span class="line">lustre-ldiskfs-3.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm <span class="se">\</span>
-</span><span class="line">lustre-modules-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm <span class="se">\</span>
-</span><span class="line">lustre-2.3.0-2.6.32_279.5.1.el6_lustre.gb16fe80.x86_64.x86_64.rpm
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="lustre-1">Lustre的配置</h2>
-
-<p>配置Lustre所使用的接口名称以及相对应的别名；</p>
-
+<h4 id="on">给定完全二叉树，求最后一层最右节点。要求时间复杂度小于<code>O(N)</code>（赵子汉——百度二面）</h4>
 <ul>
-  <li>Lustre默认使用的是第一个网络接口，默认的名称为<code>tcp0</code>；</li>
-  <li>如果需要使用光纤接口，则创建<em>/etc/modprobe.d/lnet.conf</em>文件，写入以下内容：</li>
+  <li>直接对二叉树进行层次遍历，用<code>last</code>变量记录每次访问的值，遍历完成直接返回<code>last</code>即可；时间复杂度为<code>O(N)</code>。</li>
+  <li>采用递归的思路：
+    <ul>
+      <li>结束条件：如果根节点为叶子节点，即为所求，直接返回；</li>
+      <li>如果左子树高度大于右子树，则最右节点在左子树；</li>
+      <li>如果左子树高度等于右子树，则最右节点在右子树。</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">options lnet <span class="nv">networks</span><span class="o">=</span><span class="s2">&quot;o2ib0(ib0)&quot;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>使用光纤接口前需要先确定光纤接口是否配置正常：使用<code>ifconfig</code>和<code>ibv_devinfo</code>查看相关端口是否启动，ip地址是否配置正确，接口状态等，否则会报错。查看通过光纤接口是否可以和其它节点联通。</p>
-
-<p>如果使用的是<code>mlnx</code>驱动，则在加载<code>lustre</code>模块时会报错，需要先卸载如下的几个包</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rpm -qa | grep <span class="s1">&#39;kernel&#39;</span> | grep <span class="s1">&#39;mlnx&#39;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>如果光纤接口出现故障，则首先通过<code>lspci</code>确定相关硬件是否存在；接着确定<code>openibd</code>服务是否开启，如果未开启则利用以下命令启动并设置开机启动</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">service openibd start
-</span><span class="line">chkconfig openibd on
-</span><span class="line"><span class="c">#查看开机启动是否设置成功</span>
-</span><span class="line">chkconfig --list openibd
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>载入相关模块：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">modprobe lustre
-</span><span class="line">modprobe ldiskfs
-</span><span class="line">modprobe lnet
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>这时可以查看<em>/sys/modules/lnet/prarameters/networks</em>内容，以确定<em>lnet.conf</em>中的配置信息是否已经加载至内核。</p>
-
-<p>在MDS上的创建Lustre文件系统，并挂载：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mkfs.lustre --fsname<span class="o">=</span>mylustre --mdt --mgs --index<span class="o">=</span>0 --reformat /dev/sdb1
-</span><span class="line">mount.lustre /dev/sdb1 /mnt/mdt
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>其中<em>fsname</em>为安装的lustre文件系统的标志，在MGS、MDS和OSS中都必须保持一致，在客户端挂在Lustre文件系统时也会使用到这个名字，长度不能超过8个字符；本例中MGS和MDS使用同一个服务器；<em>reformat</em>会对磁盘进行重新格式化处理。</p>
-
-<p>在OSS上创建Lustre文件系统，并挂载：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mkfs.lustre --fsname<span class="o">=</span>mylustre --ost --reformat --index<span class="o">=</span>num --mgsnode<span class="o">=</span>host_mds@o2ib0 /dev/sdb2
-</span><span class="line">mount.lustre /dev/sdb2 /mnt/ost
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>必须要在MDT的文件系统挂在之后才能挂载OST的文件系统；<em>host_mds</em>为mds的ip地址或者已经写入<em>hosts</em>文件的主机名，<em>o2ib0</em>和<em>lnet.conf</em>中写入的内容保持一致。
-如果出现无法连接的情况，则可能是防火墙的原因，可以关闭<em>iptables</em>服务：<code>service iptables stop</code></p>
-
-<p>客户端的挂载：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">mount.lustre host_mds@o2ib0:/mylustre /mnt/lustre
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-2">实用工具</h2>
-<p>lctl：可以直接在终端运行进入交互的命令方式或者直接输入命令。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lctl network up
-</span><span class="line">lctl list_nids	<span class="c">#可以查看当前实际的ip地址，以确定是否使用了正确的接口</span>
-</span><span class="line">lctl ping nids	<span class="c">#用来检查OSS和MGS连接是否正常</span>
-</span><span class="line">lctl dl		<span class="c">#查看当前的设备</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>可以通过<em>lfs</em>命令获取已挂载的<em>lustre</em>文件系统信息：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs df -h
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>或者对文件系统的文件写入方式等进行配置：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs setstripe -c -1 -S 128M /mnt/lustre/
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>其中<code>-c -1</code>表示写入到所有的OSS中，<code>-S 128M</code>表示文件分块的大小为128M；上面是对整个文件系统进行设置，也可以单独地对某个文件或者文件夹进行设置；设置完后可以通过如下命令查看配置信息是否正确：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lfs getstripe /mnt/lustre
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>利用<code>tunefs.lustre</code>可以查看已建立的lustre文件系统的信息，并对部分信息进行调整。</p>
-
-<h3 id="stopping-lnet">Stopping LNET</h3>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">lctl network unconfigure
-</span><span class="line">modprobe -r &lt;any lnd and the lnet modules&gt;
-</span><span class="line"><span class="c">#卸载所有Lustre模块</span>
-</span><span class="line">lctl modules | awk <span class="s1">&#39;{print $2}&#39;</span> | xargs rmmod
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="iozone">利用iozone进行测试</h2>
-<p>iozone是对文件系统的读写性能进行测试的工具</p>
+<p>因为是完全二叉树，树的高度可以通过从根节点不断往左遍历求得，递归也可以很方便的用迭代的方法来实现，时间复杂度为<code>O(logN*logN)</code>。代码如下：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -230,65 +57,183 @@
 <span class="line-number">10</span>
 <span class="line-number">11</span>
 <span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#单个测试文件大小</span>
-</span><span class="line"><span class="nv">FILE_SIZE</span><span class="o">=</span><span class="s2">&quot;16g&quot;</span>
-</span><span class="line"><span class="c">#进行读写的进程的数量</span>
-</span><span class="line"><span class="nv">THREAD_NUM</span><span class="o">=</span><span class="s2">&quot;16&quot;</span>
-</span><span class="line"><span class="c">#总的读写数据量</span>
-</span><span class="line"><span class="nv">TOTAL_FILESIZE</span><span class="o">=</span><span class="k">$((</span>FILE_SIZE*THREAD_NUM<span class="k">))</span>
-</span><span class="line"><span class="c">#-i 0: 代表write/rewrite</span>
-</span><span class="line"><span class="c">#-i 1: 代表read/reread</span>
-</span><span class="line"><span class="c">#-i 2: 表示random-write/random-read</span>
-</span><span class="line"><span class="c">#-o: 表示在写后要立即进行同步，去除该参数后可有效提高写速度</span>
-</span><span class="line"><span class="c">#-+n: 不进行重复测试，即不会进行rewrite和reread</span>
-</span><span class="line">/path/to/iozone -e -c -s <span class="nv">$TOTAL_FILESIZE</span> -r <span class="nv">$RECSIZE</span> -+m <span class="nv">$NODELIST</span> -+k -i 0 -i 1 -t  <span class="nv">$THREAD_NUM</span> -o -w -+n&gt;&gt; <span class="nv">$OUTPUTFILE</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="n">TreeNode</span> <span class="o">*</span><span class="n">getRightMost</span><span class="p">(</span><span class="n">TreeNode</span> <span class="o">*</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">root</span> <span class="p">)</span> <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">||</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">lh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">        <span class="n">TreeNode</span> <span class="o">*</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">        <span class="k">while</span> <span class="p">(</span> <span class="n">tmp</span> <span class="p">)</span> <span class="n">lh</span><span class="o">++</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">        <span class="kt">int</span> <span class="n">rh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">        <span class="n">tmp</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+</span><span class="line">        <span class="k">while</span> <span class="p">(</span> <span class="n">tmp</span> <span class="p">)</span> <span class="n">rh</span><span class="o">++</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">        <span class="k">if</span> <span class="p">(</span> <span class="n">lh</span> <span class="o">==</span> <span class="n">rh</span> <span class="p">)</span> <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+</span><span class="line">        <span class="k">else</span> <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>其中<code>$NODELIST</code>是下面一种格式的节点配置文件，每一行代表一个客户端，用空格区分为不同的列，每一列的含义如下：</p>
-
-<ol>
-  <li>客户端名称</li>
-  <li>要测试的文件系统的一个目录</li>
-  <li>iozone的可执行文件路径</li>
-  <li>文件名，相同的主机名但不同的文件名也表示一个单独的读写测试进程</li>
-</ol>
+<h4 id="reverse">给定一个链表内的两个指针，对指针间的节点做<code>reverse</code>（李强强——百度电面）</h4>
+<ul>
+  <li>通过交换节点数据来实现翻转，时间复杂度为<code>O(N)</code>，空间复杂度为<code>O(N)</code>；代码如下：</li>
+</ul>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">snode17 /mnt/lustre /path/to/iozone file170
-</span><span class="line">snode18 /mnt/lustre /path/to/iozone file180
-</span><span class="line">snode17 /mnt/lustre /path/to/iozone file171
-</span><span class="line">snode18 /mnt/lustre /path/to/iozone file181
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="k">struct</span> <span class="n">ListNode</span> <span class="p">{</span>
+</span><span class="line">    <span class="n">ListNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">void</span> <span class="n">reverseNodes</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">p1</span><span class="p">,</span> <span class="n">ListNode</span> <span class="o">*</span><span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">p1</span> <span class="o">||</span> <span class="o">!</span><span class="n">p2</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ListNode</span><span class="o">*&gt;</span> <span class="n">nodes</span><span class="p">;</span>
+</span><span class="line">    <span class="k">for</span> <span class="p">(</span> <span class="k">auto</span> <span class="n">node</span> <span class="o">=</span> <span class="n">p1</span><span class="p">;</span> <span class="p">;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">nodes</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span><span class="line">        <span class="k">if</span> <span class="p">(</span> <span class="n">node</span> <span class="o">==</span> <span class="n">p2</span> <span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">j</span> <span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">,</span> <span class="n">nodes</span><span class="p">[</span><span class="n">j</span><span class="o">--</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="p-problemc-causer-resolve">遇到的问题及解决方法（P-Problem，C-Cause，R-Resolve）</h2>
-<p>P：安装完重启之后，系统无法启动。<br />
-C：因为启动分区太小，只有100M大小，而<em>Lustre</em>生成的<em>initramfs</em>太大，大概有65M，最后导致生成的文件不完整，所以无法启动；在<em>lustre-module-version</em>的安装过程中产生，会报文件写入错误。<br />
-R：调整分区大小比较困难，也不方便进行批量处理；就不是用单独的启动分区，把<em>grub</em>重新安装到<em>/dev/sda</em>上，卸载启动分区，把内核等文件复制到根文件系统的<em>/boot</em>目录下，修改<em>grub.conf</em>文件，直接通过根文件系统下的<em>/boot</em>目录中的内核进行启动。  </p>
-
-<p>P：安装完Lustre并成功启动后，在执行<em>mount.lustre</em>操作之后，就会断开了ssh连接。<br />
-C：主机上提示<em>out of memory</em>提示，并killing一大堆进程，至今没搞明白为什么会出现内存不足的问题，当时机器的配置是2G内存，我在虚拟机中实验时，设置1G的内存，也没有出现这个错误。<br />
-R：去除内核参数<em>mem=2048M</em>之后，内存变为了32G，一切就恢复正常了。  </p>
-
-<h2 id="idea">比较有创意的Idea</h2>
-<p>需要对<em>/dev/sdb</em>进行分区，就在一台机器上利用<code>fdisk</code>按要求分区后，拷贝出该硬盘前512字节启动分区内容：</p>
+<ul>
+  <li>按照要求翻转的是指针之间的节点（不包括p1和p2）的方式理解的话，可以通过更改链表指针在<code>O(N)</code>的时间复杂度和<code>O(1)</code>的空间复杂度内解决；（如果包含p1和p2，也可以先交换p1和p2的值，便可转化为这种情况），代码如下：</li>
+</ul>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">dd <span class="k">if</span><span class="o">=</span>/dev/sdb <span class="nv">of</span><span class="o">=</span>boot512.img <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">void</span> <span class="n">reverseNodes</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">p1</span><span class="p">,</span> <span class="n">ListNode</span> <span class="o">*</span><span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">p1</span> <span class="o">||</span> <span class="o">!</span><span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span><span class="line">    <span class="k">auto</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">    <span class="k">auto</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">pre</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">while</span> <span class="p">(</span> <span class="n">cur</span> <span class="o">!=</span> <span class="n">p2</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">        <span class="k">auto</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span><span class="line">        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pre</span><span class="p">;</span>
+</span><span class="line">        <span class="n">pre</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+</span><span class="line">        <span class="n">cur</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+</span><span class="line">    <span class="n">p1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pre</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>之后把这个文件写入其他机器的<em>/dev/sdb</em>硬盘，便可完成分区，这样便方便进行批量处理了：</p>
+<h4 id="section-1">随机数相关算法</h4>
+<p>该类算法的思路在于先由给定随机数生成器生成一个序列，剔除一部分数，由剩下的序列来生成要求的结果。</p>
+
+<ul>
+  <li>给定随机数生成器<code>rand1p</code>，以概率<code>p</code>生成1，以概率<code>1-p</code>生成0，设计<code>rand1</code>，等概率生成0和1 ( 思路：两个<code>rand1p</code>之和为0或2的概率相等 )</li>
+</ul>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">dd <span class="k">if</span><span class="o">=</span>boot512.img <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">int</span> <span class="n">rand1</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">res</span> <span class="o">=</span> <span class="n">rand1p</span><span class="p">()</span> <span class="o">+</span> <span class="n">rand1p</span><span class="p">();</span>
+</span><span class="line">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="n">res</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>在用<code>fdisk</code>分完区后，在<em>/dev/sdb#</em>中并没有及时地反映出分区后的结果，此时运行<code>partprobe /dev/sdb</code>命令即可。</p>
+<ul>
+  <li>给定<code>rand5</code>（等概率生成1-5），设计<code>rand7</code>（等概率生成1-7）（思路：由两个<code>rand5</code>组成一个2位的5进制数，则可等概率生成序列0-24，剔除最后4个数，则可得到一个有21个数的等概率序列）</li>
+</ul>
 
-<h2 id="section-3">参考文献：</h2>
-<p><a href="http://xiaolangit.blog.51cto.com/3343422/1195060">51CTO：Lustre-2.3的安装</a></p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">int</span> <span class="n">rand7</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">res</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">rand5</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">rand5</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">res</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="p">(</span><span class="n">res</span><span class="o">%</span><span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h4 id="k">找第K个数</h4>
+
+<h4 id="section-2">两个有序数组求中位数</h4>
+
+<h4 id="inplace-mergesort">Inplace MergeSort</h4>
+
+<h4 id="section-3">非递归快排</h4>
+
+<h2 id="s2">海量数据问题</h2>
+<p>这篇<a href="http://www.cnblogs.com/gw811/archive/2012/10/11/2719232.html">博客</a>总结的挺好的。</p>
+
+<h4 id="nunsigned-intn">求N个整数（unsigned int）的中位数，N很大（强强——百度电面）</h4>
+<ul>
+  <li>用外排序的方法排好序，返回第<code>N/2</code>个元素，时间复杂度<code>O(N*logN)</code></li>
+  <li>类似桶排序的思想；对整数区间进行划分（例如划分为16个区间：0 ~ 2^28 - 1, …, 15*2^28 ~ 2^32 - 1），遍历所有整数，把属于同一个区间内的整数写到同一个文件中，并统计整数数量（N0, N1, …, N7)，找到k，使得<code>sum{N0~Nk} &gt;= N/2</code>且<code>sum{N0~Nk-1} &lt; N/2</code>，则该问题转化为求第k个区间内的整数的第<code>N/2-sum{N0~Nk-1}</code>个数的问题。如果区间内的整数还是太多，则可以对区间再做进一步细分，重复上述过程。</li>
+</ul>
+
+<h3 id="s3">操作系统相关</h3>
+
+<h4 id="shell">shell的实现原理（中海——百度一面）</h4>
+<ul>
+  <li>读取输入，fork出新的进程，在子进程中调用<code>exec</code>运行相应程序。</li>
+</ul>
 ]]></content>
   </entry>
   
