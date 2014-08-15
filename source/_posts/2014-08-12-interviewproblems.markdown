@@ -103,12 +103,17 @@ int rand1() {
     int res = 0;
 
     do {
-        res = rand1p() + rand1p();
-    } while ( res == 1 );
+        res = 2*rand1p() + rand1p();
+    } while ( res == 0 || res == 3 );
 
-    return res/2;
+    return res - 1;
 }
 ```   
+
+- 由等概率01生成器`rand1`生成等概率的N个数
+
+```c++
+```
 
 - 给定`rand5`（等概率生成1-5），设计`rand7`（等概率生成1-7）（思路：由两个`rand5`组成一个2位的5进制数，则可等概率生成序列0-24，剔除最后4个数，则可得到一个有21个数的等概率序列）
 
