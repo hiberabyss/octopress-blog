@@ -2,7 +2,15 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://hiberabyss.github.io/blog/20140812/interviewproblems/</loc>
-        <lastmod>2014-08-14T17:55:08+08:00</lastmod>
+        <lastmod>2014-08-15T11:11:42+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hiberabyss.github.io/blog/20140815/miscellaneous-problems/</loc>
+        <lastmod>2014-08-15T13:27:02+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hiberabyss.github.io/blog/20140815/binary-tree/</loc>
+        <lastmod>2014-08-15T13:48:21+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/about/</loc>
@@ -10,11 +18,11 @@
     </url>
     <url>
         <loc>http://hiberabyss.github.io/</loc>
-        <lastmod>2014-08-14T17:55:08+08:00</lastmod>
+        <lastmod>2014-08-15T13:48:21+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/blog/archives/</loc>
-        <lastmod>2014-08-14T17:55:08+08:00</lastmod>
+        <lastmod>2014-08-15T13:48:21+08:00</lastmod>
     </url>
     <url>
         <loc>http://hiberabyss.github.io/robots.txt</loc>

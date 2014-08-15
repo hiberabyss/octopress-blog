@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithm | 蛰渊-成长的轨迹]]></title>
   <link href="http://hiberabyss.github.io/blog/categories/Algorithm/atom.xml" rel="self"/>
   <link href="http://hiberabyss.github.io/"/>
-  <updated>2014-08-15T09:54:51+08:00</updated>
+  <updated>2014-08-15T13:48:28+08:00</updated>
   <id>http://hiberabyss.github.io/</id>
   <author>
     <name><![CDATA[hiberabyss]]></name>
@@ -135,8 +135,20 @@ return res - 1; } ```
   <li>由等概率01生成器<code>rand1</code>生成等概率的N个数</li>
 </ul>
 
-<p><code>c++
-</code></p>
+<p>```c++
+int randN(int N) {
+    int res = 0;</p>
+
+<pre><code>do {
+    res = 0;
+    for ( int i=0; ; i++ ) {
+        res += (rand1() &lt;&lt; i);
+        if ( (1&lt;&lt;i) &gt;= N ) break;
+    }
+} while( res &gt;= N );
+
+return res + 1; } ```
+</code></pre>
 
 <ul>
   <li>给定<code>rand5</code>（等概率生成1-5），设计<code>rand7</code>（等概率生成1-7）（思路：由两个<code>rand5</code>组成一个2位的5进制数，则可等概率生成序列0-24，剔除最后4个数，则可得到一个有21个数的等概率序列）</li>

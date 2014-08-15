@@ -275,19 +275,52 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="err">```</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">int</span> <span class="n">randN</span><span class="p">(</span><span class="kt">int</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span><span class="line">
-</span><span class="line"><span class="o">-</span> <span class="err">给定`</span><span class="n">rand5</span><span class="err">`（等概率生成</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="err">），设计`</span><span class="n">rand7</span><span class="err">`（等概率生成</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span><span class="err">）（思路：由两个`</span><span class="n">rand5</span><span class="err">`组成一个</span><span class="mi">2</span><span class="err">位的</span><span class="mi">5</span><span class="err">进制数，则可等概率生成序列</span><span class="mi">0</span><span class="o">-</span><span class="mi">24</span><span class="err">，剔除最后</span><span class="mi">4</span><span class="err">个数，则可得到一个有</span><span class="mi">21</span><span class="err">个数的等概率序列）</span>
+</span><span class="line">    <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">        <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class="line">            <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="n">rand1</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">);</span>
+</span><span class="line">            <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">    <span class="p">}</span> <span class="k">while</span><span class="p">(</span> <span class="n">res</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="n">res</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>c++
-int rand7() {
-    int res = 0;
-    do {
-        res = 5 * (rand5() - 1) + rand5() - 1;
-    } while ( res &gt; 20 );</p>
 
-<pre><code>return (res%7) + 1; } ```
-</code></pre>
+<ul>
+  <li>给定<code>rand5</code>（等概率生成1-5），设计<code>rand7</code>（等概率生成1-7）（思路：由两个<code>rand5</code>组成一个2位的5进制数，则可等概率生成序列0-24，剔除最后4个数，则可得到一个有21个数的等概率序列）</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="c++"><span class="line"><span class="kt">int</span> <span class="n">rand7</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line">    <span class="k">do</span> <span class="p">{</span>
+</span><span class="line">        <span class="n">res</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">rand5</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">rand5</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line">    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">res</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="p">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span> <span class="p">(</span><span class="n">res</span><span class="o">%</span><span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h4 id="k">找第K个数</h4>
 
@@ -357,6 +390,8 @@ int rand7() {
     <p class="meta">
       
       
+        <a class="basic-alignment right" href="/blog/20140815/miscellaneous-problems/" title="Next Post: 未分类面试题">未分类面试题 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -389,12 +424,20 @@ int rand7() {
     
 <section>
 <h1>分类目录</h1>
-<span class='categories_tag'> <a href='/blog/categories/Algorithm' style='font-size: 160.0%'>Algorithm(1)</a>  <a href='/blog/categories/Job' style='font-size: 160.0%'>Job(1)</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/Algorithm' style='font-size: 120.0%'>Algorithm(1)</a>  <a href='/blog/categories/BTree' style='font-size: 120.0%'>BTree(1)</a>  <a href='/blog/categories/Job' style='font-size: 160.0%'>Job(3)</a> </span>
 </section>
 
 <section>
   <h1>近期文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20140815/binary-tree/">二叉树相关算法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20140815/miscellaneous-problems/">未分类面试题</a>
+      </li>
     
       <li class="post">
         <a href="/blog/20140812/interviewproblems/">2014面试题</a>

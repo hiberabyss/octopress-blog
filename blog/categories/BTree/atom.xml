@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: BTree | 蛰渊-成长的轨迹]]></title>
+  <link href="http://hiberabyss.github.io/blog/categories/BTree/atom.xml" rel="self"/>
+  <link href="http://hiberabyss.github.io/"/>
+  <updated>2014-08-15T13:48:28+08:00</updated>
+  <id>http://hiberabyss.github.io/</id>
+  <author>
+    <name><![CDATA[hiberabyss]]></name>
+    <email><![CDATA[liuhb90@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[二叉树相关算法]]></title>
+    <link href="http://hiberabyss.github.io/blog/20140815/binary-tree/"/>
+    <updated>2014-08-15T13:30:00+08:00</updated>
+    <id>http://hiberabyss.github.io/blog/20140815/binary-tree</id>
+    <content type="html"><![CDATA[<p>二叉树相关的一些算法。</p>
+
+<!--more-->
+
+<h3 id="section">给定二叉树的一个节点，求中序遍历时它的下一个节点</h3>
+]]></content>
+  </entry>
+  
+</feed>
